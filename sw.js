@@ -4,7 +4,7 @@
  * No user data ever passes through here — sets/catches live in
  * localStorage/IndexedDB on the device only.
  */
-var SHELL_CACHE = 'opossum-foot-ca-shell-v1';
+var SHELL_CACHE = 'opossum-foot-ca-shell-v2';
 var TILE_CACHE = 'opossum-foot-ca-tiles-v1';
 var MAX_TILES = 2000;
 
@@ -48,6 +48,26 @@ var SHELL = [
   './assets/species/spotted-skunk.png',
   './assets/species/otter.png',
   './assets/species/bobcat.png',
+  './assets/species/marten.png',
+  './assets/species/fisher.png',
+  './assets/species/lynx.png',
+  './assets/species/wolverine.png',
+  './assets/species/black-bear.png',
+  './assets/species/grizzly-bear.png',
+  './assets/species/polar-bear.png',
+  './assets/species/cougar.png',
+  './assets/species/red-squirrel.png',
+  './assets/species/douglas-squirrel.png',
+  './assets/species/gray-squirrel.png',
+  './assets/species/eastern-chipmunk.png',
+  './assets/species/northern-flying-squirrel.png',
+  './assets/species/ground-squirrel.png',
+  './assets/species/marmot.png',
+  './assets/species/snowshoe-hare.png',
+  './assets/species/arctic-fox.png',
+  './assets/species/swift-fox.png',
+  './assets/species/black-footed-ferret.png',
+  './assets/species/sea-otter.png',
   './assets/icons/compass.png',
   './assets/icons/logbook.png',
   './assets/icons/barchart.png',
