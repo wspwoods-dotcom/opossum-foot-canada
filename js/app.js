@@ -24,7 +24,7 @@ var STATES = [
   { code: "YT", name: "Yukon", file: "yukon-2026-27.json", provisional: true }
 ];
 var REMINDER_LINE = 'Reminder only — always verify with your provincial or territorial agency and local ordinances.';
-var APP_VERSION = 'beta 0.1 · build 2026-11-17-ca1';
+var APP_VERSION = 'beta 0.1 · build 2026-11-17-ca2';
 /* Canada clone: metric is the default unit system (Settings → Where You Trap). */
 function unitsMetric() { return !(typeof Store !== 'undefined' && Store.data && Store.data.units === 'imperial'); }
 function wxTempUnit() { return unitsMetric() ? '°C' : '°F'; }
@@ -571,7 +571,49 @@ var SPECIES_ICONS = {
   'Least weasel': 'weasel',
   'Long-tailed weasel': 'weasel',
   'Short-tailed weasel': 'weasel',
-  'Spotted skunk': 'spotted-skunk'
+  'Spotted skunk': 'spotted-skunk',
+  /* ca2: Canadian name variants of the same animals above (same species,
+     different jurisdiction wording) plus Canada-only species whose
+     silhouettes were built for this clone. Lynx is its own silhouette —
+     never the bobcat's. */
+  'Badger': 'badger',
+  'Gray wolf': 'wolf',
+  'Wolf': 'wolf',
+  'Fox': 'red-fox',
+  'Red fox (coloured)': 'red-fox',
+  'Otter': 'otter',
+  'Skunk': 'striped-skunk',
+  'Ermine': 'weasel',
+  'Ermine (weasel)': 'weasel',
+  'Weasel (ermine)': 'weasel',
+  'Woodchuck': 'groundhog',
+  'American marten': 'marten',
+  'Marten': 'marten',
+  'Newfoundland marten': 'marten',
+  'Fisher': 'fisher',
+  'Canada lynx': 'lynx',
+  'Lynx': 'lynx',
+  'Wolverine': 'wolverine',
+  'Black bear': 'black-bear',
+  'Grizzly bear': 'grizzly-bear',
+  'Polar bear': 'polar-bear',
+  'Cougar': 'cougar',
+  'Red squirrel': 'red-squirrel',
+  'Squirrel': 'red-squirrel',
+  'Douglas squirrel': 'douglas-squirrel',
+  'Gray squirrel': 'gray-squirrel',
+  'Eastern chipmunk': 'eastern-chipmunk',
+  'Northern flying squirrel': 'northern-flying-squirrel',
+  'Ground squirrel': 'ground-squirrel',
+  'Marmot': 'marmot',
+  'Snowshoe hare': 'snowshoe-hare',
+  'Varying hare': 'snowshoe-hare',
+  'Hare': 'snowshoe-hare',
+  'Arctic fox': 'arctic-fox',
+  'Arctic fox (white)': 'arctic-fox',
+  'Swift fox': 'swift-fox',
+  'Black-footed ferret': 'black-footed-ferret',
+  'Sea otter': 'sea-otter'
 };
 function speciesIcon(name, cls) {
   var slug = SPECIES_ICONS[name];
@@ -972,7 +1014,7 @@ function paintWeather(j, staleNote) {
     '<div class="wx-cond">' + esc(weatherCodeText(c.weather_code)) + ' · feels like ' + Math.round(c.apparent_temperature) + wxTempUnit() + '</div>' +
     '<div class="wx-meta">Wind ' + windCompass(c.wind_direction_10m) + ' ' + Math.round(c.wind_speed_10m) + ' ' + wxWindUnit() +
     ' · Humidity ' + c.relative_humidity_2m + '%' +
-    (c.precipitation > 0 ? ' · ' + c.precipitation.toFixed(2) + ' in precip' : '') +
+    (c.precipitation > 0 ? ' · ' + (unitsMetric() ? c.precipitation.toFixed(1) + ' mm precip' : c.precipitation.toFixed(2) + ' in precip') : '') +
     (hi != null ? ' · High ' + hi + '° / Low ' + lo + '°' : '') + '</div>';
   now.innerHTML = h;
   var rows = '', times = j.hourly.time, idx = 0;
@@ -1000,9 +1042,10 @@ function showCachedWeather(msg) {
 
 /* ---- National Weather Service spot forecast (Q41) ----
    api.weather.gov is free with no key: points lookup -> grid forecast URLs.
-   Outside the US the points lookup 404s and we fall back to the Open-Meteo
-   sheet content. The map chip and auto-record stay on Open-Meteo; only the
-   sheet gains the NWS 7-day, hourly, and alerts. */
+   Outside the US the points lookup 404s — in Canada the ECCC GeoMet source
+   (below renderWeatherTab's cascade) serves the sheet instead, and
+   Open-Meteo is the global last resort. The map chip and auto-record stay
+   on Open-Meteo; the sheet gains the NWS 7-day and alerts for US points. */
 function nwsIconCode(iconUrl) {
   var m = String(iconUrl || '').match(/\/(day|night)\/([^?\/]+)/);
   if (!m) return '';
@@ -1096,17 +1139,182 @@ function noteNwsUpdated(cached) {
     : 'NWS just now';
   paintWeatherUpdated();
 }
+/* Returns true when a cached NWS forecast was painted. When there is no
+   cache it leaves the cards alone — renderWeatherTab chains the ECCC
+   cache and the Open-Meteo daily fallback before showing a dead end. */
 function showCachedNWS() {
   var c = Store.data.weatherNwsCache;
   if (c && c.payload && c.payload.daily) {
     paintNWS(c.payload);
     noteNwsUpdated(true);
-  } else {
-    var aEl = $('weather-alerts'), dEl = $('weather-daily');
-    if (aEl) { aEl.style.display = 'none'; aEl.innerHTML = ''; }
-    if (dEl) dEl.innerHTML = '<p class="dim">National Weather Service forecast unavailable.</p>';
+    return true;
   }
+  return false;
 }
+/* ---- Environment and Climate Change Canada (ECCC) GeoMet ----
+   api.weather.gc.ca is keyless with open CORS and serves the City Page
+   Weather collection: current conditions, hourly + daily forecasts and
+   warnings for Canadian locations. NWS (above) 404s outside the US, so
+   this is the forecast/alerts source for Canada — and, per Tanner's
+   direction, the now/hourly source there too. Values arrive metric
+   (°C, km/h) and are converted when the app is set to imperial. */
+function ecccEn(x) { return (x && typeof x === 'object' && 'en' in x) ? x.en : x; }
+function ecccDistKm(lat1, lng1, lat2, lng2) {
+  var dLat = (lat2 - lat1) * 111.32, dLng = (lng2 - lng1) * 111.32 * Math.cos(lat1 * Math.PI / 180);
+  return Math.sqrt(dLat * dLat + dLng * dLng);
+}
+function wxTempFromC(c) { return c == null ? '—' : Math.round(unitsMetric() ? c : c * 9 / 5 + 32); }
+function wxWindFromKmh(kmh) { return kmh == null ? 0 : Math.round(unitsMetric() ? kmh : kmh / 1.609); }
+function ecccEmoji(text) {
+  var t = String(text || '').toLowerCase();
+  if (/thunder/.test(t)) return '⛈️';
+  if (/snow|flurr|blizzard/.test(t)) return /rain/.test(t) ? '🌨️' : '❄️';
+  if (/rain|drizzle|shower/.test(t)) return '🌧️';
+  if (/fog|mist|haze/.test(t)) return '🌫️';
+  if (/mix of sun|partly|a few clouds/.test(t)) return '⛅';
+  if (/sunny|clear/.test(t)) return '☀️';
+  if (/cloud|overcast/.test(t)) return '☁️';
+  return '🌤️';
+}
+function ecccHourLabel(iso) {
+  var h = new Date(iso).getHours();
+  var ap = h >= 12 ? 'p' : 'a';
+  h = h % 12; if (h === 0) h = 12;
+  return h + ap;
+}
+/* Nearest City Page location to the point, or null when none is within
+   ~150 km (the point is then not ECCC-served and NWS/Open-Meteo take over). */
+function fetchECCC(lat, lng, cb) {
+  var done = false;
+  function finish(item) { if (!done) { done = true; cb(item); } }
+  var url = 'https://api.weather.gc.ca/collections/citypageweather-realtime/items' +
+    '?bbox=' + (lng - 1.2).toFixed(3) + ',' + (lat - 0.8).toFixed(3) + ',' +
+    (lng + 1.2).toFixed(3) + ',' + (lat + 0.8).toFixed(3) + '&limit=10&f=json';
+  try {
+    fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      var feats = (j && j.features) || [], best = null, bestKm = Infinity;
+      feats.forEach(function (f) {
+        var c = f.geometry && f.geometry.coordinates;
+        if (!c) return;
+        var km = ecccDistKm(lat, lng, c[1], c[0]);
+        if (km < bestKm) { bestKm = km; best = f; }
+      });
+      finish(best && bestKm <= 150 ? best : null);
+    }).catch(function () { finish(null); });
+  } catch (e) { finish(null); }
+  setTimeout(function () { finish(null); }, 10000); /* never hang the sheet on weather */
+}
+function paintEcccWeather(item, staleNote) {
+  var p = item.properties || {}, cc = p.currentConditions || {};
+  var now = $('weather-now');
+  var tempC = ecccEn((cc.temperature || {}).value);
+  if (tempC == null) { now.innerHTML = '<p class="dim">No weather data.</p>'; return; }
+  var hf = (p.hourlyForecastGroup || {}).hourlyForecasts || [];
+  var fg = (p.forecastGroup || {}).forecasts || [];
+  var nowMs = Date.now(), cur = null, idx = -1;
+  for (var i = 0; i < hf.length; i++) {
+    if (new Date(hf[i].timestamp).getTime() <= nowMs) { cur = hf[i]; idx = i; }
+  }
+  var condText = (cur && ecccEn(cur.condition)) ||
+    (fg[0] && fg[0].abbreviatedForecast && ecccEn(fg[0].abbreviatedForecast.textSummary)) || '';
+  var fl = null;
+  if (cc.windChill && ecccEn(cc.windChill.value) != null) fl = ecccEn(cc.windChill.value);
+  else if (cc.humidex && ecccEn(cc.humidex.value) != null) fl = ecccEn(cc.humidex.value);
+  var wind = cc.wind || {};
+  var hum = ecccEn((cc.relativeHumidity || {}).value);
+  var hi = null, lo = null;
+  fg.forEach(function (f) {
+    var t = f.temperatures && f.temperatures.temperature && f.temperatures.temperature[0];
+    if (!t) return;
+    if (ecccEn(t.class) === 'high' && hi == null) hi = ecccEn(t.value);
+    if (ecccEn(t.class) === 'low' && lo == null) lo = ecccEn(t.value);
+  });
+  var h = '<div class="wx-temp">' + ecccEmoji(condText) + ' ' + wxTempFromC(tempC) + wxTempUnit() + '</div>' +
+    '<div class="wx-cond">' + esc(condText) +
+    (fl != null ? ' · feels like ' + wxTempFromC(fl) + wxTempUnit() : '') + '</div>' +
+    '<div class="wx-meta">Wind ' + esc(ecccEn((wind.direction || {}).value) || '') + ' ' +
+    wxWindFromKmh(ecccEn((wind.speed || {}).value)) + ' ' + wxWindUnit() +
+    (hum != null ? ' · Humidity ' + hum + '%' : '') +
+    (hi != null ? ' · High ' + wxTempFromC(hi) + '°' : '') +
+    (lo != null ? ' / Low ' + wxTempFromC(lo) + '°' : '') + '</div>';
+  now.innerHTML = h;
+  var chip = $('weather-chip');
+  if (chip) chip.innerHTML = '<span>' + ecccEmoji(condText) + '</span><span>' + wxTempFromC(tempC) + wxTempUnit() + '</span>';
+  var rows = '';
+  for (var k = idx + 1; k < hf.length && k <= idx + 12; k++) {
+    var lop = ecccEn((hf[k].lop || {}).value);
+    rows += '<div class="wx-hour"><span>' + ecccHourLabel(hf[k].timestamp) + '</span><span>' +
+      ecccEmoji(ecccEn(hf[k].condition)) + '</span>' +
+      '<span>' + wxTempFromC(ecccEn((hf[k].temperature || {}).value)) + wxTempUnit() + '</span>' +
+      (lop != null ? '<span class="dim">' + lop + '% precip</span>' : '<span></span>') + '</div>';
+  }
+  $('weather-hourly').innerHTML = rows || '<p class="dim">No hourly data.</p>';
+  wxOmStamp = staleNote || 'Updated just now · Environment Canada';
+  paintWeatherUpdated();
+}
+function paintEcccForecast(item) {
+  var aEl = $('weather-alerts'), dEl = $('weather-daily');
+  if (!aEl || !dEl) return;
+  var p = item.properties || {}, warns = p.warnings || [];
+  if (warns.length) {
+    var ah = '';
+    warns.forEach(function (w) {
+      ah += '<div class="wx-alert"><div><strong>⚠️ ' + esc(ecccEn(w.description) || 'Weather alert') + '</strong></div>' +
+        (ecccEn(w.url) ? '<div><a href="' + esc(ecccEn(w.url)) + '" target="_blank" rel="noopener">Details — Environment Canada</a></div>' : '') +
+        '</div>';
+    });
+    aEl.innerHTML = ah;
+    aEl.style.display = '';
+  } else {
+    aEl.style.display = 'none'; aEl.innerHTML = '';
+  }
+  var fg = (p.forecastGroup || {}).forecasts || [], dh = '';
+  fg.forEach(function (f) {
+    var name = ecccEn((f.period || {}).textForecastName) || '';
+    var t = f.temperatures && f.temperatures.temperature && f.temperatures.temperature[0];
+    var tv = t ? ecccEn(t.value) : null, tclass = t ? ecccEn(t.class) : '';
+    var tempTxt = tv != null
+      ? (tclass === 'high' ? 'High ' : tclass === 'low' ? 'Low ' : '') + wxTempFromC(tv) + '°' : '';
+    var summary = (f.abbreviatedForecast && ecccEn(f.abbreviatedForecast.textSummary)) || ecccEn(f.textSummary) || '';
+    dh += '<div class="wx-day"><div class="wx-day-top"><span><strong>' + esc(name) + '</strong></span>' +
+      '<span>' + ecccEmoji(summary) + (tempTxt ? ' ' + tempTxt : '') + '</span></div>' +
+      (summary ? '<div class="dim">' + esc(summary) + '</div>' : '') + '</div>';
+  });
+  dEl.innerHTML = dh || '<p class="dim">No forecast data.</p>';
+}
+function noteEcccUpdated(cached) {
+  wxNwsStamp = (cached && Store.data.weatherEcccCache)
+    ? 'Environment Canada cached ' + timeAgo(Store.data.weatherEcccCache.at)
+    : 'Environment Canada just now';
+  paintWeatherUpdated();
+}
+function showCachedEccc() {
+  var c = Store.data.weatherEcccCache;
+  if (c && c.payload && c.payload.properties) {
+    paintEcccForecast(c.payload);
+    noteEcccUpdated(true);
+    return true;
+  }
+  return false;
+}
+/* Last-resort daily: Open-Meteo is global, so its 7-day hi/lo can fill the
+   forecast card when neither ECCC nor NWS serves the point. */
+function paintOmDaily(j) {
+  var dEl = $('weather-daily');
+  if (!dEl || !j || !j.daily || !j.daily.time || !j.daily.weather_code) return false;
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], dh = '';
+  for (var i = 0; i < j.daily.time.length; i++) {
+    dh += '<div class="wx-day"><div class="wx-day-top"><span><strong>' +
+      days[parseISODate(j.daily.time[i]).getDay()] + '</strong></span>' +
+      '<span>' + weatherEmoji(j.daily.weather_code[i]) + ' ' + Math.round(j.daily.temperature_2m_max[i]) + '°</span></div>' +
+      '<div class="dim">Low ' + Math.round(j.daily.temperature_2m_min[i]) + '°</div></div>';
+  }
+  dEl.innerHTML = dh;
+  var aEl = $('weather-alerts');
+  if (aEl) { aEl.style.display = 'none'; aEl.innerHTML = ''; }
+  return true;
+}
+
 function renderWeatherTab() {
   if (weatherTabBusy) return;
   weatherTabBusy = true;
@@ -1121,40 +1329,94 @@ function renderWeatherTab() {
       weatherTabBusy = false;
       $('weather-loc').textContent = 'Location unavailable.';
       showCachedWeather('No location fix yet — open the Map tab and tap the crosshair, then come back.');
-      showCachedNWS();
+      if (!showCachedNWS() && !showCachedEccc()) forecastDeadEnd();
       return;
     }
     /* Q103 (2026-10-01): Tanner — no visible coordinates anywhere in the UI unless the Privacy toggle is on. */
     $('weather-loc').textContent = showCoords()
       ? 'Near ' + fix.lat.toFixed(3) + ', ' + fix.lng.toFixed(3)
       : 'Current conditions where you are.';
-    /* National Weather Service spot forecast, in parallel with Open-Meteo. */
-    fetchNWS(fix.lat, fix.lng, function (nws) {
-      if (nws) {
-        Store.data.weatherNwsCache = { at: Date.now(), payload: nws };
-        try { Store.save(); } catch (e) {}
-        paintNWS(nws);
-        noteNwsUpdated(false);
-      } else {
-        showCachedNWS();
+    /* Source cascade (ca2): ECCC claims Canadian points — it is the
+       authoritative source there, and NWS 404s outside the US, which left
+       the forecast/alerts cards dead in Canada on ca1. When ECCC has no
+       location near the point, NWS serves US points as before. Open-Meteo
+       (global) backs the now/hourly cards outside Canada and is the
+       last-resort daily source when neither agency serves the point. */
+    var omJ = null, omSettled = false, ecccState = 'pending', ecccItem = null,
+        nwsState = 'pending', nowPainted = false, fcPainted = false;
+    function paintNow() {
+      if (nowPainted) return;
+      if (ecccState === 'hit') {
+        nowPainted = true;
+        paintEcccWeather(ecccItem, null);
+      } else if (ecccState === 'miss' && omSettled) {
+        nowPainted = true;
+        if (omJ && omJ.current) {
+          Store.data.weatherTabCache = { at: Date.now(), payload: omJ };
+          Store.save();
+          paintWeather(omJ, null);
+        } else {
+          showCachedWeather("Couldn't reach the weather service.");
+        }
       }
+    }
+    function forecastDeadEnd() {
+      if (fcPainted) return;
+      if (paintOmDaily(omJ)) {
+        fcPainted = true;
+        wxNwsStamp = 'Open-Meteo just now';
+        paintWeatherUpdated();
+        return;
+      }
+      var c = Store.data.weatherTabCache;
+      if (c && c.payload && paintOmDaily(c.payload)) {
+        fcPainted = true;
+        wxNwsStamp = 'Open-Meteo cached ' + timeAgo(c.at);
+        paintWeatherUpdated();
+        return;
+      }
+      var dEl = $('weather-daily');
+      if (dEl) dEl.innerHTML = '<p class="dim">Forecast unavailable.</p>';
+    }
+    fetchECCC(fix.lat, fix.lng, function (item) {
+      if (item) {
+        ecccState = 'hit'; ecccItem = item; fcPainted = true;
+        Store.data.weatherEcccCache = { at: Date.now(), payload: item };
+        try { Store.save(); } catch (e) {}
+        paintEcccForecast(item);
+        noteEcccUpdated(false);
+        paintNow();
+        return;
+      }
+      ecccState = 'miss';
+      fetchNWS(fix.lat, fix.lng, function (nws) {
+        nwsState = nws ? 'hit' : 'miss';
+        if (nws) {
+          fcPainted = true;
+          Store.data.weatherNwsCache = { at: Date.now(), payload: nws };
+          try { Store.save(); } catch (e) {}
+          paintNWS(nws);
+          noteNwsUpdated(false);
+        } else if (showCachedNWS() || showCachedEccc()) {
+          fcPainted = true;
+        } else if (omSettled) {
+          forecastDeadEnd();
+        }
+      });
+      paintNow();
     });
     var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + fix.lat.toFixed(4) + '&longitude=' + fix.lng.toFixed(4) +
       '&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,precipitation' +
       '&hourly=temperature_2m,precipitation_probability,weather_code' +
-      '&daily=temperature_2m_max,temperature_2m_min' +
-      '&' + wxUnitsParam() + '&timezone=auto&forecast_days=2';
+      '&daily=temperature_2m_max,temperature_2m_min,weather_code' +
+      '&' + wxUnitsParam() + '&timezone=auto&forecast_days=7';
     var done = false;
     function finish(j) {
       if (done) return; done = true;
       weatherTabBusy = false;
-      if (j && j.current) {
-        Store.data.weatherTabCache = { at: Date.now(), payload: j };
-        Store.save();
-        paintWeather(j, null);
-      } else {
-        showCachedWeather("Couldn't reach the weather service.");
-      }
+      omJ = j; omSettled = true;
+      paintNow();
+      if (!fcPainted && ecccState === 'miss' && nwsState === 'miss') forecastDeadEnd();
     }
     try {
       fetch(url).then(function (r) { return r.json(); }).then(finish).catch(function () { finish(null); });
