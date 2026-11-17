@@ -1,0 +1,2084 @@
+{
+  "schema_version": "1.1",
+  "state": "NT",
+  "state_name": "Northwest Territories",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set by territorial regulation and can change. Always verify current regulations with the Government of the Northwest Territories, Environment and Climate Change. Trapping in the NWT is governed by the Wildlife Act, S.N.W.T. 2013, c. 30 and the Trapping Regulations continued under it. Aboriginal and treaty harvest rights and land-claim settlement-area rules layer over territorial law and are only partly modelled here. This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "nt-summary-2021-22",
+      "notes": "The regulator's own published summary of the hunting and trapping regulations, including the 'Fur Trappers Only' season tables (pp. 53-55) and the wolf/wolverine 'Fur Trappers Only' subsections. States it is not a legal document. The copy read is byte-identical (MD5 verified) to the file ECC currently serves on its website — it remains the newest edition GNWT posts online as of retrieval. All season dates in this dataset come from this document. Read 2026-11-15.",
+      "title": "Northwest Territories Summary of Hunting and Trapping Regulations, July 1, 2021 - June 30, 2022 (GNWT)",
+      "type": "agency_summary",
+      "url": "https://www.gov.nt.ca/sites/ecc/files/resources/enr_hunting_and_trapping_summary-en-web.pdf"
+    },
+    {
+      "id": "nt-ecc-trapping-page",
+      "notes": "Rights-based harvest (no licence, no set seasons in the traditional area), Special Harvester Licence, registered trapping areas, land-claim exclusivity lists, GMVF/AIHTS compliance, pelt-wastage list, 72-hour live-hold trap check, ECC regional office phone numbers. Read 2026-11-15.",
+      "title": "Trapping in the Northwest Territories (GNWT Environment and Climate Change)",
+      "type": "agency_page",
+      "url": "https://www.gov.nt.ca/ecc/en/trapping-northwest-territories"
+    },
+    {
+      "id": "nt-wildlife-act-2013",
+      "notes": "S.N.W.T. 2013, c. 30; in force November 28, 2014 (ss. 46-48 in force January 1, 2020). s. 17 rights exception; s. 45(1) trapping authorization (GHL, SHL or permit). Full text could not be extracted this session (NWT Justice site migration; CanLII blocked) — provisions verified through GNWT publications and the Act's published structure. See known_gaps.",
+      "title": "Wildlife Act, S.N.W.T. 2013, c. 30",
+      "type": "statute",
+      "url": "https://www.justice.gov.nt.ca/en/browse/lawsandlegislation/"
+    },
+    {
+      "id": "nt-trapping-regulations",
+      "notes": "The Trapping Regulations (originally N.W.T. Reg. 023-92 under the former Wildlife Act) continue under the 2013 Act and carry the seasons, bag limits, tag requirements and conditions for licensed (GHL) trappers. GNWT's July 2014 Phase-1 regulation-change document confirms those seasons/conditions carried over unchanged at the 2013 Act transition. Last amendment located: R-008-2017. The consolidated regulation text could NOT be extracted this session — see known_gaps. Season dates in this dataset are the Trapping Regulations seasons as published by GNWT in the Summary (source nt-summary-2021-22).",
+      "title": "Trapping Regulations (under the Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.justice.gov.nt.ca/en/browse/lawsandlegislation/"
+    },
+    {
+      "id": "nt-fees-regulations",
+      "notes": "Wildlife Fees Regulations, R-114-2014. Items verified: registered trapping area licence $24 (item 22); registered group trapping area membership — no fee (item 23); SHL authorization to trap furbearers $24 (item 24); wildlife export permit — no fee (item 25); small game authorization $24/$48/$119; fur dealer licence $475 / renewal $238. The General Hunting Licence fee item was not captured — see known_gaps.",
+      "title": "Wildlife Fees Regulations, R-114-2014",
+      "type": "regulation",
+      "url": "https://www.justice.gov.nt.ca/en/browse/lawsandlegislation/"
+    },
+    {
+      "id": "nt-zones-regulations",
+      "notes": "Wildlife Management Zones and Areas Regulations, R.R.N.W.T. 1990, c. W-15 (incl. amendments to R-069-2022, per InforMEA). Establishes the six wildlife management zones (D, G, I, R, S, U) and the coded species management areas (e.g. I/LX/01 lynx, I/WF/01-05 wolf, R/TC/01). Schedule text not extracted this session — zone letters and area codes are as published in the GNWT Summary; legal names/boundaries unverified. See known_gaps.",
+      "title": "Wildlife Management Zones and Areas Regulations, R.R.N.W.T. 1990, c. W-15",
+      "type": "regulation",
+      "url": "https://www.informea.org/en/content/legislation/wildlife-management-zones-and-areas-regulations-rrnwt-1990-c-w-15"
+    },
+    {
+      "id": "nt-species-at-risk",
+      "notes": "GNWT species-at-risk statuses: polar bear listed Special Concern under the Species at Risk (NWT) Act (2021); grizzly bear assessed Special Concern, no territorial listing; wolverine assessed Not At Risk (2014), no territorial listing (federally Special Concern). Latin names for polar bear and wolverine as stated in this guide. Read 2026-11-15.",
+      "title": "Species at Risk in the Northwest Territories (GNWT ECC, 2024 edition) / NWT Species at Risk",
+      "type": "agency_guide",
+      "url": "https://www.nwtspeciesatrisk.ca/en/our-species-risk"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "National AIHTS certified-trap list maintained by the Fur Institute of Canada — the list the NWT points trappers to; the NWT publishes no territorial schedules equivalent to Ontario's. Updated July 22, 2026.",
+      "title": "Fur Institute of Canada — Certified Traps list (AIHTS)",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    },
+    {
+      "id": "nt-ecc-hunting-page",
+      "notes": "ECC hunting services hub (licences, fees, tags, education, land-claim considerations). Also confirms ECC's five administrative regions (Beaufort Delta, Sahtu, Dehcho, North Slave, South Slave) and that future editions of the Summary of Hunting & Trapping Regulations are in preparation. Read 2026-11-15.",
+      "title": "Hunting in the NWT (GNWT Environment and Climate Change)",
+      "type": "agency_page",
+      "url": "https://www.gov.nt.ca/ecc/en/services/hunting-nwt"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "Only AIHTS-certified traps may be used in the NWT: the GNWT Summary states it is unlawful for any person to use traps not listed in the regulations, and that only certified traps listed under the Agreement on International Humane Trapping Standards may be used. See the 'aihts' section of this dataset.",
+    "export": "A wildlife export permit is required to export wildlife from the NWT (no fee under the Fees Regulations); non-residents require one for big game. A federal CITES export permit is required to export CITES-listed species (including wolf, lynx and otter) from Canada.",
+    "fees_not_verified": "The General Hunting Licence fee itself was NOT verified from the Fees Regulations schedule in this pass. Do not quote a GHL price until the schedule is read directly. See verification.known_gaps.",
+    "fees_verified": "From the Wildlife Fees Regulations, R-114-2014 (consolidation): registered trapping area licence $24; membership in a registered group trapping area — no fee; authorization to trap furbearers under a Special Harvester Licence $24; small game authorization on a hunting licence $24 (resident/SHL), $48 (non-resident), $119 (non-resident alien); wildlife export permit — no fee; fur dealer licence $475, renewal $238.",
+    "gmvf_program": "The Genuine Mackenzie Valley Fur (GMVF) program markets NWT wild fur, complies with the AIHTS, and takes fur in through Renewable Resource Officers. The GNWT also publishes an annual NWT Trapper's calendar and a GMVF Trapper Education Manual.",
+    "harvest_reporting": "No Ontario-style mandatory season-end harvest report was found in published GNWT material in this pass. ECC runs carcass and sample collections and GMVF fur is submitted through Renewable Resource Officers; whether a formal trapper harvest-reporting duty exists in the Trapping Regulations is unverified — see known_gaps.",
+    "hunter_education": "As of January 1, 2020, all resident and non-resident hunters must complete Hunter Education training before being issued a hunting licence in the NWT, unless exempt under the regulations (GNWT Summary).",
+    "land_claims": "Land-claim settlement regions layer over territorial law: the Inuvialuit Settlement Region, Gwich'in Settlement Area, Sahtu Settlement Area, Tłı̨chǫ lands, and the Dehcho (no final agreement). A licensed trapper may not harvest the following without permission from the land-claim organization: ground squirrel, red squirrel, marmot and hare in the Inuvialuit Settlement Region; ground squirrel, red squirrel and marmot in the Gwich'in Settlement Area; red squirrel and marmot in the Sahtu Settlement Area; woodchuck and red squirrel on Tłı̨chǫ lands (ECC). Co-management boards (WMAC, Gwich'in Renewable Resources Board, Sahtu Renewable Resources Board, Wek'èezhı̀ı Renewable Resources Board) and local Hunters and Trappers Committees / Renewable Resources Councils recommend or set conditions that the territorial regulation alone does not show.",
+    "licence_types": "General Hunting Licence (GHL) — an Aboriginal person who is a member or eligible to be a member of an NWT organization listed in the regulations; Resident Hunting Licence (Canadian citizen or landed immigrant resident in the NWT for 12 continuous months); Non-resident and Non-resident Alien Hunting Licences; Special Harvester Licence (SHL). Wildlife Act s. 45(1): no person shall trap furbearers unless authorized by a general hunting licence, a special harvester licence or a permit — subject to the s. 17 rights exception.",
+    "registered_trapping_areas": "Registered trapping areas and registered group trapping areas carry exclusive trapping rights for the holder or members. Several Summary season rows are specific to the Fort Good Hope Registered Group Trapping Area (FGH RGTA) and are modelled as their own season rows.",
+    "rights_based_harvest": "A person exercising an Aboriginal or treaty right needs NO licence to trap in their traditional area, and there are NO set trapping seasons for rights-based harvest in the harvester's traditional use area (ECC). The 'AH' season rows in this dataset reproduce the GNWT Summary's Jul 1 - Jun 30 spans for Aboriginal harvesters: they record the ABSENCE of a closed season, not a territorial open season, and must be modelled and labelled that way in the clone. One exception: lynx — the Summary gives Aboriginal harvesters a set season (Nov 15 - Apr 15) in area I/LX/01 only.",
+    "season_housekeeping": "Trapping equipment must not be set before the first day of a season and must be removed or rendered harmless by the last day of the season (GNWT Summary, fur-trapper rules).",
+    "special_harvester_licence": "An SHL can be issued to a person who does not have Aboriginal harvesting rights in an area but is supporting an Indigenous family, living a subsistence lifestyle, or given permission to trap or harvest more than a Resident, Non-resident or General Hunting Licence allows. An SHL cannot be used outside the seasons, limits or conditions applicable to Aboriginal harvesters under the Big Game Hunting, Small Game Hunting and Trapping Regulations. All SHLs expire June 30 following the date of issue.",
+    "trap_check": "Live-hold restraining traps (soft-catch traps and leg snares that hold an animal alive) must be checked at least once every 72 hours (ECC). No check interval for killing traps was published in the sources read in this pass.",
+    "wastage": "It is an offence to waste the pelt of bear*, beaver*, coyote, ermine (stoat), fisher, fox, least weasel, lynx, marten, mink, muskrat*, otter, skunk, wolf or wolverine. *Bear, beaver and muskrat pelts may be discarded where the animal was harvested for meat."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-05",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Trapping seasons are the Trapping Regulations seasons as published in the GNWT Summary's Fur Trappers table (GHL rows). Beaver pelts may be discarded where the animal was harvested for meat (wastage exception).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No GHL trapping row is published for Zones G or I in the Summary's fur-trapper table.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Coyote is a furbearer in the NWT table (unlike Ontario, where it is small game). No CITES permit is required for coyote.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Ermine",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Listed as 'Ermine' (stoat) in the Wildlife Act wastage list and the Summary table. See Least weasel (closed entry): the table does not state whether the ermine rows extend to least weasel.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "The Summary's table says only 'Fox' and does not distinguish red fox from Arctic fox; whether both species are covered by these rows is unverified (see known_gaps). Scientific name given is red fox, the species these seasons principally concern.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Exception to the year-round rights-based pattern: for lynx, the Summary publishes an AH season only in area I/LX/01 (Nov 15 - Apr 15). No AH lynx row is published for any other zone.",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_area",
+              "note": "Area I/LX/01 (Inuvialuit lynx management area) — the ONLY area where the Summary gives Aboriginal harvesters a set lynx season; it is not year-round.",
+              "zone_id": "I/LX/01",
+              "zone_name": "Zone I, Lynx Management Area I/LX/01"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area I/LX/01.",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Canada lynx. CITES-listed: a federal CITES export permit is required to export lynx pelts from Canada.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-05",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "American marten — the backbone species of the Mackenzie Valley fur trade and the Genuine Mackenzie Valley Fur program.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-05",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-10",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "American mink (formerly Mustela vison / Neovison vison).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Spring muskrat trapping runs into June — the longest furbearer seasons in the territory. Muskrat pelts may be discarded where the animal was harvested for meat (wastage exception).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "North American river otter. CITES-listed: a federal CITES export permit is required to export otter pelts from Canada.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping row from the wolf chapter's 'Fur Trappers Only' subsection. Wolf is ALSO big game in the NWT: separate hunting seasons and tag rules under the Big Game Hunting Regulations are not modelled in this dataset.",
+          "open_date": "2026-08-15",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes wolf management areas I/WF/01 to I/WF/05, where wolf is managed under the big-game tables.",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Gray wolf. Dual status: furbearer for trappers, big game ('Carnivores') for hunters. A federal CITES export permit is required to export wolf pelts/hides from Canada.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the GNWT publication 'Species at Risk in the Northwest Territories' (2024) and the NWT Species Search (gov.nt.ca).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No territorial bag limit. This row is the GNWT Summary's span for Aboriginal harvesters in their traditional area: rights-based harvest under s. 17 of the Wildlife Act and the land claims is not subject to set territorial seasons or bag limits. It is NOT a territorial open season.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Rights-based harvest row (GNWT Summary 'AH' column). Included so the clone can model rights-based harvest distinctly from licensed trapping; it must never be displayed as a territorial season open to all trappers.",
+          "open_date": "2026-07-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "registered_group_trapping_area",
+              "note": "Fort Good Hope Registered Group Trapping Area — exclusive group trapping area in Zone R (Sahtu).",
+              "zone_id": "FGH RGTA",
+              "zone_name": "Fort Good Hope Registered Group Trapping Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Unlimited. The GNWT Summary's fur-trapper tables list the bag limit as 'Unlimited' for every furbearer trapping row; no licence quota is published for NWT trapping (contrast Ontario's licence quotas).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping row from the wolverine chapter's 'Fur Trappers Only' subsection. Wolverine is ALSO big game: GHL hunting Jul 25 - May 31 (unlimited) and resident tag hunting apply under the Big Game Hunting Regulations; not modelled here.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Yellowknife",
+          "zones": [
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "D",
+              "zone_name": "Zone D (Dehcho region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "G",
+              "zone_name": "Zone G (Gwich'in region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "I",
+              "zone_name": "Zone I (Inuvialuit / Beaufort Delta region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "Excludes area R/TC/01.",
+              "zone_id": "R",
+              "zone_name": "Zone R (North Slave region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "S",
+              "zone_name": "Zone S (Sahtu region)"
+            },
+            {
+              "area_type": "wildlife_management_zone",
+              "note": "",
+              "zone_id": "U",
+              "zone_name": "Zone U (South Slave region)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_hunting_licence",
+        "aboriginal_or_treaty_right",
+        "registered_group_trapping_area"
+      ],
+      "notes": "Dual status: furbearer for trappers, big game for hunters. Species-at-risk nuance: assessed Not At Risk by the NWT Species at Risk Committee (2014) and NOT listed under the Species at Risk (NWT) Act; federally, COSEWIC assessed the western population Special Concern (2014) and it is listed Special Concern on Schedule 1 of the federal Species at Risk Act (2018). The open trapping season continues. Latin name as stated in GNWT's Species at Risk in the NWT guide.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Big game in the NWT, with hunting seasons and tag rules under the Big Game Hunting Regulations. NO trapping season for black bear is published in the Trapping Regulations summary (no 'Fur Trappers Only' black bear table). Whether any bear trapping or snaring authorization exists (cf. Ontario's foot-snare seasons) was NOT verified in this pass — flagged in known_gaps, not assumed. Bear pelts are in the Wildlife Act wastage list.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Grizzly bear",
+      "scientific_name": "Ursus arctos",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Big game; harvest is by tag under the Big Game Hunting Regulations and co-management board recommendations. No trapping season. Assessed Special Concern by the NWT Species at Risk Committee but carries NO status on the legal list under the Species at Risk (NWT) Act; federally listed Special Concern (COSEWIC / SARA Schedule 1).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Polar bear",
+      "scientific_name": "Ursus maritimus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the GNWT publication 'Species at Risk in the Northwest Territories' (2024).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open trapping season. Polar bear harvest in the NWT is by community allocation and tags under the Wildlife Act, the Inuvialuit Final Agreement and Gwich'in agreement, administered with local Hunters and Trappers Committees — not a general licensed trapping season. Listed Special Concern on the legal list under the Species at Risk (NWT) Act (listed 2021); also Special Concern federally (SARA Schedule 1, 2011) and CITES Appendix II. Latin name as stated in GNWT's Species at Risk in the NWT guide.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Striped skunk is named in the Wildlife Act pelt-wastage list, so harvest plainly occurs, but NO skunk season table appears in the GNWT Summary's fur-trapper section and no trapping season could be verified from published territorial sources in this pass. Modelled closed; flagged in known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Named separately from ermine in the Wildlife Act pelt-wastage list, but the Summary's fur-trapper table publishes only 'Ermine' rows. Whether the ermine seasons extend to least weasel is unverified — modelled closed; flagged in known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season is published for this species in the GNWT Summary. Small game HUNTING seasons exist (see note). Licensed trappers also face land-claim exclusivity: see license_summary.land_claims. Small game hunting (Summary p. 50-52): resident unlimited; non-resident / non-resident alien daily bag 5, possession 10; Jul 1 - Jun 30. A licensed trapper may not harvest red squirrel in the Inuvialuit Settlement Region, Gwich'in Settlement Area or Sahtu Settlement Area, or on Tłı̨chǫ lands, without the land-claim organization's permission (ECC). Whether a GHL trapping season exists outside settlement lands is not published — flagged in known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Marmot",
+      "scientific_name": "Marmota caligata",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season is published for this species in the GNWT Summary. Small game HUNTING seasons exist (see note). Licensed trappers also face land-claim exclusivity: see license_summary.land_claims. Small game hunting: resident unlimited; non-resident / non-resident alien daily bag 5, possession 10; Jul 1 - Jun 30; Zones D, R, U only. A licensed trapper may not harvest marmot in the Inuvialuit Settlement Region, Gwich'in Settlement Area or Sahtu Settlement Area without the land-claim organization's permission (ECC). The Summary says only 'Marmots'; the NWT species is the hoary marmot.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Hare",
+      "scientific_name": "Lepus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season is published for this species in the GNWT Summary. Small game HUNTING seasons exist (see note). Licensed trappers also face land-claim exclusivity: see license_summary.land_claims. Small game hunting ('Hare, all species'): resident unlimited; non-resident / non-resident alien daily bag 5, possession 10; Jul 1 - Jun 30; Zones D, G, R, S, U (no Zone I row). A licensed trapper may not harvest hare in the Inuvialuit Settlement Region without the land-claim organization's permission (ECC). Snowshoe hare is the principal trapped hare historically; Arctic hare occurs in Zone I, where no small game hare row is published.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Woodchuck",
+      "scientific_name": "Marmota monax",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season is published for this species in the GNWT Summary. Small game HUNTING seasons exist (see note). Licensed trappers also face land-claim exclusivity: see license_summary.land_claims. Small game hunting ('Groundhog'): resident unlimited; non-resident / non-resident alien daily bag 5, possession 10; Jul 1 - Jun 30; Zones D, G, I, R, S, U. A licensed trapper may not harvest woodchuck on Tłı̨chǫ lands without permission (ECC).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Ground squirrel",
+      "scientific_name": "Urocitellus parryii",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season is published for this species in the GNWT Summary. Small game HUNTING seasons exist (see note). Licensed trappers also face land-claim exclusivity: see license_summary.land_claims. Small game hunting: resident unlimited; non-resident / non-resident alien daily bag 5, possession 10; Jul 1 - Jun 30; Zones D, R, S, U. A licensed trapper may not harvest ground squirrel in the Inuvialuit Settlement Region or the Gwich'in Settlement Area without the land-claim organization's permission (ECC). The NWT species is the Arctic ground squirrel.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All trapping season dates were transcribed from the GNWT Summary of Hunting and Trapping Regulations' 'Fur Trappers Only' tables (2021-22 edition — verified byte-identical by MD5 to the file ECC currently serves, i.e. still the newest edition posted online) and mapped into the 2026-27 regulatory year (Jul 1, 2026 - Jun 30, 2027): fall dates fall in 2026, winter/spring dates in 2027. Calendar checks: 2027 is not a leap year, so Feb 28, 2027 is the last day of February 2027; every close date falls on or before Jun 30, 2027. The Trapping Regulations themselves carried over unchanged at the Wildlife Act (2013) transition per GNWT's July 2014 Phase-1 document; last amendment located is R-008-2017. Fees verified against the Wildlife Fees Regulations R-114-2014 consolidation. Species-at-risk statuses verified against GNWT's Species at Risk in the NWT (2024) and nwtspeciesatrisk.ca. Report-a-poacher line 1-866-POACHER (762-2437) verified in the Summary (p. 60). Zone letters D, G, I, R, S, U and area codes (I/LX/01, I/WF/01-05, R/TC/01, FGH RGTA) are as published in the Summary.",
+    "known_gaps": [
+      "Consolidated Trapping Regulations text not extracted in this pass (NWT Justice site migrated mid-research; CanLII returned 403). Season dates therefore rest on the GNWT Summary — the regulator's own publication of the Trapping Regulations seasons — cross-checked against the Wildlife Act (2013) and GNWT's 2014 Phase-1 transition document. Last Trapping Regulations amendment located: R-008-2017; a search of 2022-2025 Gazette indexes for later amendments was inconclusive. RESOLVE BY: pulling the consolidated Trapping Regulations from the NWT Legislation Division or CanLII when accessible and diffing every date.",
+      "No post-2021-22 edition of the Summary of Hunting and Trapping Regulations is posted on the ECC website (the 2021-22 PDF is byte-identical to the live file, MD5-verified). ECC is preparing future editions (artist call for future guides, closing Oct 16, 2026), but no 2026-27 edition could be located online; third-party references to one are unverified. RESOLVE BY: asking ECC or checking a regional office for a current print edition.",
+      "General Hunting Licence fee not verified: the Wildlife Fees Regulations items captured cover the registered trapping area licence ($24), group trapping area membership (no fee), SHL furbearer authorization ($24), small game authorization ($24/$48/$119) and export permit (no fee), but the GHL fee item itself was not read. RESOLVE BY: reading the R-114-2014 schedule directly.",
+      "Zone legal names and boundaries (Wildlife Management Zones and Areas Regulations, Schedule A) not extracted. Zone letters are mapped to regions (D Dehcho, G Gwich'in, I Inuvialuit/Beaufort Delta, R North Slave, S Sahtu, U South Slave) from GNWT mapping and administrative regions, not from the regulation's Schedule A text.",
+      "Black bear: no trapping season is published, but whether any bear trapping/snaring authorization exists outside the Summary (permit, or a Big Game provision) was not verified. Modelled closed for trapping; flagged, not assumed.",
+      "Skunk: named in the Wildlife Act pelt-wastage list but no season table is published in the Summary. Whether the Trapping Regulations schedule a skunk season is unverified. Modelled closed.",
+      "Least weasel: named separately in the wastage list; the Summary publishes only 'Ermine' rows. Whether the ermine seasons cover least weasel is unverified. Modelled closed.",
+      "Fox: the Summary's table does not distinguish red fox from Arctic fox. Whether both species are covered by the 'Fox' rows is unverified.",
+      "Red squirrel, marmot, hare, woodchuck, ground squirrel: land-claim exclusivity rules are documented (ECC), and small game HUNTING seasons are published, but whether a GHL trapping season exists for any of them (e.g. red squirrel for the fur trade) is not stated in published sources read. Modelled closed for trapping with the hunting seasons in the species notes.",
+      "Fort Good Hope RGTA rows: the Summary does not state which harvester class the RGTA-specific season rows bind (rights holders, GHL holders, or both). Modelled as registered-group-trapping-area rows.",
+      "Area definitions for R/TC/01 and I/WF/01-05 (and the full coded-area system: PB, GB, WB, BC, MX, WF, WV, LX, OT) were not extracted from the Wildlife Management Zones and Areas Regulations; only the codes as used in the Summary's tables are recorded.",
+      "Harvest reporting: no mandatory trapper season-end harvest report was found in published GNWT material. GMVF fur submission and ECC carcass/sample collections exist, but a formal reporting duty in the Trapping Regulations is unverified.",
+      "Timezone: America/Yellowknife (Mountain Time) is used territory-wide, consistent with GNWT practice; no source read in this pass states the legal time basis for season opening/closing days.",
+      "Species-at-risk statuses are as of the 2024 GNWT guide and nwtspeciesatrisk.ca at retrieval; re-check at build time (listings change — e.g. polar bear was added to the territorial list in 2021)."
+    ],
+    "regulation_year_confirmed": "2021-22 published Summary (newest edition GNWT posts online; MD5-matched to the live ECC file 2026-11-15), applied to the 2026-27 regulatory year on the basis that the Trapping Regulations were last amended by R-008-2017 as far as could be determined — PROVISIONAL until the consolidated Trapping Regulations are read directly."
+  },
+  "license_url": "https://www.gov.nt.ca/ecc/en/trapping-northwest-territories",
+  "license_vendor": "Government of the Northwest Territories, Environment and Climate Change (ECC)",
+  "regs_url": "https://www.gov.nt.ca/sites/ecc/files/resources/enr_hunting_and_trapping_summary-en-web.pdf",
+  "regs_kind": "pdf",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a poacher (NWT)",
+    "note": "Report a poacher: 1-866-POACHER (1-866-762-2437), 24 hours. ECC regional offices: Fort Simpson 867-695-7450; Fort Smith 867-872-6400; Inuvik 867-678-8091 ext. 53661; Norman Wells 867-587-3500; Yellowknife 867-767-9238 ext. 53247.",
+    "url": "https://www.gov.nt.ca/ecc/en/trapping-northwest-territories"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_1": [],
+    "certified_restraining_traps_schedule_2": [],
+    "models_note": "The NWT publishes NO territorial schedules of certified traps equivalent to Ontario's O. Reg. 667/98 Schedules 1 and 2, so no per-species model counts are recorded here — entering Ontario's counts would misstate the NWT position. The operative list is the Fur Institute of Canada's national certified-trap list, which the NWT points trappers to. Model-by-model transcription of the FIC list for the NWT species set is a defined follow-on task.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [],
+    "note": "The NWT implements the AIHTS by requiring certified traps territory-wide: the GNWT Summary states 'It is unlawful for any person to use traps not listed in the regulations. Only approved certified traps listed in the Agreement on International Humane Trapping Standards may be used in the NWT.' The Genuine Mackenzie Valley Fur program also complies with the AIHTS. Unlike Ontario, the requirement is not species-scheduled in published territorial material — it reads as a blanket certified-traps rule for trapping. AIHTS was agreed in 1997 and ratified by Canada in June 1999; the FIC maintains the national certified list.",
+    "ontario_schedules_url": "",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Only AIHTS-certified traps may be used in the NWT; it is unlawful to use traps not listed in the regulations (GNWT Summary, Wildlife Regulation notice).",
+      "Live-hold restraining traps (soft-catch traps / leg snares) must be checked at least once every 72 hours (ECC).",
+      "Trapping equipment must not be set before the first day of a season and must be removed or rendered harmless by the last day of the season (GNWT Summary).",
+      "Pelt wastage is an offence for bear*, beaver*, coyote, ermine, fisher, fox, least weasel, lynx, marten, mink, muskrat*, otter, skunk, wolf and wolverine (*pelts may be discarded where the animal was harvested for meat)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": null
+    },
+    "check_interval": {
+      "live_holding": "Restraining traps (live-hold soft catch or leg snare): at least once every 72 hours (GNWT official trapping page; GNWT Summary of Hunting and Trapping Regulations).",
+      "killing": "No interval stated for killing traps or killing snares.",
+      "note": "Confidence: official guide / government page - the underlying Trapping Regulations text was not located online (R2 Item 1). Supersedes R1, which found no NWT interval."
+    },
+    "tenure": "Registered trapping areas / registered group trapping areas in some areas; otherwise rights-based harvesting plus Special Trapping Licences for non-rights holders (typically only at an Aboriginal community's request).",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead.",
+    "royalty": "None found - the Wildlife Fees Regulations R-114-2014 list fees only and the Wildlife Act has no royalty provision; the GNWT instead pays trappers through the Genuine Mackenzie Valley Fur Program. [R2 Item 5]",
+    "nuisance_route": "None found - Wildlife Act ss. 55-56 self-help (chase wildlife away; kill if necessary to prevent injury/death or property damage); problem-wildlife response is officer-led (Renewable Resource Officers). No NWCO licence or paid-trapper program found. [R2 Item 3]",
+    "harvest_reporting_and_sealing": null
+  }
+}

@@ -1,0 +1,1267 @@
+{
+  "schema_version": "1.1",
+  "state": "YT",
+  "state_name": "Yukon",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set annually and can change. Always verify current regulations with the Government of Yukon, Department of Environment before hunting or trapping. Trapping in Yukon is governed by the Wildlife Act (SY 2002, c. 229) and the Trapping Regulations (O.I.C. 1982/283). Commercial trapping also requires a Registered Trapping Concession or membership in a Group Trapping Area, and is subject to Yukon First Nations Final Agreements and Settlement Land laws where applicable. This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "yt-trapping-summary-2026-27",
+      "notes": "Official plain-language summary booklet for the 2026-2027 season (ISSN 1192-062); states it is not a legal document. Season dates table p. 21; permitted devices and certified trap lists pp. 11-20; concessions and licences pp. 3-10; trap checks and pelt sealing pp. 21-22; fur trade and exporting pp. 30-33; harvest monitoring p. 39; TIPP back page. Read in full 2026-11-15.",
+      "title": "Yukon Trapping Regulations Summary 2026-2027",
+      "type": "agency_summary",
+      "url": "https://yukon.ca/sites/default/files/env-yukon-trapping-regulations-summary.pdf"
+    },
+    {
+      "id": "yt-trapping-regulations",
+      "notes": "THE LAW. Trapping Regulations, O.I.C. 1982/283, made under the Wildlife Act (SY 2002, c. 229), ss. 155 and 167. Schedule A (open seasons), Schedule B (licence and concession fees), Schedule F (Part 1 big game, Part 2 furbearing animals, Part 3 small game - with scientific names). Also ss. 3-5 (methods, certified traps, trap checks), s. 6 (concession qualifications), s. 8.2 (hunting under a trapping licence), s. 11 (group trapping concessions), s. 19 (quotas), s. 20 (sealing). Consolidation dated September 30, 2021, as published on laws.yukon.ca; read 2026-11-15. Every season date in this dataset was cross-checked against Schedule A.",
+      "title": "Trapping Regulations, O.I.C. 1982/283 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://laws.yukon.ca/cms/images/LEGISLATION/SUBORDINATE/1982/1982-0283/1982-0283_2.pdf"
+    },
+    {
+      "id": "yt-trapping-regulations-page",
+      "notes": "Department of Environment page: 'There are no regulation changes for the 2026-2027 trapping season.' AIHTS section lists the 9 Yukon AIHTS species (beaver, coyote, ermine/weasel, fisher, lynx, marten, muskrat, otter, wolf) and explains FIC certification; wolf and lynx/wolverine study notices. Read 2026-11-15.",
+      "title": "See Yukon trapping rules and regulations (yukon.ca)",
+      "type": "agency_page",
+      "url": "https://yukon.ca/en/trapping-regulations"
+    },
+    {
+      "id": "yt-rtc-map-data",
+      "notes": "States the Yukon has 360 RTCs and 13 group trapping concessions; RTCs are legally defined by the 1:250,000 scale map series ENV.RTC; Kluane National Park and Reserve, Kluane Wildlife Sanctuary and Ddhaw Gro Habitat Protection Area have no RTCs. Read 2026-11-15.",
+      "title": "Find Registered Trapping Concession map data (yukon.ca)",
+      "type": "agency_page",
+      "url": "https://yukon.ca/en/outdoor-recreation-and-wildlife/hunting-and-trapping/find-registered-trapping-concession-map-data"
+    },
+    {
+      "id": "yt-manage-trapline",
+      "notes": "Concession administration: first concession probationary (1 year, reissuable up to 2 times), then full-term 5-year concessions; all concessions expire March 31; Category 1 / Category 2 concession areas; Final Agreements provide that 70 percent or more of traplines are to be held by citizens of First Nations with Final Agreements. Read 2026-11-15.",
+      "title": "Manage your trapline (yukon.ca)",
+      "type": "agency_page",
+      "url": "https://yukon.ca/en/outdoor-recreation-and-wildlife/hunting-and-trapping/manage-your-trapline"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "National AIHTS certified-trap list administered by the Fur Institute of Canada, updated July 22, 2026. The Yukon 2026-2027 Summary (p. 13) states its printed trap lists reflect this July 22, 2026 list; model counts in this dataset were counted from the Summary's printed lists.",
+      "title": "Fur Institute of Canada - Certified Traps list",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    },
+    {
+      "id": "yt-trapping-summary-2025-26",
+      "notes": "Prior-year official summary, used for ONE item only: the 'Marten quotas' section (p. 25) describing quotas on most concessions in the Marten Conservation Area as a condition of the concession registration. The section was dropped from the 2026-2027 booklet's layout; the governing regulation (s. 19) is unchanged and yukon.ca confirms no regulation changes for 2026-2027. Read 2026-11-15.",
+      "title": "Yukon Trapping Regulations Summary 2025-2026",
+      "type": "agency_summary",
+      "url": "https://emrlibrary.gov.yk.ca/emrlibrary/environment/yukon-trapping-regulations-summary/2025-26.pdf"
+    },
+    {
+      "id": "yt-tipp",
+      "notes": "TIPP (Turn in Poachers and Polluters) line 1-800-661-0525: toll-free, 24 hours, anonymous, rewards available; online reporting at Yukon.ca/TIPP. Number also printed on the back page of the 2026-2027 Trapping Regulations Summary and across yukon.ca. Verified 2026-11-15.",
+      "title": "Protect Yukon wildlife - TIPP (yukon.ca)",
+      "type": "agency_page",
+      "url": "https://yukon.ca/TIPP"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "AIHTS-certified traps are required by law for the scheduled species: certified killing traps for beaver, fisher, marten, lynx, ermine, least weasel, otter and muskrat, and certified restraining traps for beaver, lynx and wolf (Trapping Regulations s. 4(1)(e)-(f)). The 2026-2027 Summary (pp. 13-19) reproduces the Fur Institute of Canada certified trap list of July 22, 2026.",
+    "concessions": "Commercial trapping requires a Registered Trapping Concession (RTC) - the exclusive right to commercially trap furbearing animals in a defined area - or membership in a Group Trapping Area. Yukon has 360 RTCs and 13 group trapping concessions (yukon.ca RTC map data). A person may hold only one concession at a time (s. 6(3)). A first concession is probationary (1 year, expiring March 31, renewable up to twice), then full-term (5 years, expiring March 31). Concessions lying mostly inside the traditional territory of a First Nation with a Final Agreement are Category 1 (the First Nation has final authority over allocation) or Category 2 (the Government of Yukon has final authority). Renewable Resources Councils recommend on assignment of vacant or underutilized concessions. Concession boundaries are legally defined by the 1:250,000 ENV.RTC map series. Trapping is also subject to First Nation laws and RRC bylaws on Settlement Land.",
+    "course": "Recognized trapper training is required to hold a trapping concession, a trapping licence, an assistant trapper licence, or group trapping area membership (Trapping Regulations ss. 6(1)(c), 8(2)). The Government of Yukon offers the Basic Trapper Training Workshop in several communities between September and June (rotating through rural communities on a three-year cycle); each participant receives the Yukon Trapper's Manual. Graduation from recognized trapper training in another province or territory may also qualify. Trappers 65 or older who previously held a Yukon trapping or assistant trapper licence are exempt.",
+    "export": "A wildlife export permit from a Department of Environment office is required to export any furbearing animal pelt or parts out of the Yukon. To export the pelt, part or product of a wolf, otter, lynx, black bear or grizzly bear out of Canada, a CITES permit is also required (issued free at Department of Environment offices, 48 hours' advance notice). Pelts of beaver, coyote, marten, lynx, otter, muskrat, weasel/ermine, wolf or fisher taken into a European Union country also need a Certificate of Origin.",
+    "fees": "Trapping licence $10.00; assistant trapper licence $10.00; senior citizens (65+) free; members of a group trapping area free (Trapping Regulations, Schedule B). Concession fees: probationary (one-year) concession or renewal $10.00; full-term (five-year) concession or renewal $20.00; group area concession or renewal $100.00. Guided trapping permit $10.00. Fur trader's licence: Yukon resident $25.00, non-resident $300.00, non-resident restricted (7 days, one per licensing year) $25.00, agent $5.00. Manufactured products licence $2.00. Schedule B also sets a $2.00 replacement licence or concession fee, while the 2026-2027 Summary (p. 6) lists a reprinted copy as free - see verification.known_gaps.",
+    "first_nations": "Members of Yukon First Nations with Final Agreements have rights to trap furbearers for food in their traditional territory under their land claims agreements, without a commercial licence; the same applies to trapping for food in asserted traditional territory where claims are unsettled. Commercial trapping (selling pelts or by-products) is a commercial activity subject to the Wildlife Act and Regulations and requires a trapping or assistant trapper licence (Final Agreements ss. 16.4.5 and 16.4.11; Gwich'in Comprehensive Land Claim Agreement, Appendix C, s. 12.3.10). About 70 percent or more of traplines are to be held by citizens of First Nations with Final Agreements.",
+    "harvest_report": "There is no Ontario-style season-end harvest report for trappers. The Government of Yukon monitors the annual fur harvest through trapping licences, export permits, fur dealer and taxidermist records, and pelt seals (2026-2027 Summary, p. 39). Harvest documentation matters: it feeds trapping concession utilization reviews at renewal. Fur traders must submit Record of Wildlife Purchased or Received forms to a conservation officer within 10 days after the end of each month (s. 14(3)). At sealing, and with any voluntarily submitted carcass, the trapper must provide: trapper name, trapping licence number, concession number, harvest date, method of harvest, and sex of the animal.",
+    "hunting_furbearers": "A trapping licence is also a hunting authorization for furbearers: the holder of a trapping or assistant trapper licence may hunt and trap furbearing animals in the places and during the times prescribed in Schedule A (s. 3(1)), and may hunt furbearers inside their own concession area during the open season (s. 8.2(2)) - rimfire, or centrefire under 6 mm bore, for species other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. Wolf, coyote and wolverine are also big game animals and may be hunted under a big game hunting licence under the hunting regime (seasons and bag limits in the Yukon Hunting Regulations Summary 2026-2027; not modelled in this dataset). Trapping concession holders can buy a Yukon resident big game hunting licence for half price ($5.00).",
+    "licence_types": "Trapping licence (concession holders only); assistant trapper licence (issued at the request of, and cancellable by, the concession holder); group trapping area membership (licence free); guided trapping permit (concession holder with a wilderness tourism licence may supervise up to two clients for up to two weeks; fur harvested belongs to the concession holder).",
+    "permission": "A trapper may harvest only in the concession area for which their trapping licence was issued. No trapping within one kilometre of a residence without permission. On Settlement Land, First Nation laws and Renewable Resources Council bylaws may also apply.",
+    "quotas": "There are no bag limits for trapping in Yukon. Species quotas exist only as conditions of individual trapping concessions: under s. 19 of the Trapping Regulations, the maximum number of a species that may be taken on a concession is set out as a condition on the concession document (the former Schedule E quota table was revoked effective July 1, 2004); where no maximum is set, there is deemed to be no quota. Exceeding a quota is prohibited, and excess animals must be delivered to a conservation officer. The documented example is marten: quotas are in place on most concessions in the Marten Conservation Area of southern Yukon, and once a concession reaches its marten quota all marten trapping on it must stop for the season.",
+    "report_violation": "Turn in Poachers and Polluters (TIPP) line 1-800-661-0525 - toll-free, 24 hours a day, anonymous, rewards available; report online at Yukon.ca/TIPP. Conservation Officer Services (Whitehorse): 867-667-8005.",
+    "sealing": "All lynx, wolf and wolverine pelts must be sealed with a metal seal by a conservation officer or designate by the earlier of: within 15 days of the close of the trapping season for that species, or prior to the sale or transfer of the pelt (Trapping Regulations s. 20). A trapper who remains on the trapline for the extended wolf snaring season (March 11-31) may get the sealing deadline extended to April 15 with the prior written approval of a conservation officer (s. 20.1).",
+    "trap_check": "Restraining sets must be checked at least once every 5 days and killing (quick-kill) sets at least once every 7 days, and any captured animal removed (Trapping Regulations s. 5(2)-(3); 2026-2027 Summary, p. 22). A restraining trap in a drowning set for muskrat, beaver, mink or otter is classified as a killing set. All traps and snares must be removed or sprung by the last day of the season for the target species (s. 5(1)).",
+    "trapping_licence": "A trapping licence is required and is available only to the holder of a valid trapping concession, for that concession area (2026-2027 Summary, p. 6). Qualifications (Trapping Regulations s. 6(1)): at least 16 years old; Canadian citizen or permanent resident whose principal residence has been in Yukon for at least 12 months (and physically present at least 185 days in that period, or qualifying under a residency exemption); eligible for a Yukon hunting licence; no previous convictions for offences under the Wildlife Act or Regulations (unless the Minister agrees otherwise); and successful completion of a Minister-approved trapper education course. Canadian citizens or permanent residents living outside Yukon but within 150 km of the concession area applied for may be deemed Yukon residents (s. 2(2)). Licences are annual: the 2026-2027 licences are valid July 1, 2026 to June 30, 2027 (s. 8.4). Licences are issued electronically through an Environment eServices account but must still be picked up at a Department of Environment office with Yukon identification."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 1: October 1 to May 31, both north and south of the Arctic Circle (one territory-wide season). AIHTS-certified killing traps and certified restraining (cage) traps required (Trapping Regulations s. 4(1)(e)-(f); model lists in the 2026-2027 Summary, pp. 13 and 18). Leghold traps with a jaw spread under 25 cm may be used in drowning (submersion) sets (s. 4(1)(a)). A licensed trapper must not damage or interfere with a beaver dam unless authorized.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 13: November 1 to March 10. Coyote is dual-classified: a furbearing animal (Schedule F, Part 2) and a big game animal (Schedule F, Part 1), so it may also be hunted under a big game hunting licence under the hunting regime (seasons in the Yukon Hunting Regulations Summary; not modelled here). Modified leghold traps (jaw spread under 25 cm) may be used for coyote (s. 4(1)(c)). No certified-trap requirement applies to coyote in the Trapping Regulations, and no pelt sealing is required. See verification.known_gaps on the AIHTS listing for coyote.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Martes pennanti",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283). Modern taxonomy often places fisher in Pekania pennanti; the name shown is the one stated in Schedule F.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 2: November 1 to the last day of February (February 28, 2027; 2027 is not a leap year). AIHTS-certified killing traps required (s. 4(1)(e); model list in the 2026-2027 Summary, p. 14).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 3: 'Fox (coloured)', November 1 to March 10 - covers the red, cross and silver colour phases of the red fox (2026-2027 Summary, p. 21). Modified leghold traps (jaw spread under 25 cm) may be used for fox (s. 4(1)(c)). No certified-trap requirement.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Arctic fox",
+      "scientific_name": "Alopex lagopus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283). Modern taxonomy often uses Vulpes lagopus; the name shown is the one stated in Schedule F.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 4: November 1 to March 31. No certified-trap requirement (2026-2027 Summary, p. 20 device chart).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "pelt_sealing"
+      ],
+      "notes": "Schedule A item 5: November 1 to March 10. AIHTS-certified killing traps and certified restraining traps required (s. 4(1)(e)-(f); model lists in the 2026-2027 Summary, pp. 14 and 18). Pelt must be sealed by a conservation officer or designate within 15 days of the close of the season or before sale or transfer, whichever comes first (s. 20). A CITES permit is required to export a lynx pelt from Canada. For 2026-2027 the Department of Environment is asking selected trappers in the Watson Lake, Mayo, Faro, Whitehorse and Kluane Lake areas to submit a limited number of lynx carcasses for population monitoring ($50 per carcass; by invitation only).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable. Marten is the documented quota species: quotas are in place on most trapping concessions in the Marten Conservation Area (from the British Columbia border north to Carmacks and Aishihik Lake, and from the Teslin River west to Kluane National Park) as a condition of the concession registration; once a concession reaches its marten quota, all marten trapping on that concession must stop for the season (Yukon Trapping Regulations Summary 2025-2026, p. 25; the section was not repeated in the 2026-2027 booklet, and the regulation is unchanged).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable. Marten is the documented quota species: quotas are in place on most trapping concessions in the Marten Conservation Area (from the British Columbia border north to Carmacks and Aishihik Lake, and from the Teslin River west to Kluane National Park) as a condition of the concession registration; once a concession reaches its marten quota, all marten trapping on that concession must stop for the season (Yukon Trapping Regulations Summary 2025-2026, p. 25; the section was not repeated in the 2026-2027 booklet, and the regulation is unchanged).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 6: November 1 to the last day of February (February 28, 2027). AIHTS-certified killing traps required (s. 4(1)(e); model list in the 2026-2027 Summary, p. 15). Quotas apply on most concessions in the Marten Conservation Area in southern Yukon - see bag_limits.limit_notes.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American mink",
+      "scientific_name": "Mustela vison",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283). Modern taxonomy often uses Neogale vison (syn. Neovison vison); the name shown is the one stated in Schedule F.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 7: November 1 to March 31. No certified-trap requirement (2026-2027 Summary, p. 20 device chart). Leghold traps with a jaw spread under 25 cm may be used in drowning (submersion) sets (s. 4(1)(a)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "latitude_band",
+              "note": "Zone split prescribed by Schedule A item 8(a) of the Trapping Regulations.",
+              "zone_id": "north-of-arctic-circle",
+              "zone_name": "North of the Arctic Circle"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "latitude_band",
+              "note": "Zone split prescribed by Schedule A item 8(b) of the Trapping Regulations.",
+              "zone_id": "south-of-arctic-circle",
+              "zone_name": "South of the Arctic Circle"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "latitude_band",
+              "note": "Zone split prescribed by Schedule A item 8(a) of the Trapping Regulations.",
+              "zone_id": "north-of-arctic-circle",
+              "zone_name": "North of the Arctic Circle"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "latitude_band",
+              "note": "Zone split prescribed by Schedule A item 8(b) of the Trapping Regulations.",
+              "zone_id": "south-of-arctic-circle",
+              "zone_name": "South of the Arctic Circle"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 8: north of the Arctic Circle, October 1 to June 30; south of the Arctic Circle, October 1 to May 31. The only Yukon furbearer season split by a geographic line. AIHTS-certified killing traps required on land (s. 4(1)(e); model list in the 2026-2027 Summary, pp. 15-16); underwater, any jaw-type trap set as a submersion set is permitted. Leghold traps with a jaw spread under 25 cm may be used in drowning sets (s. 4(1)(a)). A licensed trapper may open a muskrat push-up to set traps if careful to prevent it freezing.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 9: November 1 to March 31. AIHTS-certified killing traps required (s. 4(1)(e); model list in the 2026-2027 Summary, p. 17). Leghold traps with a jaw spread under 25 cm may be used in drowning (submersion) sets (s. 4(1)(a)). A CITES permit is required to export an otter pelt from Canada.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 10: November 1 to March 31. Red squirrel is a furbearing animal in Yukon (Schedule F, Part 2), not small game. It is the only furbearing animal that may be trapped with a non-locking snare (s. 4(4)). No certified-trap requirement.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Ermine",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 15: November 1 to March 31. AIHTS-certified killing traps required (s. 4(1)(e) lists ermine expressly; the 2026-2027 Summary's certified model list is headed 'Weasel/Ermine', pp. 17-18). The Summary's season table (p. 21) lists this species simply as 'Weasel'.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Schedule A item 16: November 1 to March 31. AIHTS-certified killing traps required (s. 4(1)(e) lists least weasel expressly). The Summary's season table (p. 21) folds least weasel into 'Weasel'.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Extended wolf season: during March 11-31 the ONLY permitted device is a neck snare equipped with a locking device (Trapping Regulations s. 4(1)(b.1)). Schedule A item 12 prescribes the wolf season as November 1 to March 31 'or as determined by the Minister'; the 2026-2027 Summary (p. 21) presents the general season as closing March 10 with this snare-only extension. Trappers who stay on the trapline for this extension may get the lynx/wolf/wolverine sealing deadline extended to April 15 with prior written approval of a conservation officer (s. 20.1).",
+          "open_date": "2027-03-11",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-10",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "pelt_sealing"
+      ],
+      "notes": "AIHTS-certified restraining traps required (s. 4(1)(f); model list in the 2026-2027 Summary, p. 19). Pelt must be sealed by a conservation officer or designate within 15 days of the close of the season or before sale or transfer, whichever comes first (s. 20). A CITES permit is required to export a wolf pelt from Canada. Wolf is dual-classified: a furbearing animal (Schedule F, Part 2) and a big game animal (Schedule F, Part 1), so it may also be hunted under a big game hunting licence under the hunting regime (not modelled here). Wolf study: trappers in Game Management Zone 7 (west of Whitehorse) are asked to provide a 2 cm x 2 cm sample of wolf hide when submitting wolf pelts for sealing at the Whitehorse office (radio-collared wolves in the Southern Lakes region).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit is set for trapping in the Trapping Regulations or the 2026-2027 Summary. Under s. 19 of the Trapping Regulations, a species quota may be set as a condition of an individual trapping concession document (the Schedule E quota table was revoked in 2004); where a quota applies it must not be exceeded, and any excess animals must be delivered to a conservation officer as soon as practicable.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "May also be hunted (shot) under a trapping licence or assistant trapper licence inside the holder's own concession area during the same Schedule A open season (Trapping Regulations ss. 3(1) and 8.2(2)). Firearm rules: rimfire rifle, or centrefire rifle with a bore diameter of less than 6 mm, for furbearing animals other than wolf, wolverine and coyote; centrefire rifle for wolf, wolverine and coyote. A shotgun may not be used to hunt a furbearing animal (s. 4(2)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Whitehorse",
+          "zones": [
+            {
+              "area_type": "trapping_concession",
+              "note": "Commercial trapping is lawful only inside the Registered Trapping Concession (or Group Trapping Area) for which the trapper's licence was issued. Yukon has 360 RTCs and 13 group trapping concessions; boundaries are legally defined by the 1:250,000 ENV.RTC map series.",
+              "zone_id": "YT-RTC",
+              "zone_name": "All Registered Trapping Concessions and Group Trapping Areas (trapper's own concession area only)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "pelt_sealing"
+      ],
+      "notes": "Schedule A item 14: November 1 to February 28. Pelt must be sealed by a conservation officer or designate within 15 days of the close of the season or before sale or transfer, whichever comes first (s. 20). Wolverine is dual-classified: a furbearing animal (Schedule F, Part 2) and a big game animal (Schedule F, Part 1). No certified-trap requirement (2026-2027 Summary, p. 20 device chart). The Department of Environment invites all trappers to submit whole wolverine carcasses (including heads) for population monitoring ($50 per carcass).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season. Black bear is a big game animal (Schedule F, Part 1 of the Trapping Regulations), not a furbearing animal, and has no open season in Schedule A. It may be hunted under a big game hunting licence (see the Yukon Hunting Regulations Summary), and a trapping licence holder may sell the pelt of a black bear legally taken by him or her (s. 15(2)). A CITES permit is required to export a black bear pelt from Canada. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Grizzly bear",
+      "scientific_name": "Ursus arctos",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season. Grizzly bear is a big game animal (Schedule F, Part 1), not a furbearing animal, and has no open season in Schedule A. Hunting is governed by the hunting regime (Yukon Hunting Regulations Summary); a permit is required to sell the pelt of a grizzly bear taken under a big game hunting licence. A CITES permit is required to export a grizzly bear pelt from Canada. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Polar bear",
+      "scientific_name": "Ursus maritimus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in Schedule F of the Trapping Regulations (O.I.C. 1982/283).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No trapping season. Polar bear is a big game animal (Schedule F, Part 1), not a furbearing animal, and has no open season in Schedule A. It occurs on the Yukon North Slope, where harvest is governed by the Inuvialuit Final Agreement and the Wildlife Act hunting regime, not the Trapping Regulations. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All trapping season dates cross-checked between Schedule A of the Trapping Regulations (O.I.C. 1982/283) and the season table in the Yukon Trapping Regulations Summary 2026-2027 (p. 21): the two agree on every species except the presentation of the wolf season (see known_gaps). Licence and concession fees cross-checked between Schedule B of the Regulations and the Summary (pp. 4, 6, 30): all agree except the replacement/reprint fee (see known_gaps). Trap-check intervals (5 days restraining / 7 days killing), the sealing rule (lynx, wolf, wolverine; 15 days) and the quota mechanism agree between the Regulations (ss. 5, 19, 20) and the Summary (pp. 21-22). yukon.ca states there are no regulation changes for the 2026-2027 trapping season. Relative dates computed and calendar-checked for 2026-27: 'last day of February' = February 28, 2027 (2027 is not a leap year). Scientific names are stated in Schedule F of the Regulations and are marked verified on that basis; three names use older taxonomy in the Regulation (fisher Martes pennanti, Arctic fox Alopex lagopus, mink Mustela vison) and the modern synonyms are noted in the species entries.",
+    "known_gaps": [
+      "Wolf season form: Schedule A item 12 prescribes the wolf season as November 1 to March 31 'or as determined by the Minister', while the 2026-2027 Summary (p. 21) presents the operative season as November 1 to March 10 (all permitted devices) plus a neck-snare-only extension March 11-31 (device restriction in s. 4(1)(b.1)). The dataset follows the Summary. Whether firearm hunting of wolves under a trapping licence (s. 8.2(2)) is open during March 11-31 is not stated in either source - confirm with Environment Yukon before launch.",
+      "Consolidation currency: the Trapping Regulations consolidation read on laws.yukon.ca is dated September 30, 2021 (it already reflects O.I.C. 2021/110). yukon.ca states there are no regulation changes for the 2026-2027 trapping season, but an amendment after that consolidation affecting Schedule A or Schedule B cannot be ruled out from the copy read - re-verify against the current laws.yukon.ca consolidation before launch.",
+      "Quotas are not published territory-wide: since Schedule E was revoked (effective July 1, 2004), species quotas exist only as conditions on individual concession documents (s. 19) and cannot be enumerated in a dataset. The clone must surface 'check your concession document for quotas' - marten in the Marten Conservation Area is the documented example (2025-2026 Summary, p. 25; the section was dropped from the 2026-2027 booklet although the regulation is unchanged).",
+      "Replacement licence fee conflict: Schedule B of the Regulations sets a $2.00 fee for a replacement licence or concession, while the 2026-2027 Summary (p. 6) lists 'Reprinted copy: Free'. Both are recorded in license_summary.fees; confirm current practice with Environment Yukon.",
+      "Coyote and AIHTS: yukon.ca lists coyote among the 9 Yukon AIHTS species, and the Summary's 'Buyer beware' box (p. 19) tells trappers buying traps for coyote to consult the FIC certified list, but Trapping Regulations s. 4(1)(e)-(f) impose certified-trap requirements only for beaver, fisher, marten, lynx, ermine, least weasel, otter and muskrat (killing traps) and beaver, lynx and wolf (restraining traps), and the Summary's device chart (p. 20) treats coyote as a species without certified-trap requirements. The dataset follows the Regulations and the device chart.",
+      "Hunting-licence seasons are not modelled: wolf, coyote and wolverine are also big game animals, and their seasons and bag limits under a hunting licence (and all other big game and small game seasons) are set by the Wildlife Regulation and published in the Yukon Hunting Regulations Summary 2026-2027, which was not read in this pass. Only hunting under a trapping licence (ss. 3(1), 8.2(2)) is modelled. Black bear, grizzly bear and polar bear hunting seasons are likewise out of scope.",
+      "Concession boundaries: the dataset references the RTC system as a whole (360 RTCs and 13 group trapping concessions). Individual concession boundaries (ENV.RTC 1:250,000 map series; GeoYukon) are a separate dataset task. Minimum viable for the clone: an RTC picker; a boundary/map lookup is a bigger job.",
+      "Tenure overlays are not season data: whether a given RTC is a Category 1 or Category 2 concession area, and which First Nation laws or Renewable Resources Council bylaws apply on Settlement Land within it, must be resolved per concession at build time.",
+      "Group Trapping Areas: only the McPherson Group Trapping Area's non-resident eligibility list (Schedule C of the Regulations - named individuals, mostly Gwich'in) was read. The names and boundaries of all 13 group trapping concessions were not enumerated.",
+      "Time-of-day: open_time is null throughout. No time-of-day rules for trapping were found in the Trapping Regulations or the 2026-2027 Summary.",
+      "The Wildlife Act itself (SY 2002, c. 229) was not read in full in this pass; the Act provisions relied on are those referenced by the Trapping Regulations (ss. 15, 30(2), 60, 61, 68, 70, 155, 167, 192(1)(m), 194(1))."
+    ],
+    "regulation_year_confirmed": true
+  },
+  "license_url": "https://yukon.ca/en/trapping-regulations",
+  "license_vendor": "Government of Yukon, Department of Environment (Environment eServices / Environment Client ID; licences issued in person at Department of Environment offices)",
+  "regs_url": "https://yukon.ca/en/trapping-regulations",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a wildlife or environmental violation (TIPP line)",
+    "note": "Turn in Poachers and Polluters (TIPP) line 1-800-661-0525 - toll-free, 24 hours a day, anonymous; rewards available; report online at Yukon.ca/TIPP. Conservation Officer Services (Whitehorse): 867-667-8005; toll-free in Yukon 1-800-661-0408 ext. 8005.",
+    "url": "https://yukon.ca/TIPP"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_1": [
+      {
+        "models_approx": 25,
+        "note": "Certified killing traps required (Trapping Regulations s. 4(1)(e)). List as printed in the 2026-2027 Summary, p. 13.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 19,
+        "note": "Certified killing traps required (s. 4(1)(e)). Summary, p. 14.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 14,
+        "note": "Certified killing traps required (s. 4(1)(e)). Summary, p. 14.",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 16,
+        "note": "Certified killing traps required (s. 4(1)(e)). Summary, p. 15.",
+        "species": "Marten"
+      },
+      {
+        "models_approx": 37,
+        "note": "Certified killing traps required on land (s. 4(1)(e)). Underwater, any jaw-type trap set as a submersion set is permitted. Summary, pp. 15-16.",
+        "species": "Muskrat (on land)"
+      },
+      {
+        "models_approx": 16,
+        "note": "Certified killing traps required (s. 4(1)(e)). Summary, p. 17.",
+        "species": "River otter"
+      },
+      {
+        "models_approx": 26,
+        "note": "Certified killing traps required for ermine and least weasel (s. 4(1)(e)); the Summary's list is headed 'Weasel/Ermine'. Summary, pp. 17-18.",
+        "species": "Weasel/ermine"
+      }
+    ],
+    "certified_restraining_traps_schedule_2": [
+      {
+        "models_approx": 6,
+        "note": "Cage traps only. Summary, p. 18.",
+        "species": "Beaver (cage traps)"
+      },
+      {
+        "models_approx": 5,
+        "note": "Certified restraining traps required (s. 4(1)(f)): foot snares and specified soft-catch leghold configurations. Summary, p. 18.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 14,
+        "note": "Certified restraining traps required (s. 4(1)(f)). Summary, p. 19.",
+        "species": "Wolf"
+      }
+    ],
+    "models_note": "Yukon has no trap schedules of its own: the Trapping Regulations impose certified-trap requirements by reference to the AIHTS, and the 2026-2027 Trapping Regulations Summary (pp. 13-19) reproduces the Fur Institute of Canada certified trap list of July 22, 2026. Model counts above were counted from the lists printed in the Summary; the full model-by-model lists were not transcribed in this pass. Certification does not mean a model is still manufactured - check the current FIC list at fur.ca before relying on any model.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "American mink",
+      "Arctic fox",
+      "Coyote",
+      "Red fox",
+      "Red squirrel",
+      "Wolverine"
+    ],
+    "note": "Yukon implements the Agreement on International Humane Trapping Standards (AIHTS, 1997) directly in the Trapping Regulations: s. 4(1)(e) requires AIHTS-certified killing traps for beaver, fisher, marten, lynx, ermine, least weasel, otter and muskrat, and s. 4(1)(f) requires AIHTS-certified restraining traps for beaver, lynx and wolf. The Fur Institute of Canada administers trap testing and certification in Canada. yukon.ca lists 9 Yukon species under the AIHTS (beaver, coyote, ermine/weasel, fisher, lynx, marten, muskrat, otter, wolf), but the Regulations impose no certified-trap requirement for coyote - see verification.known_gaps.",
+    "regulation_url": "https://laws.yukon.ca/cms/images/LEGISLATION/SUBORDINATE/1982/1982-0283/1982-0283_2.pdf",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Only the devices listed in Trapping Regulations s. 4(1) may be used: (a) a leghold trap with a jaw spread less than 250 mm used solely to capture and drown muskrat, beaver, mink or otter; (b) a snare equipped with a locking device; (c) a modified leghold trap with a jaw spread less than 250 mm used solely to capture fox or coyote; (d) a mechanically powered, trigger-activated quick-kill trap that is not a leghold trap; (e) for beaver, fisher, marten, lynx, ermine, least weasel, otter or muskrat, a killing trap certified under the AIHTS; (f) for beaver, lynx or wolf, a restraining trap certified under the AIHTS.",
+      "Extended wolf season, March 11-31: only a neck snare equipped with a locking device is a permissible device for wolves (s. 4(1)(b.1)).",
+      "Non-locking snares may be used only for red squirrel (s. 4(4)). Neck snares for all other furbearing animals must have a locking device; power-assisted neck and foot snares are permitted devices (2026-2027 Summary, pp. 11-12, 20).",
+      "Prohibited devices: traps with teeth or metal serrated edges; hooks; spring poles equipped with leghold traps (s. 4(5)); dead fall traps (they do not meet the legal definition of a quick-kill trap); leghold traps with a jaw spread of more than 25 cm; certified traps whose springs or jaws have been modified in any way (Summary, p. 12).",
+      "Trap checks (s. 5): a set designed to restrain an animal must be visually inspected, and any captured animal removed, at intervals of not more than 5 days; a quick-killing set at intervals of not more than 7 days. A restraining trap in a drowning set for muskrat, beaver, mink or otter is classified as a killing set. Every trap or snare must be removed or sprung on or before the last day of the open season for the target species (s. 5(1)).",
+      "An identical trap (same make and model) manufactured before certification is still considered a certified trap and is legal to use, provided the trap has not been modified (Summary, p. 11). Trappers receive three years' notice of new certified-trap requirements.",
+      "It is an offence to set traps within one kilometre of a residence without permission (Summary, pp. 21, 25), and to trap anywhere except inside the concession area for which the trapper's licence was issued.",
+      "No person shall hunt a furbearing animal with a shotgun (s. 4(2)). A rimfire rifle may be used to kill any furbearing animal held in a legally set trap or snare (s. 8.2(3); Summary, p. 26)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "Yukon summary states expressly that identical pre-certification trap models generally remain usable if unmodified. [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Restraining sets: every 5 days.",
+      "killing": "Killing sets: every 7 days.",
+      "note": null
+    },
+    "tenure": "Trapping concessions - exclusive commercial trapping areas; a person may hold only one. First concession is a 1-year probationary term (renewable up to twice), then a 5-year full term.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead. Trapper name/licence/concession numbers are required with submitted carcasses and for pelt sealing, not on traps.",
+    "royalty": "None - the 2026-27 Trapping Regulations Summary requires an export permit for pelts leaving Yukon but charges no royalty (Yukon royalties abolished 1978, per a secondary source). [R2 Item 5]",
+    "nuisance_route": "None found - only defence-of-life/property self-help (Wildlife Act ss. 86-88; defence kills of big game, lynx, fox, wolverine or specially protected wildlife must be reported to a Conservation Officer ASAP). No permit, licence or program authorizing paid problem-wildlife trapping was found. [R2 Item 3]",
+    "harvest_reporting_and_sealing": "All lynx, wolf and wolverine pelts must have a metal seal secured by a conservation officer/designate by the earlier of 15 days after season close or before sale/transfer. Trappers in named areas are contacted to submit lynx carcasses; all trappers are invited to submit whole wolverine carcasses. [R1 s.5]"
+  }
+}

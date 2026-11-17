@@ -1,0 +1,2226 @@
+{
+  "schema_version": "1.1",
+  "state": "AB",
+  "state_name": "Alberta",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only — NOT legal authority. Season dates, zones, quotas and limits are set annually and can change. Always verify current regulations with Alberta Forestry and Parks (Fish and Wildlife) before trapping. Trapping in Alberta is governed by the Wildlife Act and the Wildlife Regulation (Alberta Regulation 143/1997); the Alberta Guide to Trapping Regulations is a plain-language summary of the Regulation, not the law itself. Report violations to Report A Poacher at 1-800-642-3800.",
+  "sources": [
+    {
+      "id": "ab-guide-2026-27",
+      "notes": "Official annual guide published by Alberta Forestry and Parks with Sports Scene Publications; ISBN 978-1-4601-6602-4 (PDF) / 978-1-4601-6603-1 (print), Publication No. I/560. The Guide states it is a summary of the Wildlife Regulation, not a legal document. Season table p. 15; licensing and fees; general regulations and certified-trap lists; control of problem wildlife; furbearer management and the 2025/26 fur production table (total fur value $2,721,465). The online edition at albertaregulations.ca/trappingregs/ was read in full (gen-regs, licensing, important-changes, quotas-seasons, furbearer-management pages). Read 2026-11-15.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027",
+      "type": "official_guide",
+      "url": "https://albertaregulations.ca/trappingregs/"
+    },
+    {
+      "id": "ab-guide-seasons",
+      "notes": "The Guide's Fur Seasons table by Fur Management Zone, with footnotes 1-7 — the primary season source, cross-checked cell-by-cell (15 species x 8 zones) against Wildlife Regulation Schedule 15, Table 5.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027 — Quotas and Seasons (Fur Seasons table)",
+      "type": "official_guide_page",
+      "url": "https://albertaregulations.ca/trappingregs/quotas-seasons.html"
+    },
+    {
+      "id": "ab-wildlife-regulation",
+      "notes": "The law. King's Printer consolidation with amendments up to and including AR 234/2026, current as of September 17, 2026. Read: ss. 107, 107.1, 108, 109, 109.1, 110, 115, 120; Schedule 1, s. 7 (problem-wildlife exemptions); Schedule 6 (endangered and threatened animals — grizzly bear, swift fox); Schedule 8, Part 3 (fees); Schedule 15, ss. 8.7, 9, 12, 15 and Table 5 with footnotes 1-5 and 7. Table 5 agrees with the Guide's season table on every date and every CLOSED cell; Schedule 8 fees agree with the Guide's fee table exactly.",
+      "title": "Wildlife Regulation, Alberta Regulation 143/1997 (King's Printer consolidation)",
+      "type": "regulation",
+      "url": "https://kings-printer.alberta.ca/documents/regs/1997_143.pdf"
+    },
+    {
+      "id": "ab-guide-licensing",
+      "notes": "Licence types, the RFMA system, fees, trapper education and youth rules; fees cross-checked against Wildlife Regulation Schedule 8, Part 3, and licence structure against Regulation ss. 33-38.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027 — Licensing and Costs",
+      "type": "official_guide_page",
+      "url": "https://albertaregulations.ca/trappingregs/licensing.html"
+    },
+    {
+      "id": "ab-guide-gen-regs",
+      "notes": "Trap-device rules, the AIHTS Phase 1 and Phase 2 certified-trap lists as printed in the Guide, trap-check summary, snaring rules and problem-wildlife authorities; cross-checked against Wildlife Regulation ss. 107-115 and Schedule 1, s. 7.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027 — General Regulations (including Certified Traps)",
+      "type": "official_guide_page",
+      "url": "https://albertaregulations.ca/trappingregs/gen-regs.html"
+    },
+    {
+      "id": "ab-guide-changes",
+      "notes": "Changes for 2026-27: certified cage and box traps mandatory for raccoon beginning 2026/27; certified coyote foothold restraining traps mandatory beginning 2028/29; the baited-snare 200 m dwelling-notification rule (Wildlife Regulation s. 109.1, added by AR 187/2026); senior RFML holders requested to submit trapping activity logbooks to the Alberta Furbearer Harvest and Trapping Effort Program.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027 — Important Changes",
+      "type": "official_guide_page",
+      "url": "https://albertaregulations.ca/trappingregs/important-changes.html"
+    },
+    {
+      "id": "ab-guide-furbearer-mgmt",
+      "notes": "Furbearer management in Alberta: the RFMA system, mandatory registration, cougar ('no trapping season exists'), the black bear RFMA hunting provision and baiting rules, and the 2025/26 fur production statistics.",
+      "title": "Alberta Guide to Trapping Regulations 2026-2027 — Furbearer Management",
+      "type": "official_guide_page",
+      "url": "https://albertaregulations.ca/trappingregs/furbearer-management.html"
+    },
+    {
+      "id": "ab-report-a-poacher",
+      "notes": "Report A Poacher 1-800-642-3800 (24 hours, 7 days); 310-LAND for public land and provincial park violations; 9-1-1 for emergencies. Also printed in the Guide, p. 4.",
+      "title": "Report A Poacher (alberta.ca)",
+      "type": "agency_page",
+      "url": "https://alberta.ca/report-poacher"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "Fur Institute of Canada certified trap list (AIHTS implementation), updated July 22, 2026. In Alberta the Phase 1 list has legal force through Wildlife Regulation s. 107.1 (incorporated by reference) and is republished annually in the Guide; the model counts in this dataset were counted from the Guide's printed lists.",
+      "title": "Certified Traps List — Fur Institute of Canada (AIHTS)",
+      "type": "certified_trap_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "Alberta has adopted the AIHTS certified-trap list in law: Wildlife Regulation s. 107.1 incorporates Phase 1 of the Fur Institute of Canada's 'Certified Traps – AIHTS Implementation' list by reference, and a person shall not use any trap for a certified species unless it is currently listed by name and certified for that species. The list is published annually in the Guide to Trapping Regulations. New for 2026/27: certified cage and box traps are mandatory for raccoon; certified foothold restraining traps for coyote become mandatory in 2028/29.",
+    "course": "First-time trappers — anyone who has never held a trapping licence in Alberta or elsewhere, or who has not completed a fur management course — must successfully complete the Alberta Trapper Education Course and pass a test on humane trapping and fur management before being licensed. Course information: Alberta Trappers' Association, Box 6020, Westlock, AB T7P 2P7, phone 780-349-6626, albertatrappers.com/trapper-courses.html.",
+    "fees": "Resident Fur Management Licence $20; Registered Fur Management Licence, senior holder, $40 plus an area fee of $10 for each 36 sq mi of RFMA area in excess of 72 sq mi, plus $10 for any remaining area, to a maximum area fee of $40 (the Guide presents the same fee as $10/$20/$30/$40 for RFMAs of 3/4/5/6 townships; the maximum combined licence and area fee is $80); Registered FML partner $20; Indian Fur Management Licence free; Métis Fur Management Licence — no fee stated in the Guide; Damage Control Licence — no fee stated. Fur dealer permits: Class 1 $100, Class 2 $500. Listed fees do not include GST. $5 from each Registered FML funds the Alberta Trappers' Compensation Program. (Guide, Licence Fees; cross-checked against Wildlife Regulation, Schedule 8, Part 3 — the two agree exactly.)",
+    "harvest_report": "Registered FML holders must submit the Registered Fur Harvest Report (Form WA12) with the annual licence renewal by September 30, covering the species and number of all furbearers harvested on their RFMA(s), including harvest by their spouse and resident children under 18. Resident FML holders are asked to complete the Resident Fur Harvest Report (Form WA12A), by WMU, on or before September 30. New for 2026-27: senior RFML holders are requested to submit completed trapping activity reports (logbooks) to the Alberta Furbearer Harvest and Trapping Effort Program (online at atalogbook.ab-conservation.com; a pull-out logbook is included in the centre of the printed Guide). Fur Harvest Reports remain required for annual renewal.",
+    "licence_types": "Registered Fur Management Licence (senior holder or partner) — for a Registered Fur Management Area; Resident Fur Management Licence — private lands the holder owns, leases or occupies, or other private land with Form WA 19A permission; Indian Fur Management Licence — First Nation individuals within their First Nation boundaries, issued by Band Administration Offices; Métis Fur Management Licence — Métis Settlement members within their settlement, issued by Métis Settlement Supervisors; Damage Control Licence — for problem wildlife not covered by the no-licence authorities.",
+    "licensing_transition": "Since July 2021, all fur management licences are issued through AlbertaRELM and require a WiN (Wildlife Identification Number) activation ($8 + GST). Vacant RFMAs are listed at, and applied for through, Fish and Wildlife District Offices.",
+    "non_licence_animals": "Raccoon and skunk are classed as non-licence animals: they may be hunted or trapped during all seasons by the owner or occupant of land, a person authorized by the owner or occupant, or the holder of a licence authorizing the trapping of furbearers (Wildlife Regulation, Schedule 1, s. 7(12)). The open season for hunting non-licence animals is January 1 to December 31, except in Big Game Zone 17, where there is no open season (Schedule 15, s. 12).",
+    "permission": "A Resident Fur Management Licence holder trapping on private land they do not own, lease or occupy must carry the licence together with Form WA 19A, the landowner's signed written authorization to hunt fur-bearing animals, and produce both on the request of a Fish and Wildlife Officer. Use of neck snares for wolf, coyote, fox and bobcat on another person's land requires the landowner's additional written authorization (Form WA 19A provides for it).",
+    "problem_wildlife": "Without a licence (Wildlife Regulation, Schedule 1, s. 7; Guide, Control of Problem Wildlife): beaver may be hunted and trapped year-round on private land by the owner or occupant or a resident with written permission; badger and red squirrel may be hunted or trapped year-round by a resident on private land with a right of access; muskrat may be hunted year-round on private land (owner/occupant, or resident with written authorization); red fox may be hunted (not trapped) year-round by a resident on private land with a right of access; coyote may be hunted (not trapped) year-round province-wide by residents with a right of access, landowners/occupants and livestock keepers (pelts must be salvaged when hunting under a livestock keeper's written authorization on Green Area lands); wolf may be hunted (not trapped) year-round on private land, and by livestock keepers on public land, extending to land within 8 km (5 mi) of that land; raccoon and skunk may be hunted or trapped year-round by landowners/occupants, their authorized persons, or licensed trappers; bobcat may be hunted (not trapped) by residents from November 1 to the last day of February in WMUs 102, 104, 106, 108, 112, 116, 118, 119 and part of WMU 110; rabbit and hare may be hunted year-round without a licence on land with a right of access, and snared by residents with single-strand wire snares. A Damage Control Licence may be necessary for other species destroying property.",
+    "quotas": "The Alberta season table (Guide p. 15; Wildlife Regulation, Schedule 15, Table 5) sets NO daily, possession or season bag limits for any furbearer. Instead, the Minister may set an open season quota — the maximum number of otter, wolverine, lynx and fisher that may be killed in a Registered Fur Management Area during the open season (Schedule 15, s. 8.7). A quota that is set must immediately be made publicly available on a department website, and when the quota is reached in an RFMA the open season no longer applies there (Schedule 15, s. 9(1)(b)). The 2026-27 Guide does not print quota numbers — guides up to at least 2018-19 printed an RFMA limits table (a basic limit per RFMA plus per-township increments for fisher, lynx, otter and wolverine), which is absent from the 2025-26 and 2026-27 Guides — and current quota values were not located in this pass; they are recorded as a known gap.",
+    "registration_tagging": "Mandatory registration: fisher, lynx, otter and wolverine killed in an open season must be registered within 30 days of the close of that season (killed outside an open season, within 30 days of the kill), and in all cases before sale, processing or export, by presenting the pelt at a Fish and Wildlife District Office or approved location. All bobcat taken under any authority must be registered before the skin is sold, processed or exported from Alberta, or within 30 days after harvest. Wolverine registration requires the skull with the pelt (tooth and DNA sample). Any cougar harvest, including an accidental capture, must be registered at a district office immediately. A provincial export permit is required to export any furbearer skin or pelt from Alberta (exceptions include beaver castor and oil glands, claws, skulls and teeth of furbearers, processed skins, and lawfully possessed coyote skins), and a CITES permit is required to export wolf, lynx, bobcat, otter or black bear across an international boundary. Raw skins may be sold only to a licensed fur dealer; dealers verify a partner's licence and WA188 card, record lynx, fisher, wolverine and otter on a Furbearers Registration Certificate (Form WA324), report monthly, and retain records for two years. Exception: non-residents within 30 miles of Fort Smith, NWT, trapping on an RFMA wholly north of the north boundary of Township 118 and east of Wood Buffalo National Park are exempt from mandatory registration of fisher, lynx, otter and wolverine and from the provincial export permit for those species.",
+    "report_violation": "Report A Poacher: 1-800-642-3800 (24 hours a day, 7 days a week), or online at alberta.ca/report-poacher. Report violations on public land or in provincial parks to 310-LAND; emergencies 9-1-1.",
+    "resident_licence": "An Alberta resident aged 14 or older may obtain a Resident Fur Management Licence ($20) to hunt or trap furbearing animals on land they own, lease (other than a lease within an RFMA) or occupy, or on other private land with the owner/occupant's written permission on Form WA 19A, which must be carried with the licence. Resident FML holders may NOT take fisher, otter, lynx or wolverine anywhere in Alberta, and may not take marten in Fur Management Zone 3.",
+    "rfma_system": "Alberta has approximately 1,630 Registered Fur Management Areas (the Guide's licensing page says approximately 1,632; its 2025/26 statistics say 1,628) — parcels of public (Crown) land whose boundaries are described on the Registered Fur Management Licence. The senior holder is authorized for a five-year term and must renew the licence each year on or before September 30, submitting the Registered Fur Harvest Report (Form WA12); failure to renew may result in revocation of RFML privileges. The senior holder may add partners under a Fur Management Area Partnership Agreement approved in writing by a wildlife biologist; partnership agreements are confirmed annually, and partners are issued a licence and a wallet-size WA188 card valid July 1 to June 30. The senior holder's spouse, or a resident child under 18 of the senior holder, may hunt or trap on the RFMA without a licence, with the harvest included in the senior holder's WA12. A senior holder may transfer an RFMA by conditional relinquishment, in person at a government office. An RFML authorizes hunting and trapping only on the holder's RFMA(s) or on lands the holder owns, leases or occupies; a Resident Fur Management Licence is required for other private lands.",
+    "trap_check": "Every non-killing trap must be examined at least once every 24 hours when set under a Resident Fur Management Licence, and at least once every 48 hours in any other case (i.e. under a Registered Fur Management Licence) (Wildlife Regulation, s. 110).",
+    "trapping_licence": "A fur management licence is required to hunt or trap furbearing animals in Alberta under the Wildlife Act and the Wildlife Regulation (Alberta Regulation 143/1997), except under the no-licence problem-wildlife authorities and for non-licence animals (raccoon and skunk). A fur management licence or trapper's identification card must be carried at all times while trapping.",
+    "youth": "A resident under 18 whose parent holds a Registered Fur Management Licence (senior holder or partner) may hunt or trap in that RFMA subject to seasons, quotas and restrictions; residents aged 12 to 17 may trap under the senior holder's direct supervision with the senior holder's permission and written parent/guardian authorization. A resident under 16 whose parent holds a Resident Fur Management Licence may hunt or trap on the parent's lands (the WA 19A lands); residents aged 12 to 13 may hunt or trap under the licence holder's direct supervision with the holder's permission and written parent/guardian authorization."
+  },
+  "species": [
+    {
+      "common_name": "Badger",
+      "scientific_name": "Taxidea taxus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Closed in Fur Management Zones 1, 2 and 8 on these dates; Zone 8 has its own shorter season (next row).",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "trapping",
+          "notes": "Problem wildlife: without a licence, a resident may hunt or trap badger at any time of year on privately owned land to which they have a right of access (Alberta Guide to Trapping Regulations 2026-2027, Control of Problem Wildlife; Wildlife Regulation, Schedule 1, s. 7(6)). Municipal employees under contract whose duties include animal control may also hunt badger within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "No open season in Fur Management Zones 1 and 2 (Wildlife Regulation, Schedule 15, Table 5). Badger is not an AIHTS Phase 1 certified-trap species in Alberta.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "trapping",
+          "notes": "Problem wildlife: beaver may be hunted and trapped without a licence, during all seasons, on privately owned land by the owner or occupant of the land, or by a resident authorized in writing by the owner or occupant (Guide, Control of Problem Wildlife; Wildlife Regulation, Schedule 1, s. 7(2)). Municipal employees under contract whose duties include animal control may also hunt beaver within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "Under a Resident Fur Management Licence, beaver may be snared only where the snare loop is completely underwater. Beaver castor and beaver oil glands are exempt from the provincial export permit requirement. The sale of unskinned beaver carcasses harvested outside the beaver season is legal.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "A resident may hunt (not trap) bobcat without a fur management licence from November 1 to the last day of February in WMUs 102, 104, 106, 108, 112, 116, 118, 119, and the part of WMU 110 east of Highway 2 and south of Highway 3 (Wildlife Regulation, Schedule 15, s. 8(6); Guide, Control of Problem Wildlife). 2027 is not a leap year, so the last day of February 2027 is February 28 (verified by calendar check). Bobcat may not be hunted with dogs (Wildlife Regulation, s. 115).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "WMU 110 is included only for the part east of Highway 2 and south of Highway 3.",
+              "zone_id": "102, 104, 106, 108, 112, 116, 118, 119, 110 (part)",
+              "zone_name": "WMUs 102, 104, 106, 108, 112, 116, 118, 119 and part of WMU 110"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "All bobcat taken under any authority must be registered before the skin is sold, processed or exported from Alberta, or within 30 days after harvest. A CITES permit is required to export bobcat (or any part of one) across an international boundary, and a provincial export permit is required to export the skin or pelt from Alberta.",
+      "notes": "Closed to trapping in Fur Management Zones 1, 2, 3, 4, 5 and 7 (Wildlife Regulation, Schedule 15, Table 5).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Seasonal snaring restriction: from October 1 to November 30, snaring of coyote, fox and wolf is prohibited in Fur Management Zones 4, 5 and 6 except in WMUs 314, 316, 318, 320, 322, 324, 330, 332, 334, 336, 337, 338, 348, 360, 410, 412, 414, 416, 417, 418, 507, 508 and 521 (a measure to reduce accidental grizzly bear harvest; Wildlife Regulation, Schedule 15, s. 9(1)(f)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Problem wildlife: coyote may be hunted (not trapped) without a licence at all times of year, province-wide, by (1) a resident with a right of access on non-public lands outside the Green Area, (2) the owner or occupant of private land, (3) a livestock keeper on public land, or (4) a resident authorized in writing by a livestock keeper on Green Area lands — in case (4) the pelt must be salvaged (Wildlife Regulation, Schedule 1, s. 7(5); Guide, Control of Problem Wildlife). Municipal employees under contract whose duties include animal control may also hunt coyote within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "Certified foothold restraining traps for coyote (AIHTS Phase 2 list) become mandatory beginning with the 2028/29 trapping season (Alberta Guide to Trapping Regulations 2026-2027, Important Changes).",
+      "notes": "Coyote skins lawfully possessed are exempt from the provincial export permit requirement. Coyote may not be hunted with dogs except as authorized under the Agricultural Pests Act (Wildlife Regulation, s. 115).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence, an Indian Fur Management Licence or a Métis Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 2).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In WMUs 524, 532, 534, 536 and 539 this species' season runs November 1 to February 15 (Wildlife Regulation, Schedule 15, Table 5, footnote 5). The 2026-27 Guide's single footnote 4 states the extension generically; the Regulation separates it into footnote 4 (fox) and footnote 5 (marten, mink, fisher and wolverine). The Regulation is followed here.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU season-extension area (Wildlife Regulation, Schedule 15, Table 5, footnotes 4 and 5).",
+              "zone_id": "524, 532, 534, 536, 539",
+              "zone_name": "WMUs 524, 532, 534, 536, 539"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "Open only to holders of a Registered Fur Management Licence, an Indian Fur Management Licence or a Métis Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 2). Resident Fur Management Licence holders may not take this species anywhere in Alberta. Mandatory registration: animals of this species killed in an open season must be registered within 30 days of the close of that season (killed outside an open season, within 30 days of the kill), and in all cases before sale, processing or export, by presenting the pelt at a Fish and Wildlife District Office or approved location. Harvest may be limited by a Minister-set open season quota for each Registered Fur Management Area (Wildlife Regulation, Schedule 15, s. 8.7).",
+      "notes": "Closed in Fur Management Zones 6, 7 and 8 (Wildlife Regulation, Schedule 15, Table 5).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Seasonal snaring restriction: from October 1 to November 30, snaring of coyote, fox and wolf is prohibited in Fur Management Zones 4, 5 and 6 except in WMUs 314, 316, 318, 320, 322, 324, 330, 332, 334, 336, 337, 338, 348, 360, 410, 412, 414, 416, 417, 418, 507, 508 and 521 (a measure to reduce accidental grizzly bear harvest; Wildlife Regulation, Schedule 15, s. 9(1)(f)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In WMUs 524, 532, 534, 536 and 539 the red/Arctic fox season runs October 1 to February 15 (Wildlife Regulation, Schedule 15, Table 5, footnote 4).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU season-extension area (Wildlife Regulation, Schedule 15, Table 5, footnotes 4 and 5).",
+              "zone_id": "524, 532, 534, 536, 539",
+              "zone_name": "WMUs 524, 532, 534, 536, 539"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "hunting",
+          "notes": "Problem wildlife: a resident may hunt (not trap) red fox without a licence during all seasons on privately owned land to which they have a right of access (Wildlife Regulation, Schedule 1, s. 7(7); Guide, Control of Problem Wildlife). Municipal employees under contract whose duties include animal control may also hunt red fox within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "The Wildlife Regulation's Table 5 species is 'Red/Arctic Fox': a single joint season covers red fox and Arctic fox, and the two are not regulated separately in Alberta. Section 107 of the Wildlife Regulation (the leg-hold trap restrictions) does not apply to fox (s. 107(4)). Fox may not be hunted with dogs except as authorized under the Agricultural Pests Act (s. 115).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence, an Indian Fur Management Licence or a Métis Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 2).",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "Open only to holders of a Registered Fur Management Licence, an Indian Fur Management Licence or a Métis Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 2). Resident Fur Management Licence holders may not take this species anywhere in Alberta. Mandatory registration: animals of this species killed in an open season must be registered within 30 days of the close of that season (killed outside an open season, within 30 days of the kill), and in all cases before sale, processing or export, by presenting the pelt at a Fish and Wildlife District Office or approved location. Harvest may be limited by a Minister-set open season quota for each Registered Fur Management Area (Wildlife Regulation, Schedule 15, s. 8.7). A CITES permit is required to export lynx (or any part of one) across an international boundary.",
+      "notes": "Closed in Fur Management Zones 7 and 8 (Wildlife Regulation, Schedule 15, Table 5). Lynx is one of the four species subject to Minister-set per-RFMA open season quotas (Schedule 15, s. 8.7) and to mandatory registration.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "The season in WMUs 524, 532, 534, 536 and 539 (which lie in these zones) is extended to February 15 — see the WMU-group row below.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence, an Indian Fur Management Licence or a Métis Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 2).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In WMUs 524, 532, 534, 536 and 539 this species' season runs November 1 to February 15 (Wildlife Regulation, Schedule 15, Table 5, footnote 5). The 2026-27 Guide's single footnote 4 states the extension generically; the Regulation separates it into footnote 4 (fox) and footnote 5 (marten, mink, fisher and wolverine). The Regulation is followed here.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU season-extension area (Wildlife Regulation, Schedule 15, Table 5, footnotes 4 and 5).",
+              "zone_id": "524, 532, 534, 536, 539",
+              "zone_name": "WMUs 524, 532, 534, 536, 539"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "In Fur Management Zone 3 this season is open only under a Registered, Indian or Métis Fur Management Licence (Table 5, footnote 2), and Resident Fur Management Licence holders may not take marten in FMZ 3; elsewhere a Resident FML holder may take marten.",
+      "notes": "Closed in Fur Management Zones 7 and 8 (Wildlife Regulation, Schedule 15, Table 5).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "The season in WMUs 524, 532, 534, 536 and 539 (which lie in these zones) is extended to February 15 — see the WMU-group row below.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In WMUs 524, 532, 534, 536 and 539 this species' season runs November 1 to February 15 (Wildlife Regulation, Schedule 15, Table 5, footnote 5). The 2026-27 Guide's single footnote 4 states the extension generically; the Regulation separates it into footnote 4 (fox) and footnote 5 (marten, mink, fisher and wolverine). The Regulation is followed here.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU season-extension area (Wildlife Regulation, Schedule 15, Table 5, footnotes 4 and 5).",
+              "zone_id": "524, 532, 534, 536, 539",
+              "zone_name": "WMUs 524, 532, 534, 536, 539"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "Mink is not an AIHTS Phase 1 certified-trap species in Alberta; no certified trap is required for mink under Wildlife Regulation s. 107.1 as published in the 2026-27 Guide.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "hunting",
+          "notes": "Problem wildlife: a resident may hunt muskrat without a licence at any time of year on privately owned land, as the owner or occupant of the land or as a resident authorized in writing by the owner or occupant (Guide, Control of Problem Wildlife; Wildlife Regulation, Schedule 1, s. 7(2)). This authority covers hunting; trapping muskrat requires a fur management licence and the open season above. Municipal employees under contract whose duties include animal control may also hunt muskrat within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "AIHTS certified-trap rules for muskrat differ by set type: on land, certified killing traps are required; underwater, any jaw-type trap (body-gripping or leghold) set as a submersion set is certified (2026-27 Guide, General Regulations).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "North American river otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 1).",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 1). Within Fur Management Zone 4, this season applies only in WMUs 330, 336, 337, 338, 339, 340, 342, 344, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 360, 507, 508 and 521 (Wildlife Regulation, Schedule 15, Table 5, footnote 7). The 2026-27 Guide's footnote 6 compresses this to 'WMUs 330, 336 to 360'; the Regulation's enumerated list is followed here.",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "Open only to holders of a Registered Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 1). Resident Fur Management Licence holders may not take this species anywhere in Alberta. Mandatory registration: animals of this species killed in an open season must be registered within 30 days of the close of that season (killed outside an open season, within 30 days of the kill), and in all cases before sale, processing or export, by presenting the pelt at a Fish and Wildlife District Office or approved location. Harvest may be limited by a Minister-set open season quota for each Registered Fur Management Area (Wildlife Regulation, Schedule 15, s. 8.7). A CITES permit is required to export otter (or any part of one) across an international boundary.",
+      "notes": "Closed in Fur Management Zones 5, 6, 7 and 8 (Wildlife Regulation, Schedule 15, Table 5).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "trapping",
+          "notes": "Problem wildlife: without a licence, a resident may hunt or trap red squirrel at any time of year on privately owned land to which they have a right of access (Guide, Control of Problem Wildlife; Wildlife Regulation, Schedule 1, s. 7(6)). Municipal employees under contract whose duties include animal control may also hunt red squirrel within a city, town, village or summer village (Schedule 1, s. 7(13)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "Residents may use neck snares for squirrel under a Resident Fur Management Licence, and single-strand wire snares for squirrel are exempt from the snare locking-device requirement (Wildlife Regulation, s. 109).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-14",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "The Wildlife Regulation (Schedule 15, Table 5) sets a single 'Weasel' season covering all weasel species; this entry carries that joint season. Weasel may not be harvested in Ranges 1 to 5 west of the 4th Meridian, from the international boundary north to the north boundary of Township 63, except on Indian Reserves and Métis Settlements (Schedule 15, s. 9(1)(a)). The Guide's production table reports the harvest as 'Weasel (Ermine)'.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Long-tailed weasel",
+      "scientific_name": "Neogale frenata",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-14",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "The Wildlife Regulation (Schedule 15, Table 5) sets a single 'Weasel' season covering all weasel species; this entry carries that joint season. Weasel may not be harvested in Ranges 1 to 5 west of the 4th Meridian, from the international boundary north to the north boundary of Township 63, except on Indian Reserves and Métis Settlements (Schedule 15, s. 9(1)(a)). The Guide's production table reports the harvest as 'Weasel (Ermine)'.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Short-tailed weasel",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-14",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "",
+      "notes": "The Wildlife Regulation (Schedule 15, Table 5) sets a single 'Weasel' season covering all weasel species; this entry carries that joint season. Weasel may not be harvested in Ranges 1 to 5 west of the 4th Meridian, from the international boundary north to the north boundary of Township 63, except on Indian Reserves and Métis Settlements (Schedule 15, s. 9(1)(a)). The Guide's production table reports the harvest as 'Weasel (Ermine)'.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Seasonal snaring restriction: from October 1 to November 30, snaring of coyote, fox and wolf is prohibited in Fur Management Zones 4, 5 and 6 except in WMUs 314, 316, 318, 320, 322, 324, 330, 332, 334, 336, 337, 338, 348, 360, 410, 412, 414, 416, 417, 418, 507, 508 and 521 (a measure to reduce accidental grizzly bear harvest; Wildlife Regulation, Schedule 15, s. 9(1)(f)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In Fur Management Zone 6, this season does not apply in WMUs 314 to 318 and 410 to 418, where the wolf season is October 1 to March 31 — see the WMU-group row below (Wildlife Regulation, Schedule 15, Table 5, footnote 3). Seasonal snaring restriction: from October 1 to November 30, snaring of coyote, fox and wolf is prohibited in Fur Management Zones 4, 5 and 6 except in WMUs 314, 316, 318, 320, 322, 324, 330, 332, 334, 336, 337, 338, 348, 360, 410, 412, 414, 416, 417, 418, 507, 508 and 521 (a measure to reduce accidental grizzly bear harvest; Wildlife Regulation, Schedule 15, s. 9(1)(f)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "7",
+              "zone_name": "Fur Management Zone 7"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "8",
+              "zone_name": "Fur Management Zone 8"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Within Fur Management Zone 6, the wolf season in WMUs 314 to 318 and 410 to 418 is October 1 to March 31, not October 1 to February 28 (Wildlife Regulation, Schedule 15, Table 5, footnote 3).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Within Fur Management Zone 6. The 2026-27 Guide (footnote 7) lists the specific units in these ranges as WMUs 314, 316, 318, 410, 412, 414, 416, 417 and 418.",
+              "zone_id": "314-318, 410-418",
+              "zone_name": "WMUs 314 to 318 and 410 to 418"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies to this no-licence problem-wildlife authority.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Problem wildlife: wolf may be hunted (not trapped) without a licence, during all seasons, by the owner or occupant of private land or a resident with that person's permission; on public land by a person who keeps livestock on that land, or a resident with that person's written permission. The authority extends to land within 8 km (5 miles) of that land to which the hunter has a right of access (Wildlife Regulation, Schedule 1, s. 7(3)-(4); Guide, Control of Problem Wildlife).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "A CITES permit is required to export wolf (or any part of one) across an international boundary, and a provincial export permit is required to export the skin or pelt from Alberta.",
+      "notes": "Certified restraining traps are mandatory for wolf (AIHTS Phase 1, Wildlife Regulation s. 107.1). The problem-wildlife hunting authority in the hunting row below does not authorize trapping.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open only to holders of a Registered Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 1).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "1",
+              "zone_name": "Fur Management Zone 1"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "2",
+              "zone_name": "Fur Management Zone 2"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "3",
+              "zone_name": "Fur Management Zone 3"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "4",
+              "zone_name": "Fur Management Zone 4"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "5",
+              "zone_name": "Fur Management Zone 5"
+            },
+            {
+              "area_type": "fur_management_zone",
+              "note": "",
+              "zone_id": "6",
+              "zone_name": "Fur Management Zone 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, possession or season bag limit is set for this species in the 2026-27 Guide season table or in Wildlife Regulation Schedule 15, Table 5. However, the Minister may set an open season quota for this species for each Registered Fur Management Area (Schedule 15, s. 8.7); when the quota is reached, the open season no longer applies in that RFMA (s. 9(1)(b)). Quota values for 2026-27 are not printed in the Guide and were not located in this pass (see verification.known_gaps).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In WMUs 524, 532, 534, 536 and 539 this species' season runs November 1 to February 15 (Wildlife Regulation, Schedule 15, Table 5, footnote 5). The 2026-27 Guide's single footnote 4 states the extension generically; the Regulation separates it into footnote 4 (fox) and footnote 5 (marten, mink, fisher and wolverine). The Regulation is followed here.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU season-extension area (Wildlife Regulation, Schedule 15, Table 5, footnotes 4 and 5).",
+              "zone_id": "524, 532, 534, 536, 539",
+              "zone_name": "WMUs 524, 532, 534, 536, 539"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "Open only to holders of a Registered Fur Management Licence (Wildlife Regulation, Schedule 15, Table 5, footnote 1). Resident Fur Management Licence holders may not take this species anywhere in Alberta. Mandatory registration: animals of this species killed in an open season must be registered within 30 days of the close of that season (killed outside an open season, within 30 days of the kill), and in all cases before sale, processing or export, by presenting the pelt at a Fish and Wildlife District Office or approved location. Harvest may be limited by a Minister-set open season quota for each Registered Fur Management Area (Wildlife Regulation, Schedule 15, s. 8.7). At mandatory registration, the harvester must deliver the skull along with the pelt so that a tooth (the first maxillary premolar, for aging) and a small pelt sample (for DNA profiling) may be obtained; the trapper may instead extract the tooth and pelt sample and present those. The sample envelope must be labelled with the Registration Certificate number, pelt seal number and RFMA number and stapled to the yellow copy of the Registration Certificate.",
+      "notes": "Closed in Fur Management Zones 7 and 8 (Wildlife Regulation, Schedule 15, Table 5). Wolverine has an Alberta general status of 'May Be At Risk' (Alberta Wildlife Status Report series) and is listed as Special Concern under the federal Species at Risk Act, but it is NOT listed as an endangered or threatened animal under Alberta's Wildlife Act or Wildlife Regulation (it does not appear in Schedule 6 of the Regulation), and it has a lawful open season under a Registered Fur Management Licence, subject to mandatory registration and any Minister-set RFMA quota. Do not present wolverine as a closed species in Alberta.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies; raccoon and skunk are non-licence animals in Alberta.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Non-licence animal: raccoon may be hunted or trapped during all seasons by the owner or occupant of a given area of land, by a person authorized by the owner or occupant, or by the holder of a licence authorizing the trapping of furbearers (Wildlife Regulation, Schedule 1, s. 7(12)). The open season for hunting non-licence animals is January 1 to December 31, except in Big Game Zone 17, where there is no open season (Schedule 15, s. 12).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "No fur management licence is required for the landowner/occupant authorities in the season note. AIHTS Phase 1 certified killing and restraining traps apply to raccoon, and certified cage and box traps became mandatory for raccoon beginning with the 2026/27 season (Guide, Important Changes).",
+      "notes": "Raccoon is classed as a non-licence animal in Alberta (Guide, General Regulations). Harvest is small — 10 pelts reported in the 2025/26 fur production table — as Alberta is the northern edge of the species' range.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit applies; raccoon and skunk are non-licence animals in Alberta.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Non-licence animal: skunk may be hunted or trapped during all seasons by the owner or occupant of a given area of land, by a person authorized by the owner or occupant, or by the holder of a licence authorizing the trapping of furbearers (Wildlife Regulation, Schedule 1, s. 7(12)). The open season for hunting non-licence animals is January 1 to December 31, except in Big Game Zone 17, where there is no open season (Schedule 15, s. 12).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Edmonton",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "",
+              "zone_id": "AB",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": "No fur management licence is required for the landowner/occupant authorities in the season note.",
+      "notes": "Skunk is classed as a non-licence animal in Alberta (Guide, General Regulations).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "No licence authorizes trapping cougar in Alberta.",
+      "notes": "No trapping season exists for cougar in Alberta: 'Cougars are carefully managed as a hunted game animal in Alberta, and no trapping season exists' (Alberta Guide to Trapping Regulations 2026-2027, Furbearer Management). Cougar is hunted as big game under the Alberta Guide to Hunting Regulations. All cougar harvests — including accidental captures, which the Guide notes are increasing, mostly in wolf and coyote snares and in large body-gripping traps set for lynx, bobcat or wolverine — must be registered at a Fish and Wildlife District Office immediately. On private land a cougar may be hunted (not by trapping, and not with dogs) by the owner or occupant, or by a resident authorized by the owner or occupant (Wildlife Regulation, Schedule 1, s. 7(8)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "Trapping black bear is prohibited; no fur management licence authorizes it.",
+      "notes": "Black bear is a big game animal, not a furbearer: it may be hunted but NOT trapped in Alberta. Under a Registered Fur Management Licence, up to six black bear may be hunted in each RFMA north of the Red Deer River during the open season for black bear, and RFMA holders permitted to hunt black bear on their RFMA may use bait in WMUs 322, 330-338, 348, 358-360, 500-506, 509, 510, 512-520, 522, 523, 529-536, 539-544 and in portions of WMUs 320, 324, 357, 507, 521, 526 and 528, subject to the Guide's baiting rules (no baiting within 1.6 km of an occupied dwelling without permission, in provincial parks other than wildland parks, in provincial or forest recreation areas, or at specified industrial sites; signed bait sites; baiting only during the open season and the preceding two weeks; meat and meat products only during November). Bear season dates are set in the Alberta Guide to Hunting Regulations and are not recorded here.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Grizzly bear",
+      "scientific_name": "Ursus arctos",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "No licence authorizes trapping grizzly bear.",
+      "notes": "Grizzly bear (brown bear) is listed as a Threatened animal in Schedule 6 of the Wildlife Regulation (Alberta Regulation 143/1997), and there is no open season. Despite the threatened listing, hunting of grizzly bear is permitted under s. 53.1 of the Regulation (Schedule 6, footnote 0.1) — that section provides only for Minister-issued grizzly bear management authorizations for specific problem bears, not a general season. The October 1 to November 30 snaring restrictions in Fur Management Zones 4, 5 and 6 exist in part to reduce accidental grizzly bear harvest.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Swift fox",
+      "scientific_name": "Vulpes velox",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard taxonomy. Not stated in the Alberta sources consulted in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "No licence authorizes taking swift fox.",
+      "notes": "Swift fox is listed as an Endangered animal under Alberta's Wildlife Act and Wildlife Regulation (Schedule 6, Alberta Regulation 143/1997) and is listed under the federal Species at Risk Act, Schedule 1 (COSEWIC assessed Threatened in 2009, confirmed May 2021). There is no open season. A reintroduced population persists in southern Alberta. The Table 5 'Red/Arctic Fox' season does not apply to swift fox.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All 120 cells of the fur season table (15 Table 5 species x 8 Fur Management Zones) were verified twice: in the Alberta Guide to Trapping Regulations 2026-2027 (p. 15; online edition at albertaregulations.ca/trappingregs/quotas-seasons.html) and in the law itself, Wildlife Regulation (Alberta Regulation 143/1997), Schedule 15, Table 5, King's Printer consolidation current as of September 17, 2026 (amendments to AR 234/2026). The two sources agree on every date and every CLOSED cell. Licence fees were cross-checked between the Guide's Licence Fees table and Schedule 8, Part 3 of the Regulation and agree exactly. Trap rules were cross-checked between the Guide's General Regulations and Regulation ss. 107, 107.1, 108, 109, 109.1, 110 and 115; problem-wildlife authorities between the Guide's Control of Problem Wildlife page and Schedule 1, s. 7 of the Regulation; registration and reporting rules against the Guide's licensing, quotas/seasons and furbearer-management pages. Relative dates were computed for 2026-27 and verified by calendar check: February 15, 2027 is a Monday, and February 2027 has 28 days (2027 is not a leap year), so 'the last day of February' in the resident bobcat hunting season (Schedule 15, s. 8(6)) is February 28, 2027. Three Guide-vs-Regulation detail differences were found — the Guide merges the Regulation's Table 5 footnotes 4 and 5, compresses the otter WMU list, and misstates the laminated-jaw thickness as 8 mm where the Regulation says 9 mm — and are recorded in known_gaps; in each case the dataset follows the Regulation.",
+    "known_gaps": [
+      "Current RFMA open-season quota values for otter, wolverine, lynx and fisher (Wildlife Regulation, Schedule 15, s. 8.7) were not located. A quota set by the Minister must be made publicly available on a department website, but no quota figures appear in the 2026-27 Guide — which no longer prints the RFMA limits table (a basic limit per RFMA plus per-township increments) that appeared in guides up to at least 2018-19 and was still listed in the 2020-21 Guide's table of contents — and no quota page was found in this pass. Resolution: Alberta Forestry and Parks department website or a Fish and Wildlife District Office. Until resolved, the dataset records the quota mechanism, not numbers.",
+      "Fur Management Zone composition: the Guide's p. 17 map shows which WMUs make up each FMZ only as a graphic; no official text list of FMZ-to-WMU membership was transcribed in this pass. WMUs are legally described in Schedule 9 of the Wildlife Regulation (hundreds of boundary descriptions). Resolution: transcribe from the Guide map or obtain a department FMZ boundary dataset before building any zone picker.",
+      "Laminated-jaw thickness discrepancy: the 2026-27 Guide's summary of the leg-hold trap rules describes laminated jaws as two steel parallel jaws 'at least 8 mm' thick; Wildlife Regulation s. 107(3) says 9 mm. The Regulation governs and the dataset follows it (9 mm); the Guide figure appears to be a summary error.",
+      "The 2026-27 Guide's season-table footnote 4 merges two distinct legal footnotes. In Wildlife Regulation Schedule 15, Table 5, footnote 4 (red/Arctic fox: October 1 to February 15 in WMUs 524, 532, 534, 536 and 539) and footnote 5 (marten, mink, fisher and wolverine: November 1 to February 15 in the same WMUs) are separate. The dataset follows the Regulation, so the fox extension row opens October 1 while the marten/mink/fisher/wolverine extension rows open November 1.",
+      "The Guide's otter footnote 6 compresses the FMZ 4 application area to 'WMUs 330, 336 to 360'; Wildlife Regulation Schedule 15, Table 5, footnote 7 enumerates the specific units (330, 336, 337, 338, 339, 340, 342, 344, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 360, 507, 508, 521). The dataset follows the Regulation's enumerated list.",
+      "Scientific names are standard taxonomy and are flagged scientific_name_verified: false throughout; no Alberta source consulted in this pass states Latin names for the season-table species.",
+      "Full model-by-model transcription of the AIHTS certified-trap lists printed in the Guide (Phase 1 and Phase 2) was not done in this pass; species-level model counts were captured instead. Resolution: transcribe from the Guide's General Regulations pages or the Fur Institute of Canada certified list (updated July 22, 2026), as planned for Ontario.",
+      "Recreational (non-trapper) hunting seasons under the Alberta Guide to Hunting Regulations 2026 — including general wolf and coyote hunting seasons and black bear season dates — were not scoped in this pass. This dataset covers the trapping guide plus the problem-wildlife (no-licence) hunting authorities in Wildlife Regulation Schedule 1, s. 7 and the resident bobcat hunting season in Schedule 15, s. 8(6).",
+      "General time-of-day and hunting-hours rules were not transcribed; open_time is null on every season row.",
+      "Wolverine status must be presented carefully in any clone: the species has a lawful Registered FML open season in FMZ 1-6 even though Alberta's general status assessment lists it as 'May Be At Risk' and the federal Species at Risk Act lists it as Special Concern. It is not listed in Schedule 6 of the Wildlife Regulation (endangered and threatened animals). The dataset models the season exactly as written in Table 5.",
+      "The number of Registered Fur Management Areas is given as 'approximately 1,632' on the Guide's licensing page and as 1,628 in the Guide's 2025/26 trapper statistics; the dataset says 'approximately 1,630'. Immaterial to seasons and rules.",
+      "Arctic fox is not modelled as a separate species entry: Wildlife Regulation Table 5 sets one joint 'Red/Arctic Fox' season, carried on the Red fox entry. If the clone later needs a separate Arctic fox row, it should carry the red fox dates with a note that the two are regulated jointly in Alberta."
+    ],
+    "regulation_year_confirmed": "2026-27"
+  },
+  "license_url": "https://albertaregulations.ca/trappingregs/licensing.html",
+  "license_vendor": "AlbertaRELM (WiN required) and Fish and Wildlife District Offices — Alberta Forestry and Parks",
+  "regs_url": "https://albertaregulations.ca/trappingregs/quotas-seasons.html",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report A Poacher (Alberta)",
+    "note": "Report A Poacher line 1-800-642-3800, staffed 24 hours a day, 7 days a week; online reporting at alberta.ca/report-poacher. Report violations on public land or in provincial parks to 310-LAND; emergencies 9-1-1. (Alberta Guide to Trapping Regulations 2026-2027, p. 4.)",
+    "url": "https://alberta.ca/report-poacher"
+  },
+  "aihts": {
+    "alberta_implementation_url": "https://albertaregulations.ca/trappingregs/gen-regs.html",
+    "certified_killing_traps_phase_1": [
+      {
+        "models_approx": 26,
+        "note": "Phase 1 certified killing traps are mandatory for this species.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 22,
+        "note": "The Guide publishes one joint certified killing-trap list for Canada lynx and bobcat.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 22,
+        "note": "The Guide publishes one joint certified killing-trap list for Canada lynx and bobcat.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 18,
+        "note": "Phase 1 certified killing traps are mandatory for this species.",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 19,
+        "note": "Phase 1 certified killing traps are mandatory for this species.",
+        "species": "Marten"
+      },
+      {
+        "models_approx": 32,
+        "note": "Certified killing traps for muskrat set on land.",
+        "species": "Muskrat (on land)"
+      },
+      {
+        "models_approx": null,
+        "note": "For muskrat underwater, any jaw-type trap (body-gripping or leghold) set as a submersion set is certified; no model list applies.",
+        "species": "Muskrat (underwater)"
+      },
+      {
+        "models_approx": 20,
+        "note": "Phase 1 certified killing traps are mandatory for this species.",
+        "species": "Otter"
+      },
+      {
+        "models_approx": 35,
+        "note": "Phase 1 certified killing traps are mandatory for this species.",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 26,
+        "note": "One joint list covers all weasel species.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_restraining_traps_phase_1": [
+      {
+        "models_approx": 6,
+        "note": "Cage traps (Breathe Easy, Comstock, Dam, Ezee Set, Hancock, Koro Klam).",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 6,
+        "note": "Certified restraining traps are mandatory for bobcat.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 4,
+        "note": "Certified restraining traps are mandatory for Canada lynx.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 5,
+        "note": "Bridger T3, Duffer, Duke DP Coon Trap, Egg Trap, Lil' Grizz Get'rz.",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 14,
+        "note": "Certified restraining traps are mandatory for wolf.",
+        "species": "Wolf"
+      }
+    ],
+    "models_note": "Model counts were counted from the certified-trap lists printed in the Alberta Guide to Trapping Regulations 2026-2027 (General Regulations — Certified Traps), which republishes the Fur Institute of Canada AIHTS implementation list. This pass captured list structure and counts, not the full model-by-model list; full transcription is a follow-on task, as with Ontario.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "American mink",
+      "Red fox",
+      "Badger",
+      "Red squirrel",
+      "Striped skunk",
+      "Coyote (until the 2028/29 season, when certified foothold restraining traps become mandatory)"
+    ],
+    "note": "Alberta implements the AIHTS in law: Wildlife Regulation (AR 143/1997) s. 107.1 incorporates Phase 1 of the competent authority's 'Certified Traps – AIHTS Implementation' document — the Fur Institute of Canada certified-trap list — by reference into the Regulation, and provides that a person shall not use any trap for a certified species unless the trap is currently listed by name and certified for that species. The Minister delegates amendment of the list to the competent authority and must publish the implementation list annually in the Alberta Guide to Trapping Regulations. 'Alberta has agreed to implement the AIHTS standards' (Guide, General Regulations).",
+    "phase_2_certified_not_yet_mandatory": [
+      {
+        "models_approx": 25,
+        "note": "Phase 2 certified foothold restraining traps for coyote; they become mandatory beginning with the 2028/29 trapping season (Guide, Important Changes).",
+        "species": "Coyote"
+      },
+      {
+        "models_approx": 23,
+        "note": "Phase 2 certified cage and box traps for raccoon (Havahart, Ramconct, Tomahawk models). Although listed as Phase 2 in the Guide's trap lists, the Guide's Important Changes state they are mandatory beginning with the 2026/27 season — treat as mandatory for 2026-27.",
+        "species": "Raccoon (cage and box traps)"
+      }
+    ],
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Only traps currently listed by name as certified for a species may be used for that species (Wildlife Regulation, s. 107.1(2)); it is unlawful to use traps that do not meet the AIHTS standards for a certified species (Guide, General Regulations).",
+      "Traps set for fur-bearing animals must be killing devices, leg snares, or live-container (cage/box) traps (Wildlife Regulation, s. 107(1)).",
+      "Leg-hold traps may be used only as killing devices, except for wolf, coyote, lynx, bobcat and raccoon, where they may also be used as restraining devices if the jaws are laminated (two steel parallel jaws, each at least 9 mm thick), offset, or padded (Wildlife Regulation, s. 107(3)). The 2026-27 Guide's summary of this rule says 8 mm; the Regulation says 9 mm and governs (see verification.known_gaps). Section 107 does not apply to fox (s. 107(4)).",
+      "Foothold traps with toothed jaws, or with an inside jaw spread of 23 cm (9 in.) or more, may not be used to trap furbearing animals (Guide, General Regulations).",
+      "A foothold trap that is not set as a killing device may not be set in a tree or on a pole (Wildlife Regulation, s. 108), and foothold traps not set as killing devices may be used only for bobcat, coyote, fox, lynx or wolf; every other furbearer must be taken in a killing device or a live-container trap (Guide, General Regulations).",
+      "Neck snares must have a locking device that prevents the snare from loosening once an animal is caught, except snares set underwater and single-strand wire snares for squirrel, rabbit or hare (Wildlife Regulation, s. 109).",
+      "New for 2026-27: a trapper who sets a baited killing neck snare within 200 m of the boundary of land occupied as a dwelling must notify the occupant (Wildlife Regulation, s. 109.1, added by AR 187/2026); the requirement does not apply where the adjacent land is larger than a quarter section.",
+      "Trap check: every non-killing trap must be examined at least once every 24 hours when set under a Resident Fur Management Licence, and at least once every 48 hours in any other case (i.e. under a Registered Fur Management Licence) (Wildlife Regulation, s. 110).",
+      "Snares may be used only under a Registered Fur Management Licence, or under a Resident Fur Management Licence for bobcat, coyote, fox, squirrel and wolf, and for beaver where the snare loop is completely underwater; a resident may also snare rabbit and hare with single-strand wire of 20 gauge or heavier and a loop diameter of 13 cm (5 in.) or less (Guide, General Regulations).",
+      "Seasonal snaring restriction: from October 1 to November 30, snaring of coyote, fox and wolf is prohibited in Fur Management Zones 4, 5 and 6 except in WMUs 314, 316, 318, 320, 322, 324, 330, 332, 334, 336, 337, 338, 348, 360, 410, 412, 414, 416, 417, 418, 507, 508 and 521 (Wildlife Regulation, Schedule 15, s. 9(1)(f)).",
+      "Slide-wire (drowning) sets must have a lock, must be anchored securely, and must be set in water deep enough to completely submerge the largest animal that may enter the trap (Guide, General Regulations).",
+      "Certified cage and box traps are mandatory for raccoon beginning with the 2026/27 season; certified foothold restraining traps for coyote become mandatory beginning with the 2028/29 season (Guide, Important Changes for 2026-27).",
+      "Trapping is prohibited in ecological reserves and, with limited RFMA exceptions, in wildlife sanctuaries; no furbearer may be harvested within 100 m of Highway 1A in WMU 410 except with traps. No person may remove, spring or otherwise interfere with another person's traps, except that a Registered FML holder may remove unlawful traps within their own RFMA and must report it immediately. Poison (except as authorized under the Agricultural Pests Act) and sharp hooks may not be used (Guide, General Regulations; Wildlife Regulation)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "Certified cage/box traps for raccoon mandatory from 2026-27; certified coyote restraining traps mandatory from 2028-29. Alberta guide: jaw-type leg/foothold restraining traps on land prohibited for badger, beaver, ermine, fisher, marten, muskrat and otter; conventional steel-jawed legholds on land prohibited for bobcat, coyote, lynx, raccoon and wolf - only certified/modified restraining traps for that group. [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Non-killing devices: 48 hours under a Registered Fur Management Licence; 24 hours under a Resident Fur Management Licence.",
+      "killing": "No legal check requirement for killing devices.",
+      "note": null
+    },
+    "tenure": "Registered Fur Management Areas (~1,632 RFMAs; Senior Holder on a 5-year term, licence renewed annually by Sept 30) plus a separate Resident Fur Management Licence for private land and some non-RFMA public land.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead. Near-miss: black bear bait stations need a sign showing the owner's name or RFMA number - a bait-site sign, not a trap mark.",
+    "royalty": "None found in the current Wildlife Act, Wildlife Regulation AR 143/97, or the 2025-26 Guide to Trapping Regulations. [R2 Item 5]",
+    "nuisance_route": "Paid route exists - Damage Control Licence (Fish and Wildlife Stewardship): lethal control of specified wildlife causing/likely to cause damage or safety threats, typically valid ~1 month; never issued for capture/relocation, general nuisance, or population control. Counties hold DCLs and appoint contract trappers as external designates for problem beaver; some counties employ Problem Wildlife Specialists. [R1 s.4]",
+    "harvest_reporting_and_sealing": "Mandatory registration at a Fish & Wildlife office for fisher, lynx, otter, wolverine and all bobcat (wolverine skull must be delivered with the pelt). Fur Harvest Reports are required for annual licence renewal; Senior RFMA holders are additionally requested (voluntary) to submit logbooks to the Alberta Furbearer Harvest Program. [R1 s.5]"
+  }
+}

@@ -1,0 +1,1997 @@
+{
+  "schema_version": "1.1",
+  "state": "MB",
+  "state_name": "Manitoba",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Scoping-pass dataset built 2026-11-15 from Manitoba's Trapping of Wild Animals Regulation, M.R. 245/90 (current consolidation, in effect September 17, 2026), the 2026-2027 Manitoba Trapping Guide, The Wildlife Act, and related Manitoba regulations. PROVISIONAL research only - verify against the current regulation and guide before relying on any date, limit, fee, or rule. Manitoba seasons are set by fixed month/day in Schedule A of M.R. 245/90; the dates below are the 2026-27 instances (October-December dates fall in 2026, January-May dates in 2027). Seasons open at 12:00 a.m. on the opening date and close at 11:59 p.m. on the closing date (M.R. 245/90 s. 2).",
+  "sources": [
+    {
+      "id": "mr245-90",
+      "title": "Trapping of Wild Animals Regulation, M.R. 245/90 (current consolidation; in effect September 17, 2026; last amendment M.R. 98/2026)",
+      "type": "regulation",
+      "url": "https://web2.gov.mb.ca/laws/regs/current/245-90.php?lang=en",
+      "notes": "Primary source for all trapping seasons and quotas (Schedule A), approved devices (Schedule B), approved power-assisted snares (Schedule C), trap rules, the 72-hour trap-check interval, Turtle Mountain tagging, and prohibited areas."
+    },
+    {
+      "id": "trapping-guide-2026-27",
+      "title": "2026-2027 Manitoba Trapping Guide (document MG-8691, Rev. 2026; Manitoba Natural Resources and Indigenous Futures)",
+      "type": "official guide (PDF)",
+      "url": "https://www.gov.mb.ca/nrnd/fish-wildlife/pubs/fish_wildlife/trapping_guide.pdf",
+      "notes": "Season schedule cross-checked against M.R. 245/90 Schedule A - the two agree everywhere except muskrat in the Northern Special Trapping District (see verification.known_gaps). Source for licence fees, the RTL system, voluntary harvest reporting, export permits, accidental captures, defence of property, rights-based harvesting, certified-trap phase lists, and the Turn-in-Poachers line."
+    },
+    {
+      "id": "wildlife-act",
+      "title": "The Wildlife Act, C.C.S.M. c. W130 (current as of November 13, 2026)",
+      "type": "statute",
+      "url": "https://web2.gov.mb.ca/laws/statutes/ccsm/w130.php?lang=en",
+      "notes": "Schedule A designates big game (Division 1, including black bear and gray (timber) wolf), fur bearing animals (Division 2, 17 species), and protected species (Division 6, including cougar and polar bear). Section 46 covers defence of property."
+    },
+    {
+      "id": "mr3-96",
+      "title": "Designation of Wild Animals Regulation, M.R. 3/96 (in effect September 22, 2025; last amendment M.R. 77/2025)",
+      "type": "regulation",
+      "url": "https://web2.gov.mb.ca/laws/regs/current/003-96.php?lang=en",
+      "notes": "Designates least weasel as a fur bearing animal (s. 2.1) and lists protected species including grizzly bear and swift fox (s. 3)."
+    },
+    {
+      "id": "mr149-2001",
+      "title": "Trapping Areas and Zones Regulation, M.R. 149/2001 (in effect June 18, 2021)",
+      "type": "regulation",
+      "url": "https://web2.gov.mb.ca/laws/regs/current/149-2001.php?lang=en",
+      "notes": "Defines Open Trapping Area Zones 1-5, the Registered Trapline districts and their sections (Southern RTL District = Turtle Mountain section only), and the Special Trapping Areas/Districts."
+    },
+    {
+      "id": "mr165-91",
+      "title": "Hunting Seasons and Bag Limits Regulation, M.R. 165/91 (in effect June 16, 2026)",
+      "type": "regulation",
+      "url": "https://web2.gov.mb.ca/laws/regs/current/165-91.php?lang=en",
+      "notes": "Coyote hunting (Part 8.1, Schedule H) and gray (timber) wolf hunting (Part 8, Schedule G) under a current-year big game licence."
+    },
+    {
+      "id": "elicensing-faq",
+      "title": "Manitoba elicensing FAQ (gov.mb.ca)",
+      "type": "official web page",
+      "url": "https://gov.mb.ca/elicensing/faqs.html",
+      "notes": "Trapping licence eligibility: Manitoba residents only, age 12+, trapper education graduate certificate with the pre-1990 exemption; an Open Trapping Area licence is valid across Zones 1-5; RTL permit issuance, vacant-line applications, and helper consent."
+    },
+    {
+      "id": "fic-certified-traps",
+      "title": "Fur Institute of Canada - Certified Traps list (updated July 22, 2026)",
+      "type": "AIHTS reference",
+      "url": "https://www.gov.mb.ca/nrnd/fish-wildlife/pubs/fish_wildlife/trapping_guide.pdf",
+      "notes": "Manitoba does not incorporate the FIC list by reference in its regulation; the 2026-2027 Trapping Guide (pp. 25-26) reproduces the FIC certified-trap lists in two phases (Phase 1 mandatory, Phase 2 certified but not yet mandatory). Manitoba's binding device list is M.R. 245/90 Schedule B. The FIC list itself was cross-referenced during the Ontario pass."
+    }
+  ],
+  "license_summary": {
+    "resident_open_area_licence": "Resident (Open Area) Trapping Licence - $14.50 (2026-27 guide figure, incl. 5% GST and a Fish and Wildlife Enhancement Fund portion). Manitoba residents only: no trapping licences are issued to non-residents. The licence is valid in Open Trapping Area Zones 1-5, and a holder may trap in any OTA zone (the zone and Local Fur Council area are recorded at purchase for harvest tracking). Minimum age 12. First-time trappers must hold a trapper education graduate certificate (see trapper_education).",
+    "resident_open_area_licence_treaty": "Resident (Open Area) Licence - Treaty - free. For Treaty/status holders; available through Manitoba elicensing, Conservation Officer Service offices, and most First Nations band offices.",
+    "registered_trapline_permit": "Registered Trapline (RTL) Permit - $15.00 (2026-27). Issued through Conservation Officer Service district offices to the lineholder of a registered trapline section; the lineholder holds exclusive harvest rights on their line, and lines are awarded by competition (not sold or inherited). A person may not hold both an RTL permit and an open trapping area licence in the same trapping year (M.R. 245/90 s. 13), except that a landowner/tenant may hold an open area licence for their own land. Helpers may trap a line with the lineholder's written consent while the lineholder is actively trapping.",
+    "youth_licence": "Youth Trapping Licence/Permit (ages 12-17 on October 1) - free.",
+    "trapper_education": "Mandatory for first-time trappers: a trapper education graduate certificate from a course of at least 9 hours approved by the minister (M.R. 245/90 s. 4), or an equivalent certificate from another jurisdiction. Exam pass mark 80%; courses are usually 2 days or 3 evenings through the Manitoba Trappers Association. Hunter Education does NOT satisfy the requirement. Trappers who obtained a licence or permit before 1990 are exempt; anyone licensed after 1990 without a certificate must complete the course.",
+    "special_trapping_area": "Special Trapping Area (STA) harvest is by permit through Conservation Officer Service offices, with eligibility determined by the Conservation Officer for the area. Muskrat in the Southern Special Trapping District, the Northern Special Trapping District (guide only - see known gaps), Oak Hammock Marsh WMA, and Grant's Lake WMA is by special permit; any furbearer, black bear, or wolf in Game Hunting Area 38 is by special permit only (M.R. 245/90 s. 6).",
+    "dead_wild_animal_possession_permit": "Dead Wild Animal Possession Permit (Furbearer) - $10.50. Required to keep an accidentally captured furbearer; obtain one from a Conservation Officer as soon as possible after the capture. Subsequent accidental captures of the same species are turned over to the Conservation Officer Service and remain Crown property. Exception: open area trappers may not keep an accidentally taken black bear (except in the Northern Special Trapping District).",
+    "export_permit": "Export Permit - $21.00. A provincial export permit is required before shipping raw pelts out of Manitoba (Wildlife Branch, Winnipeg, 431-276-8352, or Conservation Officer Service offices). A federal CITES export permit (Environment and Climate Change Canada) is also required for bobcat, black bear, lynx, river otter, and wolf crossing international borders.",
+    "vendor": "Manitoba elicensing (manitobaelicensing.ca; new platform effective April 1, 2026), vendors, and Conservation Officer Service offices. 2026/27 resident trapping licences went on sale September 1, 2026. RTL permits are issued through COS district offices. All fees include 5% GST plus a Fish and Wildlife Enhancement Fund portion and are stated in the guide as subject to change.",
+    "harvest_reporting": "Harvest reporting is VOLUNTARY in Manitoba (contrast Ontario's mandatory report). Open area licence holders may complete the Trapper Harvest Survey (available until August 31, 2027) or the Furbearer Harvest Report Form / voluntary online questionnaire at manitobaelicensing.ca. Fur dealers must record all transactions and report by the 10th day after the reporting period; processors report quarterly.",
+    "tagging": "Tagging is narrow in Manitoba: a marten, fisher, or river otter taken in the Turtle Mountain Registered Trapline Section (the Southern RTL District) must carry a minister-issued tag or seal on the pelt or unskinned carcass before it is possessed for sale, bought, sold, or disposed of (M.R. 245/90 s. 12).",
+    "rights_based_harvest": "Status First Nations people may generally trap for food, traditional, or ceremonial purposes on reserve lands, wildlife management areas, provincial forests, areas of provincial parks where licensed trapping is permitted, unoccupied Crown lands, community pastures with permission, and private land with permission, without a provincial licence, and are not subject to AIHTS equipment restrictions. Pelts taken under rights may not be sold (sale requires a licence and full compliance). Safety and conservation rules still apply, and protected species may not be taken where prohibited (e.g., wolverine in open trapping areas).",
+    "defence_of_property": "Under The Wildlife Act s. 46, landowners and occupiers may take furbearers, black bear, and wolves in defence of property without a licence; the take must be reported to a Conservation Officer within 10 days (badgers taken this way must also be reported within 10 days), and pelts are not saleable except under permit."
+  },
+  "species": [
+    {
+      "common_name": "Arctic fox",
+      "scientific_name": "Vulpes lagopus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Wildlife Act, Schedule A, Division 2 lists arctic fox as Canis lagopus, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-15",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 15 to March 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": null,
+          "close_date": null,
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": ""
+          },
+          "notes": "CLOSED - Schedule A provides no arctic fox season outside the Barrenlands and Northern Registered Trapline Districts. Null dates mean no season in this area, never an open season."
+        }
+      ],
+      "permit_requirements": "Registered Trapline Permit for the district trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Arctic fox range in Manitoba is the Hudson Bay coast, and the season exists only in the two northernmost RTL districts. Leghold traps for arctic fox require pad inserts, laminated jaws, or offset jaws of at least 5 mm (M.R. 245/90 s. 7(5)). No bait within 10 km of the Hudson Bay coastline unless permitted, and no leghold trap or snare on land within 10 km of the coastline from September 1 to November 15 (ss. 6.1, 6.1.1).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Badger",
+      "scientific_name": "Taxidea taxus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "ALL",
+              "zone_name": "All areas (province-wide)",
+              "area_type": "province-wide",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all areas, November 1 to February 28."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "The American badger (subspecies Taxidea taxus taxus) is listed as Special Concern under the federal Species at Risk Act; the 2026-2027 Trapping Guide confirms this does not change Manitoba trapping. No leghold traps may be used for badger (M.R. 245/90 s. 7(4)). No killing trap is certified for badger under the AIHTS to date (guide, Phase 2 list). Badgers taken in defence of property must be reported to a Conservation Officer within 10 days.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-01",
+          "close_date": "2027-05-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-ALL",
+              "zone_name": "All Open Trapping Area Zones (1, 2, 2A, 3, 4, 5)",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all open trapping area zones, October 1 to May 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-01",
+          "close_date": "2027-05-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas (Registered Trapline districts and Special Trapping Areas)",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, October 1 to May 31. Same dates as the open trapping area row; Schedule A lists the two area groups separately, so both rows are kept."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for beaver (32 models). Leghold traps for beaver may be used only in drowning sets (s. 7(3)). Under-ice beaver snares are the one common-snare exception allowed in the open trapping area (s. 9).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "firearm only (trapping licence)",
+          "land_type": "all",
+          "open_date": "2026-09-16",
+          "close_date": "2026-11-14",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-EASTERN",
+              "zone_name": "Eastern Registered Trapline District (excluding the Whiteshell Registered Trapline Section)",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-INTERLAKE",
+              "zone_name": "Interlake Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-WESTERN",
+              "zone_name": "Western Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "STA-NORTHERN",
+              "zone_name": "Northern Special Trapping District",
+              "area_type": "special trapping district",
+              "note": "Saskeram, Clearwater, and Summerberry Special Trapping Areas plus the Easterville Registered Trapline Section."
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: fall season, September 16 to November 14."
+        },
+        {
+          "method": "firearm only (trapping licence)",
+          "land_type": "all",
+          "open_date": "2027-04-01",
+          "close_date": "2027-05-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-EASTERN",
+              "zone_name": "Eastern Registered Trapline District (excluding the Whiteshell Registered Trapline Section)",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-INTERLAKE",
+              "zone_name": "Interlake Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-WESTERN",
+              "zone_name": "Western Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "STA-NORTHERN",
+              "zone_name": "Northern Special Trapping District",
+              "area_type": "special trapping district",
+              "note": "Saskeram, Clearwater, and Summerberry Special Trapping Areas plus the Easterville Registered Trapline Section."
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: spring season, April 1 to May 31."
+        },
+        {
+          "method": "firearm only (trapping licence)",
+          "land_type": "all",
+          "open_date": "2026-09-16",
+          "close_date": "2026-11-14",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTS-WHITESHELL",
+              "zone_name": "Whiteshell Registered Trapline Section (Eastern RTL District)",
+              "area_type": "registered trapline section",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Whiteshell Registered Trapline Section fall season, September 16 to November 14 (same as the rest of the Eastern district)."
+        },
+        {
+          "method": "firearm only (trapping licence)",
+          "land_type": "all",
+          "open_date": "2027-04-01",
+          "close_date": "2027-05-19",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTS-WHITESHELL",
+              "zone_name": "Whiteshell Registered Trapline Section (Eastern RTL District)",
+              "area_type": "registered trapline section",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Whiteshell Registered Trapline Section spring season, April 1 to May 19 - closes 12 days earlier than the rest of the Eastern district."
+        },
+        {
+          "method": "firearm only (trapping licence)",
+          "land_type": "all",
+          "open_date": null,
+          "close_date": null,
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-ALL",
+              "zone_name": "All Open Trapping Area Zones (1, 2, 2A, 3, 4, 5), excluding the Northern Special Trapping District",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": ""
+          },
+          "notes": "CLOSED - Schedule A provides no black bear season in the open trapping area zones or the Southern Registered Trapline District. Null dates mean no season in this area, never an open season."
+        }
+      ],
+      "permit_requirements": "Registered Trapline Permit (RTL districts) or a resident trapping licence for the Northern Special Trapping District. Black bear may NOT be taken on an Open Area licence in Open Areas 1-5 (2026-2027 Trapping Guide, rule 11).",
+      "notes": "Black bear is big game under The Wildlife Act (Schedule A, Division 1) but is also taken under the trapping regulation. Firearm only - no traps or snares; a bear may not be taken in a den, and a female with cubs may not be taken (M.R. 245/90 s. 7(2)). Open area trappers may not keep an accidentally taken black bear, except in the Northern Special Trapping District. Any black bear in Game Hunting Area 38 may be taken only under a special permit (s. 6). A CITES export permit is required to export across international borders. The guide notes that when only a firearm is used to harvest an animal under a trapping licence, the activity is considered hunting.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Wildlife Act, Schedule A, Division 2 lists bobcat as Felis rufus, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-12-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "ALL",
+              "zone_name": "All areas (province-wide)",
+              "area_type": "province-wide",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all areas, December 1 to February 28."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for bobcat (28 models). A CITES export permit is required to export across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-15",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands Registered Trapline District, November 15 to March 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-ALL",
+              "zone_name": "All Open Trapping Area Zones (1, 2, 2A, 3, 4, 5)",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all open trapping area zones, October 14 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas (Registered Trapline districts other than Barrenlands, and Special Trapping Areas)",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, October 14 to February 28."
+        },
+        {
+          "method": "hunting",
+          "land_type": "all",
+          "open_date": "2026-08-31",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "GHA-ALL-EXC-38",
+              "zone_name": "All Game Hunting Areas except GHA 38",
+              "area_type": "game hunting area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": 1,
+            "possession_limit": null,
+            "limit_notes": "Bag limit 1 coyote (M.R. 165/91 Schedule H). Hunting is under a current-year big game licence, not a trapping licence - see notes."
+          },
+          "notes": "M.R. 165/91 Part 8.1 and Schedule H: a Manitoba resident holding a valid mule deer, white-tailed deer, elk, moose, caribou, or black bear licence for the current hunting year may hunt coyote August 31 to the last day of February of the following year (February 28, 2027; 2027 is not a leap year - verified by calendar check). With an unused big game tag, hunting is limited to the part of the season overlapping that licence's own season; when no big game season is in effect, no tag is needed (s. 29.0.1(2))."
+        }
+      ],
+      "permit_requirements": "Trapping rows: Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped. Hunting row: a current-year Manitoba big game licence (M.R. 165/91 s. 29.0.1).",
+      "notes": "A trapping licence authorizes the holder to trap or shoot coyote in season (M.R. 245/90 s. 3(1)). Leghold traps for coyote require pad inserts, laminated jaws, or offset jaws of at least 5 mm (s. 7(5)). Approved power-assisted snares (Schedule C devices) may be used for coyote anywhere in Manitoba (s. 9). Certified restraining traps for coyote exist under the AIHTS but are Phase 2 in Manitoba - certified, not yet mandatory (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Wildlife Act, Schedule A, Division 2 lists fisher as Martes pennanti, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-01-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-1",
+              "zone_name": "Open Trapping Area Zone 1",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zone 1, November 1 to January 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-01-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "Quota: 2 fisher per registered trapline (M.R. 245/90 Schedule A, Southern Registered Trapline District). The quota runs per registered trapline for the season, not per day."
+          },
+          "notes": "M.R. 245/90 Schedule A: Southern Registered Trapline District, November 1 to January 31, quota 2 fisher per registered trapline."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-15",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to February 15."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for fisher (15 models). Fisher taken in the Turtle Mountain Registered Trapline Section (the Southern RTL District) must carry a minister-issued tag or seal on the pelt or unskinned carcass before it is possessed for sale, bought, sold, or disposed of (s. 12).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Canada lynx. The Wildlife Act, Schedule A, Division 2 lists lynx as Felis canadensis, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-12-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "ALL",
+              "zone_name": "All areas (province-wide)",
+              "area_type": "province-wide",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all areas, December 1 to February 28."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for lynx (26 models). A CITES export permit is required to export across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "American marten.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-01-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-1",
+              "zone_name": "Open Trapping Area Zone 1",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zone 1, November 1 to January 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-01-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "Quota: 8 marten per registered trapline (M.R. 245/90 Schedule A, Southern Registered Trapline District). The quota runs per registered trapline for the season, not per day."
+          },
+          "notes": "M.R. 245/90 Schedule A: Southern Registered Trapline District, November 1 to January 31, quota 8 marten per registered trapline."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-15",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to February 15."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for marten (18 models). Marten taken in the Turtle Mountain Registered Trapline Section (the Southern RTL District) must carry a minister-issued tag or seal on the pelt or unskinned carcass before it is possessed for sale, bought, sold, or disposed of (s. 12).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "American mink. The Wildlife Act, Schedule A, Division 2 lists mink as Mustela vision, an older synonym (also spelled Mustela vison in older works).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-01-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to January 31."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Leghold traps for mink may be used only in drowning sets (M.R. 245/90 s. 7(3)). Submarine traps may be used for mink or muskrat only (s. 7.1). Mink is not a Schedule B species, so the approved-device list does not apply, but the general trap rules do.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2026-11-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-1",
+              "zone_name": "Open Trapping Area Zone 1",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-2",
+              "zone_name": "Open Trapping Area Zone 2",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-2A",
+              "zone_name": "Open Trapping Area Zone 2A",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-3",
+              "zone_name": "Open Trapping Area Zone 3",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-4",
+              "zone_name": "Open Trapping Area Zone 4",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zones 1, 2, 2A, 3 and 4, fall season October 14 to November 30."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2027-03-01",
+          "close_date": "2027-04-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-1",
+              "zone_name": "Open Trapping Area Zone 1",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-2",
+              "zone_name": "Open Trapping Area Zone 2",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-2A",
+              "zone_name": "Open Trapping Area Zone 2A",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-3",
+              "zone_name": "Open Trapping Area Zone 3",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-4",
+              "zone_name": "Open Trapping Area Zone 4",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zones 1, 2, 2A, 3 and 4, spring season March 1 to April 30."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-05-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-5",
+              "zone_name": "Open Trapping Area Zone 5",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-WESTERN",
+              "zone_name": "Western Registered Trapline District (excluding the Camperduck A and Camperduck B Registered Trapline Sections)",
+              "area_type": "registered trapline district",
+              "note": "Camperduck A and Camperduck B have their own spring-only season - see the Gypsumville/Camperduck row."
+            },
+            {
+              "zone_id": "RTL-INTERLAKE",
+              "zone_name": "Interlake Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": "Includes the Gypsumville Registered Trapline Section in this long-season group per Schedule A's wording; the separate spring-only Gypsumville row also appears in Schedule A - see the note on that row."
+            },
+            {
+              "zone_id": "RTL-EASTERN",
+              "zone_name": "Eastern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zone 5 and the Barrenlands, Northern, Western (excluding Camperduck A and B), Interlake, Eastern, and Southern Registered Trapline Districts, October 14 to May 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2027-03-01",
+          "close_date": "2027-04-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTS-GYPSUMVILLE",
+              "zone_name": "Gypsumville Registered Trapline Section (Interlake RTL District)",
+              "area_type": "registered trapline section",
+              "note": ""
+            },
+            {
+              "zone_id": "RTS-CAMPERDUCK-A",
+              "zone_name": "Camperduck A Registered Trapline Section (Western RTL District)",
+              "area_type": "registered trapline section",
+              "note": ""
+            },
+            {
+              "zone_id": "RTS-CAMPERDUCK-B",
+              "zone_name": "Camperduck B Registered Trapline Section (Western RTL District)",
+              "area_type": "registered trapline section",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Gypsumville, Camperduck A, and Camperduck B Registered Trapline Sections, March 1 to April 30. Note the drafting overlap: Schedule A also places the Interlake district (which contains Gypsumville) in the October 14 to May 31 group, while naming Gypsumville separately here with a spring-only season. The dataset reproduces both rows exactly as written; the specific spring-only row should be treated as governing Gypsumville, and the point is flagged in verification.known_gaps."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2026-11-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "STA-SOUTHERN",
+              "zone_name": "Southern Special Trapping District",
+              "area_type": "special trapping district",
+              "note": "Delta, Oak Lake, and Whitewater Lake Special Trapping Areas. Special permit required."
+            },
+            {
+              "zone_id": "WMA-OAK-HAMMOCK",
+              "zone_name": "Oak Hammock Marsh Wildlife Management Area",
+              "area_type": "wildlife management area",
+              "note": "Special permit required; no trapping of fur bearing animals in the WMA except muskrat under this season and permit."
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Southern Special Trapping District and Oak Hammock Marsh WMA, fall season October 14 to November 30, by special permit."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2027-03-01",
+          "close_date": "2027-04-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "STA-SOUTHERN",
+              "zone_name": "Southern Special Trapping District",
+              "area_type": "special trapping district",
+              "note": "Delta, Oak Lake, and Whitewater Lake Special Trapping Areas. Special permit required."
+            },
+            {
+              "zone_id": "WMA-OAK-HAMMOCK",
+              "zone_name": "Oak Hammock Marsh Wildlife Management Area",
+              "area_type": "wildlife management area",
+              "note": "Special permit required; no trapping of fur bearing animals in the WMA except muskrat under this season and permit."
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Southern Special Trapping District and Oak Hammock Marsh WMA, spring season March 1 to April 30, by special permit."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped. Muskrat in the Southern Special Trapping District, Oak Hammock Marsh WMA, and Grant's Lake WMA is by special permit only.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for muskrat (37 named models plus a generic underwater jaw-type trap entry). Muskrat is the one animal for which 110-size body-gripping traps may be used on land (s. 7(1.2)); submarine traps may be used for muskrat or mink (s. 7.1). The 2026-2027 Trapping Guide's season schedule also places the Northern Special Trapping District in the October 14 to May 31 group, but Schedule A does not name it - the dataset follows the regulation; see verification.known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-01",
+          "close_date": "2027-04-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-ALL",
+              "zone_name": "All Open Trapping Area Zones (1, 2, 2A, 3, 4, 5)",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all open trapping area zones, October 1 to April 30."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-04-30",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas (Registered Trapline districts and Special Trapping Areas)",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, October 14 to April 30 - opens two weeks later than the open trapping area season."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for raccoon (30 named models plus a generic foot-encapsulating trap entry).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Includes the cross and silver colour phases, which are red fox. The Wildlife Act, Schedule A, Division 2 lists red fox as Canis vulpes, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-15",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands Registered Trapline District, November 15 to March 31."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, October 14 to February 28."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Leghold traps for red fox require pad inserts, laminated jaws, or offset jaws of at least 5 mm (M.R. 245/90 s. 7(5)). Approved power-assisted snares (Schedule C devices) may be used for red fox anywhere in Manitoba (s. 9). Grey fox is not designated in Manitoba law and has no entry in this dataset - see verification.known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-15",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to February 15."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "No leghold traps may be used for red squirrel (M.R. 245/90 s. 7(4)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Wildlife Act, Schedule A, Division 2 lists river otter as Lutra canadensis, an older synonym.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": null,
+          "close_date": null,
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-1",
+              "zone_name": "Open Trapping Area Zone 1",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": ""
+          },
+          "notes": "CLOSED - Schedule A provides no river otter season in Open Trapping Area Zone 1. Null dates mean no season in this area, never an open season."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "Quota: 2 river otter per registered trapline (M.R. 245/90 Schedule A, Southern Registered Trapline District). The quota runs per registered trapline for the season, not per day."
+          },
+          "notes": "M.R. 245/90 Schedule A: Southern Registered Trapline District, November 1 to February 28, quota 2 river otter per registered trapline."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-2",
+              "zone_name": "Open Trapping Area Zone 2",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-2A",
+              "zone_name": "Open Trapping Area Zone 2A",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-3",
+              "zone_name": "Open Trapping Area Zone 3",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "OTA-4",
+              "zone_name": "Open Trapping Area Zone 4",
+              "area_type": "open trapping area",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-WESTERN",
+              "zone_name": "Western Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Open Trapping Area Zones 2, 2A, 3 and 4 and the Western Registered Trapline District, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to March 31."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Only approved devices listed in M.R. 245/90 Schedule B may be used for river otter (18 models). Leghold traps for river otter may be used only in drowning sets (s. 7(3)). River otter taken in the Turtle Mountain Registered Trapline Section (the Southern RTL District) must carry a minister-issued tag or seal on the pelt or unskinned carcass before it is possessed for sale, bought, sold, or disposed of (s. 12). A CITES export permit is required to export across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Weasel",
+      "scientific_name": "Mustela erminea / Mustela frenata / Mustela nivalis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "One dataset entry covering the short-tailed weasel (Mustela erminea), long-tailed weasel (Mustela frenata; modern taxonomy Neogale frenata), and least weasel (Mustela nivalis), matching Manitoba's single WEASEL heading. The Wildlife Act, Schedule A, Division 2 designates the short-tailed and long-tailed weasels; the least weasel is designated by M.R. 3/96 s. 2.1.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-15",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTHER",
+              "zone_name": "All other areas",
+              "area_type": "province-wide remainder",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all other areas, November 1 to February 15."
+        }
+      ],
+      "permit_requirements": "Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped; trapper education certificate required for first-time trappers.",
+      "notes": "Manitoba regulates all weasels under the single heading WEASEL in M.R. 245/90 Schedule A, so they are modeled as one entry (Ontario, by contrast, splits its three weasels). No leghold traps may be used for weasel (s. 7(4)). Only approved devices listed in Schedule B may be used (26 models). The least weasel was designated a fur bearing animal by M.R. 3/96 s. 2.1, added by M.R. 77/2025.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray (timber) wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-10-14",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "ALL",
+              "zone_name": "All areas (province-wide)",
+              "area_type": "province-wide",
+              "note": "Any wolf in Game Hunting Area 38 may be taken only under a special permit (M.R. 245/90 s. 6)."
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: all areas, October 14 to March 31."
+        },
+        {
+          "method": "hunting",
+          "land_type": "all",
+          "open_date": "2026-08-31",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "GHA-ALL-EXC-18-26-38",
+              "zone_name": "All Game Hunting Areas except GHAs 18, 18A, 18B, 18C, 26 and 38",
+              "area_type": "game hunting area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": 1,
+            "possession_limit": null,
+            "limit_notes": "Bag limit 1 wolf (M.R. 165/91 Schedule G). Hunting is under a current-year big game licence, not a trapping licence - see notes."
+          },
+          "notes": "M.R. 165/91 Part 8 and Schedule G: a Manitoba resident holding a valid mule deer, white-tailed deer, elk, moose, caribou, or black bear licence for the current hunting year may hunt gray (timber) wolf August 31 to March 31. With an unused big game tag, hunting is limited to the part of the season overlapping that licence's own season; when no big game season is in effect, no tag is needed (s. 29(2))."
+        },
+        {
+          "method": "hunting",
+          "land_type": "all",
+          "open_date": "2026-08-31",
+          "close_date": "2027-03-31",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "GHA-18-GROUP",
+              "zone_name": "Game Hunting Areas 18, 18A, 18B, 18C and 26",
+              "area_type": "game hunting area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": 2,
+            "possession_limit": null,
+            "limit_notes": "Bag limit 2 wolves (M.R. 165/91 Schedule G). Hunting is under a current-year big game licence, not a trapping licence - see notes."
+          },
+          "notes": "M.R. 165/91 Part 8 and Schedule G: same licence linkage as the other wolf hunting row; the bag limit is 2 wolves in GHAs 18, 18A, 18B, 18C and 26."
+        }
+      ],
+      "permit_requirements": "Trapping row: Resident (Open Area) Trapping Licence or Registered Trapline Permit, depending on the area trapped. Hunting rows: a current-year Manitoba big game licence (M.R. 165/91 s. 29).",
+      "notes": "The gray (timber) wolf is big game under The Wildlife Act (Schedule A, Division 1) and is also a furbearer taken under the trapping regulation - Manitoba runs it under both regimes, so both a trapping season and big-game-licence hunting seasons are modeled. Only approved devices listed in M.R. 245/90 Schedule B may be used for wolf when trapping (13 models). A CITES export permit is required to export across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": null,
+          "close_date": null,
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "OTA-ALL",
+              "zone_name": "All Open Trapping Area Zones (1, 2, 2A, 3, 4, 5)",
+              "area_type": "open trapping area",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": ""
+          },
+          "notes": "CLOSED - Schedule A provides no wolverine season in the open trapping area zones; the wolverine season exists only on registered traplines. Null dates mean no season in this area, never an open season."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-15",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-WESTERN",
+              "zone_name": "Western Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-INTERLAKE",
+              "zone_name": "Interlake Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-EASTERN",
+              "zone_name": "Eastern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-SOUTHERN",
+              "zone_name": "Southern Registered Trapline District (Turtle Mountain)",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: the registered trapline area excluding the Barrenlands and Northern Registered Trapline Districts, November 1 to February 15."
+        },
+        {
+          "method": "trapping",
+          "land_type": "all",
+          "open_date": "2026-11-01",
+          "close_date": "2027-02-28",
+          "open_time": "12:00 a.m.",
+          "timezone": "America/Winnipeg",
+          "continuous_open": false,
+          "zones": [
+            {
+              "zone_id": "RTL-BARRENLANDS",
+              "zone_name": "Barrenlands Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            },
+            {
+              "zone_id": "RTL-NORTHERN",
+              "zone_name": "Northern Registered Trapline District",
+              "area_type": "registered trapline district",
+              "note": ""
+            }
+          ],
+          "bag_limits": {
+            "daily_bag": null,
+            "season_bag": null,
+            "possession_limit": null,
+            "limit_notes": "No quota stated in Schedule A - unlimited (M.R. 245/90 s. 3(2))."
+          },
+          "notes": "M.R. 245/90 Schedule A: Barrenlands and Northern Registered Trapline Districts, November 1 to February 28."
+        }
+      ],
+      "permit_requirements": "Registered Trapline Permit only - there is no open-area wolverine season.",
+      "notes": "Wolverine is listed as Special Concern under the federal Species at Risk Act; the 2026-2027 Trapping Guide confirms this does not change Manitoba trapping. No leghold traps may be used for wolverine (M.R. 245/90 s. 7(4)). Rights-based harvesters may not trap wolverine in open trapping areas (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "",
+      "notes": "CLOSED - no open season. Striped skunk is not designated a fur bearing animal in The Wildlife Act, Schedule A, or in the Designation of Wild Animals Regulation, M.R. 3/96, and M.R. 245/90 Schedule A sets no season for it; the 2026-2027 Trapping Guide's season schedule likewise omits it (the species appears only in the guide's fur-primeness chart). Its precise legal status (for example, take in defence of property) was not verified from a primary instrument - see verification.known_gaps.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Wildlife Act, Schedule A, Division 6 lists the cougar as Felis concolor, an older synonym.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "",
+      "notes": "CLOSED - protected species under The Wildlife Act, Schedule A, Division 6 (Protected Species). No open season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Polar bear",
+      "scientific_name": "Ursus maritimus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "",
+      "notes": "CLOSED - protected species under The Wildlife Act, Schedule A, Division 6 (Protected Species). No open season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Grizzly bear",
+      "scientific_name": "Ursus arctos",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "",
+      "notes": "CLOSED - protected species under the Designation of Wild Animals Regulation, M.R. 3/96, s. 3. No open season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Swift fox",
+      "scientific_name": "Vulpes velox",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": "",
+      "notes": "CLOSED - protected species under the Designation of Wild Animals Regulation, M.R. 3/96, s. 3. No open season.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "regulation_year_confirmed": true,
+    "confirmation_notes": "Every season date, quota, and area grouping was taken from Schedule A of the Trapping of Wild Animals Regulation, M.R. 245/90 (Manitoba Laws current consolidation, most current version as of November 15, 2026, in effect September 17, 2026, last amendment included M.R. 98/2026) and cross-checked against the season schedule in the 2026-2027 Manitoba Trapping Guide (MG-8691, Rev. 2026) - the two agree everywhere except muskrat in the Northern Special Trapping District (see known_gaps). Manitoba Schedule A uses fixed month/day dates only, with no relative dates; the 2026-27 instances place October-December dates in 2026 and January-May dates in 2027. The dataset's one relative date - the coyote hunting season's 'last day of February of the following year' (M.R. 165/91 Schedule H) - resolves to February 28, 2027 (2027 is not a leap year; verified by calendar check). Hunting rows for coyote and wolf come from M.R. 165/91 (in effect June 16, 2026), Parts 8 and 8.1 and Schedules G and H. Fees are the guide's published 2026-27 figures. Species designations were verified against The Wildlife Act Schedule A and M.R. 3/96; area and district compositions against M.R. 149/2001; licence eligibility against the Manitoba elicensing FAQ. Manitoba lies entirely within the Central Time zone, so every row uses America/Winnipeg (no split, unlike Ontario).",
+    "known_gaps": [
+      "Muskrat, Northern Special Trapping District: the 2026-2027 Trapping Guide's season schedule includes the Northern Special Trapping District in the October 14 to May 31 muskrat group, but M.R. 245/90 Schedule A does not name the district for muskrat. The dataset follows the regulation (no Northern ST District muskrat row). Resolution: written confirmation from the Wildlife Branch, or a regulation amendment.",
+      "Muskrat, Gypsumville overlap inside Schedule A itself: Schedule A places the Interlake RTL District in the October 14 to May 31 group and also names the Gypsumville Registered Trapline Section (an Interlake section under M.R. 149/2001) separately with a spring-only March 1 to April 30 season. Both rows are reproduced as written; the specific spring-only row should be treated as governing Gypsumville. Resolution: Wildlife Branch confirmation.",
+      "Closed-area season rows (arctic fox outside the Barrenlands/Northern RTL districts; black bear in the OTA zones and Southern RTL District; river otter in OTA Zone 1; wolverine in the OTA zones) are modeled as season rows with null open/close dates and a CLOSED note, rather than in species-level notes only. The clone's season engine must treat a null-date row as 'no season in this area' and never as open.",
+      "Weasel is modeled as ONE species entry covering short-tailed, long-tailed, and least weasels, matching Manitoba's instruments (a single WEASEL line in M.R. 245/90 Schedule A). Ontario split its weasels into three entries. A product decision is needed if per-species weasel catch logging is wanted.",
+      "Striped skunk: verified absent - no season in M.R. 245/90 Schedule A, not designated a fur bearing animal in The Wildlife Act Schedule A or M.R. 3/96, and absent from the guide's season schedule (it appears only in the guide's fur-primeness chart). Its precise legal status (e.g., whether it may be taken in defence of property) was not verified from a primary instrument, so it is listed closed with that caveat.",
+      "Grey fox: not designated anywhere in Manitoba law (absent from The Wildlife Act Schedule A and M.R. 3/96) and given no species entry; recorded here so the omission is a decision, not an oversight.",
+      "Zone geography not transcribed: OTA Zone 1-5 boundaries and RTL section boundaries are defined by boundary descriptions and Plan 19319D under M.R. 149/2001, and Game Hunting Area boundaries under M.R. 220/86. A boundaries dataset is a separate task (the Ontario WMU-boundary equivalent).",
+      "Minor guide-vs-regulation wording differences: guide rule 31 includes muskrat in the leghold drowning-set rule, while M.R. 245/90 s. 7(3) names beaver, mink, and river otter only; guide rule 32's phrasing differs slightly from s. 7(4). The dataset follows the regulation text in both cases.",
+      "Fees are the guide's published 2026-27 figures and are stated to be subject to change; re-check manitobaelicensing.ca at build time. The responsible department is now Manitoba Natural Resources and Indigenous Futures (the guide's imprint); older material, including parts of the elicensing site, uses Natural Resources and Northern Development or Conservation and Climate.",
+      "Scientific names use modern standard taxonomy with scientific_name_verified: false throughout. The Wildlife Act Schedule A uses older synonyms for several species (Canis lagopus, Felis rufus, Felis canadensis, Lutra canadensis, Mustela vision, Martes pennanti, Canis vulpes, Felis concolor), noted per species where relevant."
+    ]
+  },
+  "license_url": "https://www.manitobaelicensing.ca",
+  "license_vendor": "Manitoba elicensing (manitobaelicensing.ca); Conservation Officer Service district offices",
+  "regs_url": "https://web2.gov.mb.ca/laws/regs/current/245-90.php?lang=en",
+  "regs_kind": "regulation (M.R. 245/90, current consolidation)",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "tip_line",
+    "label": "Turn-in-Poachers (TIP) line",
+    "note": "Report a violation: Turn-in-Poachers (TIP) line 1-800-782-0076 (2026-2027 Manitoba Trapping Guide, contacts page). General inquiries: 1-800-214-6497 or 204-945-6784 (Winnipeg).",
+    "url": "https://www.gov.mb.ca/nrnd/fish-wildlife/pubs/fish_wildlife/trapping_guide.pdf"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_1": [
+      {
+        "species": "Beaver",
+        "models_approx": 32,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B (killing and restraining devices combined - the regulation does not split them)."
+      },
+      {
+        "species": "Bobcat",
+        "models_approx": 28,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Fisher",
+        "models_approx": 15,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Lynx",
+        "models_approx": 26,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Marten",
+        "models_approx": 18,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Muskrat",
+        "models_approx": 37,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B: 37 named models plus a generic underwater jaw-type trap entry."
+      },
+      {
+        "species": "River otter",
+        "models_approx": 18,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Raccoon",
+        "models_approx": 30,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B: 30 named models plus a generic foot-encapsulating trap entry."
+      },
+      {
+        "species": "Weasel",
+        "models_approx": 26,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Wolf",
+        "models_approx": 13,
+        "note": "Approved devices listed in M.R. 245/90 Schedule B."
+      }
+    ],
+    "certified_restraining_traps_schedule_2": [
+      {
+        "species": "Beaver",
+        "models_approx": null,
+        "note": "The guide's Phase 1 (mandatory) list includes certified restraining traps for beaver (cages). Model counts are in the Fur Institute of Canada list and were not transcribed; Manitoba's binding list is M.R. 245/90 Schedule B."
+      },
+      {
+        "species": "Bobcat",
+        "models_approx": null,
+        "note": "Phase 1 (mandatory) certified restraining traps per the guide; counts not transcribed."
+      },
+      {
+        "species": "Lynx",
+        "models_approx": null,
+        "note": "Phase 1 (mandatory) certified restraining traps per the guide; counts not transcribed."
+      },
+      {
+        "species": "Wolf",
+        "models_approx": null,
+        "note": "Phase 1 (mandatory) certified restraining traps per the guide; counts not transcribed."
+      },
+      {
+        "species": "Coyote",
+        "models_approx": null,
+        "note": "Phase 2 per the guide: certified restraining traps exist for coyote but are NOT yet mandatory in Manitoba; implementation year to be determined, with at least three years' notice promised."
+      },
+      {
+        "species": "Badger",
+        "models_approx": 0,
+        "note": "Phase 2 per the guide: no killing trap is certified for badger to date."
+      }
+    ],
+    "models_note": "This pass captured schedule structure and model counts per species from M.R. 245/90 Schedule B (243 named models plus 2 generic entries across 10 species); individual model names were counted, not transcribed. The Fur Institute of Canada certified-trap list cross-referenced through the 2026-2027 Manitoba Trapping Guide (pp. 25-26) is the July 22, 2026 edition.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "Arctic fox",
+      "Badger",
+      "Black bear",
+      "Coyote",
+      "Mink",
+      "Red fox",
+      "Red squirrel",
+      "Wolverine"
+    ],
+    "note": "Manitoba implements the Agreement on International Humane Trapping Standards through its own approved-device list, not by incorporating the Fur Institute of Canada list by reference: M.R. 245/90 s. 7(1)(e) restricts the ten Schedule B species to the devices listed in Schedule B (243 named models plus 2 generic entries; Schedule B last amended by M.R. 98/2026), and s. 7(1.1) allows any device for species not in Schedule B, subject to the general trap rules. The regulation never uses the word 'certified'; the 2026-2027 Trapping Guide (pp. 24-26) reproduces the FIC certified-trap lists in two phases - Phase 1 certified traps are mandatory (killing traps for beaver, fisher, marten, muskrat, river otter, raccoon, lynx and bobcat, weasel; restraining traps for beaver (cages), bobcat, lynx, wolf), while Phase 2 traps are certified but not yet mandatory (including coyote restraining traps; no killing trap is yet certified for badger), with the implementation year to be determined and at least three years' notice promised. Guide rule 29 matches the Schedule B species list. Three new certified traps were introduced for 2026-27 (guide, minister's message). The guide also carries a trap sales warning: vendors have sold non-certified traps as certified, and the onus is on the trapper. Approved power-assisted snares are listed separately in Schedule C (5 torsion springs, 4 breakaway devices, and a cam lock with teeth) for coyote and red fox.",
+    "manitoba_schedules_url": "https://web2.gov.mb.ca/laws/regs/current/245-90.php?lang=en",
+    "source_updated": "2026-07-22",
+    "source_url": "https://web2.gov.mb.ca/laws/regs/current/245-90.php?lang=en",
+    "trap_rules": [
+      "Seasons open at 12:00 a.m. on the opening date and close at 11:59 p.m. on the closing date (M.R. 245/90 s. 2). Sunday trapping is allowed (s. 5). The trapping year runs September 1 to August 31 (s. 13(4)). The minister may extend a Schedule A season by written notice (s. 3.1).",
+      "Trap check: live holding devices must be inspected at least once every 72 hours (s. 8(1)); live trapping in defence of property must be checked every 24 hours (s. 8(3)). A live-trapped animal must be humanely killed immediately (s. 8(2)). The guide's responsible-trapping advice (not law) is to inspect live-holding devices daily in the early morning.",
+      "Only approved devices listed in Schedule B may be used for beaver, bobcat, fisher, lynx, marten, muskrat, river otter, raccoon, weasel, and wolf (s. 7(1)(e)); any device may be used for a species not in Schedule B (s. 7(1.1)), subject to the general rules.",
+      "No toothed or serrated traps; no hooks; no spring-pole sets; no leghold trap set in a tree or on a pole; leghold jaw spread must not exceed 23 cm (s. 7(1)).",
+      "110-size body-gripping traps (8 named models in the regulation) must not be used on land for any animal other than muskrat (s. 7(1.2)).",
+      "Leghold traps for beaver, mink, and river otter may be used only in drowning sets (s. 7(3)); no leghold traps for badger, red squirrel, weasel, or wolverine (s. 7(4)); leghold traps for coyote, arctic fox, and red fox require pad inserts, laminated jaws, or offset jaws of at least 5 mm (s. 7(5)).",
+      "Black bear: firearm only; not in a den; not a female with cubs (s. 7(2)).",
+      "Submarine traps may be used only for muskrat or mink (s. 7.1).",
+      "Common snares may be used only in the registered trapline area or the Northern Special Trapping District; exceptions are under-ice beaver snares in the open trapping area, power snares anywhere, and approved power-assisted snares (Schedule C devices) for coyote or red fox anywhere (s. 9). A snare on land requires a mechanical locking device that prevents the noose from expanding (s. 9(2.1)).",
+      "Traps and snares on land must be chained, cabled, or wired to a tree, grapple, heavy object, or stake (s. 9.1; the Victor Rat Trap is exempt).",
+      "Hudson Bay coastline: no bait within 10 km unless permitted or licence conditions allow (s. 6.1); no leghold trap or snare on land within 10 km from September 1 to November 15 (s. 6.1.1).",
+      "All traps and snares must be removed before the season closes (s. 10). Every trapped animal must be retrieved (s. 10.1(1)); hides and pelts must not be wasted, abandoned, or allowed to spoil (s. 10.1(2)).",
+      "No trapping in Birds Hill Provincial Park, Beaudry Provincial Park, parts of Pembina Valley Provincial Park, or ecological reserves; muskrat in Grant's Lake WMA, and any furbearer, black bear, or wolf in Game Hunting Area 38, only under a special permit (s. 6)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": null
+    },
+    "check_interval": {
+      "live_holding": "Live-holding devices: 72 hours; live traps for defence of property: 24 hours (secondary table).",
+      "killing": "No check requirement found.",
+      "note": null
+    },
+    "tenure": "Registered Trapline system - 46 community-based RTL sections in the north (lines cannot be sold, inherited or handed down; awarded by competition/scoring) plus Open Area Zones and Special Trapping Areas.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead.",
+    "royalty": "No royalty currently payable - Wildlife Act s. 41 machinery survives, but the current Wildlife Fees Regulation (M.R. 31/92) prescribes fees only; the royalty schedule was removed in the 2016 amendments. [R2 Item 5]",
+    "nuisance_route": "Paid trapping generally prohibited - Wildlife Act s. 18 bars hunting/trapping for hire, gain or remuneration except as permitted. Narrow routes: (i) Targeted Predator Removal Program - a producer with a MASC wildlife-damage claim contacts the Manitoba Trappers Association, which assigns a trapper; trappers are paid time, mileage and equipment plus a per-wolf incentive; lethal only. (ii) Conservation Officer special permits for out-of-season property-protection harvest. Landowner self-help under s. 46 (no licence) must be reported to a CO within 10 days. [R2 Item 3]",
+    "harvest_reporting_and_sealing": null
+  }
+}

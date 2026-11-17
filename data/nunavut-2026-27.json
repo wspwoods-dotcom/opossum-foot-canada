@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.1",
+  "state": "NU",
+  "state_name": "Nunavut",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Nunavut wildlife harvest is governed first by the Nunavut Agreement (the land claim): Inuit harvest rights under Article 5 of the Agreement and s. 10 of the Wildlife Act do not depend on licences or published seasons, and community Hunters and Trappers Organizations (HTOs) and the Nunavut Wildlife Management Board (NWMB) make decisions that no published table captures. The season rows in this dataset describe ONLY the published rules for licensed hunters in the Government of Nunavut's 2026-27 Hunting Regulations Guide. They are not a statement of Inuit harvesting rights. Always verify current rules with a Government of Nunavut Conservation Officer or your local HTO before hunting or trapping. This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "nu-hunting-guide-2026-27",
+      "notes": "Official GN summary of the 2026-27 hunting regulations (April 2026). States it is a summary, not a legal document. Source of every licensed-hunter season row, annual limit and tag fee/surcharge in this dataset, plus residency classes, ages, guide rules, HTO-approval rule, tag-attachment and waste rules, and the Wildlife Office directory. Applies by its own terms to hunters who require a harvesting licence; Inuit rights-based harvest is expressly different. Read 2026-11-15.",
+      "title": "Summary of the Nunavut Hunting Regulations 2026 | 2027 (Department of Environment)",
+      "type": "agency_summary",
+      "url": "https://gov.nu.ca/sites/default/files/documents/2026-04/9694_21_Nunavut_Hunting_Guide_2026-27_eng_apr1.pdf"
+    },
+    {
+      "id": "nu-wildlife-act",
+      "notes": "Official consolidation current to September 18, 2025. Source for: furbearer/big game/small game definitions (s. 2, furbearers = Schedule 5-2 of the Nunavut Agreement); Inuit no-licence harvest right (s. 10) and extensions (ss. 12-14, 16); identification (s. 17); licence requirement (s. 18); furbearer licence eligibility and HTO conditions (ss. 24, 30(4)); licence expiry June 30 (s. 34); AIHTS trap rule (s. 82); Agreement-prevails rule (s. 5(2)); residence = 3 months (s. 4). Read 2026-11-15.",
+      "title": "Wildlife Act, C.S.Nu. c.W-50 (official consolidation)",
+      "type": "legislation",
+      "url": "https://www.nunavutlegislation.ca/sites/default/files/consolidated-law-current/CSNucW50.pdf"
+    },
+    {
+      "id": "nu-harvesting-regulations",
+      "notes": "In force July 1, 2015. Contains NO season dates. Source for trap method prohibitions (s. 5), trap prohibitions (s. 7), 72-hour live-capture trap inspection for furbearers, illegal-bycatch delivery (s. 13), TAH accounting (ss. 16-18) and sanctuary prohibitions (s. 19). Made in accordance with an accepted decision of the NWMB under Wildlife Act s. 157(1). Read 2026-11-15.",
+      "title": "Harvesting Regulations, R-011-2015 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.nunavutlegislation.ca/en/file-download/download/public/5189"
+    },
+    {
+      "id": "nu-licences-tags-regulations",
+      "notes": "In force July 1, 2015. Source for species authorization tags (ss. 39-42: tag required for furbearers, s. 40; big-game-furbearer tag eligibility tied to Act s. 24 and TAH, s. 41; tag cancellation by notching, s. 42) and fur tags (s. 43: required for TAH furbearers; no export or traffic of an untagged pelt). Confirms no licence is required of a person holding a s. 10/12/13/14/16 right. Read 2026-11-15.",
+      "title": "Licences and Tags Regulations, R-012-2015 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.nunavutlegislation.ca/sites/default/files/regulations-annual-volumes/eR0122015.pdf"
+    },
+    {
+      "id": "nu-fees-regulations",
+      "notes": "Registered 2015-05-11. Source for all fee and surcharge figures: Schedule A/B/D licence fees and totals; Schedules E/F/G species authorization tag fees, surcharges and totals (wolf, wolverine, fox, hare, any other furbearer); no fee for fur tags or export permits (s. 1(3)); replacement fee $10 (s. 5). Cross-checked against the 2026-27 Guide tables - they agree, except the Guide's combined 'Hare and Any Other Furbearer' tag-fee row (see known_gaps). Read 2026-11-15.",
+      "title": "Fees Regulations, R-010-2015 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.nunavutlegislation.ca/en/file-download/download/public/5246"
+    },
+    {
+      "id": "nu-reporting-regulations",
+      "notes": "Registered 2015-05-11. Source for mandatory harvest reports for TAH species (s. 15) and commercial record-keeping/monthly reporting by dealers, tanners and taxidermists (s. 7). Read 2026-11-15.",
+      "title": "Reporting Regulations, R-014-2015 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.nunavutlegislation.ca/sites/default/files/regulations-annual-volumes/eR0142015.pdf"
+    },
+    {
+      "id": "nu-prescribed-matters-regulations",
+      "notes": "Registered 2005-07-08 under the Wildlife Act, S.Nu. 2003, c.26. Source for prescribed identification for NWT Aboriginal harvesters (s. 2), prescribed commercial thresholds for raw hides/pelts (s. 13: any raw hide or pelt other than caribou, fair market value $2,000 per year), and export-related prescriptions. Read 2026-11-15.",
+      "title": "Prescribed Matters Regulations, R-010-2005 (Wildlife Act)",
+      "type": "regulation",
+      "url": "https://www.nunavutlegislation.ca/in/file-download/download/public/6450"
+    },
+    {
+      "id": "ca-cites-eccc",
+      "notes": "Federal source: CITES is administered in Canada by Environment and Climate Change Canada under WAPPRIITA; Appendix II species require a Canadian CITES export permit before export, validated by CBSA at exit; permits are not issued retroactively. The page names northern river otter as an Appendix II example. Wolf (Canis lupus), Canada lynx (Lynx canadensis), wolverine (Gulo gulo) and river otter (Lontra canadensis) are CITES Appendix II taxa per the federal CITES checklist / WAPTR Schedule I - the checklist is the operative check before any export. Read 2026-11-15.",
+      "title": "Environment and Climate Change Canada - CITES permits and endangered species trade (canada.ca)",
+      "type": "federal_programme",
+      "url": "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/permits.html"
+    }
+  ],
+  "license_summary": {
+    "ages": "Per the 2026-27 Hunting Guide: a person 12+ may be issued a licence to hunt small game; 16+ for big game; ages 12-16 may be licensed for big game if endorsed by a parent or guardian.",
+    "export_permit": "An export permit is required to export wildlife or parts from Nunavut unless an exemption applies (Wildlife Act and Prescribed Matters Regulations); the export permit itself carries no fee (Fees Regulations R-010-2015 s. 1(3)(d)). GN export guidance ('Leaving Nunavut with animal products? You may need a permit') lists untanned furs among the items to check with a Wildlife Office before export.",
+    "fees": "Fees Regulations R-010-2015: harvesting licence fee $10 for all classes, plus surcharge (resident $5 / non-resident $20 / non-resident foreigner $50) = totals $15 / $30 / $60. Species authorization tag totals (fee + surcharge, Schedules E-G): wolf $15 / $140 / $170; wolverine $15 / $140 / $170; fox $15 / $30 / $70; hare and any other furbearer $10 / $20 / $40. Fur tags: no fee. Export permits: no fee. Licence/tag replacement: $10. Fees payable by an Inuk are the same as for a resident (s. 2(2)) - but see inuit_rights: an Inuk exercising s. 10 rights needs no licence at all.",
+    "fur_tags": "A person who harvests a furbearer for which a TAH is established must attach a fur tag to the hide or pelt (non-reusable attachment, as soon as practicable, may wait until after fleshing). Without the fur tag attached, no person shall export the pelt or hide from Nunavut or traffic in it (Licences and Tags Regulations s. 43). Fur tags expire at the end of June if not attached.",
+    "guides": "Non-residents and non-resident foreigners may hunt big game only through a licensed outfitter accompanied by a professional big game guide; the community HTO approves guides and may waive the guide requirement (2026-27 Hunting Guide).",
+    "harvest_report": "Reporting Regulations R-014-2015 s. 15: a person who harvests a species for which a TAH is established must submit a harvest report (contact information, hunting licence number or enrolment number, tag numbers if any, date and location of harvest, and further prescribed particulars) to a conservation officer. Dealers, tanners and taxidermists keep records of wildlife received and file monthly reports within 10 days after month end, even for nil months (s. 7).",
+    "harvesting_licence": "A harvesting licence is required for anyone without a s. 10/12/13/14/16 right (Wildlife Act s. 18). Small game requires a harvesting licence; big game requires a harvesting licence plus species authorization tag(s). Licences and tags are valid July 1 to June 30 and are not transferable (Guide; Wildlife Act s. 34). There is NO separate trapping licence in Nunavut.",
+    "hto_approval": "Furbearer harvest by licence is HTO-gated: Wildlife Act s. 24 restricts furbearer licences in the Nunavut Settlement Area to 1981 General Hunting Licence holders who actually harvested furbearers, or persons approved and recommended by the local HTO; s. 30(4) makes the licence subject to HTO-imposed terms and conditions. The 2026-27 Guide states the operational rule: arctic foxes, hares and ground squirrels are classed as furbearers and can only be hunted by HTO-approved individuals, and the same applies to big-game furbearers (bears, wolves, wolverines); a Conservation Officer issues the licence only on evidence of HTO approval.",
+    "inuit_rights": "Wildlife Act s. 10: an Inuk with proper identification may harvest wildlife with NO licence, tax or fee, throughout Nunavut, up to the adjusted basic needs level (TAH established) or the full level of economic, social and cultural needs (no TAH). Sections 12-14 extend no-licence harvest rights to Inuit of Northern Quebec, NWT Aboriginal people, and Manitoba/Saskatchewan band members in traditional areas; s. 16 covers assignees. Licences and Tags Regulations confirm no licence is required of a person with a s. 10/12/13/14/16 right. The Nunavut Agreement prevails over the Act in case of conflict (Act s. 5(2)).",
+    "report_violation": "Report hunting violations to the nearest GN Wildlife Office (2026-27 Guide, 'Reporting Hunting Violations'). Department of Environment headquarters: 867-975-7700, environment@gov.nu.ca.",
+    "residency": "Three licensed-hunter classes (Guide; Wildlife Act s. 4): Resident - Canadian citizen or landed immigrant living in Nunavut at least 3 months; Non-resident - Canadian citizen or landed immigrant living outside Nunavut or resident less than 3 months; Non-resident foreigner - neither a resident nor a Canadian citizen.",
+    "species_authorization_tags": "No person who requires a licence shall harvest furbearers (or big game other than white-tailed deer) without a species authorization tag (Licences and Tags Regulations s. 40). The tag is affixed to the licence; on harvest the holder cancels it by notching the licence page to show the date (s. 42). Tags expire at the end of June. Per the Guide, the tag must be attached to the harvested animal as soon as possible, but for wolf and wolverine (and bears) attachment to the raw pelt or hide may wait until immediately after fleshing.",
+    "trap_check": "Live-capture traps used to harvest furbearers must be inspected at least once every 72 hours (Harvesting Regulations R-011-2015, under Wildlife Act s. 82(3))."
+  },
+  "species": [],
+  "verification": {
+    "confirmation_notes": "CONFIRMED from official sources: (1) The Wildlife Act consolidation current to September 18, 2025 was read directly - ss. 2, 4, 5, 10, 12-14, 16-18, 24, 30(4), 34, 82 ground every licensing and rights claim. (2) The Harvesting Regulations R-011-2015 were read directly and contain NO season dates - the absence of a published trapping season table in law is a verified negative, not an oversight. (3) Every licensed-hunter season row comes from the official GN 2026-27 Hunting Regulations Guide (April 2026 PDF on gov.nu.ca), read directly, pp. 19-20 tables. (4) All fees were cross-checked between the Guide tables and the Fees Regulations R-010-2015 Schedules A-G and agree, except the one flagged conflict. (5) Tags and fur tags verified in Licences and Tags Regulations R-012-2015 ss. 39-43; harvest reporting in Reporting Regulations R-014-2015 s. 15. NOT confirmed: regulation_year_confirmed is FALSE because there is no regulation-published season year to confirm - the operative season instrument for licensed hunters is an annual summary guide, and the rights-based system has no season year at all. The dataset is provisional for that structural reason, not for lack of checking.",
+    "known_gaps": [
+      "NO PUBLISHED TRAPPING SEASONS EXIST. The Harvesting Regulations (R-011-2015) contain no season dates, and the GN Hunting Guide publishes hunting tables only. There is no licensed trapping season - and no trapping licence product - anywhere in the official sources. The dataset's rows are licensed-HUNTING rows and must be labelled as such wherever the clone displays them.",
+      "INUIT RIGHTS-BASED HARVEST CANNOT BE DATASET-ED. Wildlife Act s. 10 harvest (no licence, no published season, bounded only by TAH/basic-needs levels) is the majority harvest model in Nunavut and has no dates, zones or limits that a season table can honestly carry. Any clone UI that shows a Nunavut 'season' without the rights-based framing would misstate the law. Resolving this is a design and consultation question (GN Department of Environment, Nunavut Tunngavik, HTOs), not a research question.",
+      "TAHs AND NWMB DECISIONS ARE NOT PUBLISHED AS A TABLE. Total allowable harvests and non-quota limitations are set stock-by-stock by NWMB decision and allocated through RWOs/HTOs. No territory-wide furbearer TAH list was found in official sources. Which furbearer stocks (beyond polar bear) currently carry TAHs - and their community allocations - would require direct inquiry to the NWMB or GN Department of Environment.",
+      "HTO TERMS ARE COMMUNITY-LEVEL AND UNPUBLISHED. Furbearer licences are subject to HTO-imposed terms (Wildlife Act s. 30(4)) and HTO approval is evidenced locally. The content of those terms for any given community is not published centrally and cannot be dataset-ed from official public sources.",
+      "FEE CONFLICT: the 2026-27 Guide's combined 'Hare and Any Other Furbearer' table (tag fee $10/$10/$20, surcharge $5/$5/$20 by class) does not match Fees Regulations R-010-2015 Schedules E-G, which price hare and 'any other furbearer' tags identically at $5/$10/$20 fee and $5/$10/$20 surcharge (totals $10/$20/$40). Recorded as a conflict, not resolved. Confirm with GN before the clone displays any hare/other-furbearer tag price.",
+      "CATCH-ALL ROWS ARE AN INTERPRETATION, FLAGGED AS SUCH. For 11 species (lynx, ermine, least weasel, mink, otter, marten, fisher, beaver, muskrat, red squirrel, arctic ground squirrel) the only licensed-hunter authority is the Guide's 'Hare and Any Other Furbearer' catch-all table. Applying that row species-by-species is the natural reading (the Fees Regulations likewise price an 'any other furbearer' tag), but GN has not published a species-by-species confirmation. Each such row carries the flag in its notes.",
+      "COYOTE: named in the Act and the Harvesting Regulations but given no Guide table, and at most a marginal presence in Nunavut. No season row recorded. GN confirmation needed on whether coyote is treated under the Wolf table, the catch-all, or not at all.",
+      "TIMEZONES: Nunavut spans three time zones (Eastern - America/Iqaluit; Central - America/Rankin_Inlet; Mountain - America/Cambridge_Bay). All rows use America/Iqaluit with this flag; the clone needs community-level timezone handling for Nunavut, since dates are licence-year boundaries (July 1 / June 30) rather than intraday open/close times.",
+      "BEAR HUNTING TABLES NOT TRANSCRIBED. The Guide's Black Bear (p. 16), Polar Bear (p. 16) and Grizzly Bear (p. 17) tables, and the caribou TAH notes, were left out deliberately: bears are hunt-only in Nunavut and the tables are meaningless without the Guide's management-area maps. A follow-on pass could transcribe them if the clone ever covers big-game hunting.",
+      "AIHTS MODEL LISTS: Nunavut publishes no certified-trap schedule. Which FIC-listed models GN Conservation Officers treat as certified for Nunavut purposes under Wildlife Act s. 82(1) was not confirmed with GN in this pass; the dataset records the legal duty and prohibitions only.",
+      "Lemmings, voles and marmots appear in the Act's legal furbearer definition (Schedule 5-2 genera Lemmus, Dicrostonyx, Synaptomys, Phenacomys, Clethrionomys, Microtus, Marmota) but are not harvested furbearers in practice and are not given species entries; porcupine is small game, not a furbearer, and is likewise omitted. The full legal genus list is quoted in the scoping report.",
+      "The Prescribed Matters Regulations on file are R-010-2005, made under the former Wildlife Act (S.Nu. 2003, c.26). Their current consolidation status under the present Act was not independently confirmed in this pass; export-permit exemptions should be re-verified against the current regulation before the clone states them as rules."
+    ],
+    "regulation_year_confirmed": false
+  },
+  "license_url": "https://gov.nu.ca/environment",
+  "license_vendor": "Government of Nunavut, Department of Environment - licences and tags are issued in person at community Wildlife Offices; there is no online licensing service.",
+  "regs_url": "https://gov.nu.ca/sites/default/files/documents/2026-04/9694_21_Nunavut_Hunting_Guide_2026-27_eng_apr1.pdf",
+  "regs_kind": "guide_pdf",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "offices",
+    "label": "Government of Nunavut Department of Environment - Wildlife Offices",
+    "note": "Report violations and direct all licence/tag questions to the nearest Wildlife Office (2026-27 Guide, p. 24). Regional offices: North Baffin Regional Office, Pond Inlet 867-899-7360; South Baffin Regional Office, Iqaluit 867-975-7780; Kivalliq Regional Office, Arviat 867-857-3170; Kitikmeot Regional Office, Kugluktuk 867-982-7440. Community Wildlife Offices serve Arctic Bay, Clyde River, Grise Fiord, Igloolik, Resolute Bay, Pond Inlet, Sanirajak, Kimmirut, Kinngait, Pangnirtung, Qikiqtarjuaq, Sanikiluaq, Arviat, Baker Lake, Chesterfield Inlet, Coral Harbour, Naujaat, Rankin Inlet, Whale Cove, Cambridge Bay, Gjoa Haven, Kugaaruk, Kugluktuk and Taloyoak (numbers in the Guide). Department of Environment headquarters: PO Box 1000, Stn. 1300, Iqaluit, NU X0A 0H0; 867-975-7700; environment@gov.nu.ca.",
+    "url": "https://gov.nu.ca/environment"
+  },
+  "aihts": {
+    "applies": true,
+    "certification_source": "Fur Institute of Canada certified-trap list (national list; Nunavut has no territory-specific schedule).",
+    "legal_basis": "Wildlife Act (C.S.Nu. c.W-50) s. 82(1): no person shall harvest game using a trap unless the trap is certified under the Agreement on International Humane Trapping Standards (AIHTS) by the Minister or another competent authority in Canada for that species, or is certified by the Minister (with the advice of a committee of elders) for a species to which the AIHTS does not apply. Section 82(3): live-capture traps must be checked as prescribed (Harvesting Regulations: at least once every 72 hours for furbearers). Traps must be removed or rendered inoperative when not in use / at the end of the harvest as provided in s. 82.",
+    "models_transcribed": false,
+    "note": "Unlike Ontario, Nunavut law contains NO species-by-species certified-trap schedules. The AIHTS duty in s. 82(1) points outward to certification 'by the Minister or another competent authority in Canada' - in practice the national Fur Institute of Canada certified-traps list. No Nunavut-specific certified-model list was found in any official source in this pass, and none is transcribed here. Additional Nunavut trap law is prohibitory, not schedular: Harvesting Regulations R-011-2015 s. 5 bans jaw-type leghold traps on land for beaver, otter, marten, fisher, muskrat and badger, and bans conventional steel-jawed leghold traps on land for coyote, wolf, bobcat, lynx and raccoon; s. 7 bans toothed or serrated jaws, spring-pole foothold sets, and unfit or unanchored traps.",
+    "no_species_schedules": true,
+    "source_updated": "2026-07-22 (national FIC list, as verified in the Ontario pass; not re-verified for Nunavut in this pass)",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "AIHTS-certified traps required for harvesting game with a trap (Wildlife Act s. 82(1)); for species the AIHTS does not cover, traps may be certified by the Minister with elders-committee advice.",
+      "Live-capture traps used for furbearers must be inspected at least once every 72 hours (Harvesting Regulations R-011-2015, under Wildlife Act s. 82(3)).",
+      "Jaw-type leghold traps are prohibited on land for beaver, otter, marten, fisher, muskrat and badger (Harvesting Regulations s. 5).",
+      "Conventional steel-jawed leghold traps are prohibited on land for coyote, wolf, bobcat, lynx and raccoon (Harvesting Regulations s. 5).",
+      "Traps with toothed or serrated jaws, spring-pole foothold sets, and traps that are unfit or not properly anchored are prohibited (Harvesting Regulations s. 7).",
+      "Wildlife taken illegally as bycatch must be delivered to a conservation officer for certification and disposal (Harvesting Regulations s. 13 and related sections).",
+      "No trapping in prescribed wildlife sanctuaries (Harvesting Regulations s. 19: Bowman Bay, James Bay Special Management Area, Thelon, Twin Islands) - Inuit exercising Agreement rights are exempt from the sanctuary prohibition as provided in the regulation."
+    ]
+  },
+  "harvest_model": {
+    "model_note": "EXTENSION beyond the Ontario/US shape, documented here because the standard season-dataset model does not describe Nunavut. Nunavut has no published trapping season table in law. The Harvesting Regulations (R-011-2015) contain no season dates at all - they regulate methods, trap prohibitions, bycatch, total allowable harvest (TAH) accounting and sanctuaries. Harvest limits, where they exist, are set as TAHs and non-quota limitations by NWMB decision under the Nunavut Agreement and implemented by the Minister (Wildlife Act s. 157); they are allocated to communities and HTOs, not published as a per-species season table.",
+    "rights_based_harvest": "An Inuk with proper identification (enrolment card, Wildlife Act s. 17) may harvest wildlife WITHOUT any licence, tax or fee, throughout Nunavut, up to the adjusted basic needs level where a TAH is established, or up to the full level of his or her economic, social and cultural needs where no TAH is established (Wildlife Act s. 10). Sections 12-14 extend equivalent no-licence rights to Inuit of Northern Quebec, Aboriginal people of the Northwest Territories, and Manitoba and Saskatchewan band members in their traditional areas; s. 16 covers assignees of those rights. The Nunavut Agreement prevails over the Wildlife Act in any conflict (s. 5(2)).",
+    "licensed_harvest": "Persons without an Agreement right need a harvesting licence (Wildlife Act s. 18). A licence to harvest furbearers in the Nunavut Settlement Area may be issued ONLY to (a) a person who held a valid General Hunting Licence on October 27, 1981 and actually harvested furbearers there, or (b) a person approved and recommended by the HTO of the place (s. 24); the licence is subject to any terms and conditions the HTO imposes (s. 30(4)). In practice (2026-27 Hunting Guide): a Conservation Officer issues a furbearer licence only with evidence of local HTO approval. Licensed hunters also need a species authorization tag for furbearers (Licences and Tags Regulations s. 40).",
+    "what_the_season_rows_mean": "Every season row in this dataset is a LICENSED-HUNTER row taken from the GN 2026-27 Hunting Regulations Guide tables. The Guide is a hunting guide; it publishes no separate licensed trapping seasons, and there is no licensed 'trapping licence' product in Nunavut at all. Rows must never be presented as limits on Inuit rights-based harvest.",
+    "tah_species_note": "Where a TAH is established for a furbearer, harvest is accounted against community/HTO allocations, fur tags are required (Licences and Tags Regulations s. 43), and harvest reporting is mandatory (Reporting Regulations R-014-2015 s. 15). No territory-wide published TAH table for furbearers was found in official sources in this pass; TAHs are established stock-by-stock by NWMB decision (polar bear is the prominent furbearer example and is outside trap-log scope)."
+  },
+  "seasons_status": "no_published_trapping_seasons",
+  "seasons_note": "Nunavut has NO published trapping seasons: the Harvesting Regulations (R-011-2015) contain no season dates at all - they regulate methods, trap prohibitions, bycatch, Total Allowable Harvest accounting and sanctuaries. Inuit harvest is rights-based (Wildlife Act s. 10 - no licence, no season in law); non-Inuit furbearer licences require local HTO approval. The source dataset's species rows were derived from the 2026-27 Hunting Guide and are WITHHELD from this pack so no hunting table is presented as a trapping season. Decision pending (Tanner): ship a partial dataset with honest labels, or defer Nunavut.",
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": null
+    },
+    "check_interval": {
+      "live_holding": "Live-capture traps for furbearers: inspect at least once every 72 hours and remove the animal (Harvesting Regulations R-011-2015 s. 5(3)).",
+      "killing": "No interval found for killing traps.",
+      "note": null
+    },
+    "tenure": "No trapline tenure - Nunavut Settlement Area regime; non-Inuit furbearer licence eligibility is gated by the local Hunters and Trappers Organisation (HTO).",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead.",
+    "royalty": null,
+    "nuisance_route": "None found - Wildlife Act s. 97 defence/emergency kills (report ASAP; valuable parts, generally the hide, surrendered to the local HTO under s. 100). Special exemptions under s. 21 are officer-led, not a commercial licence. [R2 Item 3]",
+    "harvest_reporting_and_sealing": "Fur tags (metal bands) evidence lawful harvest where a Total Allowable Harvest share applies. An export permit is required to take untanned furs out of Nunavut. [R1 s.5; NU dataset]"
+  }
+}

@@ -1,0 +1,1030 @@
+{
+  "schema_version": "1.1",
+  "state": "NS",
+  "state_name": "Nova Scotia",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set by regulation and can change. Always verify current regulations with the Nova Scotia Department of Natural Resources before hunting or trapping. Fur harvesting in Nova Scotia is governed by the Wildlife Act, R.S.N.S. 1989, c. 504 and the Fur Harvesting Regulations, N.S. Reg. 165/1987 (amended to N.S. Reg. 25/2026). This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "ns-fur-harvesting-regs",
+      "notes": "The law for fur harvesting: licence qualifications and stamp fee (s. 3), non-resident prohibition (s. 4), open seasons (s. 6), possession dates (s. 7), bag limits and beaver zones (s. 9), pelt stamping (s. 10), methods/equipment, setbacks, trap check, TIN marking, certified-trap rules (s. 11), partnerships (s. 11A), information returns (s. 13), Schedule A certified killing traps and Schedule B certified restraining traps. Read in full 2026-11-15.",
+      "title": "Fur Harvesting Regulations, made under Section 113 of the Wildlife Act, R.S.N.S. 1989, c. 504 (N.S. Reg. 165/1987, amended to O.I.C. 2026-27, N.S. Reg. 25/2026)",
+      "type": "regulation",
+      "url": "https://www.novascotia.ca/Just/Regulations/regs/wifurhrv.htm"
+    },
+    {
+      "id": "ns-2026-summary",
+      "notes": "Official annual summary (Crown copyright, Province of Nova Scotia, 2026). Fur Harvester bag limits and open seasons p. 9; licence costs p. 8; 2026 Fur Harvesting Regulation changes and Trap Compliance Notice p. 5; certifications p. 6; Other Harvestable Wildlife and Sunday-hunting restriction p. 10; mandatory reporting and biological submissions pp. 20-21; bear hunting and snaring p. 24; fur harvester licensing pp. 45-46; fur harvester reports p. 49; traps and snares pp. 50-54; possession and export of pelts pp. 55-56; otter/fisher turn-in p. 56; report a poacher p. 58. Every season date and limit in the p. 9 table agrees with the Fur Harvesting Regulations. Read 2026-11-15.",
+      "title": "2026 Nova Scotia Hunting and Fur Harvesting Summary of Regulations",
+      "type": "agency_summary",
+      "url": "https://novascotia.ca/natr/hunt/pdf/hunting-and-furharvesting-summary-of-regulations.pdf"
+    },
+    {
+      "id": "ns-general-wildlife-regs",
+      "notes": "'Other harvestable wildlife' seasons (s. 3(2): coyote Jan 1 - Dec 31; red squirrel Nov 1 - Feb 28) and landowner damage-prevention take (s. 3(3), incl. skunk and coyote); mandatory submission of biological material (s. 15B). Read 2026-11-15.",
+      "title": "General Wildlife Regulations (N.S. Reg. 205/1987, amended to O.I.C. 2026-27, N.S. Reg. 26/2026)",
+      "type": "regulation",
+      "url": "https://novascotia.ca/just/REGULATIONS/REGS/wigeneral.htm"
+    },
+    {
+      "id": "ns-bear-harvesting-regs",
+      "notes": "Bear hunting season (s. 5), bear snaring season (s. 6), bag limits (s. 7), female-with-cubs prohibition (s. 7A), tagging (s. 8), snaring methods and daily check (s. 10), information return and jaw/skull submission (s. 11); stamp fees (s. 3, incl. Non-Resident Bear Hunting Stamp $124.52 and free resident senior stamps). Read 2026-11-15.",
+      "title": "Bear Harvesting Regulations (N.S. Reg. 60/1988, amended to N.S. Reg. 21/2026)",
+      "type": "regulation",
+      "url": "https://novascotia.ca/just/regulations/regs/wibear.htm"
+    },
+    {
+      "id": "ns-furharvester-report-form",
+      "notes": "'IMPORTANT: You are required to report by April 15 even if you did not trap.' Report online at HuntNS.ca or to the DNR office where the licence was purchased; harvest recorded by county with sets and trap nights; 'Kept' column for pelts retained after April 15; notes that lynx and marten are completely protected and that otter and fisher are mandatory carcass submissions. The 2026-27 deadline (April 15, 2027) is confirmed in the 2026 Summary (pp. 20, 49).",
+      "title": "Fur Harvesters Report Form 2025-26 (Nova Scotia DNR)",
+      "type": "agency_form",
+      "url": "https://novascotia.ca/NATR/hunt/pdf/furharvester-report-form.pdf"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "National AIHTS certified-trap list, updated July 22, 2026. Phase 1 killing traps regulated for beaver, Canada lynx/bobcat, fisher, marten, muskrat, otter, raccoon, weasels; Phase 1 restraining traps for beaver (cage), bobcat, Canada lynx, raccoon, wolf - Note 1 states exclusive use of the certified raccoon restraining traps is currently mandatory only in Ontario, Quebec, Prince Edward Island, New Brunswick and Nova Scotia. Phase 2 (not yet mandatory): coyote restraining traps and raccoon cage/box traps. Nova Scotia's Schedules A and B are drawn from this list but are a regulation snapshot and are not identical to the live list (see known_gaps).",
+      "title": "Fur Institute of Canada - Certified Traps list (AIHTS Implementation in Canada)",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    },
+    {
+      "id": "ns-esa-list",
+      "notes": "American marten (Cape Breton population), Martes americana - Endangered, added 2001. Canada lynx, Lynx canadensis - Endangered, added 2002. Cross-checked against the Department's species-at-risk page (novascotia.ca/natr/wildlife/species-at-risk/), which shows the marten mainland-population listing as pending.",
+      "title": "Categorized List of Species at Risk, made under Section 12 of the Endangered Species Act, S.N.S. 1998, c. 11 (N.S. Reg. 146/2017)",
+      "type": "regulation",
+      "url": "https://www.novascotia.ca/just/REGULATIONS/regs/eslist.htm"
+    },
+    {
+      "id": "ns-hunter-education",
+      "notes": "FT certification requires the Furharvester Education Course: in-person only, fee $65 + HST, registration via HuntNS.ca; FT certification is not transferable to Nova Scotia. Course background (mandatory since 1986, 90% exam pass, TANS cooperation, late summer/early fall delivery) from the Department's Fur Harvester Education page, novascotia.ca/natr/wildlife/furbearers/education.asp.",
+      "title": "Hunter Education in Nova Scotia (Department of Natural Resources) - Furharvester Trained (FT) certification",
+      "type": "agency_page",
+      "url": "https://novascotia.ca/natr/hunt/pdf/hunter-education.pdf"
+    },
+    {
+      "id": "ns-fur-harvester-licence-directory",
+      "notes": "Licence is residents-only; applicants must be 16+ and hold a valid Wildlife Resources Card with FQ or FT certification; purchasable any time after August 1; a Fur Harvester Report Card must be returned; fur harvesters may be required to submit carcasses or parts for scientific purposes. Legislative authority: Wildlife Act ss. 44-45 and the Fur Harvesting Regulations.",
+      "title": "Nova Scotia Permits Directory - Fur Harvester Licence (Department of Natural Resources)",
+      "type": "agency_page",
+      "url": "http://novascotia.ca/sns/paal/dnr/paal097.asp"
+    },
+    {
+      "id": "ns-wildlife-resources-card",
+      "notes": "Wildlife Resources Card required of Nova Scotia residents as proof of certification; new/replacement card $6.25 + HST (free for seniors 65+ by phone). Page dates from the card's 2005-06 rollout - see known_gaps on the fee.",
+      "title": "Wildlife Resources Card (Department of Natural Resources)",
+      "type": "agency_page",
+      "url": "https://novascotia.ca/natr/wrcard/default.asp"
+    }
+  ],
+  "license_summary": {
+    "accidental_catch": "A person who accidentally catches a fur-bearing animal they are not entitled to must forthwith release it alive, OR report it immediately to the Department before removing it from the trap site, OR complete an Accidental Harvest Form before removing it (Fur Harvesting Regulations s. 11(12)). The 2026 Summary: report immediately to a local DNR office (office hours) or 1-800-565-2224 after hours, and complete the Accidental Harvest Form (booklet p. 57). One accidentally caught fisher's pelt may be kept (carcass turned in, pelt stamped); raccoons taken accidentally in fox/coyote sets before the raccoon season may be kept (ss. 6(6)-(7)).",
+    "certified_traps": "Body-gripping traps for beaver, fisher, raccoon, weasel, otter, lynx and bobcat may only be traps listed in Schedule A of the Fur Harvesting Regulations as certified killing traps for that species; muskrat body-grippers only underwater as submersion sets or, on land, if Schedule A-listed for muskrat (ss. 11(20)-(21)). Beaver restraining traps must be Schedule B-listed (s. 11(22)); foot-encapsulating traps for raccoon and leghold traps for lynx/bobcat must be Schedule B-listed restraining traps (s. 11(14)(d),(g)). The schedules are headed 'Certified under the Canadian Trap Certification Program' - the national AIHTS certification administered by the Fur Institute of Canada; the 2026 Summary directs trappers to fur.ca/certified-traps/ for the up-to-date list. See the 'aihts' section of this dataset.",
+    "course": "Furharvester Education Course - mandatory for all first-time fur harvesters since 1986; final examination must be passed with a score of 90% or better. Delivered in person only; fee $65 + HST; registration through HuntNS.ca; courses usually run late summer/early fall and are managed by the Department's Hunter Education Coordinator in cooperation with the Trappers' Association of Nova Scotia (TANS). Completion gives FT (Furharvester Trained) certification; FQ (Furharvester Qualified) is the grandfathered equivalent. FQ is maintained by buying at least one Fur Harvester Stamp every four years - otherwise the course must be retaken before a licence can be issued (Fur Harvesting Regulations s. 3(1A)). FT certification earned outside Nova Scotia is not transferable. An optional hands-on Trapper Education Workshop is held about once a year by TANS.",
+    "fees": "Fur Harvesters Stamp $21.17 + HST (Fur Harvesting Regulations s. 3(3); 2026 Summary p. 8 - 'Fur Harvester Resident $21.17 + HST', DNR offices only). Wildlife Habitat Stamp (base licence) $5.15. Bear Snaring stamp (resident) $26.57 + HST, resident seniors 65+ $0.00; Bear Hunting stamp (resident) $26.57 + HST. Wildlife Resources Card $6.25 + HST for a new or replacement card (Department's Wildlife Resources Card page).",
+    "harvest_report": "Mandatory Fur Harvester Report: every Fur Harvester's Licence holder must submit the Fur Harvester Report Form plus fur-buyer receipt slips by April 15 (April 15, 2027 for 2026-27) - even if they did not trap. Report online at HuntNS.ca, by email (HuntNS@novascotia.ca), or on paper to a local DNR office (Fur Harvesting Regulations s. 13; 2026 Summary pp. 20, 49). Failure to report carries penalties starting from $180 and loss of the opportunity to hold a licence in subsequent years. Report harvest by county, sets and trap nights; pelts retained past April 15 are registered in the report's 'Kept' column - no other permit is needed to retain furs so registered. Bear licence holders must file their information return within 2 weeks of season end (Dec 19, 2026) and submit the lower jaw or skull of any bear killed (Bear Harvesting Regulations s. 11).",
+    "hunting_furbearers": "Under a Fur Harvester's Licence, bobcat, fox, raccoon, weasel and red squirrel have hunting as well as trapping seasons (Fur Harvesting Regulations s. 6(3)). Beaver, muskrat, mink and otter may NOT be taken by firearm or bow unless the animal is confined by a trap (s. 11(1)). Coyote and red squirrel are also 'other harvestable wildlife' under the General Wildlife Regulations, huntable on a base licence alone (coyote year-round; red squirrel Nov 1 - Feb 28). Raccoon night hunting requires a Raccoon Dog Night Training/Hunting Permit.",
+    "licence_types": "Fur Harvester's Licence (residents only; non-residents may not take, trap or possess fur-bearing animals except under a Non-Resident Furbuyers Licence - s. 4). Apprentice registration: a resident under 19 may set and tend traps under the immediate supervision of a licensed fur harvester 19+, identified in writing to the Department; the apprentice's harvest counts toward the supervisor's bag limit (s. 3(2)). Also relevant: Resident Bear Snaring Licence (requires FQ/FT certification) and the base licence (Wildlife Habitat Stamp) alone for 'other harvestable wildlife' hunting (coyote, red squirrel). Trapping in partnership is allowed after written notice to the Department; partners may tend traps marked with a partner's TIN (s. 11A).",
+    "licensing_transition": "Nova Scotia is modernizing licensing through the HuntNS online system (HuntNS.ca): certifications (HT, B, CT, FT, FQ, GT, N) now appear on the client's HuntNS profile, and harvest reports are filed online. Fur Harvester and Bear Snaring licences are still sold at DNR offices only (2026 Summary p. 8). No cutover date affecting the Fur Harvester's Licence was announced in the 2026 Summary.",
+    "pelt_stamping": "Otter and fisher are mandatory turn-in species in 2026-27: turn in the whole skinned carcass to the local DNR district office, exhibit the pelt for stamping, and declare your Wildlife Resources Client Number, date of capture, location of capture and method of kill (Fur Harvesting Regulations s. 10; 2026 Summary pp. 21, 56). To sell an otter or fisher in the round (unskinned), first exhibit the animal at the district office and obtain a Round Permit. No furbuyer may possess a pelt required to be stamped unless it is stamped. Marten and lynx (accidental catches): entire animal must be turned in. Bear: lower jaw or full skull.",
+    "permission": "Trap setbacks (Fur Harvesting Regulations s. 11(3)-(4)): no trap or snare within 274 m of a dwelling, school, playground, athletic field or place of business, or within 182 m of those places plus golf courses, woods operations, agricultural and public buildings, except as the regulation provides (owner/occupier permission, conservation-officer written authorization for nuisance trapping, and exemptions for box traps, under-ice snares, submarine traps, hooded rat traps, and - within 274 m with landowner permission - cable restraints, foot-encapsulating traps, padded modified legholds and small submerged body-grippers, which must still be 182 m from other protected places). Traps/snares are also restricted within 15 m of trails and highways (s. 11(5)-(5C); K-class roads excepted). Do not set traps on posted private forest land where the owner/occupier has posted notice prohibiting trapping (snowshoe hare snares excepted). Dens and beaver dams may not be damaged or destroyed.",
+    "possession": "Pelt possession under a Fur Harvester's Licence: beaver, otter, mink, muskrat, weasel, fisher and bobcat pelts Nov 1 - Apr 15; fox and raccoon pelts Oct 15 - Apr 15; coyote, skunk and red squirrel pelts year-round. Pelts may be kept beyond the possession date if registered in the 'Kept' column of the Fur Harvester Report (Fur Harvesting Regulations s. 7; 2026 Summary pp. 55-56). An export permit from DNR is required to ship furs out of the province (not required when sold or consigned to a licensed Nova Scotia furbuyer). Bobcat, otter and bear are CITES-listed - exporting out of Canada may require a CITES Export Permit.",
+    "quotas": "No quotas in Nova Scotia. Harvest is governed by per-licence bag limits only: bobcat 5 per licence; beaver 30 per licence in Zone 1 and 20 per licence in Zones 2-4 (by the zone of the licence holder's permanent residence); bear 1 (hunting) / 2 (snaring). There is no bag limit for muskrat, fox, mink, otter, skunk, red squirrel, coyote, weasel or raccoon (Fur Harvesting Regulations s. 9).",
+    "report_violation": "Report illegal hunting or trapping to a local DNR office or by phone at 1-800-565-2224 (2026 Summary cover and p. 58). Online: novascotia.ca/natr/enforcement/reportapoacher.asp.",
+    "sunday_hunting": "Sunday hunting is permitted only on designated Sundays: in 2026 the window was extended to the first Sunday immediately following October 1 through the last Sunday in December, for all harvestable species (2026 Summary p. 10). Traps may be checked and trapped animals dispatched on Sundays - a Fur Harvester's Licence holder may use a .22 calibre or smaller rimfire rifle during the fur harvesting season, including Sundays, to dispatch animals in traps (Firearm and Bow Regulations s. 7(1)). The bear snaring season expressly includes Sundays.",
+    "trap_check": "Every trap or snare designed to hold an animal alive - including cable restraints - must be examined at least once every day ('day' = 12:01 a.m. to 11:59 p.m.) (Fur Harvesting Regulations s. 11(9)). Bear snares must likewise be examined at least once every day (Bear Harvesting Regulations s. 10(1B)).",
+    "trap_marking": "Since October 15, 2006, every trap or snare set for a fur-bearing animal must be clearly marked with the setter's TIN (trap identification number); the 2026 Summary directs trappers to mark their Wildlife Resources Client Number permanently on traps and snares. Exempt: traps/snares set for red squirrel, and nuisance-wildlife sets under the General Wildlife Regulations (Fur Harvesting Regulations s. 11(19); 2026 Summary p. 50).",
+    "trapping_licence": "A Fur Harvester's Licence - a valid base licence (Wildlife Habitat Stamp) with a Fur Harvesters Stamp affixed - is required to trap, snare, hunt, shoot or possess any wild furbearer in Nova Scotia (Fur Harvesting Regulations ss. 2, 3). Issued only to Nova Scotia residents who are 16 or older and hold a Wildlife Resources Client Number with FQ or FT certification. Sold at DNR offices only. The licence expires on April 15 following issuance (s. 3(4)); licences can generally be purchased any time after August 1."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 30 beaver per licence (Fur Harvesting Regulations s. 9(2)). The applicable limit is set by the zone in which the licence holder permanently resides (s. 9(2B)); when hunting in a particular zone, that zone's limit applies (s. 9(2C)). Exceeding the limit is an offence except under a Salvage Permit.",
+            "possession_limit": null,
+            "season_bag": 30
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a beaver may not be taken by firearm or bow unless it is confined by a trap (Fur Harvesting Regulations s. 11(1)). Body-gripping traps must be Schedule A certified killing traps for beaver (s. 11(20)); beaver restraining traps must be Schedule B (s. 11(22)). Season: Fur Harvesting Regulations s. 6(3)(a); confirmed in the 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "county_group",
+              "note": "Beaver bag-limit zone (Fur Harvesting Regulations s. 9(2)). The limit that binds a licence holder is the limit for the zone in which they permanently reside (s. 9(2B)); a holder may set aquatic furbearer sets in any zone (s. 9(2A)).",
+              "zone_id": "Zone 1",
+              "zone_name": "Zone 1 - Cape Breton, Inverness, Richmond and Victoria Counties"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 20 beaver per licence (Fur Harvesting Regulations s. 9(2)). The applicable limit is set by the zone in which the licence holder permanently resides (s. 9(2B)); when hunting in a particular zone, that zone's limit applies (s. 9(2C)). Exceeding the limit is an offence except under a Salvage Permit.",
+            "possession_limit": null,
+            "season_bag": 20
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a beaver may not be taken by firearm or bow unless it is confined by a trap (Fur Harvesting Regulations s. 11(1)). Body-gripping traps must be Schedule A certified killing traps for beaver (s. 11(20)); beaver restraining traps must be Schedule B (s. 11(22)). Season: Fur Harvesting Regulations s. 6(3)(a); confirmed in the 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "county_group",
+              "note": "Beaver bag-limit zone (Fur Harvesting Regulations s. 9(2)). The limit that binds a licence holder is the limit for the zone in which they permanently reside (s. 9(2B)); a holder may set aquatic furbearer sets in any zone (s. 9(2A)).",
+              "zone_id": "Zone 2",
+              "zone_name": "Zone 2 - Halifax, Guysborough, Antigonish, Pictou, Colchester, Cumberland and Hants Counties"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 20 beaver per licence (Fur Harvesting Regulations s. 9(2)). The applicable limit is set by the zone in which the licence holder permanently resides (s. 9(2B)); when hunting in a particular zone, that zone's limit applies (s. 9(2C)). Exceeding the limit is an offence except under a Salvage Permit.",
+            "possession_limit": null,
+            "season_bag": 20
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a beaver may not be taken by firearm or bow unless it is confined by a trap (Fur Harvesting Regulations s. 11(1)). Body-gripping traps must be Schedule A certified killing traps for beaver (s. 11(20)); beaver restraining traps must be Schedule B (s. 11(22)). Season: Fur Harvesting Regulations s. 6(3)(a); confirmed in the 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "county_group",
+              "note": "Beaver bag-limit zone (Fur Harvesting Regulations s. 9(2)). The limit that binds a licence holder is the limit for the zone in which they permanently reside (s. 9(2B)); a holder may set aquatic furbearer sets in any zone (s. 9(2A)).",
+              "zone_id": "Zone 3",
+              "zone_name": "Zone 3 - Lunenburg, Kings and Annapolis Counties"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 20 beaver per licence (Fur Harvesting Regulations s. 9(2)). The applicable limit is set by the zone in which the licence holder permanently resides (s. 9(2B)); when hunting in a particular zone, that zone's limit applies (s. 9(2C)). Exceeding the limit is an offence except under a Salvage Permit.",
+            "possession_limit": null,
+            "season_bag": 20
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a beaver may not be taken by firearm or bow unless it is confined by a trap (Fur Harvesting Regulations s. 11(1)). Body-gripping traps must be Schedule A certified killing traps for beaver (s. 11(20)); beaver restraining traps must be Schedule B (s. 11(22)). Season: Fur Harvesting Regulations s. 6(3)(a); confirmed in the 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "county_group",
+              "note": "Beaver bag-limit zone (Fur Harvesting Regulations s. 9(2)). The limit that binds a licence holder is the limit for the zone in which they permanently reside (s. 9(2B)); a holder may set aquatic furbearer sets in any zone (s. 9(2A)).",
+              "zone_id": "Zone 4",
+              "zone_name": "Zone 4 - Yarmouth, Shelburne, Digby and Queens Counties"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified body-gripping (Schedule A) or restraining (Schedule B) traps required. It is an offence to damage or disturb a beaver dam or lodge except as authorized. Pelt possession Nov 1 - Apr 15 under a Fur Harvester's Licence, or as registered 'kept' in the Fur Harvester Report.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a muskrat may not be taken by firearm or bow unless it is confined by a trap (s. 11(1)). Body-gripping traps for muskrat may only be used underwater as a submersion set, or on land if listed in Schedule A as a certified killing trap for muskrat (s. 11(21)). Season: s. 6(3)(a); 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No bag limit. Submarine traps are a standard muskrat set in Nova Scotia.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - a mink may not be taken by firearm or bow unless it is confined by a trap (s. 11(1)). In March, a trap set or maintained for mink must be at least 50% submerged in water or be a box trap (s. 11(18)). No certified trap is required for mink. Season: s. 6(3)(a); 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "American mink. No bag limit; no AIHTS-certified trap requirement in Nova Scotia.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping only - an otter may not be taken by firearm or bow unless it is confined by a trap (s. 11(1)). Body-gripping traps must be Schedule A certified killing traps for otter (s. 11(20)). Season: s. 6(3)(e) (Nov 1 to the last day of February; Feb 28, 2027 - 2027 is not a leap year); 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "MANDATORY TURN-IN SPECIES in 2026-27: the whole skinned carcass must be turned in to a local DNR office and the pelt exhibited for stamping, declaring WRC number, date and location of capture and method of kill (Fur Harvesting Regulations s. 10; 2026 Summary pp. 20-21, 56). A Round Permit is required to sell an otter in the round. The dried pelt must be DNR-stamped before it can be sold to a furbuyer. Otter is CITES-listed; exporting out of Canada requires a CITES Export Permit.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Weasel",
+      "scientific_name": "Neogale frenata and Mustela richardsonii",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The Fur Harvesting Regulations regulate 'weasel' as a single category; the two species present in Nova Scotia are the long-tailed weasel (Neogale frenata) and the short-tailed weasel / ermine (Mustela richardsonii). Standard taxonomy; not stated in the regulations.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season: Fur Harvesting Regulations s. 6(3)(f). In March, traps or snares for weasels are restricted to snares of 20-gauge or smaller wire, rat traps, or box traps (s. 11(17)). Body-gripping traps must be Schedule A certified killing traps for weasel (s. 11(20)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Weasel may also be hunted under a Fur Harvester's Licence in the same period (Fur Harvesting Regulations s. 6(3)(f): 'trapping or hunting of weasel').",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "The regulations set one season for 'weasel', covering the long-tailed weasel and the short-tailed weasel (ermine) found in Nova Scotia. No bag limit.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 5 bobcat per licence (Fur Harvesting Regulations s. 9(1)).",
+            "possession_limit": null,
+            "season_bag": 5
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Body-gripping traps must be Schedule A certified killing traps for bobcat (s. 11(20)); leghold traps for bobcat must be Schedule B certified restraining traps (s. 11(14)(g)). Season: s. 6(3)(b); 2026 Summary p. 9.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 5 bobcat per licence (Fur Harvesting Regulations s. 9(1)).",
+            "possession_limit": null,
+            "season_bag": 5
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Bobcat may be trapped or hunted under a Fur Harvester's Licence in the same period (s. 6(3)(b)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Bag limit 5 per licence - the only furbearer besides beaver and bear with a bag limit in Nova Scotia. Bobcat is CITES-listed; exporting out of Canada requires a CITES Export Permit.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season: Fur Harvesting Regulations s. 6(3)(d); 2026 Summary p. 9 (FOX and COYOTE). Leghold traps may be set for fox (s. 11(14)(e)); no certified trap required.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Fox may be trapped or hunted under a Fur Harvester's Licence in the same period (s. 6(3)(d)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No bag limit. Pelt possession Oct 15 - Apr 15 under a Fur Harvester's Licence, or as registered 'kept'. Voluntary coyote/fox carcass collection for disease monitoring ran fall 2024 - winter 2026 (2026 Summary p. 48).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping under a Fur Harvester's Licence (Fur Harvesting Regulations s. 6(3)(a)); 2026 Summary p. 9. A Fur Harvester licence or a Nuisance Wildlife permit is required to trap or snare skunk (2026 Summary p. 46).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limit stated. Take is restricted to the owner or occupier of the property (or their agent) for the purpose of preventing damage to property (General Wildlife Regulations s. 3(3)(g)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "hunting",
+          "notes": "Skunk is classed as 'other harvestable wildlife': the owner or occupier of property (or their agent) may take skunk at any time of year to prevent property damage (General Wildlife Regulations s. 3(3)(g)). There is no general open hunting season for skunk. Skunk pelts may be possessed year-round without a permit; an export permit is required to ship a pelt out of the province (2026 Summary p. 46).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Classed as 'Other Harvestable Wildlife' in Nova Scotia along with coyote and red squirrel. No certified trap required.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season: Fur Harvesting Regulations s. 6(3)(f). In March, traps or snares for squirrels are restricted to snares of 20-gauge or smaller wire, rat traps, or box traps (s. 11(17)). Traps and snares set for red squirrel are exempt from the TIN/WRC marking requirement (s. 11(19)(a)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Red squirrel may be trapped or hunted under a Fur Harvester's Licence in the same period (Fur Harvesting Regulations s. 6(3)(f)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limit (General Wildlife Regulations s. 3(2)(b)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Red squirrel is also 'other harvestable wildlife' huntable with only a Wildlife Habitat Stamp (base licence), Nov 1 - Feb 28 (General Wildlife Regulations s. 3(2)(b)). The 2026 Summary's Other Harvestable Wildlife table (p. 10) prints the end date as Feb 27, 2027 - Feb 28, 2027 is a Sunday, outside the designated Sunday-hunting window; the regulation date (Feb 28) is modelled here. See verification.known_gaps.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Classed as 'Other Harvestable Wildlife' as well as a fur-bearing animal - two licence bases apply (see season rows). Pelts may be possessed year-round. No certified trap required.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping under a Fur Harvester's Licence (Fur Harvesting Regulations s. 6(3)(d)); 2026 Summary p. 9 (FOX and COYOTE). Leghold traps for coyote must be modified leghold traps (laminated, offset, padded, or cable-restraint type) (s. 11(14)(f)). A Fur Harvester licence or a Nuisance Wildlife permit is required to trap or snare coyote (2026 Summary p. 46).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limit (General Wildlife Regulations s. 3(2)(a)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Coyote is 'other harvestable wildlife': it may be hunted year-round (January 1 to December 31) with only a Wildlife Habitat Stamp (base licence) - no Fur Harvester's Licence needed to hunt coyote (General Wildlife Regulations s. 3(2)(a); 2026 Summary p. 10). Landowners/occupiers may also take coyote at any time to prevent property damage (s. 3(3)(f)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No bag limit. Pelts may be possessed year-round without a permit. As of the 2028-29 trapping season, AIHTS-certified traps will be required for the live capture of coyotes (2026 Summary, Trap Compliance Notice, p. 5) - Phase 2 of the national AIHTS implementation; not yet mandatory in 2026-27.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season: Fur Harvesting Regulations s. 6(3)(a); 2026 Summary p. 9. Foot-encapsulating traps for raccoon must be Schedule B certified restraining traps (s. 11(14)(d)); body-gripping traps must be Schedule A certified killing traps for raccoon (s. 11(20)). Raccoons taken accidentally in a trap lawfully set for fox or coyote before the raccoon season may be kept (s. 6(7)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Fur Harvesting Regulations s. 9(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting season: Fur Harvesting Regulations s. 6(3)(c); 2026 Summary p. 9. Night hunting of raccoons (Oct 15 - Mar 31) requires a Raccoon Dog Night Training/Hunting Permit, both stamps, and landowner consent on private land; raccoon dog training runs Jul 1 - Mar 31 but killing is not permitted until Oct 15 (2026 Summary p. 47).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No bag limit. Pelt possession Oct 15 - Apr 15. As of the 2028-29 trapping season, AIHTS-certified traps will be required for raccoon box traps (2026 Summary, Trap Compliance Notice, p. 5); certified restraining (foot-encapsulating) traps are already mandatory for raccoon foothold sets.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 1 bear regardless of sex (Bear Harvesting Regulations s. 7(1)). A female bear accompanied by cubs may not be taken (s. 7A).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2026-12-05",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Season is defined as the second Monday of September to the first Saturday of December (Bear Harvesting Regulations s. 5) - computed for 2026: Mon Sep 14 to Sat Dec 5, 2026 (calendar-verified); matches the 2026 Summary p. 10. Bear is NOT a 'fur-bearing animal' under the Wildlife Act; it is included here because bear snaring is a certified-fur-harvester activity, paralleling the Ontario dataset's inclusion of black bear.",
+          "open_date": "2026-09-14",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit 2 bears regardless of sex for snaring (Bear Harvesting Regulations s. 7(2)).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2026-12-05",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Bear SNARING season: Oct 1 to the first Saturday of December, including Sundays (Bear Harvesting Regulations s. 6) - computed close: Sat Dec 5, 2026 (calendar-verified); matches the 2026 Summary p. 10. Resident Bear Snaring Licence required; holder must be certified as a qualified fur harvester (FQ or FT); non-residents may not snare bear (s. 4(4)). Cable foot snare only; no snare within 100 ft (30.48 m) of a common or public highway boundary; snares examined at least once every day (s. 10). Tagging on kill (s. 8); report and lower jaw/skull submission due within 2 weeks of season end - Dec 19, 2026 (s. 11; 2026 Summary p. 20). Method recorded as 'trapping' (snaring); the app method vocabulary has no separate snaring value.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Nova Scotia has no fur-harvesting zones; seasons are province-wide (the only zones in the Fur Harvesting Regulations are the beaver bag-limit zones).",
+              "zone_id": "NS",
+              "zone_name": "Nova Scotia (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "bear_hunting_licence",
+        "bear_snaring_licence"
+      ],
+      "notes": "Bear gallbladders must be sealed with a permanently attached locking seal before sale or export (seal $6.22 + HST at DNR offices). Exporting bear or bear parts out of Canada may require a CITES Export Permit. In Moose Management Zones 2, 3 and 4 (Cape Breton), possession/use of rifles, shotguns and muzzleloaders for bear hunting is prohibited Sep 14 - Oct 11, 2026 by Ministerial Order; bear hunting there may be done by trapping, snaring or crossbow.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED - no open season. 'No person shall at any time take, hunt, kill, trap or snare or possess a lynx, fisher, cougar or marten' (Fur Harvesting Regulations s. 6(5)); the 2026 Summary (p. 9) lists LYNX, MARTEN and FISHER as 'Closed season'. Exception: a licensed fur harvester may keep the pelt of ONE fisher taken accidentally in a trap lawfully set for another species, but the whole skinned carcass must be turned in to a DNR office and the pelt stamped (s. 6(6); s. 10; 2026 Summary pp. 9, 21, 56). Fisher is a mandatory carcass-submission species in 2026-27 for this reason. Note: the Summary's licensing section (p. 46) still lists fisher among 'harvestable furbearers' for licence purposes - the season is closed regardless.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the Categorized List of Species at Risk under the Nova Scotia Endangered Species Act (N.S. Reg. 146/2017).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED - completely protected in Nova Scotia (Fur Harvesting Regulations s. 6(5); 2026 Summary pp. 9, 46). The Cape Breton population is listed as Endangered under the Nova Scotia Endangered Species Act (listed 2001; Categorized List, N.S. Reg. 146/2017); a mainland-population listing is shown as pending on the Department's species-at-risk page. Accidentally caught marten must be released alive and reported; a dead animal must be turned in to a DNR office immediately (entire animal - mandatory biological submission, 2026 Summary p. 20).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the Categorized List of Species at Risk under the Nova Scotia Endangered Species Act (N.S. Reg. 146/2017).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED - completely protected in Nova Scotia (Fur Harvesting Regulations s. 6(5); 2026 Summary pp. 9, 46). Listed as Endangered under the Nova Scotia Endangered Species Act (listed 2002; Categorized List, N.S. Reg. 146/2017); the remaining population is restricted to two areas in the Cape Breton highlands. Accidentally caught lynx must be released alive and reported; a dead animal must be turned in to a DNR office immediately (entire animal - mandatory biological submission, 2026 Summary p. 20). NOTE: Schedule A/B of the Fur Harvesting Regulations still list certified traps 'for lynx' (a legacy of the national AIHTS list) - there is no lynx season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED - no person shall at any time take, hunt, kill, trap or snare or possess a cougar (Fur Harvesting Regulations s. 6(5)); the 2026 Summary (p. 46) lists cougar among 'completely protected furbearers'. Cougar is not listed under the Nova Scotia Endangered Species Act, and there is no confirmed resident wild population in Nova Scotia - the operative protection is the Fur Harvesting Regulations and the Wildlife Act. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "Every furbearer season date and bag limit was verified in the Fur Harvesting Regulations (N.S. Reg. 165/1987, consolidated to N.S. Reg. 25/2026, effective January 26, 2026) and cross-checked against the official 2026 Hunting and Fur Harvesting Summary of Regulations, p. 9 table - the two agree on every date and limit, including the four beaver zones. Relative dates computed and calendar-verified for 2026-27: 'last day of February' = February 28, 2027 (2027 is not a leap year); bear hunting 'second Monday of September' = September 14, 2026 and 'first Saturday of December' = December 5, 2026 (Sep 14, 2026 is a Monday; Dec 5, 2026 is a Saturday - both confirmed by calendar check and by the 2026 Summary p. 10). Coyote and red squirrel 'other harvestable wildlife' seasons and landowner take verified in the General Wildlife Regulations s. 3. Bear seasons, limits, tagging and reporting verified in the Bear Harvesting Regulations and cross-checked at 2026 Summary pp. 10, 20, 24. Closed-species statuses verified in Fur Harvesting Regulations s. 6(5) and, for lynx and American marten, the NS Endangered Species Act Categorized List (N.S. Reg. 146/2017). AIHTS adoption verified three ways: the Schedule A/B headers in the Fur Harvesting Regulations ('Certified under the Canadian Trap Certification Program'), the 2026 Summary 'Approved traps' section pointing to fur.ca/certified-traps/, and the FIC certified list itself (updated July 22, 2026), whose Note 1 names Nova Scotia as a province where exclusive use of the certified raccoon restraining traps is mandatory. Report-a-violation line 1-800-565-2224 verified on the 2026 Summary cover and p. 58.",
+    "known_gaps": [
+      "Red squirrel 'other harvestable wildlife' hunting end date: the General Wildlife Regulations s. 3(2)(b) say February 28, but the 2026 Summary's table (p. 10) prints Feb 27, 2027. Feb 28, 2027 is a Sunday outside the designated Sunday-hunting window, which likely explains the Summary's print (the same table ends snowshoe hare hunting Feb 27 but hare snaring Feb 28). Modelled per the regulation (Feb 28) with the discrepancy noted in the season row; DNR confirmation is a small follow-on if the clone displays Other Harvestable Wildlife seasons.",
+      "Nova Scotia's Schedule A/B (Fur Harvesting Regulations, updated by N.S. Reg. 25/2026) vs the live FIC certified list (July 22, 2026): the lists are close but not identical - e.g., the DAM 330 appears on the FIC Phase 1 beaver killing list but not in Schedule A as consolidated. The regulation schedule is the law in Nova Scotia. A model-by-model diff is a follow-on task.",
+      "Full model-by-model transcription of Schedules A and B not done in this pass (structure and model counts only - approx. 193 models across both schedules).",
+      "Wildlife Resources Card fee ($6.25 + HST) is taken from the Department's Wildlife Resources Card page, which dates to the card's 2005-06 rollout; the 2026 Summary does not print a card fee and certifications now live on the HuntNS profile. Re-confirm the current card fee before launch.",
+      "Trap Compliance Notice wording: the 2026 Summary (p. 5) states that as of the 2028-29 trapping season only AIHTS-certified traps will be required 'for the live capture of coyotes and raccoon box traps', pointing to a Department PDF ('certified-traps-recommended-not-mandatory.pdf'). The notice's exact scope was read from the Summary PDF's text layer, which garbles some passages; re-verify the exact wording against the linked Department PDF before the clone states it as a rule. It does not affect any 2026-27 season row.",
+      "The 2026 Summary's methods-summary tables (pp. 15-18: weapon-by-weapon permissions by species) did not extract cleanly from the PDF text layer. Weapon rules in this dataset come from the Fur Harvesting Regulations s. 11 and the Firearm and Bow Regulations s. 7 instead. If the clone displays weapon tables, re-extract them from the printed booklet.",
+      "Sunday hunting: the exact list of designated Sundays for the 2026-27 season (expanded for 2026 per the Minister's message in the Summary) was not transcribed; the dataset records regulation dates with open_time null. Hunting (as distinct from trapping/tending) remains prohibited on non-designated Sundays.",
+      "Cougar protection wording rests on Fur Harvesting Regulations s. 6(5) and the Summary's 'completely protected furbearers' list; cougar is not on the NS Endangered Species Act Categorized List and its designation (if any) as 'protected wildlife' under Wildlife Act s. 49 was not separately verified in this pass.",
+      "American marten: the Department's species-at-risk page shows a mainland-population ESA listing as 'pending'. The Fur Harvesting Regulations close marten province-wide regardless of the listing's progress."
+    ],
+    "regulation_year_confirmed": true
+  },
+  "license_url": "https://huntns.ca",
+  "license_vendor": "Nova Scotia Department of Natural Resources (Fur Harvester licences at DNR offices only; reports and most other licences via HuntNS.ca)",
+  "regs_url": "https://www.novascotia.ca/Just/Regulations/regs/wifurhrv.htm",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a poacher (Nova Scotia DNR)",
+    "note": "1-800-565-2224 - report illegal hunting or trapping to a local DNR office or by phone at 1-800-565-2224 (2026 Summary cover; p. 58). The same line takes after-hours accidental-catch reports. Online reporting: novascotia.ca/natr/enforcement/reportapoacher.asp",
+    "url": "https://novascotia.ca/natr/enforcement/reportapoacher.asp"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_1": [
+      {
+        "models_approx": 25,
+        "note": "Schedule A of the Fur Harvesting Regulations.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 19,
+        "note": "Schedule A lists 'Bobcat and Lynx' as one combined list.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 19,
+        "note": "Same combined 'Bobcat and Lynx' list as bobcat. Lynx has NO open season in Nova Scotia - the listing is a legacy of the national certified list.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 13,
+        "note": "Fisher has NO open season in Nova Scotia - the listing is a legacy of the national certified list.",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 37,
+        "note": "On land, only Schedule A muskrat traps may be used as body-grippers; underwater, any jaw-type submersion set is permitted (s. 11(21)).",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": 16,
+        "note": "",
+        "species": "River otter"
+      },
+      {
+        "models_approx": 32,
+        "note": "",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 26,
+        "note": "Covers the weasel species present in Nova Scotia.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_restraining_traps_schedule_2": [
+      {
+        "models_approx": 6,
+        "note": "Cage/live beaver traps ('beaver restraining traps', s. 11(22)).",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 7,
+        "note": "Includes Belisle footsnares and specified Oneida Victor soft-catch/offset-laminated leghold configurations.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 5,
+        "note": "Lynx has NO open season in Nova Scotia - legacy listing.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 5,
+        "note": "Foot-encapsulating traps (Bridger T3, Duffer, Duke DP, Egg Trap, Lil' Grizz Get'rz). Mandatory for raccoon foothold sets (s. 11(14)(d)).",
+        "species": "Raccoon"
+      }
+    ],
+    "models_note": "This pass captured schedule structure and model counts per species from Schedules A and B of the Fur Harvesting Regulations (as updated by N.S. Reg. 25/2026), not the full model-by-model list. Full transcription is a defined follow-on task (see the scoping report). Certification is not the same as current manufacturing: several certified models are legacy/discontinued. Do not present the certified list as a shopping list without a retailer-availability check. That check was not done in this pass.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "Mink",
+      "Red fox",
+      "Striped skunk",
+      "Red squirrel",
+      "Coyote (Phase 2 - certified restraining traps certified nationally but not yet mandatory; Nova Scotia has announced mandatory AIHTS-certified traps for live capture of coyotes from the 2028-29 season)",
+      "Raccoon cage/box traps (Phase 2 - mandatory in Nova Scotia from the 2028-29 season per the 2026 Summary Trap Compliance Notice)"
+    ],
+    "note": "Nova Scotia adopts the national AIHTS certification (the Canadian Trap Certification Program, administered by the Fur Institute of Canada) by embedding the certified lists in its own regulation as Schedule A (killing traps) and Schedule B (restraining traps) of the Fur Harvesting Regulations. The regulation schedules - not the live FIC web list - are the legal lists in Nova Scotia, and the two are close but not identical (see verification.known_gaps). The 2026 Summary's 'Approved traps' section states: 'Certain trap types must meet the requirements of the Agreement on International Humane Trapping Standards (AIHTS). Approved traps are updated periodically. Check online for an up-to-date list: fur.ca/certified-traps/.'",
+    "ns_schedules_url": "https://www.novascotia.ca/Just/Regulations/regs/wifurhrv.htm",
+    "source_updated": "July 22, 2026",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "Certified coyote restraining traps and raccoon cage/box traps mandatory from 2028-29 (provincial notice). Nova Scotia is also a FIC Note 1 province for raccoon restraining traps. [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Daily - failing to check a snare or trap at least once every day is an offence (Fur Harvesting Regulations s. 11(9)); bear snares also daily (s. 10(1)(c)).",
+      "killing": "Daily - the rule covers snares and traps generally, unlike most provinces.",
+      "note": null
+    },
+    "tenure": "No trapline tenure - Fur Harvester Licence plus Fur Harvesters Certificate.",
+    "trap_id_requirement": "REQUIRED - every trap or snare for a fur-bearing animal must be clearly marked with the trapper's TIN (Trap Identification Number) (Fur Harvesting Regulations s. 11(19), in force since Oct 15, 2006). Exceptions: red squirrel sets and nuisance trapping; traps marked with a partner's TIN may be tended by that partner. Verified in regulation text. [R2 Item 6]",
+    "royalty": "None - the Fur Harvesting Regulations (consolidation amended to Jan 26, 2026) contain no royalty. [R2 Item 5]",
+    "nuisance_route": "Paid route exists - licensed Nuisance Wildlife Operator (defined as a person who traps/kills/frightens/excludes nuisance wildlife 'for compensation or reward'; the closest Canadian analogue to a US NWCO licence), plus a free Nuisance Wildlife Permit (Wildlife Act s. 28) issued same-day to an owner/occupier authorizing them or their agents. [R1 s.4]",
+    "harvest_reporting_and_sealing": "Hunter/fur-harvester information returns are mandatory - failing to submit is an offence. The regulations also provide for stamping of pelts. [R1 s.5]"
+  }
+}

@@ -1,0 +1,1255 @@
+{
+  "schema_version": "1.1",
+  "state": "SK",
+  "state_name": "Saskatchewan",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set annually and can change. Always verify current regulations with the Saskatchewan Ministry of Environment before hunting or trapping. Trapping in Saskatchewan is governed by The Wildlife Act, 1998, The Wildlife Regulations, 1981 (W-13.1 Reg 1) and The Fur Animals Open Seasons Regulations (W-13.12 Reg 4). This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "sk-fur-seasons-regs",
+      "notes": "The law for season dates. Section 4 lists every fur animal season (dates inclusive, s. 3); s. 2 defines the northern and southern fur conservation areas. Consolidation as amended by Saskatchewan Regulations 74/2017. Read 2026-11-15.",
+      "title": "The Fur Animals Open Seasons Regulations, W-13.12 Reg 4",
+      "type": "regulation",
+      "url": "https://publications.saskatchewan.ca/api/v1/products/32635/formats/39653/download"
+    },
+    {
+      "id": "sk-wildlife-regs",
+      "notes": "The law for licences, traps, fur conservation areas and traffic in wildlife. Definitions s. 2 (certified trap (h.12), certified restraining trap (h.11), fur animal (m)); permitted hunting s. 4; protected wildlife s. 6; landowner exemptions s. 6.2; traps s. 24; beaver/bear/cougar s. 25; fur licences ss. 32-35; harvest surveys s. 31.4; cougar possession s. 31.21; import/export s. 51; shipment s. 53; fur conservation areas ss. 55-59; Table 3 fur licence fees. Consolidation as amended through SR 73/2026 (Oct 9, 2026). Read 2026-11-15.",
+      "title": "The Wildlife Regulations, 1981, W-13.1 Reg 1",
+      "type": "regulation",
+      "url": "https://publications.saskatchewan.ca/api/v1/products/1602/formats/2841/download"
+    },
+    {
+      "id": "sk-trapping-page",
+      "notes": "Ministry trapping landing page: licence fees (SFCA $45, NFCA $25, Youth free, Treaty Indian free), TIPP line 1-800-667-7561, Fur Program and Trappers Guide links, Wildlife Management Zone map. Read 2026-11-15.",
+      "title": "Trapping - Government of Saskatchewan (saskatchewan.ca)",
+      "type": "agency_page",
+      "url": "https://www.saskatchewan.ca/residents/parks-culture-heritage-and-sport/hunting-trapping-and-angling/trapping"
+    },
+    {
+      "id": "sk-trapping-licences-page",
+      "notes": "Eligibility (Saskatchewan residents only; 3-month residence + Health Services Card), Wildlife Habitat Certificate requirement, youth rules (12-18; NFCA only as block member; under 16 no firearm), first-time trapper education / equivalency test, born after Jan 1, 1971 firearm safety requirement, HAL purchase routes and phone 1-855-848-4773. Read 2026-11-15.",
+      "title": "Trapping Licences - Government of Saskatchewan (saskatchewan.ca)",
+      "type": "agency_page",
+      "url": "https://www.saskatchewan.ca/residents/parks-culture-heritage-and-sport/hunting-trapping-and-angling/trapping/buy-a-trapping-licence"
+    },
+    {
+      "id": "sk-fur-program",
+      "notes": "Ministry of Environment summary of the Saskatchewan Fur Program, revised January 15, 2019. Used as the cross-check against the regulation: its season table agrees with W-13.12 Reg 4 s. 4 on all 21 listed species rows, including raccoon and skunk 'Open Season' and swift fox 'Protected Species - Closed'. Its 2019 licence fees ($40 SFCA, $20 NFCA) are superseded by Table 3 ($45/$25) and are not used. Read 2026-11-15.",
+      "title": "Saskatchewan Fur Program - Summary of Regulations, Policy and Associated Programs",
+      "type": "agency_summary",
+      "url": "https://pubsaskdev.blob.core.windows.net/pubsask-prod/76577/76577-TRAPPING_-_POLICY_AND_REGS_-_SASKATCHEWAN_FUR_PROGRAM_-_UPDATED_JANUARY_2019.pdf"
+    },
+    {
+      "id": "sk-wild-species-at-risk-regs",
+      "notes": "Swift fox (Vulpes velox) listed as Endangered in Appendix 2. Black-footed ferret listed as extirpated (Appendix 1) per the ministry Fur Program summary; its current listing was not re-verified against this consolidation in this pass. Read 2026-11-15.",
+      "title": "The Wild Species at Risk Regulations, W-13.11 Reg 1",
+      "type": "regulation",
+      "url": "https://publications.saskatchewan.ca/#/products/1609"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "National AIHTS certified-trap list. Saskatchewan adopts this list by reference in The Wildlife Regulations, 1981, s. 2(h.11) and (h.12). Updated July 22, 2026. Read 2026-11-15.",
+      "title": "Certified Traps - AIHTS Implementation in Canada (Fur Institute of Canada)",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    },
+    {
+      "id": "hal-key-dates",
+      "notes": "Official HAL licensing system key dates: fur licences go on sale April 1; 2026 fur licences remain valid until August 31, 2027; Annual Status of Furbearers Survey March 1 to April 30. Read 2026-11-15.",
+      "title": "Saskatchewan Licensing - Key Dates (HAL)",
+      "type": "agency_page",
+      "url": "https://hfsk-cui.castatic.reserveamerica.com/cust.keydates.page"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "Saskatchewan adopts the Fur Institute of Canada certified-trap lists by reference: 'certified trap' and 'certified restraining trap' are defined as traps on the FIC lists certified under AIHTS (The Wildlife Regulations, 1981, s. 2(h.11) and (h.12)). See the 'aihts' section of this dataset.",
+    "course": "First-time trappers must satisfy s. 33(1)(a): be a Saskatchewan resident, hold a firearm safety/hunter education certificate, and either obtain a mark set by the minister on a minister-approved trapping examination, have previously held a lawful trapping licence in Saskatchewan or elsewhere, or have completed a minister-approved trapping course. In practice: a recognized humane trapper education course or an equivalency test at a Ministry of Environment office (pass mark 75%). Courses are delivered by the Saskatchewan Trappers Association in the south and the Northern Saskatchewan Trappers Association in the north. Persons born after January 1, 1971 must graduate from a firearm safety/hunter education course to hold a fur licence. Youth aged 12 to 15 must be accompanied by a parent or guardian when using a firearm while trapping; youth under 16 may not use a firearm while trapping.",
+    "fees": "Southern Fur Conservation Area Fur Licence $45; Northern Fur Conservation Area Fur Licence $25; Saskatchewan Resident Youth Fur Licence no fee; Saskatchewan Treaty Indian Fur Licence no fee (The Wildlife Regulations, 1981, Table 3, includes GST; confirmed on saskatchewan.ca). Saskatchewan Wildlife Habitat Licence $20 including GST (s. 37.1); Veteran Wildlife Habitat Licence $0 (s. 37.11). Resident Fur Dealer Licence $65 plus an agent fee (maximum 3 agents); Non-resident Fur Dealer Licence $480 (Table 3).",
+    "fur_conservation_areas": "The province is split into two fur conservation areas (The Wildlife Regulations, 1981, s. 55): the Northern Fur Conservation Area (NFCA) - non-leased provincial land north of the Highway 3 / Highway 35 / Highway 49 line to the Manitoba border, plus the North Saskatchewan River / Township 44 block and Duck Mountain Provincial Park - and the Southern Fur Conservation Area (SFCA), the rest of the province. The NFCA is divided into trapping blocks (88 in 1946, per the ministry Fur Program summary), each run by its members through a Representative Council of up to 5 members (s. 56) with a certificate of registration and map (s. 57). A trapper must be voted in by block members to trap there; a licence holder inactive for two years relinquishes block privileges (s. 58). Unallocated vacant Crown land north of the block line is treated as NFCA special areas, open without block membership (ministry Fur Program summary).",
+    "harvest_report": "There is no Ontario-style season-end harvest report filed by individual trappers. Harvest is monitored through Fur Dealer Returns of Pelts Purchased (dealers report monthly, by the 5th, under s. 41) and Fur Export Permits. The minister may require a licence holder to complete and return a hunter harvest survey as a licence condition (s. 31.4); the Annual Status of Furbearers Survey runs March 1 to April 30 each year. NFCA trappers must provide the director, on request, any information the director requires (s. 59(2)).",
+    "hunting_furbearers": "A fur licence holder may hunt fur animals other than bears or cougars with a firearm during an open fur season, provided they are not accompanying or assisting a big game hunter. Cougar may be harvested under a fur licence by trap or snare only; a firearm may only dispatch a cougar already restrained (s. 25(2)(b)). Black bear under a fur licence: in the NFCA only by a trapper conducting normal bear-trapping operations; in the SFCA only after the bear is restrained in a mechanically activated foot snare (s. 25(2)(a)). Saskatchewan residents may hunt coyotes with a firearm without a licence (s. 32(3) in the SFCA; s. 36(5)). Raccoons and skunks may be hunted without a licence outside special areas (s. 4(1)(f), (g)).",
+    "licence_types": "Southern Fur Conservation Area Fur Licence; Northern Fur Conservation Area Fur Licence (valid only in the trapping block or zone specified on the licence, s. 34); Saskatchewan Resident Youth Fur Licence (free; ages 12 to 19, s. 37.2; same rights as an SFCA or NFCA licence); Saskatchewan Treaty Indian Fur Licence (free; valid only for sale of furs taken on an Indian Reserve). SFCA licences may be bought through HAL (www.saskatchewanhal.ca) or at Ministry offices; NFCA and youth licences only at Ministry of Environment field offices.",
+    "licence_validity": "Fur licences go on sale April 1 through HAL and at Ministry offices. A fur licence plus a Wildlife Habitat Licence is valid for trapping and possessing unprocessed fur until August 31 following the date of issue (s. 31(11)).",
+    "pelt_sale_export": "A fur licence (or fur dealer licence, special permit, or Treaty Indian Fur Licence) is required to sell unprocessed pelts or parts of fur animals (s. 32(1.1)). A Fur Export Permit is required before shipping or moving raw fur pelts out of Saskatchewan to another province or country (The Wildlife Act, 1998, s. 31(1)). A CITES permit is additionally required to ship pelts or parts of black bear, bobcat, lynx, otter and wolf across international borders. Shipments of wildlife must be tagged or marked with the owner's name and address, the licence number under which the wildlife was taken, and the contents (s. 53).",
+    "permission": "Southern fur conservation area: trap only on land where you have permission from the landowner or occupant (or the controlling government agency for Crown land); consent rules under The Wildlife Act, 1998, s. 41 and The Wildlife Regulations, 1981, s. 6.01. Northern fur conservation area: trap only in the trapping block or zone on your licence, and only as a voted-in block member (ss. 34, 55-57). Landowners and occupants have prior trapping rights on waters bordering their land in the SFCA (s. 35). No traps or firearms within 500 metres of an occupied building, stockade or corral without the owner's consent (s. 13). Fur licences are not valid in national parks; trapping in most provincial parks requires the written authority of the park manager.",
+    "quotas": "No bag or possession limits are set in The Fur Animals Open Seasons Regulations. Harvest is controlled in the northern fur conservation area by licence-stated limits: the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (s. 59).",
+    "report_violation": "Turn in Poachers and Polluters (TIPP) line 1-800-667-7561, 24 hours, 7 days a week (saskatchewan.ca).",
+    "snares": "Nets and snares for fur animals require a licence for the purpose, except snares for rabbits or squirrels, snares under ice, and mechanically activated foot snares (s. 24(1)). Free-hanging neck snares require a Special Permit from the ministry; they may not be used in the southern fur conservation area except for livestock predation control. Power snares and power-assisted snares require a licence issued by the director under s. 6(2) (s. 24(2)(j)). All snares must have a locking device (s. 24(2)(h)).",
+    "trap_check": "Return to every trap or snare to check it: at least every 24 hours if set in the southern fur conservation area in a town or city with a population over 1,000 people or within 5 km of one, and for mechanically activated foot snares set for black bear in the southern fur conservation area; at least every 72 hours elsewhere in the southern fur conservation area; at least every 120 hours in the northern fur conservation area (s. 24(3)).",
+    "trapping_licence": "A fur licence is required to hunt any fur animal (The Wildlife Regulations, 1981, s. 32(1)), together with a Saskatchewan Wildlife Habitat Licence or a Veteran Wildlife Habitat Licence. Fur licences are available to Saskatchewan residents only (s. 31(2)(a); s. 33(1)(a)). A fur licence plus a habitat licence is valid for trapping and possessing unprocessed fur until August 31 following the date of issue (s. 31(11))."
+  },
+  "species": [
+    {
+      "common_name": "Badger",
+      "scientific_name": "Taxidea taxus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "No certified body-gripping trap is required for badger under s. 24(2)(k), but badger is one of the 12 AIHTS species; certified restraining traps exist for it. A landowner or occupant may kill a badger without a licence to protect property on their land (s. 6.2(4)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Northern fur conservation area, not including protected areas, provincial parks and recreation sites (Fur Animals Open Seasons Regulations, s. 4(b)(i)). Black bear may only be taken with mechanically activated foot snares (Wildlife Regulations, s. 24(1.1)); in the NFCA a trapper conducting normal bear-trapping operations may shoot a bear (s. 25(2)(a)(i)).",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "fur_conservation_area",
+              "note": "Northern Fur Conservation Area as constituted by The Wildlife Regulations, 1981, s. 55(1) and (1.1).",
+              "zone_id": "SK-NFCA",
+              "zone_name": "Northern Fur Conservation Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Wildlife management zones in the southern fur conservation area open for black bear hunting as specified in The Open Seasons Game Regulations, 2009 (s. 4(b)(iii)). In the SFCA a bear may only be shot once captured and restrained in a mechanically activated foot snare (s. 25(2)(a)(ii)).",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "The Open Seasons Game Regulations, 2009 specify which SFCA wildlife management zones are open for black bear hunting; the ministry's 2019 Fur Program summary listed WMZs 30, 34-50, 52-55 and 68N. The current list was not verified in this pass - see known gaps.",
+              "zone_id": "SFCA-WMZ-BEAR",
+              "zone_name": "Southern Fur Conservation Area wildlife management zones open for black bear"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Protected areas, provincial parks and recreation sites open for the hunting of black bear as specified in The Open Seasons Game Regulations, 2009 (s. 4(b)(ii)).",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "special_area",
+              "note": "Protected areas, provincial parks and recreation sites that are open for the hunting of black bear as specified in The Open Seasons Game Regulations, 2009.",
+              "zone_id": "SK-PARKS",
+              "zone_name": "Protected areas, provincial parks and recreation sites open for black bear"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Black bear is 'big game' in Saskatchewan (The Wildlife Regulations, 1981, s. 2(d)). The rows above are the fur-licence trapping seasons; black bear hunting under a big game licence has its own seasons in The Open Seasons Game Regulations, 2009, which are not modelled here. A CITES permit is required to ship bear pelts or parts across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)). Foot-hold traps set in water for beaver must be set so the animal drowns when caught (s. 24(2)(c)). No person shall shoot a beaver in the southern fur conservation area without the permission of the owner or occupant of the land (s. 25(1)). In rural municipalities that have passed an open-season bylaw, beavers may be hunted without a licence (s. 4(2)); a fur licence is still required to sell the pelts.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)). A CITES permit is required to ship bobcat pelts or parts across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Under a fur licence, cougar may be harvested by trap or snare only; a firearm may only be used to dispatch a cougar already captured and restrained in a trap or snare (s. 25(2)(b)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence",
+        "cougar_possession_permit"
+      ],
+      "notes": "Anyone who kills a cougar under a fur licence or a special permit must immediately apply to a wildlife officer for a permit authorizing possession and present the cougar for inspection; the officer may seal or mark it, and the seal or mark must be maintained permanently (s. 31.21). No cougar pelt or part may be sold without that permit (s. 32(1.2)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Northern fur conservation area (Fur Animals Open Seasons Regulations, s. 4(e)(i)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "fur_conservation_area",
+              "note": "Northern Fur Conservation Area as constituted by The Wildlife Regulations, 1981, s. 55(1) and (1.1).",
+              "zone_id": "SK-NFCA",
+              "zone_name": "Northern Fur Conservation Area"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Southern fur conservation area, 'throughout the year' (s. 4(e)(ii)). Modelled as continuous_open with the full season-year span; confirm against the app's season logic before launch.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "fur_conservation_area",
+              "note": "Southern Fur Conservation Area as constituted by The Wildlife Regulations, 1981, s. 55(1.2).",
+              "zone_id": "SK-SFCA",
+              "zone_name": "Southern Fur Conservation Area"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "A Saskatchewan resident may hunt coyotes with a firearm in the southern fur conservation area without any licence (s. 32(3); see also s. 36(5)). A fur licence is required to trap or snare coyotes anywhere, and to sell coyote pelts. Rural municipalities may run coyote harvest incentive (bounty) programs; check the local RM office for current programs.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Season covers red, silver and cross colour phases (ministry Fur Program summary). No certified body-gripping trap is required for red fox under s. 24(2)(k).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Arctic fox",
+      "scientific_name": "Vulpes lagopus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "No certified body-gripping trap is required for Arctic fox under s. 24(2)(k).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)). A CITES permit is required to ship lynx pelts or parts across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "No certified body-gripping trap is required for mink under s. 24(2)(k). Foot-hold traps set in water for mink must be set so the animal drowns when caught (s. 24(2)(c)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)). The Fur Institute of Canada list includes 'any jaw-type killing trap' for muskrat. Foot-hold traps set in water for muskrat must be set so the animal drowns when caught (s. 24(2)(c)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)). Foot-hold traps set in water for otter must be set so the animal drowns when caught (s. 24(2)(c)). A CITES permit is required to ship otter pelts or parts across international borders.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "The regulation says 'squirrel' without qualification; red squirrel is the trapped species. Red squirrels are excluded from the unprotected rodentia in s. 4(1)(e), so they may only be taken in this season. Snares for squirrels (and rabbits) do not require the snare licence (s. 24(1)(a)). No certified body-gripping trap is required for squirrel under s. 24(2)(k).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Ermine",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "The seasons regulation says 'weasel'; ermine (short-tailed weasel), least weasel and long-tailed weasel are the three weasels in the province. Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "The seasons regulation says 'weasel'; see Ermine entry. Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Long-tailed weasel",
+      "scientific_name": "Neogale frenata",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "The seasons regulation says 'weasel'; see Ermine entry. Also given as Mustela frenata in older references. Certified body-gripping trap required (The Wildlife Regulations, 1981, s. 24(2)(k)). 'Certified trap' means a body-gripping trap on the Fur Institute of Canada list of quick-kill traps certified under the Agreement on International Humane Trapping Standards (The Wildlife Regulations, 1981, s. 2(h.12)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "Wolf is 'big game' in Saskatchewan (The Wildlife Regulations, 1981, s. 2(d)). This row is the fur-licence trapping season; wolf hunting under a big game Wolf Licence has its own seasons in The Open Seasons Game Regulations, 2009, which are not modelled here - see known gaps. A CITES permit is required to ship wolf pelts or parts across international borders. The ministry's Wolf Management Area program lets participating rural municipalities designate residents who may kill wolves without a licence at any time on lands where they have permission (a fur licence is still required to sell the pelts).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag or possession limit is set in The Fur Animals Open Seasons Regulations. In the Northern Fur Conservation Area the director may limit the number of fur animals a licensee may take in a trapping block or zone, and no holder shall take more than the number stated on his or her fur licence without the director's prior authorization (The Wildlife Regulations, 1981, s. 59).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_licence"
+      ],
+      "notes": "No certified body-gripping trap is required for wolverine under s. 24(2)(k); wolverine is not among the species addressed under AIHTS in Saskatchewan (ministry Fur Program summary). COSEWIC lists wolverine as Special Concern.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No season and no limit; raccoon is unprotected wildlife under s. 4(1)(g). A fur licence is required to sell the pelt (s. 32(1.1)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No season is set for raccoon in The Fur Animals Open Seasons Regulations; the ministry's Fur Program summary lists 'Open Season'. A fur licence is required to trap raccoon and to sell raccoon pelts (ministry Fur Program reading of ss. 32(1) and 32(1.1)) - see known gaps.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No season and no limit; raccoon is unprotected wildlife under s. 4(1)(g).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Any person may hunt raccoons without a licence outside game preserves, refuges, parks and other special areas (s. 4(1)(g)). The ministry's Fur Program summary reads the no-licence exemption as southern fur conservation area and firearm only - see known gaps.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [],
+      "notes": "Raccoon has no season in The Fur Animals Open Seasons Regulations and is unprotected wildlife (The Wildlife Regulations, 1981, s. 4(1)(g)): it may be hunted without a licence, year-round, outside special areas. The ministry's Fur Program summary reads the no-licence exemption as southern fur conservation area and firearm only, with a fur licence required to trap raccoon and to sell pelts. The dataset follows the ministry reading; confirm with the ministry before launch. Species-level permit_requirements is left empty because the hunting row needs no licence; the trapping row's licence requirement is in its notes.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No season and no limit; skunk is unprotected wildlife under s. 4(1)(f). A fur licence is required to sell the pelt (s. 32(1.1)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No season is set for skunk in The Fur Animals Open Seasons Regulations; the ministry's Fur Program summary lists 'Open Season'. A fur licence is required to trap skunk and to sell skunk pelts (ministry Fur Program reading of ss. 32(1) and 32(1.1)) - see known gaps.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No season and no limit; skunk is unprotected wildlife under s. 4(1)(f).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Any person may hunt skunks without a licence outside game preserves, refuges, parks and other special areas (s. 4(1)(f)). The ministry's Fur Program summary reads the no-licence exemption as southern fur conservation area and firearm only - see known gaps.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Regina",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Season applies province-wide under The Fur Animals Open Seasons Regulations, s. 4. Licensing and access still differ between the Northern and Southern Fur Conservation Areas.",
+              "zone_id": "SK-ALL",
+              "zone_name": "Province-wide"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [],
+      "notes": "Striped skunk has no season in The Fur Animals Open Seasons Regulations and is unprotected wildlife (The Wildlife Regulations, 1981, s. 4(1)(f)): it may be hunted without a licence, year-round, outside special areas. Same licence ambiguity as raccoon - see that entry and known gaps. Species-level permit_requirements is left empty because the hunting row needs no licence; the trapping row's licence requirement is in its notes.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Swift fox",
+      "scientific_name": "Vulpes velox",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season. Swift fox is listed as Endangered in Appendix 2 of The Wild Species at Risk Regulations (W-13.11 Reg 1) and is fully protected; it may not be killed even to protect property (The Wildlife Regulations, 1981, s. 6.2(4) expressly excepts swift fox and black-footed ferret from the landowner property-defence killing right). Dens are protected (Wild Species at Risk Regulations, s. 5(1)). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black-footed ferret",
+      "scientific_name": "Mustela nigripes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season. Listed as extirpated in The Wild Species at Risk Regulations and reintroduced in southwest Saskatchewan (ministry Fur Program summary); it is expressly excepted from the landowner property-defence killing right (The Wildlife Regulations, 1981, s. 6.2(4)). Its current listing was not re-verified against the current W-13.11 Reg 1 in this pass - see known gaps. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All trapping season dates taken from The Fur Animals Open Seasons Regulations, W-13.12 Reg 4, s. 4 (consolidation as amended by SR 74/2017; dates inclusive per s. 3), and cross-checked row-by-row against the ministry's Saskatchewan Fur Program summary (revised January 15, 2019) season table - the two agree on all 21 listed species rows, including raccoon and skunk 'Open Season' and swift fox 'Protected Species - Closed'. Licence, trap and fur conservation area rules verified in The Wildlife Regulations, 1981, W-13.1 Reg 1 (consolidation as amended through SR 73/2026, Oct 9, 2026). Licence fees cross-checked between Table 3 and saskatchewan.ca (SFCA $45, NFCA $25, Youth free, Treaty Indian free). TIPP line 1-800-667-7561 verified on saskatchewan.ca. Swift fox protection verified in The Wild Species at Risk Regulations, W-13.11 Reg 1, Appendix 2 (Endangered) and Wildlife Regulations s. 6.2(4). All season dates are fixed calendar dates; no relative dates required computation for 2026-27 (February 2027 has 28 days; 2027 is not a leap year). Timezone is America/Regina province-wide; Saskatchewan does not observe daylight saving time.",
+    "known_gaps": [
+      "The 2026-27 Trappers Guide was not read directly in this pass (the Publications Centre link did not resolve to a fetchable product in this session). Season dates were verified against the regulation itself and cross-checked against the ministry Fur Program summary, which agreed on all 21 rows. Re-check against the current Trappers Guide before launch.",
+      "Southern fur conservation area black bear WMZ list: the regulation ties the SFCA bear season to wildlife management zones open under The Open Seasons Game Regulations, 2009; the 2019 Fur Program summary listed WMZs 30, 34-50, 52-55 and 68N. The current Open Seasons Game Regulations WMZ list was not verified in this pass.",
+      "Wolf and black bear HUNTING seasons under big game licences (The Open Seasons Game Regulations, 2009) are not modelled - only the fur-licence trapping rows are. This includes the reported 2026-27 extension of the wolf hunting season to close March 15, 2027, which is known only from a Saskatchewan Trappers Association letter (a secondary source) and was not verified against the regulation.",
+      "Raccoon and skunk licence edge: s. 4(1)(f) and (g) of The Wildlife Regulations, 1981 permit any person to hunt skunks and raccoons without a licence outside special areas, while the ministry's Fur Program summary reads the no-licence exemption as southern fur conservation area and firearm only, with a fur licence required to trap them and to sell their pelts. The dataset follows the ministry reading; confirm with the ministry before launch.",
+      "Black-footed ferret: its current listing in The Wild Species at Risk Regulations was not re-verified against the current W-13.11 Reg 1 consolidation in this pass (the Fur Program summary lists it as extirpated, reintroduced). The operative fact - no open season - is certain.",
+      "Fur dealer licence Table 3 item 5: resident dealer $65 'plus, fee for each agent to a maximum of three' - the per-agent fee amount did not survive text extraction of the consolidation. Dealer fees are peripheral to the trapper dataset.",
+      "Licence validity: the Fur Program summary (2019) says fur licences are valid October 1 to September 30; the current regulation (s. 31(11)) and HAL both say a fur licence plus a Wildlife Habitat Licence remain valid for trapping and possessing unprocessed fur until August 31 following the date of issue. The dataset follows the regulation and HAL.",
+      "NFCA trapping block and zone boundaries, and wildlife management zone boundaries, are separate datasets. Block certificates of registration (name, number, council, map, zones) are held at the director's office (s. 57); the Fur Program summary records 88 blocks established in 1946. The dataset references the two fur conservation areas only.",
+      "Scientific names are standard accepted taxonomy, not independently verified against a taxonomic authority in this pass (scientific_name_verified is false throughout).",
+      "Table 7 of The Wildlife Regulations, 1981 (rural municipalities closed to hunting fur animals with dogs) was not transcribed - a long RM list relevant to dog hunting only."
+    ],
+    "regulation_year_confirmed": true
+  },
+  "license_url": "https://www.saskatchewanhal.ca",
+  "license_vendor": "Saskatchewan HAL (Hunting, Angling and Trapping Licensing System)",
+  "regs_url": "https://publications.saskatchewan.ca/api/v1/products/32635/formats/39653/download",
+  "regs_kind": "regulation",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Turn in Poachers and Polluters (TIPP)",
+    "note": "TIPP line 1-800-667-7561, 24 hours, 7 days a week (saskatchewan.ca).",
+    "url": "https://www.saskatchewan.ca/residents/parks-culture-heritage-and-sport/hunting-trapping-and-angling/trapping"
+  },
+  "aihts": {
+    "certified_killing_traps": [
+      {
+        "models_approx": 25,
+        "note": "",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 21,
+        "note": "FIC list column is shared between bobcat and Canada lynx.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 21,
+        "note": "FIC list column is shared between bobcat and Canada lynx.",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 13,
+        "note": "",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 15,
+        "note": "",
+        "species": "American marten"
+      },
+      {
+        "models_approx": 33,
+        "note": "On land.",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": null,
+        "note": "Underwater: 'any jaw-type trap' set as a submersion set.",
+        "species": "Muskrat (underwater)"
+      },
+      {
+        "models_approx": 20,
+        "note": "",
+        "species": "River otter"
+      },
+      {
+        "models_approx": 36,
+        "note": "",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 25,
+        "note": "Covers ermine, least weasel and long-tailed weasel.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_restraining_traps": [
+      {
+        "models_approx": 6,
+        "note": "Cage/live traps.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 7,
+        "note": "",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 4,
+        "note": "",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 5,
+        "note": "FIC note: exclusive use of these certified raccoon restraining traps is currently mandatory only in Ontario, Quebec, Prince Edward Island, New Brunswick and Nova Scotia. Saskatchewan's own rule (s. 24(2)(i)) independently requires a certified restraining trap for any foot-hold set on land for live capture.",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 14,
+        "note": "",
+        "species": "Wolf"
+      }
+    ],
+    "models_note": "Counts are approximate, read from the two-page Fur Institute of Canada table (updated July 22, 2026), not hand-counted line by line. Full model-by-model transcription is a defined follow-on task (see the scoping report). Certification is not the same as current manufacturing: several certified models are legacy/discontinued. Do not present the certified list as a shopping list without a retailer-availability check.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "Badger",
+      "Black bear",
+      "Cougar",
+      "Coyote",
+      "Red fox",
+      "Arctic fox",
+      "Mink",
+      "Squirrel",
+      "Striped skunk",
+      "Wolf",
+      "Wolverine"
+    ],
+    "note": "Saskatchewan implements AIHTS by incorporating the Fur Institute of Canada certified-trap lists by reference in the definitions: a 'certified trap' is a body-gripping trap on the FIC list of quick-kill traps certified under the Agreement on International Humane Trapping Standards, and a 'certified restraining trap' is a foot-hold trap on the FIC list of restraining traps certified under the Agreement, in each case as published and updated from time to time by the Fur Institute of Canada (The Wildlife Regulations, 1981, s. 2(h.11) and (h.12)). Section 24(2)(k) makes certified body-gripping traps mandatory for beaver, bobcat, otter, lynx, marten, fisher, ermine, least weasel, long-tailed weasel, muskrat and raccoon. Section 24(2)(i) separately requires a certified restraining trap for any foot-hold trap set on land for live capture and restraint of any fur animal (or, where no trap is certified for the species, a trap modified to improve humaneness). AIHTS was agreed in 1997 and ratified by Canada in June 1999; it covers 12 North American species. Phase 1 regulated species in Saskatchewan are coyote, wolf, lynx, bobcat, beaver, otter, muskrat, marten, fisher, raccoon, badger and short-tailed weasel (ermine). Phase 2 species are not yet regulated.",
+    "phase_2_restraining_not_yet_mandatory": [
+      {
+        "models_approx": 21,
+        "note": "",
+        "species": "Coyote"
+      },
+      {
+        "models_approx": 20,
+        "note": "Cage and box traps.",
+        "species": "Raccoon"
+      }
+    ],
+    "provincial_regulation_url": "https://publications.saskatchewan.ca/api/v1/products/1602/formats/2841/download",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Body-gripping traps must be certified traps for beaver, bobcat, otter, lynx, marten, fisher, ermine, least weasel, long-tailed weasel, muskrat and raccoon (s. 24(2)(k)).",
+      "A foot-hold trap used on land for live capture and restraint must be a certified restraining trap, or, where no trap is certified for the species, a trap modified to improve humaneness (s. 24(2)(i)).",
+      "Traps with an inside jaw spread exceeding 24 cm are prohibited (s. 24(2)(d)); no serrated teeth or jaws (s. 24(2)(e)); no hooks or sharp devices to snag or spear fur animals (s. 24(2)(f)).",
+      "Foot-hold traps set in water for beaver, otter, mink or muskrat must be set so the animal drowns when caught (s. 24(2)(c)).",
+      "Every snare must be equipped with a locking device to prevent the noose from opening (s. 24(2)(h)).",
+      "No trap or snare may be left set for a fur animal after the close of that animal's open season (s. 24(2)(b)).",
+      "Trap check: at least every 24 hours if set in the southern fur conservation area in a town or city with a population over 1,000 people or within 5 km of one, and for mechanically activated foot snares set for black bear in the southern fur conservation area; at least every 72 hours elsewhere in the southern fur conservation area; at least every 120 hours in the northern fur conservation area (s. 24(3)).",
+      "Black bear may only be taken with mechanically activated foot snares (s. 24(1.1)).",
+      "Free-hanging neck snares require a Special Permit from the ministry; they may not be used in the southern fur conservation area except for livestock predation control; permit snares must come from a ministry-approved supplier and be tagged with the trapper's HAL number or name and phone number (ministry Fur Program summary).",
+      "Power snares and power-assisted snares require a licence issued by the director under s. 6(2) (s. 24(2)(j)).",
+      "Spring-pole sets on poles or trees must be set to kill the animal with reasonable dispatch (s. 24(2)(g)).",
+      "No person shall touch or interfere with any legally placed trap or snare unless authorized by the owner (s. 24(2)(a))."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": null
+    },
+    "check_interval": {
+      "live_holding": "24 hours within 5 km of a town/city over 1,000 people (outside the Fur Conservation Block) and for black bear sets; 72 hours in the Southern Fur Conservation Area beyond that; 120 hours (5 days) in the Northern Fur Conservation Area (Wildlife Regulations s. 24(3)).",
+      "killing": "Same intervals - Saskatchewan does not split check intervals by trap type in s. 24(3).",
+      "note": null
+    },
+    "tenure": "Two macro-zones: the Northern Fur Conservation Area (fur-block membership - a fur licence can only be bought by members of an existing northern fur block) vs the Southern Fur Conservation Area (open to licensed residents, private-land/permission based). Fur licences are Saskatchewan-resident-only.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead. A HAL identification number may identify hunting baits and stands on Crown land - not traps.",
+    "royalty": "No royalty currently charged - the per-pelt royalty was removed for 2011/12 (ministerial answer tabled in the Legislative Assembly, March 28, 2011). [R2 Item 5]",
+    "nuisance_route": "Paid route exists, producer/RM-driven - under the SARM/RM Beaver Control Program, trapping a nuisance beaver requires the RM or First Nation band to contract a trapper holding a valid trapping licence; SCIC hires predation specialists where livestock predation persists. Coyotes may be shot year-round in the SFCA without a licence, but trapping them requires a fur licence plus landowner permission. [R1 s.4]",
+    "harvest_reporting_and_sealing": null
+  }
+}

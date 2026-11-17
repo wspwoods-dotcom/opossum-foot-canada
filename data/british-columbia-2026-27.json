@@ -1,0 +1,2884 @@
+{
+  "schema_version": "1.1",
+  "state": "BC",
+  "state_name": "British Columbia",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set by regulation and can change. The Hunting and Trapping Regulations Synopsis is a summary, not the law; where it differs from the regulations, the regulations are the final authority. Always verify current regulations with the BC Ministry of Water, Land and Resource Stewardship before hunting or trapping. Trapping in British Columbia is governed by the Wildlife Act and the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82. Trapping is on registered traplines or private property with written permission; a trapping licence and completion of an approved trapper education course are required.",
+  "sources": [
+    {
+      "id": "bc-synopsis-2026-2028",
+      "title": "Hunting and Trapping Regulations Synopsis 2026-2028",
+      "type": "agency_summary",
+      "url": "https://www2.gov.bc.ca/assets/gov/sports-recreation-arts-and-culture/outdoor-recreation/fishing-and-hunting/hunting/regulations/hunting-trapping-synopsis.pdf",
+      "notes": "BC Ministry of Water, Land and Resource Stewardship. Effective July 1, 2026 to June 30, 2028. Trapping Regulations section pp. 71-76 (Provincial Trapping Seasons table p. 76; certified traps pp. 74-75; compulsory reporting/inspection p. 72; royalties p. 73); regional General Open Seasons tables; CITES p. 16; royalty rule p. 15. Read 2026-11-15."
+    },
+    {
+      "id": "bc-trapping-section-pdf",
+      "title": "Trapping Regulations (standalone, 2026-2028)",
+      "type": "agency_summary",
+      "url": "https://www2.gov.bc.ca/assets/gov/sports-recreation-arts-and-culture/outdoor-recreation/fishing-and-hunting/hunting/regulations/trapping-section.pdf",
+      "notes": "Linked from the 'Trapping in B.C.' page as 'Trapping Regulations (PDF, 267KB)', in effect 2026 to 2028. Verbatim extract of synopsis pp. 71-76; cross-checked against the full synopsis. Read 2026-11-15."
+    },
+    {
+      "id": "bc-reg-338-82",
+      "title": "Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82",
+      "type": "regulation",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/338_82",
+      "notes": "The law. Division 3 - Trapping and Traplines: trap rules s. 3.04 and Schedule 3.04; trap check s. 3.05; dwelling setback s. 3.06; trapping seasons ss. 3.07-3.08 and Schedules 3.07-3.08; royalties s. 3.09 and Schedule 3.09; trapper education s. 3.10; quotas s. 3.20; fees Schedule 2.02. Last amended July 1, 2026 by B.C. Reg. 97/2026. Consolidation current to November 10, 2026. Read 2026-11-15."
+    },
+    {
+      "id": "bc-reg-168-90",
+      "title": "Designation and Exemption Regulation, B.C. Reg. 168/90",
+      "type": "regulation",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/13_168_90",
+      "notes": "The prescribing instrument for 'fur bearing animal' (Wildlife Act s. 1): s. 16 lists 25 mammals with Latin names. s. 13 and Schedules D/E designate threatened (sea otter) and endangered (Vancouver Island marmot) species. Consolidation current to November 10, 2026. Read 2026-11-15."
+    },
+    {
+      "id": "bc-wildlife-act",
+      "title": "Wildlife Act, RSBC 1996, c. 488",
+      "type": "statute",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/00_96488_01",
+      "notes": "s. 1 ('fur bearing animal' means a mammal prescribed as a fur bearing animal; big game includes bear, cougar, wolf); s. 26 (endangered/threatened species); s. 40.1 (trapping licence); ss. 41-44 (trapline offences, registration, leaving traps set); ss. 72-73 (fur traders, royalties). Consolidation current to November 10, 2026. Read 2026-11-15."
+    },
+    {
+      "id": "bc-reg-190-84",
+      "title": "Hunting Regulation, B.C. Reg. 190/84",
+      "type": "regulation",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/190_84_00_multi",
+      "notes": "Sets hunting open seasons/bag limits by region (Schedules 1-8) and expressly carves trapping out: it does not apply to fur bearing animals taken by trapping during an open trapping season. Provincial bag limits s. 11 (2 black bear; 2 cougar). Read 2026-11-15."
+    },
+    {
+      "id": "bc-reg-97-2026",
+      "title": "B.C. Reg. 97/2026 (amendments to B.C. Reg. 338/82)",
+      "type": "regulation",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/lc/bcgaz2/v69n11_97-2026",
+      "notes": "Effective July 1, 2026. Amended Schedules 3.07/3.08: Region 6 wolverine trapping season shortened Nov 1 - Feb 28 to Nov 1 - Jan 31; fisher exclusion boxes (s. 3.04.1) added. Read 2026-11-15."
+    },
+    {
+      "id": "bc-trapping-in-bc",
+      "title": "Trapping in B.C.",
+      "type": "agency_page",
+      "url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc",
+      "notes": "Ministry overview: 'trappers actively manage 17 types of furbearing animals'; regulation under the Wildlife Act and Commercial Activities Regulation; current Trapping Regulations in effect 2026 to 2028; royalty schedule 'as of January 14, 2026'; fisher closures across the Columbian population range. Read 2026-11-15."
+    },
+    {
+      "id": "bc-apply-trapping",
+      "title": "Apply for a trapping licence or renew a trapping licence",
+      "type": "agency_page",
+      "url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc/apply-trapping",
+      "notes": "Eligibility (Canadian citizen or permanent resident); Trapper Education course requirement and equivalencies (B.C. since July 1, 1982; Quebec since July 1, 1988; Yukon, Alberta, Ontario since July 1, 1989); fees $40 (1 year) / $200 (5 years), HCTF surcharge included; FWID required for reporting; harvest reports due July 31 after each licence year; trapline / assistant / private-property application types. Read 2026-11-15."
+    },
+    {
+      "id": "bc-compulsory-reporting",
+      "title": "Trapping Compulsory Reporting and Inspection",
+      "type": "agency_page",
+      "url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc/trapping-compulsory-reporting-and-inspection",
+      "notes": "Current operational summary (last updated January 28, 2026): compulsory reporting within 15 days of season end (fisher all MUs; wolverine regions 5, 6, 7A, 7B; bobcat region 2; wolf region 1 and MUs 2-5, 2-6, 2-11 to 2-16); compulsory inspection of incidentally killed furbearers (fisher within 30 days; others by June 30) and of Region 3 wolverine pelts. Read 2026-11-15."
+    },
+    {
+      "id": "bc-trapping-standards",
+      "title": "Trapping Standards (AIHTS in B.C.)",
+      "type": "agency_page",
+      "url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc/trapping-standards",
+      "notes": "AIHTS adoption in B.C.: certified-trap mandate since the 2007-2008 season, phased by species; current mandatory species (killing traps: beaver, bobcat, fisher, lynx, marten, muskrat, otter, raccoon, weasels; restraining: beaver cage, bobcat, lynx, wolf); raccoon box/cage and coyote restraining certification under consideration from 2028-2029. Last updated January 21, 2026. Read 2026-11-15."
+    },
+    {
+      "id": "fic-certified-traps",
+      "title": "Fur Institute of Canada - Certified Traps list",
+      "type": "agency_page",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+      "notes": "National AIHTS certified-trap list; B.C.'s certified lists (Synopsis pp. 74-75) are drawn from it. Updated July 22, 2026. Model-by-model transcription not done in this pass (see known_gaps)."
+    },
+    {
+      "id": "bc-rapp",
+      "title": "Report All Poachers and Polluters (RAPP)",
+      "type": "agency_page",
+      "url": "https://forms.gov.bc.ca/environment/rapp/",
+      "notes": "24-hour hotline 1-877-952-7277 (1-877-952-RAPP), #7277 on a cellphone; online report form to the Conservation Officer Service. Read 2026-11-15."
+    },
+    {
+      "id": "bc-region-pdfs",
+      "title": "Hunting and Trapping Regulations Synopsis 2026-2028, regional chapters (Regions 1, 2, 5, 6, 7A, 8)",
+      "type": "agency_summary",
+      "url": "https://www2.gov.bc.ca/assets/gov/sports-recreation-arts-and-culture/outdoor-recreation/fishing-and-hunting/hunting/regulations/hunting-trapping-synopsis-region-1-vancouver-island.pdf",
+      "notes": "Per-region PDFs of the same synopsis (Region 1 Vancouver Island, Region 2 Lower Mainland, Region 5 Cariboo, Region 6 Skeena, Region 7A Omineca, Region 8 Okanagan; Region 7B Peace chapter read inside the full synopsis PDF). Regional General Open Seasons tables provided the furbearer hunting rows. Regions 3 and 4 hunting rows were not extracted in this pass (see known_gaps). Read 2026-11-15."
+    }
+  ],
+  "license_summary": {
+    "trapping_licence": "A trapping licence is required (Wildlife Act s. 11, s. 40.1). The regional manager may issue one to a person who is a Canadian citizen or a permanent resident of Canada. Licences are issued through FrontCounter BC (online application, Basic or Business BCeID). A FWID (Fish & Wildlife ID, obtained through BC Hunting Online) is required to submit trapping reports.",
+    "course": "It is an offence to trap unless you have completed a trapper education course approved by the Director of the Wildlife Branch (B.C. Reg. 338/82 s. 3.10). Approved courses: B.C. since July 1, 1982; Quebec since July 1, 1988; Yukon, Alberta and Ontario since July 1, 1989. The BC Trappers Association delivers the 3-day Trapper Education Program (250-962-5452, info@bctrappers.ca). First-time applicants attach a photocopy of the course certificate.",
+    "fees": "Trapping licence $40.00 for one year / $200.00 for five years (GST included where applicable; Habitat Conservation Trust Fund surcharge included - $32 fee + $8 surcharge for one year; $160 + $40 for five years, B.C. Reg. 338/82 Schedule 2.02). Duplicate licence $10.00. Registered trapline transfer fee $50.00. Fur trader's licence $100.00; fur trader trading from a place of business in another province $400.00. (Synopsis p. 73; B.C. Reg. 338/82 Schedule 2.02.)",
+    "licence_year": "Annual trapping licences are valid from the later of July 1 of the year of issue or the issue date, to the following June 30 (B.C. Reg. 338/82 s. 2.04). A five-year licence runs to June 30 of the year five years after the year of issue (s. 2.04.1). The trapping licence year 2026-27 runs July 1, 2026 to June 30, 2027.",
+    "quotas": "No bag limits are printed in the Provincial Trapping Seasons table, except the black bear quota of 2 in one licence year (B.C. Reg. 338/82 s. 3.20). Trapping is managed by registered traplines (Class 1 species: beaver, fox, marten, mink, muskrat, raccoon, skunk, squirrel, weasel) and regional regulation (Class 2: lynx, bobcat, wolverine, fisher, river otter; Class 3: wolf, coyote). Hunting bag limits for furbearers are in the regional General Open Seasons tables (see season rows).",
+    "traplines": "It is an offence to trap in any area unless you are the registered holder of the trapline for that area or are authorized by regulation or permit. Registration of a trapline on Crown land may only be granted to a person 19 years of age or older who is a Canadian citizen or permanent resident. No more than one trapline per person unless traplines are adjoining and a fur management plan is approved by the Regional Manager. Registration gives no proprietary rights in wildlife. A registered trapline must be actively trapped (or used by a licensed trapper, or temporarily discontinued with permission for up to two years); a trapline is unused if, within a year, the holder fails to take furbearers of $200 value or 50 pelts, unless that is unreasonable for the trapline. Transfer/relinquishment must be approved by the Regional Manager; transfer fee $50.00. Private-property trapping requires written permission of the owner/occupier. (Synopsis p. 72; B.C. Reg. 338/82 ss. 3.13-3.19.) Approximately 2,900 registered traplines in B.C. (BC Furbearer Management Guidelines).",
+    "trap_check": "A licence holder commits an offence by failing to examine: (a) every 72 hours, every holding or non-killing trap except an egg trap; (b) every 24 hours, every egg trap; (c) every 14 days, every killing trap or killing snare (B.C. Reg. 338/82 s. 3.05; Synopsis p. 71). On private property, holding/non-killing traps must be examined at least once every 24 hours. A trapped furbearing animal found alive must be immediately released or killed.",
+    "harvest_report": "Licensed trappers must submit a trapping harvest report each trapping licence year (July 1 to June 30), due 31 days after the end of the licence year - by July 31 (July 31, 2027 for 2026-27). A report is required even if no harvest occurred. Non-filing: the trapper cannot buy a licence, permit, limited entry hunting application or guide territory certificate until a report is submitted, and may be charged a $460 fine. Report online through WILD (BC Hunting Online) or on the form at any FrontCounter BC office. (Synopsis p. 72.)",
+    "compulsory_reporting": "Trappers must report within 15 days following the end of the trapping season: fisher in all MUs when trapped in an open season; wolverine in Regions 5, 6, 7A and 7B; bobcat in Region 2; wolf in Region 1 and MUs 2-5, 2-6, 2-11 to 2-16. (Synopsis p. 72.)",
+    "compulsory_inspection": "Furbearers trapped outside an open season (incidental) must be submitted (carcass and pelt) for Compulsory Inspection: fishers within 30 days of the kill; all others by June 30 of the licence year. These animals cannot be reclaimed. The pelt of a wolverine trapped in Region 3 during an open season must be submitted within 15 days after the last day of the continuous season (and before export if applicable). (Synopsis pp. 72-73.)",
+    "royalties": "Royalty must be paid to keep the pelt/skin of a furbearing animal lawfully taken under a trapping licence, unless sold to a licensed fur trader. Royalty is 3% of the average auction price for that species over the preceding three years. Current schedule (gov.bc.ca, as of January 14, 2026), per pelt: beaver $1.03, black bear $8.69, bobcat $11.29, coyote $0.68, fisher $1.94, fox $0.73, lynx $5.33, marten $2.08, mink $0.32, muskrat $0.07, otter $1.40, raccoon $0.21, skunk $1.38, squirrel $0.04, weasel (ermine) $0.25, wolf $9.62, wolverine $16.18. An Assigned Trapper Number (ATN) is required by the fur trader when accepting, exporting and selling fur, and when paying royalties. (Synopsis p. 73.)",
+    "export_cites": "Any raw fur or skin shipped out of the province for commercial purposes must be accompanied by an Export Permit (Synopsis p. 72). A CITES Export Permit is required to export out of Canada all bears, cougar, lynx, bobcat, wolf, sea otter, or river otter or parts of these animals (Synopsis p. 16).",
+    "certified_traps": "A person using killing traps for beaver, bobcat, fisher, lynx, marten, muskrat, river otter, raccoon or weasels, or restraining traps for beaver (cage traps), bobcat, lynx or wolf is required by law to use only species-specific traps included in B.C.'s trapping regulations that have been certified under the Agreement on International Humane Trapping Standards (Synopsis p. 72; B.C. Reg. 338/82 Schedule 3.04; certified-trap lists Synopsis pp. 74-75). See the 'aihts' section of this dataset.",
+    "hunting_furbearers": "Furbearers may also be hunted under a hunting licence in regional General Open Seasons (bobcat, lynx, coyote, wolf, wolverine, raccoon, skunk; see hunting season rows in this dataset for Regions 2, 5, 6, 7A, 7B and 8). Cougar and black bear are big game hunted under the Hunting Regulation (B.C. Reg. 190/84); their hunting seasons were not transcribed in this pass. Hunting rows for Regions 1, 3 and 4 were not verified in this pass (see known_gaps).",
+    "permission": "Trap only on your registered trapline, or on private property with the written permission of the property owner or occupier. Trapping in ecological reserves is prohibited; trapline tenure in provincial parks, conservancies and recreation areas is subject to the Park Act and requires a Park Use / Resource Use Permit.",
+    "report_violation": "Report All Poachers and Polluters (RAPP), 24-hour hotline 1-877-952-7277 (1-877-952-RAPP), or #7277 on a cellphone. Online: forms.gov.bc.ca/environment/rapp/. Reports go to the Conservation Officer Service."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 1",
+              "zone_name": "Region 1 - Vancouver Island"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 2, 3, 4, 5, 8",
+              "zone_name": "Regions 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining (cage) traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Quota = 2 black bear in one licence year (table note; B.C. Reg. 338/82 s. 3.20).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Region 5 (except MUs 5-2, 5-15) and MUs 6-3, 6-11 to 6-14",
+              "zone_name": "Region 5 (except MUs 5-2, 5-15) and MUs 6-3, 6-11 to 6-14 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Quota = 2 black bear in one licence year (table note; B.C. Reg. 338/82 s. 3.20).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 3, 4, 7B, 8, and MUs 5-2, 5-15",
+              "zone_name": "Regions 3, 4, 7B, 8, and MUs 5-2, 5-15 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Quota = 2 black bear in one licence year (table note; B.C. Reg. 338/82 s. 3.20).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-3, 6-11 to 6-14), 7A",
+              "zone_name": "Regions 6 (except MUs 6-3, 6-11 to 6-14), 7A - "
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Black bear is both a fur bearing animal (B.C. Reg. 168/90 s. 16(c)) and big game. No open season on white or blue (Glacier) colour-phase black bear, a black bear under 2 years old, or a black bear accompanying one (B.C. Reg. 338/82 s. 3.07). Black bear may not be trapped by placing bait or by using a dead animal or part of it as bait (Synopsis p. 75). No trapping season is listed for Regions 1 or 2 in the p. 76 table. Black bear is also hunted under regional General Open Seasons (Hunting Regulation); those hunting rows were not transcribed in this pass.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 2, 3, 4, 5, 8",
+              "zone_name": "Regions 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required (Region 2).",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-2 to 2-19",
+              "zone_name": "2-2 to 2-19 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2026-12-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-12-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-1 to 5-9, 5-12 to 5-15",
+              "zone_name": "5-1 to 5-9, 5-12 to 5-15 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunters may not hunt a bobcat accompanied by one or more bobcat.",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "compulsory_reporting"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). No trapping season listed for Regions 1, 6, 7A or 7B. Hunting rows for Regions 1, 3, 4, 6, 7A and 7B were not verified in this pass (see known_gaps).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 2",
+              "zone_name": "Region 2 - Lower Mainland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "In MU 4-1 the open season is Dec 1 - Mar 31 if using a killing snare.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 1-14, 1-15 and Regions 3, 4, 5, 6, 7A, 7B, 8",
+              "zone_name": "MUs 1-14, 1-15 and Regions 3, 4, 5, 6, 7A, 7B, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No closed season for coyote in these MUs below 1100 m elevation.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58",
+              "zone_name": "MUs 7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58 - Region 7B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-2 to 2-19",
+              "zone_name": "2-2 to 2-19 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-1 to 5-15",
+              "zone_name": "5-1 to 5-15 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 10
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "6-1 to 6-11, 6-14 to 6-30",
+              "zone_name": "6-1 to 6-11, 6-14 to 6-30 - Region 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "2026-2028 change: coyote hunting season extended to Aug 15 in Region 7A.",
+          "open_date": "2026-08-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41",
+              "zone_name": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41 - Region 7A"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58",
+              "zone_name": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58 - Region 7B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap required for coyote killing traps under the current AIHTS mandate (Synopsis p. 72). B.C. is considering restricting live restraining traps for coyotes to certified traps from 2028-2029. Hunting rows for Regions 1, 3 and 4 were not verified in this pass (see known_gaps).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Martes pennanti",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "See Compulsory Inspection and Reporting requirements, Synopsis p. 72.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 6-19 to 6-27, and Region 7B",
+              "zone_name": "MUs 6-19 to 6-27, and Region 7B - "
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "compulsory_reporting"
+      ],
+      "notes": "Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). The 2026-2028 Synopsis Provincial Trapping Seasons table (p. 76) lists a fisher season ONLY for MUs 6-19 to 6-27 and Region 7B; no open season is listed elsewhere. Fisher trapping seasons are closed across the range of the Columbian population (Central Interior; red-listed, 272-558 mature individuals per the 2025 BC Conservation Data Centre re-assessment). BUT Schedule 3.08 of B.C. Reg. 338/82 carries MU-level 'No open season' entries for fisher in parts of Regions 3 and 5, which implies a broader base season in Schedule 3.07 - the two official sources were not reconciled in this pass; see verification.known_gaps and do not rely on this row alone. Fisher exclusion boxes are required for listed 120-size box sets on land in MUs 3-30, 3-31, 5-1, 5-2, 5-12, 5-13 and 5-14 (B.C. Reg. 338/82 s. 3.04.1, added 2026). All fishers trapped in an open season must be Compulsory Reported within 15 days of the season end; fishers incidentally trapped where there is no open season must be Compulsory Inspected (carcass and pelt) within 30 days of the kill.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 1-14, 1-15, and Regions 2, 3, 4, 6, 7A, 7B",
+              "zone_name": "MUs 1-14, 1-15, and Regions 2, 3, 4, 6, 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 5",
+              "zone_name": "Region 5 - Cariboo"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap required for fox under the current AIHTS mandate (Synopsis p. 72). No fox trapping season listed for Region 8. The table's 'Fox' row is read as red fox; Arctic fox, kit fox and grey fox are designated fur bearing animals (B.C. Reg. 168/90 s. 16(h)-(j)) but do not occur in B.C. and have no season rows.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 3, 4, 5, 8",
+              "zone_name": "Regions 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6, 7A, 7B",
+              "zone_name": "Regions 6, 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-1 to 5-9, 5-12 to 5-15",
+              "zone_name": "5-1 to 5-9, 5-12 to 5-15 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "6-1, 6-2, 6-4 to 6-9, 6-15 to 6-30",
+              "zone_name": "6-1, 6-2, 6-4 to 6-9, 6-15 to 6-30 - Region 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41",
+              "zone_name": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41 - Region 7A"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58",
+              "zone_name": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58 - Region 7B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunters may not hunt a lynx accompanied by one or more lynx.",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). No trapping season listed for Regions 1 or 2. Hunting rows for Regions 1, 2, 3 and 4 were not verified in this pass (see known_gaps).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 2, 3, 4, 5, 8",
+              "zone_name": "Regions 1, 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6, 7A, 7B (except MUs 7-49 to 7-54)",
+              "zone_name": "Regions 6, 7A, 7B (except MUs 7-49 to 7-54) - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 7-49 to 7-54",
+              "zone_name": "MUs 7-49 to 7-54"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). Marten trappers in MUs 3-30, 3-31, 5-1, 5-2, 5-12, 5-13 and 5-14 must house listed 120-size traps in a fisher exclusion box when set on land (B.C. Reg. 338/82 s. 3.04.1).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Mustela vison",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1). Regulation name Mustela vison; current accepted taxonomy is Neogale vison.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 3, 4, 5, 7B (except MUs 7-49 to 7-54), 8",
+              "zone_name": "Regions 1, 3, 4, 5, 7B (except MUs 7-49 to 7-54), 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Region 2 and MUs 6-3, 6-11, 6-14",
+              "zone_name": "Region 2 and MUs 6-3, 6-11, 6-14 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-3, 6-11, 6-14), 7A",
+              "zone_name": "Regions 6 (except MUs 6-3, 6-11, 6-14), 7A - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 7-49 to 7-54",
+              "zone_name": "MUs 7-49 to 7-54"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap required for mink under the current AIHTS mandate (Synopsis p. 72). Regulation name Mustela vison; current accepted taxonomy is Neogale vison.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 3, 4, 5, 8",
+              "zone_name": "Regions 1, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 2",
+              "zone_name": "Region 2 - Lower Mainland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required, including 'any jaw-type killing trap' for muskrat (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). Underwater: any jaw-type trap set as a submersion set that exerts clamping force and keeps the animal underwater.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lutra canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1). Regulation name Lutra canadensis; current accepted taxonomy is Lontra canadensis.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 1",
+              "zone_name": "Region 1 - Vancouver Island"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 2-2 to 2-5, 2-12 to 2-16",
+              "zone_name": "MUs 2-2 to 2-5, 2-12 to 2-16"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 2-6 to 2-11, 2-17 to 2-19 and Regions 3, 4, 5",
+              "zone_name": "MUs 2-6 to 2-11, 2-17 to 2-19 and Regions 3, 4, 5 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6, 7A, 7B",
+              "zone_name": "Regions 6, 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 8",
+              "zone_name": "Region 8 - Okanagan"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). A CITES export permit is required to export river otter out of Canada (Synopsis p. 16). Regulation name Lutra canadensis; current accepted taxonomy is Lontra canadensis.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 2, 3, 4, 5, 6 (except MUs 6-12, 6-13), 7A, 7B, 8",
+              "zone_name": "Regions 1, 2, 3, 4, 5, 6 (except MUs 6-12, 6-13), 7A, 7B, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Combined 'RACCOON, SKUNK' row as printed.",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-2 to 2-19",
+              "zone_name": "2-2 to 2-19 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "No Closed Season as printed.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-1 to 5-15",
+              "zone_name": "5-1 to 5-15 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "No Closed Season as printed.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Season printed 'Apr 1-Mar 31' (year-round); modelled as continuous within the season year.",
+          "open_date": "2026-04-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41",
+              "zone_name": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41 - Region 7A"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Combined 'SKUNK, RACCOON' row, No Closed Season as printed.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). B.C. is considering restricting live box/cage traps for raccoons to AIHTS-certified traps only from the 2028-2029 trapping year (Synopsis p. 72). Raccoon hunting rows for Regions 3, 4 and 7B were not verified in this pass; no raccoon hunting row was found in the Region 7B General Open Seasons extraction (flagged as a gap, not confirmed absent).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 1-14, 1-15 and Regions 2, 3, 4, 5, 6, 7A, 7B, 8",
+              "zone_name": "MUs 1-14, 1-15 and Regions 2, 3, 4, 5, 6, 7A, 7B, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Combined 'RACCOON, SKUNK' row as printed.",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-2 to 2-19",
+              "zone_name": "2-2 to 2-19 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Combined 'SKUNK, RACCOON' row, No Closed Season as printed.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap required for skunk under the current AIHTS mandate (Synopsis p. 72). The table's 'Skunk' row is read as striped skunk; spotted skunk is a designated fur bearing animal with no separate season row - whether the 'Skunk' season covers it is unverified (see verification.known_gaps). Skunk hunting rows for Regions 3, 4, 5, 6, 7A and 7B were not verified in this pass.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Douglas squirrel",
+      "scientific_name": "Tamiasciurus douglasii",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 2, 3, 4, 5, 8",
+              "zone_name": "Regions 1, 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates Douglas, northern flying and red squirrels as one 'SQUIRREL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows. No certified trap required for squirrel under the current AIHTS mandate (Synopsis p. 72). Ground squirrels are excluded from the furbearer definition.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Northern flying squirrel",
+      "scientific_name": "Glaucomys sabrinus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 2, 3, 4, 5, 8",
+              "zone_name": "Regions 1, 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates Douglas, northern flying and red squirrels as one 'SQUIRREL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows. No certified trap required for squirrel under the current AIHTS mandate (Synopsis p. 72). Ground squirrels are excluded from the furbearer definition.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 1, 2, 3, 4, 5, 8",
+              "zone_name": "Regions 1, 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Open all year in MUs 6-12 and 6-13 (table prints 'Jan 1 - Dec 31').",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 6-12, 6-13",
+              "zone_name": "MUs 6-12, 6-13"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates Douglas, northern flying and red squirrels as one 'SQUIRREL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows. No certified trap required for squirrel under the current AIHTS mandate (Synopsis p. 72). Ground squirrels are excluded from the furbearer definition.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 2, 3, 4, 5, 8",
+              "zone_name": "Regions 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates least, long-tailed and short-tailed weasels as one 'WEASEL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows except where noted. Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Long-tailed weasel",
+      "scientific_name": "Mustela frenata",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 2, 3, 4, 5, 8",
+              "zone_name": "Regions 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates least, long-tailed and short-tailed weasels as one 'WEASEL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows except where noted. Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). There is no open season for long-tailed weasel in MUs 2-3, 2-4, 2-6, 2-18 and 2-19 (table footnote, p. 76).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Short-tailed weasel",
+      "scientific_name": "Mustela richardsonii",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 2, 3, 4, 5, 8",
+              "zone_name": "Regions 2, 3, 4, 5, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B",
+              "zone_name": "Regions 6 (except MUs 6-12, 6-13), 7A, 7B - "
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "B.C. regulates least, long-tailed and short-tailed weasels as one 'WEASEL' group in the Provincial Trapping Seasons table (p. 76); the three species are modelled as separate entries with identical season rows except where noted. Certified killing traps required (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "",
+              "zone_id": "Region 1",
+              "zone_name": "Region 1 - Vancouver Island"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 2-5, 2-6, 2-11 to 2-16",
+              "zone_name": "MUs 2-5, 2-6, 2-11 to 2-16"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "management_unit_group",
+              "note": "",
+              "zone_id": "MUs 3-12 to 3-20, 3-26 to 3-33, 3-34 to 3-44",
+              "zone_name": "MUs 3-12 to 3-20, 3-26 to 3-33, 3-34 to 3-44"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 4, 5, 6, 8",
+              "zone_name": "Regions 4, 5, 6, 8 - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 7A, 7B",
+              "zone_name": "Regions 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No closed season below 1100 m elevation. From Apr 1 - Oct 14 restricted to certified restraining traps only (table footnote, p. 76).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 4-2 to 4-5, 4-20 to 4-22, 4-24 to 4-26, 4-34 to 4-37, and 4-40",
+              "zone_name": "MUs 4-2 to 4-5, 4-20 to 4-22, 4-24 to 4-26, 4-34 to 4-37, and 4-40 - Region 4 (Kootenay)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "private",
+          "method": "trapping",
+          "notes": "No closed season on private land ONLY. From Apr 1 - Oct 14 only certified restraining traps can be used. Private land is land that is not Crown land and that government does not have a vested interest in (does not apply to Crown grazing lease).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 3-12, 3-13, 3-17 to 3-20, 3-26 to 3-33, 3-35 to 3-42, 5-1 to 5-6, and 5-12 to 5-14",
+              "zone_name": "MUs 3-12, 3-13, 3-17 to 3-20, 3-26 to 3-33, 3-35 to 3-42, 5-1 to 5-6, and 5-12 to 5-14 - Regions 3 and 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No closed season in these MUs below 1100 m elevation.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58",
+              "zone_name": "MUs 7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58 - Region 7B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-5, 2-6, 2-11 to 2-16",
+              "zone_name": "2-5, 2-6, 2-11 to 2-16 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2027-04-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "2-5, 2-6, 2-11 to 2-16",
+              "zone_name": "2-5, 2-6, 2-11 to 2-16 - Region 2"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2027-04-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-7 to 5-9",
+              "zone_name": "5-7 to 5-9 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-08-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-7 to 5-9",
+              "zone_name": "5-7 to 5-9 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-10, 5-11",
+              "zone_name": "5-10, 5-11 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "No Closed Season as printed; regional bag limits note no bag limit in these MUs.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "5-1 to 5-6, 5-12 to 5-15",
+              "zone_name": "5-1 to 5-6, 5-12 to 5-15 - Region 5"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit numeral not legible in the text extraction of the Region 6 General Open Seasons table - see known_gaps; do not quote a limit for this row.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-08-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "6-1 to 6-30",
+              "zone_name": "6-1 to 6-30 - Region 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (NBL as printed in the regional General Open Seasons table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-08-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41",
+              "zone_name": "7-2 to 7-18, 7-23 to 7-30, 7-37 to 7-41 - Region 7A"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-08-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58",
+              "zone_name": "7-19 to 7-22, 7-31 to 7-36, 7-42 to 7-58 - Region 7B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 3
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-10",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "8-1 to 8-15, 8-21 to 8-26",
+              "zone_name": "8-1 to 8-15, 8-21 to 8-26 - Region 8"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "compulsory_reporting"
+      ],
+      "notes": "Certified restraining traps required for wolf (AIHTS; B.C. Reg. 338/82 Schedule 3.04; Synopsis pp. 74-75). Killing snares in the Kootenay Region are limited to Dec 1 - Mar 31. A CITES export permit is required to export wolf out of Canada (Synopsis p. 16). Wolf is both a fur bearing animal (B.C. Reg. 168/90 s. 16(b)) and big game (Wildlife Act s. 1). Hunting rows for Regions 1, 3 and 4 were not verified in this pass (see known_gaps).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16 (the prescribing instrument for 'fur bearing animal' under Wildlife Act s. 1).",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "2026 change (B.C. Reg. 97/2026, effective July 1, 2026): Region 6 wolverine season shortened from Nov 1 - Feb 28 to Nov 1 - Jan 31. See Compulsory Inspection and Reporting requirements, p. 72.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "Regions 3, 5, 6 (except MUs 6-1, 6-2)",
+              "zone_name": "Regions 3, 5, 6 (except MUs 6-1, 6-2) - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in the Provincial Trapping Seasons table. Trapping seasons are set in the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, ss. 3.07-3.08 (Schedules 3.07-3.08); harvest is governed by trapline registration and regional rules, not bag limits.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "See Compulsory Inspection and Reporting requirements, p. 72.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "MUs 6-1, 6-2 and Regions 7A, 7B",
+              "zone_name": "MUs 6-1, 6-2 and Regions 7A, 7B - "
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "6-1 to 6-11, 6-14 to 6-30",
+              "zone_name": "6-1 to 6-11, 6-14 to 6-30 - Region 6"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-01-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-3, 7-17, 7-18, 7-37 to 7-41",
+              "zone_name": "7-3, 7-17, 7-18, 7-37 to 7-41 - Region 7A"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Bag limit as printed in the regional General Open Seasons table of the 2026-2028 Synopsis (regional bag limit).",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-01-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Compulsory Reporting required.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Vancouver",
+          "zones": [
+            {
+              "area_type": "region_group",
+              "note": "",
+              "zone_id": "7-19 to 7-22, 7-31 to 7-36, 7-42, 7-43, 7-47 to 7-58",
+              "zone_name": "7-19 to 7-22, 7-31 to 7-36, 7-42, 7-43, 7-47 to 7-58 - Region 7B"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "compulsory_reporting"
+      ],
+      "notes": "No certified trap required for wolverine under the current AIHTS mandate (Synopsis p. 72). No trapping season listed for Regions 1, 2, 4 or 8. Compulsory Reporting of wolverine in Regions 5, 6, 7A and 7B within 15 days of the season end; the pelt of a wolverine trapped in Region 3 during an open season must be Compulsory Inspected within 15 days after the last day of the continuous season. Hunting rows for Regions 1, 2, 3, 4, 5 and 8 were not verified in this pass (see known_gaps).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American badger",
+      "scientific_name": "Taxidea taxus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass. B.C. subspecies is Taxidea taxus jeffersonii.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in the Provincial Trapping Seasons table (p. 76) and no season in Schedules 3.07/3.08 of B.C. Reg. 338/82. The B.C. subspecies (Taxidea taxus jeffersonii) is red-listed in B.C. and listed as Endangered under the federal Species at Risk Act. Badger is NOT a designated fur bearing animal (B.C. Reg. 168/90 s. 16). The Region 8 chapter notes 'there are no hunting seasons for ... badgers'. The precise provincial protecting instrument was not pinned down in this pass (see known_gaps). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Sea otter",
+      "scientific_name": "Enhydra lutris",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, Schedule D.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in the Provincial Trapping Seasons table (p. 76). Designated a threatened species: Designation and Exemption Regulation, B.C. Reg. 168/90, s. 13(1) and Schedule D ('Enhydra lutris - sea otter'). Wildlife Act s. 26 prohibits hunting or trapping a threatened species. Sea otter is NOT a designated fur bearing animal (B.C. Reg. 168/90 s. 16). A CITES export permit is required to export sea otter out of Canada (Synopsis p. 16). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Spotted skunk",
+      "scientific_name": "Spilogale putorius",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Latin name as stated in the Designation and Exemption Regulation, B.C. Reg. 168/90, s. 16(y).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated a fur bearing animal (B.C. Reg. 168/90 s. 16(y)) but no species-specific season row exists in the Provincial Trapping Seasons table (p. 76) or in Schedules 3.07/3.08 of B.C. Reg. 338/82 - the table's 'Skunk' row is read as striped skunk. Whether the 'Skunk' season legally covers spotted skunk is UNVERIFIED; this entry is modelled as closed until the ministry confirms (see verification.known_gaps). Do not trap spotted skunk on the strength of this dataset.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "regulation_year_confirmed": true,
+    "confirmation_notes": "Trapping seasons cross-checked between two independent extractions of the official 2026-2028 Synopsis: the full synopsis PDF (Trapping Regulations section, p. 76 Provincial Trapping Seasons table) and the regional chapter PDFs (Regions 1, 2, 5, 6, 7A, 8; Region 7B chapter read inside the full synopsis PDF). The two extractions agree on every shared trapping row. Season dates are printed as recurring month/day ranges in the 2026-2028 synopsis (effective July 1, 2026 to June 30, 2028) and are converted here to 2026-27 instances (open dates in 2026, close dates in 2027 where the season wraps the year). February 28, 2027 is the last day of February 2027 (2027 is not a leap year), verified by calendar check. Licensing, fees, trap-check intervals, compulsory reporting/inspection and royalties cross-checked between the synopsis (pp. 71-73) and the gov.bc.ca trapping pages and BC Laws (B.C. Reg. 338/82). The 2026 wolverine Region 6 amendment was verified in B.C. Reg. 97/2026 (effective July 1, 2026). Furbearer hunting rows were transcribed from the regional General Open Seasons tables for Regions 2, 5, 6, 7A, 7B and 8 only. Latin names are as stated in B.C. Reg. 168/90 s. 16 (and Schedule D for sea otter) except for badger, whose name is standard taxonomy.",
+    "known_gaps": [
+      "Furbearer hunting rows for Regions 1 (Vancouver Island), 3 (Thompson) and 4 (Kootenay) were not extracted - the regional PDFs for Regions 3 and 4 and the furbearer rows of Region 1 could not be read before a browser rate limit stopped the extraction. Raccoon hunting in Region 7B was not located in the Peace General Open Seasons extraction (flagged as a gap, not confirmed absent). Resolution: re-read the Region 1, 3 and 4 chapter PDFs and the Region 7B PDF directly.",
+      "Fisher season conflict: the 2026-2028 Synopsis Provincial Trapping Seasons table (p. 76) lists a fisher season ONLY for MUs 6-19 to 6-27 and Region 7B, but Schedule 3.08 of B.C. Reg. 338/82 carries MU-level 'No open season' entries for fisher in parts of Regions 3 and 5 (e.g. MUs 3-12 to 3-20, 3-26, 3-34 to 3-37, 3-42 to 3-46), which implies a broader base season in Schedule 3.07. The dataset follows the synopsis table. Resolution: full read of the current consolidated Schedules 3.07/3.08 on BC Laws and/or confirmation from the ministry.",
+      "Full Schedule 3.07/3.08 matrix (the law) was not read cell-by-cell; the dataset rests on the Synopsis p. 76 reprint plus spot checks (wolverine 2026 amendment; fisher 3.08 entries). Resolution: read the consolidated B.C. Reg. 338/82 Schedules 3.07/3.08 on BC Laws and diff against the synopsis table.",
+      "Spotted skunk: designated a fur bearing animal (B.C. Reg. 168/90 s. 16(y)) but no species-specific season row exists anywhere; whether the table's 'Skunk' season legally covers spotted skunk is unverified. Modelled as closed. Resolution: ministry confirmation or a reading of the 'Skunk' row definition in Schedule 3.07.",
+      "Badger's precise protecting instrument was not pinned down: no open season and red-listed/Endangered status are verified, but no regulation section naming badger was located in this pass. Resolution: BC Laws search for 'badger' in B.C. Reg. 338/82 / the Closed Areas Regulation and a full read of the ministry badger brochure.",
+      "Region 6 wolf hunting bag limit: the numeral was not legible in the text extraction of the Region 6 General Open Seasons table. The row is included with no bag limit and a note. Resolution: visual check of the Region 6 PDF.",
+      "Full model-by-model transcription of the certified-trap lists (Synopsis pp. 74-75) not done in this pass (structure and species categories only); the Trapping Methods matrix (p. 75) per-cell assignments could not be reliably reconstructed from the PDF text extraction. Resolution: visual transcription from the PDF, or from the Fur Institute of Canada certified list.",
+      "Minimum age for a trapping licence itself: unverified. The gov.bc.ca apply page states no age and Wildlife Act s. 40.1 states only citizenship/permanent residency; 19+ is verified for trapline registration and for a fur trader licence, not for the trapping licence. Resolution: read the full text of Wildlife Act ss. 11/40.1 and the application form's eligibility block.",
+      "Arctic fox, kit fox and grey fox are designated fur bearing animals (B.C. Reg. 168/90 s. 16(h)-(j)) but do not occur in B.C. and have no season rows; they are not modelled as species entries. No action needed unless the clone needs a 'designated but absent' note.",
+      "Timezone split: the dataset uses America/Vancouver throughout. The Peace Region (7B) is on Mountain Standard Time year-round (America/Dawson_Creek) and the Creston area of Region 4 is America/Creston (MST, no DST); northwest open/close times in those MUs are one hour off if read as Pacific Time. The clone needs the split or a gap note.",
+      "Black bear hunting seasons (General Open Seasons, regional chapters) and cougar hunting seasons were not transcribed; cougar is big game, not a furbearer, and has no trapping season. If the clone shows hunted big game, these are separate tasks.",
+      "In-season corrections: the synopsis notes corrections are published online at www.gov.bc.ca/hunting. This dataset is a snapshot of the synopsis as read 2026-11-15; in-season changes after that date are not reflected.",
+      "Trapline boundary data: the dataset references Regions and Management Units only. Individual trapline boundaries (~2,900 registered traplines) and MU boundaries are a separate dataset task, not scoped here. Minimum viable: let the trapper pick their region/MU from a list."
+    ]
+  },
+  "license_url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc/apply-trapping",
+  "license_vendor": "FrontCounter BC (BC Fish and Wildlife Branch)",
+  "regs_url": "https://www2.gov.bc.ca/assets/gov/sports-recreation-arts-and-culture/outdoor-recreation/fishing-and-hunting/hunting/regulations/hunting-trapping-synopsis.pdf",
+  "regs_kind": "pdf",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report All Poachers and Polluters (RAPP)",
+    "note": "RAPP 24-hour hotline 1-877-952-7277 (1-877-952-RAPP); #7277 on a cellphone. Online form: forms.gov.bc.ca/environment/rapp/. Reports go to the Conservation Officer Service. Salmon-related violations go to Fisheries and Oceans Canada: 1-800-465-4336.",
+    "url": "https://forms.gov.bc.ca/environment/rapp/"
+  },
+  "aihts": {
+    "note": "British Columbia implements AIHTS through the Wildlife Act Commercial Activities Regulation, B.C. Reg. 338/82, s. 3.04 and Schedule 3.04, which lists the lawful traps by species and trap position; the Synopsis (pp. 74-75) reprints the certified-trap lists. A 'certified trap' is one listed in Schedule 3.04 for that species and position. The Fur Institute of Canada maintains the national certified-trap list (updated July 22, 2026); B.C.'s lists are drawn from it. AIHTS was agreed in 1997 and ratified by Canada in June 1999. Since the 2007-2008 season B.C. trappers have been required by law to use only AIHTS-certified traps for the mandated species; the requirement is phased in species by species once enough trap types are certified and trappers are notified.",
+    "source_url": "https://www2.gov.bc.ca/gov/content/sports-culture/recreation/fishing-hunting/hunting/trapping-in-bc/trapping-standards",
+    "fic_list_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "source_updated": "2026-07-22",
+    "models_transcribed": false,
+    "models_note": "This pass captured the mandate structure and species categories from the Synopsis (pp. 74-75) and the Trapping Standards page, not the full model-by-model lists. The pp. 74-75 tables could not be transcribed with dataset-grade reliability from the PDF text extraction (multi-column interleaving). Full transcription from the PDF (or from the FIC list) is a defined follow-on task. Certification is not the same as current manufacturing: several certified models are legacy/discontinued. Do not present the certified list as a shopping list without a retailer-availability check.",
+    "certified_killing_traps": [
+      {
+        "species": "Beaver",
+        "models_approx": null,
+        "note": "Underwater or on land; list on Synopsis p. 74."
+      },
+      {
+        "species": "Bobcat and Lynx",
+        "models_approx": null,
+        "note": "Combined list on Synopsis p. 74."
+      },
+      {
+        "species": "Fisher",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Marten",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Muskrat",
+        "models_approx": null,
+        "note": "On land only; and underwater only: any jaw-type trap (body gripping or foot-hold) set as a submersion set that exerts clamping force and keeps the animal underwater."
+      },
+      {
+        "species": "River otter",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Raccoon",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Weasel",
+        "models_approx": null,
+        "note": "Covers least, long-tailed and short-tailed weasel."
+      }
+    ],
+    "certified_restraining_traps": [
+      {
+        "species": "Beaver",
+        "models_approx": null,
+        "note": "Live cage traps (Breathe Easy, Comstock, Dam Beaver, Ezee Set, Hancock, Koro 'Klam')."
+      },
+      {
+        "species": "Bobcat",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Lynx",
+        "models_approx": null,
+        "note": ""
+      },
+      {
+        "species": "Wolf",
+        "models_approx": null,
+        "note": "Foot snares and specified soft-catch / laminated / offset foot-hold models."
+      }
+    ],
+    "no_certified_trap_required": [
+      "Coyote",
+      "Red fox",
+      "Striped skunk",
+      "Squirrel",
+      "Wolverine",
+      "Black bear",
+      "Mink"
+    ],
+    "trap_rules": [
+      "Only certified traps may be used for the mandated species/positions (Synopsis p. 72; B.C. Reg. 338/82 s. 3.04 and Schedule 3.04).",
+      "It is an offence to trap within 200 m of a dwelling unless using, on land, a live box trap or egg trap, or on/in water a Conibear not larger than size #330 or equivalent, foot-hold traps not larger than size #2, or submarine traps (Synopsis p. 71; B.C. Reg. 338/82 s. 3.06).",
+      "Trap check: holding/non-killing traps every 72 hours (24 hours on private property); egg traps every 24 hours; killing traps and killing snares every 14 days (B.C. Reg. 338/82 s. 3.05; Synopsis p. 71).",
+      "It is an offence to use a foot-hold trap with teeth or other projections on the jaws; to use a killing snare on land unless it has a locking device, is designed for squirrels/hares, or is a mechanically powered killing snare; to use snare wire heavier than 20 gauge or braided wire unless licensed/authorized to trap; to set spring poles or running poles unless equipped with a killing trap; to use a trap with a spearing device; to use a Conibear larger than (not including) #220 for land sets within any municipality (Synopsis p. 73).",
+      "Egg traps may only be used by a person holding a valid trapping licence, and the trap must be securely fastened or anchored so a caught animal cannot drag it away (Synopsis p. 73).",
+      "Fisher exclusion boxes are required for listed 120-size traps set on land in MUs 3-30, 3-31, 5-1, 5-2, 5-12, 5-13 and 5-14: box at least 17 inches long (outside), entry hole no more than 56 mm (2-1/4 in) in diameter, side slot at least 10 in long and no more than 1 in high (B.C. Reg. 338/82 s. 3.04.1; Synopsis p. 73).",
+      "Wolf foot-hold traps must be solidly fastened with no more than 60 cm of chain (Synopsis p. 75, footnote 1).",
+      "Muskrat submerging sets smaller than size #1 1/2 require a minimum 150 g weight securely attached (Synopsis p. 75, footnote 2).",
+      "In Region 5 it is an offence to set a killing snare to trap wolves or coyotes within 10 m of where bait is placed (Synopsis p. 73).",
+      "Killing snares in the Kootenay Region are limited to Dec 1 - Mar 31 for wolf (Provincial Trapping Seasons table footnote, p. 76).",
+      "It is an offence to trap wildlife using a firearm from one hour after sunset until one hour before sunrise the following day, unless using a firearm to kill a furbearing animal caught in a trap on a registered trapline (Synopsis p. 71).",
+      "A trapped furbearing animal found alive must be immediately released or killed; a trapping licence does not authorize possession of live wildlife, and live trapped furbearers must not be transported and released elsewhere without a permit (Synopsis pp. 71-72).",
+      "It is an offence to cause or allow dogs to pursue furbearers under the authority of a trapping licence; electronic or recorded calls may be used for trapping wolf, coyote, bobcat or lynx only (Synopsis p. 73).",
+      "Future restriction under consideration: restricting box/cage traps for live-trapping raccoons and restraining traps for live-trapping coyotes to AIHTS-certified traps only, starting in the 2028-2029 trapping year (Synopsis p. 72)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": null
+    },
+    "check_interval": {
+      "live_holding": "72 hours for holding/non-killing traps; 24 hours for egg traps (raccoon).",
+      "killing": "14 days for killing traps/killing snares on a trapline (B.C. Reg. 338/82 s. 3.05).",
+      "note": null
+    },
+    "tenure": "Registered traplines on Crown land (holder must actively trap to the regional manager's satisfaction or risk cancellation); private-land trapping needs the owner's written permission.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead. BC's Assigned Trapper Number is used on fur-sale/export/royalty paperwork, not on traps.",
+    "royalty": "3% of the 3-year average Canadian auction price per pelt, payable by a trapper who keeps a pelt (not payable if the pelt is sold to a licensed fur trader); due to the regional manager by March 31 following the year taken (B.C. Reg. 338/82 s. 3.09). [R1 s.5; R2 Item 5]",
+    "nuisance_route": "Paid route exists - General Wildlife Permit (Permit Regulation, B.C. Reg. 253/2000): s. 2(b) hunt/trap/kill on own property in/out of season; s. 2(c)(iii) hunt/trap/kill on others' property for problem wildlife (application via FrontCounter BC listing professional qualifications; records due within 21 days after permit expiry). Schedule C species need no permit with owner permission. [R1 s.4]",
+    "harvest_reporting_and_sealing": "Compulsory reporting within 15 days after season end for listed species, plus a general compulsory report of furbearers killed (Reg. 338/82 ss. 3.16, 3.16.1); compulsory inspection/carcass submission for wolverine, lynx, bobcat and wolf by region/MU and for fisher in any MU with an open season; fur traders must submit lynx pelt measurements. [R1 s.5]"
+  }
+}

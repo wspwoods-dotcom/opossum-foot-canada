@@ -1,0 +1,1614 @@
+{
+  "schema_version": "1.1",
+  "state": "NL",
+  "state_name": "Newfoundland and Labrador",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Season dates, limits and rules summarized from the Newfoundland and Labrador 2026-27 Hunting and Trapping Guide, the Open Seasons Hunting and Trapping Order, 2026-2027 (NLR 43/26), the Fur Bearing Animals and Coyote Trapping and Shooting Order (NLR 71/18) and the Wild Life Regulations (CNLR 1156/96). This is a reminder only — the Wild Life Act, its regulations and the minister's orders prevail. Verify with the Wildlife Division, Department of Forestry, Agriculture and Lands before you set.",
+  "sources": [
+    {
+      "id": "nl-guide-trappers",
+      "notes": "Licence types, Trapper Education Course and fees for the course, application deadlines (August 28, 2026; beaver trapline renewals October 5, 2026), WIMS online-only applications, Labrador firearms rule, LISA eligibility, accidental beaver/lynx/wolf reporting rules, fur export licensing and auction agents.",
+      "title": "2026-27 Hunting and Trapping Guide — General Information for Trappers (Government of Newfoundland and Labrador)",
+      "type": "agency_guide",
+      "url": "https://www.gov.nl.ca/hunting-trapping-guide/2026-27/general-information-for-trappers/"
+    },
+    {
+      "id": "nl-guide-print",
+      "notes": "Island and Labrador trapping season tables, black bear BBMA table (BBMA 206 closed), Newfoundland marten status and Category One/Two trapping areas, AIHTS section and certified trap lists, coyote certified traps mandatory 2029-30, youth licence rules, trapper code of ethics.",
+      "title": "2026-27 Hunting and Trapping Guide — full print edition (Government of Newfoundland and Labrador)",
+      "type": "agency_guide",
+      "url": "https://www.gov.nl.ca/hunting-trapping-guide/2026-27/print/"
+    },
+    {
+      "id": "nl-open-seasons-order-2026-27",
+      "notes": "THE LAW for 2026-27 seasons: s. 2 fur zone definitions; s. 4 Labrador North seasons; s. 5 Island and Labrador South seasons, lynx zones and deadlines; s. 7 black bear; s. 11 wolf shooting; ss. 13-15 small game, red squirrel and coyote shooting. Every guide season date was cross-checked against this Order; the two agree throughout.",
+      "title": "Open Seasons Hunting and Trapping Order, 2026-2027, NLR 43/26 (Newfoundland and Labrador Gazette, Vol. 101 No. 32, August 7, 2026, pp. 275-284)",
+      "type": "regulation",
+      "url": "https://www.gov.nl.ca/gs/files/NLG20260807.pdf"
+    },
+    {
+      "id": "nl-furbearing-order",
+      "notes": "Trap law: s. 3 certified traps (Schedule C) and marten-area rules; s. 4 neck snares; s. 5 foothold traps; s. 6 killing traps; s. 7 daily checks and Island restraining-snare breakaways; s. 8 beaver harvest limits; s. 9 lynx; Schedules A (zones/areas), C (certified traps), D and E (marten-area traps). NLR 42/26 (Gazette pp. 263-272) replaced Schedule C and amended ss. 4, 7 and 8 in 2026.",
+      "title": "Fur Bearing Animals and Coyote Trapping and Shooting Order, NLR 71/18 (consolidated, as amended by NLR 42/26)",
+      "type": "regulation",
+      "url": "https://assembly.nl.ca/Legislation/sr/regulations/rc180071.htm"
+    },
+    {
+      "id": "nl-wild-life-regulations",
+      "notes": "Licensing law: s. 2 definitions (small game includes red squirrel; youth); s. 10 trapper's, trapper's beaver and beaver trapline licences, and s. 10(4) non-residents barred; s. 14 firearms for furbearers; s. 15 wolf licence (one wolf by shooting); s. 18 licences carried; s. 24 trapper's returns due June 30; ss. 25-28 beaver licences, traplines and pelt stamping within 14 days.",
+      "title": "Wild Life Regulations, CNLR 1156/96, under the Wild Life Act (consolidated)",
+      "type": "regulation",
+      "url": "https://www.assembly.nl.ca/Legislation/sr/Regulations/rc961156.htm"
+    },
+    {
+      "id": "nl-guide-coyotes-wolves",
+      "notes": "Coyote shooting season September 12, 2026 - July 15, 2027 with no bag limit; wolf shooting seasons and the one-wolf bag limit for the shooting licence.",
+      "title": "2026-27 Hunting and Trapping Guide — Coyotes and Wolves (Government of Newfoundland and Labrador)",
+      "type": "agency_guide",
+      "url": "https://www.gov.nl.ca/hunting-trapping-guide/2026-27/hunting-seasons-and-zones/coyotes-and-wolves/"
+    },
+    {
+      "id": "nl-guide-contact",
+      "notes": "Report Poaching line 1-877-820-0999 (24/7, anonymous), Resource Enforcement Division; online reporting link.",
+      "title": "2026-27 Hunting and Trapping Guide — Contact / Report Poaching (Government of Newfoundland and Labrador)",
+      "type": "agency_guide",
+      "url": "https://www.gov.nl.ca/hunting-trapping-guide/2026-27/contact/"
+    },
+    {
+      "id": "nl-guide-2025-26-fees",
+      "notes": "Licence Fees table: General Trapper's Licence $15.00 / senior $9.75; Beaver Trapline or Trapper's Beaver Licence (Island) $15.00 / senior $9.75; prices exclude HST; $3.00 vendor/Government Service Centre surcharge. The 2026-27 web guide carries no fee table; the same fees appear in the 2015-16 and 2020-21 guides, unchanged.",
+      "title": "2025-26 Hunting and Trapping Guide (PDF) — Licence Fees table (Government of Newfoundland and Labrador)",
+      "type": "agency_guide",
+      "url": "https://www.gov.nl.ca/hunting-trapping-guide/2025-26/wp-content/uploads/sites/9/Hunting-Trapping-Guide.pdf"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "The national certified trap list that NL's Schedule C mirrors; also the source of the coyote certified restraining trap implementation schedule (mandatory in NL in 2029-30).",
+      "title": "Fur Institute of Canada — Certified Traps list (updated July 22, 2026)",
+      "type": "certified_trap_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    }
+  ],
+  "license_summary": {
+    "applications": "Applications and payment are online only through the Wildlife Information Management System (WIMS) at wildlife.gov.nl.ca. To receive a licence before the trapping season opens, applications and payments must be received by August 28, 2026. Beaver trapline licence renewals must be received by October 5, 2026 or the trapline may be forfeited. Trapping licences are downloaded and printed — they are no longer mailed.",
+    "certified_traps": "Newfoundland and Labrador adopts the AIHTS certified-trap system in law: traps for beaver, muskrat, marten, lynx, weasel (ermine) and otter, and restraining traps for beaver, lynx and wolf, must be models listed in Schedule C of NLR 71/18, which mirrors the Fur Institute of Canada certified trap list. Certified restraining traps for coyote become mandatory in the 2029-30 season. See the aihts block.",
+    "course": "All new trappers must complete the Trapper Education Course. A trapper who uses firearms must also have completed the Canadian Firearms Safety Course and the Hunter Education Course, hold an Outdoor Identification Card, and hold a valid General Trapper's Licence. Completing the Trapper Education Course after August 21, 2026 does not guarantee a trapper's licence for the 2026-27 season.",
+    "fees": "From the Licence Fees table of the 2025-26 Hunting and Trapping Guide — the 2026-27 web guide carries no fee table, and these fees are unchanged since 2015-16 (see verification.known_gaps): General Trapper's Licence $15.00, senior (age 65+) $9.75; Beaver Trapline Licence or Trapper's Beaver Licence, Island $15.00, senior $9.75. Prices do not include HST; licences purchased through vendor outlets or Government Service Centres carry an additional $3.00 fee. Trapper Education Course fees: adults $150, age 17 and under $80 (2026-27 guide).",
+    "harvest_report": "Every holder of a trapper's licence must furnish a return to the Wildlife Division on or before June 30, setting out the number and kinds of fur bearing animals taken during the licence's validity (Wild Life Regulations, s. 24(1)); returns may be filed online through WIMS. The guide's Regulation Summaries state that small game, coyote and trapping returns must be submitted within seven days of the season closing date — the two statements are both carried here and flagged in verification.known_gaps. Island lynx must be registered and the pelt stamped on or before February 9, 2027; the skull or lower jawbone of each wolf taken must be surrendered on or before May 14, 2027; beaver pelts must be pelted and stamped within 14 days after the season closes.",
+    "labrador_inuit": "Labrador Inuit Settlement Area (LISA): before a non-Inuit resident of Labrador living outside LISA may trap in LISA, they must demonstrate that they held a commercial trapping licence on June 25, 2001 and trapped there traditionally; a non-Inuit resident of Labrador living inside LISA must demonstrate they held a commercial trapping licence on December 1, 2005, or obtain the consent of the Nunatsiavut Government (2026-27 guide).",
+    "licence_types": "General Trapper's Licence (furbearers except beaver); Trapper's Beaver Licence; Beaver Trapline Licence (Island only — an assigned trapline in a Beaver Management Area); Black Bear Licence, with a trapper's licence to take black bear by trapping; combined Small Game/Coyote/Wolf Licence (the shooting seasons for coyote, wolf, red squirrel and other small game); a licence to take one wolf by shooting (Wild Life Regulations, s. 15); Fur Export Licence plus a Fur Export Permit for each shipment (required to sell fur outside the province).",
+    "permission": "Trappers must have the permission of the landowner before setting traps or snares on private land (2026-27 guide).",
+    "report_violation": "Report Poaching — Resource Enforcement Division, Department of Forestry, Agriculture and Lands: 1-877-820-0999 (toll-free, 24 hours a day, anonymous). Online reporting: gov.nl.ca/feedback/report-poaching/ (Stop Poaching).",
+    "residency": "Trapping is residents-only: a non-resident shall not be issued a trapper's licence, a trapper's beaver licence or a beaver trapline licence (Wild Life Regulations, s. 10(4)), and it is an offence under the Wild Life Act and Regulations to apply for a resident licence if you are not a resident of Newfoundland and Labrador (WIMS notice).",
+    "tagging": "Traps used on a beaver trapline must be tagged with a metal tag bearing the holder's licence number (Wild Life Regulations, s. 27(11)). Island lynx pelts are stamped at registration; beaver pelts must be pelted and stamped within 14 days after the season closes (s. 28).",
+    "trap_check": "Live holding devices set on land must be checked once per day (NLR 71/18, s. 7(1)). Restraining neck snares for fox, coyote and lynx in marten-recovery areas must be checked daily (s. 3(4)). Black bear Aldrich foot snares must be checked daily (guide). No general check interval for killing traps or killing snares was found in NLR 71/18.",
+    "trapping_licence": "General Trapper's Licence — authorizes the holder to take or kill fur bearing animals except beaver (Wild Life Regulations, CNLR 1156/96, s. 10(1)(a)). Beaver requires a separate Trapper's Beaver Licence or, on the Island, a Beaver Trapline Licence, and a person may not hold both beaver licences at the same time (s. 27(7)). Licences must be carried on the person while trapping (s. 18).",
+    "youth": "A youth who is 12 years of age may hold licences to shoot small game, coyote and wolf, and to shoot or trap furbearers; big game licences start at age 16. Youth 12 to under 16 need written parental or guardian consent for a licence to shoot fur-bearing animals; no consent is required for a General Trapper's Licence for youth under 12, or for a licence that does not involve a firearm (guide, Youth Hunting and Trapping Licences). Designated Adult supervision rules apply to youth using firearms."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Island: the harvest limit is printed on the licence. Beaver Trapline Licence — the number of beaver equal to the number of active beaver lodges on the trapline (NLR 71/18, s. 8(1)), and trapline holders must harvest a minimum of five beaver per season unless they can justify otherwise. Trapper's Beaver Licence (outside the trapline system) — maximum five beaver per season (NLR 71/18, s. 8(3)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland. Beaver trapline licence renewals were due October 5, 2026 or the trapline may be forfeited. Traps used on a beaver trapline must be tagged with a metal tag bearing the holder's licence number (Wild Life Regulations, s. 27(11)). A general trapper who accidentally takes a beaver inside a trapline area must surrender it to the trapline owner or a Forestry and Land Resources office. A Beaver Data Information Form must be completed.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Labrador: no harvest limit for the holder of a Trapper's Beaver Licence (NLR 71/18, s. 8(2)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Labrador: no harvest limit for the holder of a Trapper's Beaver Licence (NLR 71/18, s. 8(2)).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapper_beaver_licence",
+        "beaver_trapline_licence"
+      ],
+      "notes": "Beaver is managed separately from the other furbearers: a Trapper's Beaver Licence or, on the Island, a Beaver Trapline Licence is required — the General Trapper's Licence does not cover beaver (Wild Life Regulations, CNLR 1156/96, s. 10(1)). Island trapline system: a Beaver Trapline Licence covers an assigned trapline in a Beaver Management Area, and a person may not hold both a Trapper's Beaver Licence and a Beaver Trapline Licence (s. 27(7)). Beaver pelts must be pelted and stamped within 14 days after the close of the season (s. 28).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone. Muskrat opens October 5, 2026 — ten days before the zone's other furbearer seasons (Open Seasons Order, s. 4(2)).",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "Certified killing traps required (AIHTS): on land, a trap listed in Schedule C of NLR 71/18; underwater, any jaw-type trap set as a submersion set is permitted. Foothold traps for muskrat must be set as submersion sets (NLR 71/18, s. 5(1)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "Certified killing traps required (AIHTS; Schedule C of NLR 71/18). Foothold traps for otter must be set as submersion sets (NLR 71/18, s. 5(1)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Scientific name formerly Mustela vison / Neovison vison.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "American mink. The AIHTS does not apply to mink in Newfoundland and Labrador — no certified trap is required (2026-27 Hunting and Trapping Guide). Foothold traps for mink must be set as submersion sets (NLR 71/18, s. 5(1)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Ermine (weasel)",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "NL sources list 'ermine, weasel' as one line; the long-tailed weasel (Neogale frenata) also occurs in Labrador and no separate weasel season is set.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "Listed as 'Ermine, weasel' in the Open Seasons Order, 2026-2027. Certified killing traps required (AIHTS; Schedule C of NLR 71/18).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Island of Newfoundland (General Trapper's Licence).",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador North Fur Zone (General Trapper's Licence).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador South Fur Zone (General Trapper's Licence).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Labrador (Open Seasons Order, s. 13; small game licence).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "All of Labrador. Black bear seasons exclude Torngat Mountains National Park and Mealy Mountains National Park Reserve (Open Seasons Order, s. 7(1)).",
+              "zone_id": "NL-LAB",
+              "zone_name": "Labrador"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-27",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Great Island (small game licence).",
+          "open_date": "2026-10-03",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "small_game_area",
+              "note": "",
+              "zone_id": "NL-SG-GREAT-ISLAND",
+              "zone_name": "Great Island (Island of Newfoundland)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-11-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Little Bay Islands (small game licence).",
+          "open_date": "2026-10-03",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "small_game_area",
+              "note": "",
+              "zone_id": "NL-SG-LITTLE-BAY-ISLANDS",
+              "zone_name": "Little Bay Islands (Island of Newfoundland)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-07",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, remainder of the Island of Newfoundland (small game licence).",
+          "open_date": "2026-10-03",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "small_game_area",
+              "note": "Remainder of the Island of Newfoundland; Bell Island is closed to small game hunting (Open Seasons Order, s. 13).",
+              "zone_id": "NL-SG-ISLAND-REST",
+              "zone_name": "Remainder of the Island of Newfoundland"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence",
+        "small_game_licence"
+      ],
+      "notes": "Red squirrel is both a furbearer (trapping, under a General Trapper's Licence) and a small game species (shooting, under a small game licence) — it is named in the definition of small game in the Wild Life Regulations, s. 2. The AIHTS does not apply to squirrel. Small game snaring is restricted to 22-gauge brass wire or six-strand braided picture cord (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox (coloured)",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "'Fox, coloured' in the Open Seasons Order — the red fox in all colour phases (red, cross, silver and black). The AIHTS does not apply to fox in Newfoundland and Labrador. On the Island, a trapper may also shoot fox during the open trapping season with a centre-fire rifle not greater than .225 calibre or a shotgun using shot size 2 or larger (Wild Life Regulations, s. 14(4)(b)); in Labrador, holders of a general trapper's licence may use firearms to harvest furbearers during the trapping season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Arctic fox (white)",
+      "scientific_name": "Vulpes lagopus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "'Fox, white' in the Open Seasons Order. The AIHTS does not apply to fox in Newfoundland and Labrador.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland, Lynx Zone A.",
+          "open_date": "2027-01-01",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "lynx_zone",
+              "note": "Called the Northern Region (Open) in the Open Seasons Order, 2026-2027, s. 5(3) and in the guide; NLR 71/18, Schedule A names the same area Lynx Zone A, Western Region. Boundary: west of a line from the mouth of the Grand Codroy River to the northern tip of Grand Lake, then to the head of the Bay of Islands, then to the southern tip of Adies Lake. See verification.known_gaps on the naming conflict.",
+              "zone_id": "NL-LYNX-A",
+              "zone_name": "Lynx Zone A — Northern Region (Island of Newfoundland)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Island of Newfoundland, Lynx Zone B.",
+          "open_date": "2027-01-15",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "lynx_zone",
+              "note": "Called the Southern Region in the Open Seasons Order, 2026-2027, s. 5(3) and in the guide; NLR 71/18, Schedule A names the same area Lynx Zone B, Eastern Region. Boundary: east of the Zone A line. No lynx season on Brunette Island (Fortune Bay) or at Great Southern Harbour (Open Seasons Order, s. 5(4)).",
+              "zone_id": "NL-LYNX-B",
+              "zone_name": "Lynx Zone B — Southern Region (Island of Newfoundland)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "Certified traps required (AIHTS): Schedule C killing traps or certified restraining traps (NLR 71/18); in Labrador only certified killing traps or snares may be used for lynx (NLR 71/18, s. 9(1)). Island lynx must be registered and the pelt stamped on or before February 9, 2027 (Open Seasons Order, s. 5(5)); a lynx taken accidentally on the Island must be surrendered to the minister within seven days (NLR 71/18, s. 9(2)). On the Island, a trapper may also shoot lynx during the open trapping season with a centre-fire rifle not greater than .225 calibre or a shotgun using shot size 2 or larger (Wild Life Regulations, s. 14(4)(b)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "One wolf per wolf shooting licence (Wild Life Regulations, s. 15). The holder of a trapper's licence is not limited to one wolf.",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Island of Newfoundland (Open Seasons Order, s. 11(1)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "One wolf per wolf shooting licence (Wild Life Regulations, s. 15). The holder of a trapper's licence is not limited to one wolf.",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Labrador North Fur Zone (Open Seasons Order, s. 11(2)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "One wolf per wolf shooting licence (Wild Life Regulations, s. 15). The holder of a trapper's licence is not limited to one wolf.",
+            "possession_limit": null,
+            "season_bag": 1
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, Labrador South Fur Zone (Open Seasons Order, s. 11(3)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence",
+        "wolf_shooting_licence"
+      ],
+      "notes": "Trapping is under a General Trapper's Licence; shooting is under the combined small game/coyote/wolf licence, which authorizes one wolf by shooting (Wild Life Regulations, s. 15) — the holder of a trapper's licence is not limited to one wolf. The skull or the lower jawbone of each wolf taken must be surrendered to the minister on or before May 14, 2027 (Open Seasons Order, ss. 4(4) and 5(7)). Certified restraining traps for wolf are listed in Schedule C of NLR 71/18; killing neck snares remain permitted (locking device required, and on the Island a breakaway device releasing at 340 kg or less). Wolves are not established on the Island of Newfoundland; the Order nevertheless sets Island wolf seasons, and coyote-wolf hybrids are documented there.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-01",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Island of Newfoundland.",
+          "open_date": "2026-10-20",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "fur_management_area_group",
+              "note": "All Island fur management areas (NLR 71/18, Schedule A). Marten-area trap restrictions (Category One and Two) apply in designated areas.",
+              "zone_id": "NL-ISLAND",
+              "zone_name": "Island of Newfoundland"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping, Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit (Open Seasons Order, 2026-2027, s. 15).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-07-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Shooting season, province-wide, under the combined small game/coyote/wolf licence (Open Seasons Order, s. 15). Timezone shown is the Island's; Labrador observes Atlantic Time.",
+          "open_date": "2026-09-12",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "province",
+              "note": "Island of Newfoundland and Labrador. No trapping, snaring or dogs in Gros Morne and Terra Nova national parks; no shooting within the designated Pippy Park (St. John's) area.",
+              "zone_id": "NL-PROVINCE",
+              "zone_name": "Province-wide (Newfoundland and Labrador)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence",
+        "coyote_shooting_licence"
+      ],
+      "notes": "Trapping is under a General Trapper's Licence; a separate province-wide shooting season runs under the combined small game/coyote/wolf licence with no bag limit. Certified restraining traps for coyote become mandatory in the 2029-30 season (Fur Institute of Canada implementation schedule, September 2025; 22 models are listed in the 2026-27 guide); until then currently permitted traps and killing neck snares remain legal, and on the Island a neck snare must carry a breakaway device releasing at 340 kg or less (NLR 71/18, s. 4). On the Island, a trapper may also shoot coyote during the open trapping season with a centre-fire rifle not greater than .225 calibre or a shotgun using shot size 2 or larger (Wild Life Regulations, s. 14(4)(b)); in Labrador, general trappers may use firearms to harvest furbearers during the trapping season.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador North Fur Zone.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "North of a line along latitude 54°00′N to longitude 62°00′W, then north along longitude 62°00′W to latitude 55°00′N, then west to the Quebec border (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-N",
+              "zone_name": "Labrador North Fur Zone"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit specified in the Open Seasons Hunting and Trapping Order, 2026-2027.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-20",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Labrador South Fur Zone.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "fur_zone",
+              "note": "The remainder of Labrador not in the Labrador North Fur Zone (Open Seasons Order, 2026-2027, s. 2).",
+              "zone_id": "NL-LAB-S",
+              "zone_name": "Labrador South Fur Zone"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "general_trapper_licence"
+      ],
+      "notes": "Open in Labrador only — there is NO open season on the Island of Newfoundland (see the separate Newfoundland marten entry: the Island population is protected). Certified killing traps required (AIHTS; Schedule C of NLR 71/18). In Labrador marten-recovery areas, restraining neck snares used for fox, coyote and lynx must meet the marten-protection specifications in NLR 71/18, s. 3(3)-(4).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Two black bears per licence, across the spring and fall seasons combined (guide).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2026-11-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Fall season, Island of Newfoundland. A bow-only pre-season runs August 29 - September 11, 2026. The guide's BBMA table lists BBMA 206 (Eastern) as closed — see verification.known_gaps.",
+          "open_date": "2026-09-12",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "black_bear_management_area_group",
+              "note": "The guide's BBMA table lists BBMA 206 (Eastern: former MMAs 31, 32, 33, 34, 35, 36, 43, 44) as Closed for spring and fall, while the Open Seasons Order, s. 7(2) states the seasons apply in all black bear management areas — discrepancy flagged in verification.known_gaps.",
+              "zone_id": "NL-BBMA-ISLAND",
+              "zone_name": "Island of Newfoundland — Black Bear Management Areas"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Two black bears per licence, across the spring and fall seasons combined (guide).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-07-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Spring season, Island of Newfoundland. The guide's BBMA table lists BBMA 206 (Eastern) as closed — see verification.known_gaps.",
+          "open_date": "2027-05-01",
+          "open_time": null,
+          "timezone": "America/St_Johns",
+          "zones": [
+            {
+              "area_type": "black_bear_management_area_group",
+              "note": "The guide's BBMA table lists BBMA 206 (Eastern: former MMAs 31, 32, 33, 34, 35, 36, 43, 44) as Closed for spring and fall, while the Open Seasons Order, s. 7(2) states the seasons apply in all black bear management areas — discrepancy flagged in verification.known_gaps.",
+              "zone_id": "NL-BBMA-ISLAND",
+              "zone_name": "Island of Newfoundland — Black Bear Management Areas"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Two black bears per licence, across the spring and fall seasons combined (guide).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2026-11-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Fall season, Labrador, excluding Torngat Mountains National Park and Mealy Mountains National Park Reserve.",
+          "open_date": "2026-08-10",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "All of Labrador. Black bear seasons exclude Torngat Mountains National Park and Mealy Mountains National Park Reserve (Open Seasons Order, s. 7(1)).",
+              "zone_id": "NL-LAB",
+              "zone_name": "Labrador"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Two black bears per licence, across the spring and fall seasons combined (guide).",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-07-13",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Spring season, Labrador, excluding Torngat Mountains National Park and Mealy Mountains National Park Reserve.",
+          "open_date": "2027-04-01",
+          "open_time": null,
+          "timezone": "America/Goose_Bay",
+          "zones": [
+            {
+              "area_type": "region",
+              "note": "All of Labrador. Black bear seasons exclude Torngat Mountains National Park and Mealy Mountains National Park Reserve (Open Seasons Order, s. 7(1)).",
+              "zone_id": "NL-LAB",
+              "zone_name": "Labrador"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "black_bear_licence",
+        "general_trapper_licence"
+      ],
+      "notes": "The same seasons govern trapping and shooting (Open Seasons Order, 2026-2027, s. 7); rows are modelled as trapping because the app is a trap log, with the shooting and bow seasons in the row notes. A black bear licence authorizes two bears. Bear trapping requires a trapper's licence to take black bear by trapping, issued to a black bear licence holder (Wild Life Regulations, Part IV). Bear may be trapped only with an Aldrich foot snare in a covered cubby set, checked daily, with a warning sign posted at the site; cubs under one year of age and females accompanied by cubs under one year may not be taken (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Newfoundland marten",
+      "scientific_name": "Martes americana atrata",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Island population of the American marten, treated as a distinct protected population under the Newfoundland and Labrador Endangered Species Act.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED — no open season on the Island of Newfoundland. The Newfoundland marten is designated Vulnerable under the Newfoundland and Labrador Endangered Species Act (downlisted from Threatened) and is protected under the Wild Life Act; it is one of only seven land mammals native to the Island of Newfoundland. Trapping in designated marten areas is restricted by category (NLR 71/18, ss. 3(2), Schedules A, D and E): Category One areas (Pine Marten Study Area, Main River Study Area, Little Grand Lake Wildlife Reserve, Glover Island Public Reserve) — Schedule D traps only, no land-based traps or snares and no small game snaring; Category Two areas — Schedule E devices only; the Little Grand Lake Provisional Ecological Reserve is closed to all trapping except beaver. A marten taken accidentally must be turned in to the nearest Forestry and Land Resources office (guide). The Labrador population is a separate population with open seasons — see American marten.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED — no open season anywhere in Newfoundland and Labrador. The 2026-27 Hunting and Trapping Guide lists fisher as 'No Open Season' in both Labrador fur zones, the Open Seasons Hunting and Trapping Order, 2026-2027 sets no fisher season, and fisher is not native to the Island of Newfoundland.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "CLOSED — no open season anywhere in Newfoundland and Labrador. The 2026-27 Hunting and Trapping Guide lists wolverine as 'No Open Season' in both Labrador fur zones, and the Open Seasons Hunting and Trapping Order, 2026-2027 sets no wolverine season.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "cross_checks": [
+      "Every Island and Labrador trapping season date in the 2026-27 guide's tables was checked against the Open Seasons Hunting and Trapping Order, 2026-2027 (NLR 43/26), ss. 4, 5 and 11-15. The guide and the Order agree on every date, including the Labrador North muskrat October 5 opener and the Island lynx zone split (Zone A January 1, Zone B January 15).",
+      "Trap rules, certified-trap requirements and beaver limits were taken from the regulation text (NLR 71/18 consolidated, including the NLR 42/26 amendments that replaced Schedule C in 2026), not from the guide's summaries.",
+      "Licence types, the non-resident bar, the wolf one-animal shooting limit, the June 30 trapper's return and beaver pelt stamping were taken from the Wild Life Regulations, CNLR 1156/96, ss. 10, 14, 15, 24 and 25-28.",
+      "Calendar check: all 2026-27 dates are fixed calendar dates in the Order (no relative dates to compute). February 2027 has 28 days, so the February 28, 2027 closings (Island mink, ermine and red squirrel) are valid month-end dates."
+    ],
+    "known_gaps": [
+      "Licence fees: the 2026-27 web guide carries no fee table. Fees in license_summary.fees come from the Licence Fees table of the 2025-26 Hunting and Trapping Guide; the same amounts ($15.00 / $9.75 senior) appear unchanged in the 2015-16 and 2020-21 guides. What resolves it: read the fee shown in WIMS when applying, or the fee table in the 2026-27 print/PDF guide, before the dataset leaves provisional.",
+      "Lynx zone naming conflict: NLR 71/18, Schedule A names the Island areas 'Lynx Zone A (Western Region)' and 'Lynx Zone B (Eastern Region)', while the Open Seasons Order, 2026-2027, s. 5(3) and the guide call the same areas the 'Northern Region' and 'Southern Region'. The boundaries and dates agree; only the region labels differ. The dataset uses the Order's 2026-27 labels with the conflict noted on the zone records. What resolves it: written confirmation from the Wildlife Division of the current labels.",
+      "Island black bear closure conflict: the guide's Black Bear Management Area table lists BBMA 206 (Eastern: former MMAs 31, 32, 33, 34, 35, 36, 43, 44) as Closed for both spring and fall, but the Open Seasons Order, s. 7(2) states the Island seasons apply 'in all black bear management areas'. The dataset models the seasons province-wide per the Order and flags the guide's closure on the zone record. What resolves it: the Black Bear Hunting and Trapping Order for 2026-27 (a separate instrument not read in this pass).",
+      "Trapper's return deadline: the Wild Life Regulations, s. 24(1) require a trapper's licence return on or before June 30; the guide's Regulation Summaries state that small game, coyote and trapping returns must be submitted within seven days of the season closing date. Both statements are carried in license_summary.harvest_report. What resolves it: the return form/notice issued with the 2026-27 licence in WIMS.",
+      "Beaver traplines outside the Island: the guide describes the beaver trapline system as an Island system, and NLR 71/18, s. 8(2) gives Labrador Trapper's Beaver Licence holders no harvest limit; whether any Beaver Management Areas or traplines are designated in Labrador was not verified in this pass. What resolves it: the current beaver order under Wild Life Regulations, s. 25.",
+      "Schedule D and E trap tables (Category One and Two marten areas) were captured from the guide's summary tables and the headings of NLR 71/18, Schedules D and E; the full model lists in those schedules were not transcribed line-by-line. What resolves it: a dedicated transcription pass over Schedules D and E, the same follow-on Ontario needs for its full certified-trap list.",
+      "Time zones: Island rows use America/St_Johns (Newfoundland Time, UTC-3:30) and Labrador rows use America/Goose_Bay (Atlantic Time, UTC-4). The southeastern Labrador coast (Strait of Belle Isle area) observes Newfoundland Time, so Labrador-zone rows carry a small timezone edge case the clone must handle or note.",
+      "Island wolf rows are modelled exactly as written in the Order (trapping October 20, 2026 - February 1, 2027; shooting October 15, 2026 - March 31, 2027) even though wolves are not established on the Island; the seasons appear to exist for coyote-wolf hybrids and incidental animals.",
+      "Sunday hunting and any first-day opening-time rules were not transcribed (open_time is null on every row), the same limitation as the Ontario pass.",
+      "Out of scope, deliberately: polar bear (a Labrador shooting season, February 1 - June 30, 2027, exists in the Order, s. 12, but polar bear harvest is governed by the Labrador Inuit Land Claims Agreement, not a trapper's licence), and the small game species (snowshoe hare, arctic hare, porcupine, ptarmigan, grouse) — hare snaring in particular is a major NL activity the clone may want as a later module. Red squirrel is included because it is a listed furbearer with trapping seasons."
+    ],
+    "retrieved": "2026-11-15",
+    "status": "Structured dataset built from the 2026-27 Hunting and Trapping Guide (Government of Newfoundland and Labrador, Department of Forestry, Agriculture and Lands — Wildlife Division), cross-checked against the Open Seasons Hunting and Trapping Order, 2026-2027 (NLR 43/26), the Fur Bearing Animals and Coyote Trapping and Shooting Order (NLR 71/18, consolidated, as amended by NLR 42/26) and the Wild Life Regulations (CNLR 1156/96). Provisional: research pass, not yet final."
+  },
+  "license_url": "https://www.wildlife.gov.nl.ca/",
+  "license_vendor": "Wildlife Information Management System (WIMS), Wildlife Division, Department of Forestry, Agriculture and Lands",
+  "regs_url": "https://www.gov.nl.ca/hunting-trapping-guide/2026-27/general-information-for-trappers/",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report Poaching — Resource Enforcement Division",
+    "note": "Toll-free 1-877-820-0999, 24 hours a day, anonymous. Online reporting: https://www.gov.nl.ca/feedback/report-poaching/ (Stop Poaching).",
+    "url": "https://www.gov.nl.ca/feedback/report-poaching/"
+  },
+  "aihts": {
+    "canada_aihts_species_in_province": [
+      "Beaver",
+      "Ermine (weasel)",
+      "Coyote",
+      "Canada lynx",
+      "American marten",
+      "Muskrat",
+      "River otter",
+      "Gray wolf"
+    ],
+    "certified_killing_traps_schedule_c_part_a": [
+      {
+        "models_approx": 25,
+        "note": "NLR 71/18, Schedule C, Part A(a)(i), as replaced by NLR 42/26.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 19,
+        "note": "NLR 71/18, Schedule C, Part A(a)(ii).",
+        "species": "American marten"
+      },
+      {
+        "models_approx": 36,
+        "note": "NLR 71/18, Schedule C, Part A(a)(iii). Underwater, any jaw-type trap set as a submersion set may be used instead.",
+        "species": "Muskrat (on land)"
+      },
+      {
+        "models_approx": 26,
+        "note": "NLR 71/18, Schedule C, Part A(a)(iv).",
+        "species": "Ermine (weasel)"
+      },
+      {
+        "models_approx": 18,
+        "note": "NLR 71/18, Schedule C, Part A(a)(v).",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 17,
+        "note": "NLR 71/18, Schedule C, Part A(a)(vi).",
+        "species": "River otter"
+      }
+    ],
+    "certified_restraining_traps_schedule_c_part_b": [
+      {
+        "models_approx": 6,
+        "note": "Cage traps only. NLR 71/18, Schedule C, Part B(b)(i).",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 14,
+        "note": "NLR 71/18, Schedule C, Part B(b)(ii).",
+        "species": "Gray wolf"
+      },
+      {
+        "models_approx": 5,
+        "note": "NLR 71/18, Schedule C, Part B(b)(iii).",
+        "species": "Canada lynx"
+      }
+    ],
+    "coyote_certified_traps": {
+      "mandatory_from": "2029-30 season",
+      "models_listed_in_guide": 22,
+      "note": "The 2026-27 guide lists 22 certified restraining trap models for coyote from the Fur Institute of Canada implementation schedule (September 2025); they become mandatory in the 2029-30 season. Until then, currently permitted traps and killing neck snares remain legal for coyote."
+    },
+    "no_certified_trap_required": [
+      "American mink",
+      "Red fox (coloured)",
+      "Arctic fox (white)",
+      "Red squirrel",
+      "Black bear",
+      "Coyote (restraining traps, until the 2029-30 season)"
+    ],
+    "note": "Newfoundland and Labrador implements the Agreement on International Humane Trapping Standards in law: NLR 71/18, s. 3 requires traps for beaver, muskrat, marten, lynx, weasel (ermine) and otter, and restraining traps for beaver, lynx and wolf, to be models listed in Schedule C of that Order — a provincial list that tracks the Fur Institute of Canada certified trap list. The guide states the AIHTS applies to eight species in the province (beaver, ermine/weasel, coyote, lynx, marten, muskrat, otter, wolf) and does not apply to mink, fox or squirrel. Sufficient numbers of killing traps have not yet been certified for wolf or coyote, so currently permitted devices (including locking neck snares) remain legal for those two species. Model counts are structural counts of Schedule C as replaced by NLR 42/26 in 2026; the full model-by-model list was not transcribed in this pass — see the Fur Institute of Canada certified trap list (July 22, 2026).",
+    "trap_rules": [
+      "Killing neck snares set on land must have a locking device; on the Island of Newfoundland they must also have a breakaway device that disassembles the snare loop or releases the loop when a static force of 340 kg or more is applied (NLR 71/18, s. 4, as amended by NLR 42/26).",
+      "Live holding devices set on land must be checked once per day (NLR 71/18, s. 7(1)). Restraining neck snares on the Island must have a breakaway device releasing at 340 kg or less, except snares set completely under water or as part of a submersion set (s. 7(2)).",
+      "Foothold traps for beaver, muskrat, otter or mink must be set as submersion sets (NLR 71/18, s. 5(1)). Foothold traps for coyote or wolf must have a minimum 5 mm space between the jaws when fully closed, rubber-like jaw pads, or jaws at least 9 mm thick (s. 5(2)).",
+      "Killing traps must not have metal teeth, serrated edges or hooks on their jaws, and spring poles and foothold traps set in trees or on poles are prohibited unless the trap is set as a killing trap (NLR 71/18, s. 6).",
+      "Marten protection: in Category One areas only Schedule D traps may be used, with no land-based traps or snares and no small game snaring; in Category Two areas only Schedule E devices may be used (NLR 71/18, s. 3(2), Schedules D and E). The Little Grand Lake Provisional Ecological Reserve is closed to all trapping except beaver.",
+      "Restraining neck snares for fox, coyote and lynx in Labrador marten-recovery areas: cable at least 3/32 inch, a 360-degree swivel, a stop limiting the loop to a minimum circumference of eight inches, fastened to an immovable object, no drags, checked daily, and a breakaway device releasing at 340 kg or less (NLR 71/18, s. 3(3)-(4)).",
+      "Small game snaring is restricted to 22-gauge brass wire or six-strand braided picture cord (2026-27 guide)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "From 2029-30 only certified restraining traps may be used for coyote; killing neck snares remain permitted with breakaway devices. [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Live-holding devices on land: daily (Trapping Order s. 7(1)); restraining (live) neck snares for fox/coyote/lynx: 24-hour check per the guide.",
+      "killing": "No interval for killing traps found.",
+      "note": null
+    },
+    "tenure": "Beaver traplines on the Island (vacant lines go on a general areas list for the season) plus general trapping by Fur Management Areas/Zones, split Island / Labrador North / Labrador South.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead.",
+    "royalty": "None in force - Wild Life Act s. 7(1)(d) gives the Minister power to prescribe royalties, but none is prescribed in the Wild Life Regulations or the 2026-27 guide. [R2 Item 5]",
+    "nuisance_route": "Case-by-case only - a Permit to Destroy Problem Animals (Dept. of Forestry, Agriculture and Lands) is required to destroy wildlife interfering with farm crops, operations or dwellings when other mitigation fails; kill only, no relocation route stated. Livestock Protection from Coyote permits are for producers only. Whether a hired trapper may hold the destroy permit is not stated - unconfirmed. [R2 Item 3]",
+    "harvest_reporting_and_sealing": "All Island lynx must be registered and skins stamped (by Feb 9, 2027 for 2026-27); Labrador trappers submit wolf skull or lower jaw (by May 14, 2027). [R1 s.5]"
+  }
+}

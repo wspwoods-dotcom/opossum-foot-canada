@@ -1,0 +1,874 @@
+{
+  "schema_version": "1.1",
+  "state": "PE",
+  "state_name": "Prince Edward Island",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates and limits are set by regulation and can change. Always verify current regulations with the Prince Edward Island Department of Environment, Energy and Climate Action (Forests, Fish and Wildlife Division) before hunting or trapping. Trapping in Prince Edward Island is governed by the Wildlife Conservation Act, R.S.P.E.I. 1988, c. W-4.1, the Fur Harvesting Regulations (EC663/04) and the Hunting and Trapping Seasons Regulations (EC592/16). This dataset is for the separate Canada clone of the app and is provisional research data, not yet final.",
+  "sources": [
+    {
+      "id": "pei-seasons-regulations",
+      "notes": "THE LAW for seasons. Office consolidation (Legislative Counsel Office) current to September 15, 2018, read via a mirror copy (docslib) on 2026-11-15; the consolidation is published by the Legislative Counsel Office on princeedwardisland.ca under the Wildlife Conservation Act. Schedule I (hunting) and Schedule II (trapping) transcribed in full; ss. 2(3)-(4) set the fox/coyote method windows. Post-2018 amendments exist (see pei-summaries-2020-2021 and pei-hunting-summary-2026) and are flagged in verification.known_gaps.",
+      "title": "Hunting and Trapping Seasons Regulations (EC592/16) under the Wildlife Conservation Act",
+      "type": "regulation",
+      "url": "https://docslib.org/download/10185786/hunting-and-trapping-seasons-regulations"
+    },
+    {
+      "id": "pei-fur-harvesting-regulations",
+      "notes": "THE LAW for trapping rules. Office consolidation (Legislative Counsel Office) current to September 12, 2015, read in full via the FAOLEX mirror of the official PDF on 2026-11-15: definitions, Schedule A fur-bearing animals, licensing (s. 2), trapper education (s. 3), snares (s. 4), body-gripping traps and Schedule C (s. 5), foot-hold traps (s. 6), prohibited devices (s. 7), permitted devices (s. 8), prohibited activities incl. trap-check intervals (s. 9), possession/sale/export (ss. 10-13), Schedule B fees. September 2025 amendments to this regulation were announced but the amended text was not read in this pass - see verification.known_gaps.",
+      "title": "Fur Harvesting Regulations (EC663/04) under the Wildlife Conservation Act",
+      "type": "regulation",
+      "url": "https://www.princeedwardisland.ca/en/legislation/wildlife-conservation-act/fur-harvesting-regulations"
+    },
+    {
+      "id": "pei-hunting-summary-2026",
+      "notes": "The official guide for 2026-27. The 'Resident Game and Furbearer Hunting - Open Seasons and Limits' table is p. 17; general hunting regulations pp. 7-9; furbearer hunting rules p. 23. NOT read directly in this pass: the official PDF link on princeedwardisland.ca could not be extracted with this session's tools. Content was taken from two independent extractions that quote the guide's page numbers (truenorthhunter.ca and huntscout.app), which agree with each other and, except for the March 30 vs March 31 close dates flagged in known_gaps, with the Seasons Regulations. Re-verify against the official PDF before launch - this is the PEI equivalent of Ontario's Blocker #1.",
+      "title": "2026 Hunting Summary (2026-27), Government of Prince Edward Island, Forests, Fish and Wildlife Division",
+      "type": "agency_guide",
+      "url": "https://www.princeedwardisland.ca/en/service/buy-a-hunting-licence-online"
+    },
+    {
+      "id": "pei-trapping-information-centre",
+      "notes": "Official PEI page (updated October 3, 2025). Trapping licence requirement, Trapper Education Course schedule and fees, WCF fee, where licences are sold, restricted public-land sites list, and a link to the 2025 Trapping Summary (4.1 MB PDF; the 2026 Trapping Summary, if published, would be linked here). Read 2026-11-15.",
+      "title": "Trapping Information Centre (princeedwardisland.ca)",
+      "type": "agency_page",
+      "url": "https://www.princeedwardisland.ca/en/information/environment-energy-and-climate-action/trapping-information-centre"
+    },
+    {
+      "id": "pei-buy-hunting-licence",
+      "notes": "Official service page (crawled October 31, 2026). Licence fees incl. fur-bearer hunting licence $5 for youth/resident/senior classes, CAF member exemption, non-resident $75/$60, WCF fee schedule, residency definition, youth rules, hunter safety requirement. Read 2026-11-15.",
+      "title": "Buy a Hunting Licence Online (princeedwardisland.ca)",
+      "type": "agency_page",
+      "url": "https://www.princeedwardisland.ca/en/service/buy-a-hunting-licence-online"
+    },
+    {
+      "id": "pei-trapping-changes-2025",
+      "notes": "Official announcement of the September 2025 Fur Harvesting Regulations changes: continuing education for certified trappers (phased in by 2029); landowner right to remove unauthorized traps; added permission requirements for traps on private land and a higher standard for snares; snares prohibited on public lands; bait prohibited in conjunction with snares; killing neck snare design required; live-restraining snares allowed. Read via the release as reproduced by The Fur-Bearers (September 17, 2025) and the Animal Law Digest summary; the release itself is posted on princeedwardisland.ca (September 16, 2025). The amending regulation (EC number, exact text, in-force dates) was not read - see verification.known_gaps.",
+      "title": "PEI implements changes to trapping and snaring rules - Government of Prince Edward Island news release, September 16, 2025",
+      "type": "agency_news_release",
+      "url": "https://thefurbearers.com/wp-content/uploads/2025-09-17-PEI-Trapping-PR.pdf"
+    },
+    {
+      "id": "pei-report-violation",
+      "notes": "Official page (updated February 2, 2026): report violations, including poaching and illegal trapping, by leaving a detailed message anytime at 902-368-4884.",
+      "title": "Report a Violation to a Conservation Officer (princeedwardisland.ca)",
+      "type": "agency_page",
+      "url": "https://www.princeedwardisland.ca/en/topic/angling-hunting-and-trapping-licences"
+    },
+    {
+      "id": "pei-wcf",
+      "notes": "WCF annual fees: $20 including HST; $13 for seniors 65+; no fee for youth under 16. Read 2026-11-15.",
+      "title": "Wildlife Conservation Fund (princeedwardisland.ca)",
+      "type": "agency_page",
+      "url": "https://www.princeedwardisland.ca/en/information/environment-energy-and-climate-action/wildlife-conservation-fund"
+    },
+    {
+      "id": "pei-summaries-2020-2021",
+      "notes": "Official summaries read via mirror copies (readkong). The 2020 summary's 'What's New' documents the amendment moving the coyote foothold trapping opener to October 15 and the end of the metal-die trap-tagging requirement (traps must still be clearly marked with the trapper's ID number). The 2021 summary's trapping-season table confirms the fox/coyote method windows (fox modified foothold Nov 1 - Jan 31; fox snaring Nov 15 - Jan 31; raccoon Oct 15 - Mar 31; coyote Oct 15 - Nov 14 and Feb 1 - Feb 28 foothold windows) and Schedule C's presence in the annual summary.",
+      "title": "2020 and 2021 Hunting and Trapping Summaries, Government of Prince Edward Island (official PDFs, mirror copies)",
+      "type": "agency_guide_mirror",
+      "url": "https://www.readkong.com/page/2021-hunting-and-trapping-summary-government-of-prince-3354820"
+    },
+    {
+      "id": "fic-certified-traps",
+      "notes": "National AIHTS certified-trap list. PEI's Schedule C header states its approved body-gripping traps are 'Certified under the Canadian Trap Certification Program' - the FIC program. The FIC list is the national source; PEI's Schedule C is a frozen provincial subset and governs in PEI.",
+      "title": "Fur Institute of Canada - Certified Traps list",
+      "type": "national_certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "Body-gripping traps for beaver, raccoon, muskrat and weasel (on land) and beaver/muskrat (underwater) must be approved traps listed in Schedule C of the Fur Harvesting Regulations - PEI's adoption of the Canadian Trap Certification Program (FIC) list. See the 'aihts' section of this dataset.",
+    "course": "Trapper Education Course (approved trapper education program) required for a first trapping licence: Fur Harvesting Regulations s. 2(1)(a)(ii) (age 16+) and s. 2(2) (junior). Courses are held twice a year, usually April and October; free for ages 12-15, $20 for ages 16+ (Trapping Information Centre). Since September 2025, certified trappers must also complete continuing education to maintain eligibility, fully phased in by 2029 (Government of PEI news release, September 16, 2025).",
+    "fees": "Trapping licence $10.00 (18+) and junior trapping licence $5.00 (Schedule B, Fur Harvesting Regulations, as amended by EC305/13; HST not included) - no newer official fee source was found in this pass, so treat as to-confirm. Wildlife Conservation Fund (WCF) licence: $20/year, $13/year for ages 65+, no fee under 16 (Trapping Information Centre; WCF page). Fur-bearer hunting licence $5 (resident, all age classes; no fee for Canadian Armed Forces members/veterans); non-resident hunting licence $75 seasonal / $60 three-day (Buy a Hunting Licence Online service page). Snowshoe hare snaring licence $5. Trapper Education Course $20 (16+), free 12-15.",
+    "harvest_report": "Fur dealers must keep records and report monthly during open season and within 30 days of a season close (Fur Harvesting Regulations s. 13). A trapper must, on request by a conservation officer, provide information on the trapping of any fur-bearing animal whose green hide or carcass they possess (s. 10(2)). The annual summaries include a Trapper Harvest Log; whether returning a trapper harvest report is mandatory was NOT verified in this pass - see verification.known_gaps. There is no pelt tagging or sealing requirement in the Fur Harvesting Regulations.",
+    "hunting_furbearers": "Raccoon, red fox, coyote and red squirrel may be hunted under a fur-bearer hunting licence ($5 resident). Beaver, mink, muskrat, skunk and weasel may be taken ONLY by trapping (Fur Harvesting Regulations s. 9(1)(f)). A fur-bearer hunting licence holder may sell the pelts of raccoon, coyote, red fox or red squirrel to a licensed fur dealer (s. 12(3)). Snowshoe hare hunting (Oct 1 - Mar 31, daily limit 5) is under the general hunting licence; hare snaring (Nov 1 - Feb 28) needs its own $5 Snowshoe Hare Snaring Licence.",
+    "licence_types": "Trapping licence; junior trapping licence; fur-bearer hunting licence; general hunting licence; snowshoe hare snaring licence; fur dealer's licence; fur export permit. A trapping licence expires on March 31 following the date of issue (Fur Harvesting Regulations s. 2(8)). Trapping licences are sold in person at Access PEI offices and the Forests, Fish and Wildlife office, 183 Upton Road, Charlottetown (Trapping Information Centre); hunting licences are also sold online.",
+    "permission": "Landowner permission is required before setting traps (Trapping Information Centre; Fur Harvesting Regulations framework). September 2025 changes added permission requirements for traps on private land, a higher permission standard for snares, and a landowner right to remove traps set without permission (news release). Snares have been prohibited on public land since the September 2025 changes, and trapping is restricted/closed on about 3,525 hectares of listed public land.",
+    "quotas": "PEI has NO licence quotas and NO bag limits for trapping: Schedule II of the Hunting and Trapping Seasons Regulations sets open seasons with no daily, season, or possession limits for any trapped species. The only bag limit in this dataset is snowshoe hare hunting (5/day).",
+    "report_violation": "Report a violation to a Conservation Officer: leave a detailed message anytime at 902-368-4884 (Government of PEI, 'Report a Violation to a Conservation Officer', updated February 2, 2026). Forests, Fish and Wildlife Division: 902-368-4683 / 1-866-368-4683.",
+    "trap_check": "Every trapping device must be examined at least once every 72 hours; traps designed to hold an animal alive at least once a day; snares designed to kill red fox or coyote at least once every 48 hours (Fur Harvesting Regulations s. 9(1)(h)-(i), 2015 consolidation - confirm against the current consolidation, see verification.known_gaps).",
+    "trapping_licence": "A trapping licence is required to trap fur-bearing animals (Fur Harvesting Regulations s. 2). Eligibility: held a valid trapping licence within the previous 5 years, OR age 16+ and successful completion of an approved trapper education program; junior licence for under-16s who have completed the program. Each licensed trapper is assigned a permanent trapper registration number, and every trap or snare set must be clearly identified with it (s. 2(4)-(5)). A current Wildlife Conservation Fund licence is also required."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season opens 8:00 AM November 1 (Schedule II). In February and March, beaver traps may be set only in or over water (Fur Harvesting Regulations s. 9(1)(d)). Body-gripping traps used for beaver on land, and beaver/muskrat underwater, must be approved traps listed in Schedule C of the Fur Harvesting Regulations. Foot-hold traps for beaver must be attached to a drowning device (s. 6(1)(a)). A named 'Beaver Restricted Zone' (Kensington-Malpeque-Darnley-Fox River-Long River) appears in secondary extractions of the 2026 summary; its terms were not verified in this pass - see verification.known_gaps.",
+          "open_date": "2026-11-01",
+          "open_time": "08:00",
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Fur Harvesting Regulations, Schedule A). May be taken only by trapping (s. 9(1)(f)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season opens 8:00 AM November 1 (Schedule II). In February and March, mink traps may be set only in or over water (Fur Harvesting Regulations s. 9(1)(d)). Foot-hold traps for mink must be attached to a drowning device or be heavy enough to submerge the animal (s. 6(1)(a)-(b)).",
+          "open_date": "2026-11-01",
+          "open_time": "08:00",
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). May be taken only by trapping (s. 9(1)(f)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season opens 8:00 AM November 1 (Schedule II). In February and March, muskrat traps may be set only in or over water (Fur Harvesting Regulations s. 9(1)(d)). Body-gripping traps for muskrat on land must be Schedule C approved traps; underwater, Schedule C traps or a set that prevents the muskrat from resurfacing (s. 5(6)-(7)).",
+          "open_date": "2026-11-01",
+          "open_time": "08:00",
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). May be taken only by trapping (s. 9(1)(f)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Weasel (ermine)",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Season opens 8:00 AM November 1 (Schedule II). During March, a trap set for weasel must be a Victor rat trap (Fur Harvesting Regulations s. 9(1)(e)). Body-gripping traps for weasel on land must be Schedule C approved traps (s. 5(6)).",
+          "open_date": "2026-11-01",
+          "open_time": "08:00",
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal as 'weasel (ermine)' (Schedule A). May be taken only by trapping (s. 9(1)(f)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping season October 15 - March 31 (Schedule II). Except during the open season for mink, no trap may be set for raccoon within 3 metres of a watercourse, marsh or open-water wetland (Fur Harvesting Regulations s. 9(1)(c)). Foot-hold traps for raccoon must have rubber-padded jaws or be foot-encapsulating traps (s. 6(1)(d)).",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for hunting this species in Schedule I of the Hunting and Trapping Seasons Regulations (shown as '-' in the 2026 Hunting Summary).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting season October 1 - March 31 (Schedule I, as updated in the 2026 Hunting Summary; the 2018 consolidation of Schedule I reads March 30 - see verification.known_gaps). A fur-bearer hunting licence holder may sell raccoon pelts to a licensed fur dealer (Fur Harvesting Regulations s. 12(3)). Secondary extractions of the 2026 summary indicate night hunting of raccoon requires a permit; not confirmed in the regulation text read in this pass.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). Huntable under a fur-bearer hunting licence and trappable under a trapping licence.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-11-14",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Trapping restricted to modified foot-hold traps (laminated, off-set or padded jaws, or similar) from November 1 to November 14 (Hunting and Trapping Seasons Regulations s. 2(3)).",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Snares and modified foot-hold traps permitted from November 15 to January 31 (s. 2(3)). Since the September 2025 regulation changes, snares are prohibited on public land and bait may not be used in conjunction with snares; only killing neck snares or live-restraining snares may be used (Government of PEI news release, September 16, 2025; amended regulation text not read in this pass). Killing snares for fox must be examined at least once every 48 hours (Fur Harvesting Regulations s. 9(1)(i)).",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for hunting this species in Schedule I of the Hunting and Trapping Seasons Regulations (shown as '-' in the 2026 Hunting Summary).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting season November 1 - January 31 (Schedule I). It is unlawful to hunt fox with cartridges larger than .22 rim fire or .17 centre fire (2026 Hunting Summary). A fur-bearer hunting licence holder may sell red fox pelts to a licensed fur dealer (Fur Harvesting Regulations s. 12(3)); the 2026 Hunting Summary states fox pelts may be sold only to a licensed fur dealer or fur auction house representative.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). 'Modified foot-hold trap' is defined by reference to Fur Harvesting Regulations s. 6(1)(e).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-11-14",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Modified foot-hold traps only. The October 15 foothold opener was introduced by amendment documented in the official 2020 Hunting and Trapping Summary ('What's New': 'The opening date of coyote trapping season with footholds is October 15th'); the 2018 consolidation of the Seasons Regulations reads November 1 - see verification.known_gaps.",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Snares and modified foot-hold traps permitted from November 15 to January 31 (Hunting and Trapping Seasons Regulations s. 2(4)). Since the September 2025 regulation changes, snares are prohibited on public land and bait may not be used in conjunction with snares; only killing neck snares or live-restraining snares may be used (Government of PEI news release, September 16, 2025; amended regulation text not read in this pass). Killing snares for coyote must be examined at least once every 48 hours (Fur Harvesting Regulations s. 9(1)(i)).",
+          "open_date": "2026-11-15",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for trapping in Schedule II of the Hunting and Trapping Seasons Regulations; PEI trapping is not quota-based.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Modified foot-hold traps only from February 1 to February 28 (s. 2(4)). Overall coyote trapping season closes February 28.",
+          "open_date": "2027-02-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No daily, season, or possession limit is set out for hunting this species in Schedule I of the Hunting and Trapping Seasons Regulations (shown as '-' in the 2026 Hunting Summary).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting season October 1 - March 31 (Schedule I, as updated in the 2026 Hunting Summary; the 2018 consolidation reads March 30 - see verification.known_gaps). A fur-bearer hunting licence holder may sell coyote pelts to a licensed fur dealer (Fur Harvesting Regulations s. 12(3)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). Eastern coyote. No bounty or quota is recorded in the sources read in this pass.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No closed season (Schedule II); no daily, season, or possession limit is set out.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No closed season for trapping (Schedule II). Modelled as continuous_open over the full span, following the Ontario dataset's convention for 'all year' seasons.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No closed season (Schedule I); no daily or possession limit is set out.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "No closed season for hunting (Schedule I). A fur-bearer hunting licence holder may sell red squirrel pelts to a licensed fur dealer (Fur Harvesting Regulations s. 12(3)).",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No closed season (Schedule II); no daily, season, or possession limit is set out.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "No closed season for trapping (Schedule II). Modelled as continuous_open over the full span, following the Ontario dataset's convention for 'all year' seasons.",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Designated fur-bearing animal (Schedule A). May be taken only by trapping (Fur Harvesting Regulations s. 9(1)(f)); no hunting season in Schedule I.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Snowshoe hare",
+      "scientific_name": "Lepus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": 5,
+            "limit_notes": "Daily limit 5; no possession limit (shown as '-' in the 2026 Hunting Summary, p. 17). The 2018 consolidation of Schedule I reads October 1 - March 30 - see verification.known_gaps.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting season October 1 - March 31 (2026 Hunting Summary, p. 17). A Game Export Permit is required to ship snowshoe hare out of the province, and a Possession Permit is required if pelts are held longer than 5 days after the close of the open season (2026 Hunting Summary).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limit (shown as '-' in the 2026 Hunting Summary, p. 17).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Snowshoe hare SNARING season November 1 - February 28 under a Snowshoe Hare Snaring Licence ($5). Snares must be single strand brass wire of 20 to 24 gauge, loop not greater than 10 cm (4 inches) (2026 Hunting Summary, pp. 8, 17). Modelled with method 'trapping' because it is a snaring activity; the hare is NOT a fur-bearing animal (Fur Harvesting Regulations s. 2(7)) and this licence is separate from the trapping licence.",
+          "open_date": "2026-11-01",
+          "open_time": null,
+          "timezone": "America/Halifax",
+          "zones": [
+            {
+              "area_type": "province_wide",
+              "note": "PEI has no wildlife management units or zones for furbearers; seasons apply province-wide.",
+              "zone_id": "province-wide",
+              "zone_name": "Prince Edward Island (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "hunting_licence"
+      ],
+      "notes": "NOT a fur-bearing animal (Fur Harvesting Regulations s. 2(7) states this expressly). Included in this dataset because PEI licenses hare snaring separately and it is a core snaring activity for Island trappers; seasons are set in the Hunting and Trapping Seasons Regulations (Schedule I) and the annual Hunting Summary.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Fur Harvesting Regulations, Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Bobcat is not established in Prince Edward Island. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Eastern chipmunk",
+      "scientific_name": "Tamias striatus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Fisher is not established in Prince Edward Island. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal as 'lynx' (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Lynx is not established in Prince Edward Island. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal as 'marten' (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Marten is not established in Prince Edward Island. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Northern flying squirrel",
+      "scientific_name": "Glaucomys sabrinus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. PEI trapping summaries carry a standing 'avoiding river otters when trapping beavers' advisory - otters are an incidental-catch concern, not a target species. Do not trap. Whether PEI states an explicit protection instrument for otter beyond the absence of an open season was not verified in this pass.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "Designated fur-bearing animal (Schedule A) but NO open season in Schedule II of the Hunting and Trapping Seasons Regulations. Wolverine does not occur in Prince Edward Island. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "Seasons were verified against the Hunting and Trapping Seasons Regulations (EC592/16), Schedules I and II (office consolidation current to September 15, 2018, read in full), cross-checked against the Fur Harvesting Regulations (EC663/04, office consolidation current to September 12, 2015, read in full), the official 2020/2021 summaries (which document the coyote October 15 foothold amendment), and two independent extractions of the official 2026 Hunting Summary quoting its page numbers. Licensing, fees, trap rules, check intervals and Schedule C were verified against the Fur Harvesting Regulations text and official princeedwardisland.ca pages (Trapping Information Centre, Buy a Hunting Licence Online, Wildlife Conservation Fund, Report a Violation). PEI furbearer seasons use fixed calendar dates only - there are no relative dates ('second Saturday of...') to compute for the species in this dataset, so no calendar computation was required; February 28, 2027 is confirmed as the last day of February 2027 (2027 is not a leap year) for the coyote close. regulation_year_confirmed is FALSE because the two 2026-27-specific items in known_gaps (the current consolidated regulations as amended in 2025, and the official 2026 Trapping Summary) could not be read directly in this session.",
+    "known_gaps": [
+      "The official 2026 Trapping Summary PDF was not read directly: PDF links on princeedwardisland.ca could not be extracted with this session's tools and the site rate-limited page fetches. Trapping dates rest on the Seasons Regulations as amended by changes documented in official summaries through 2021, corroborated by 2026-dated extractions of the current summaries. Resolve by reading the official 2026 Trapping Summary PDF (linked from the Trapping Information Centre) and diffing every date.",
+      "The 2026 Hunting Summary was read via two independent secondary extractions quoting its page numbers (truenorthhunter.ca, huntscout.app), not the official PDF itself. The extractions agree with each other; re-verify against the official PDF before launch (same class of blocker as Ontario's mirror-copy Hunting Summary).",
+      "Hunting close dates: the 2018 consolidation of Schedule I reads March 30 for raccoon, coyote and snowshoe hare hunting; the 2026 Hunting Summary reads March 31. This dataset follows the 2026 summary (March 31). The amending instrument was not read; confirm against the current consolidation of the Seasons Regulations.",
+      "Coyote foothold opener: the 2018 consolidation of the Seasons Regulations (s. 2(4)) reads November 1; the official 2020 summary documents the opener moving to October 15, and 2026 extractions confirm October 15 - November 14 and February foothold windows. The EC number and in-force date of that amendment were not confirmed.",
+      "September 2025 Fur Harvesting Regulations amendments: the announced changes (snare prohibition on public land, bait-with-snares prohibition, killing neck snare / live-restraining snare designs, tightened landowner permission, landowner trap-removal right, trapper continuing education by 2029) are recorded from the government news release, but the amended regulation text was not read. Whether the s. 9 trap-check intervals (72 hours / daily / 48 hours), the s. 4 snare specifications, and Schedule C survived the amendments unchanged is unconfirmed. Resolve by reading the current consolidated Fur Harvesting Regulations on princeedwardisland.ca.",
+      "Trapping licence fee: Schedule B (last amended EC305/13) sets $10 adult / $5 junior (HST not included). No newer official source stating the trapping licence fee was found - the Trapping Information Centre confirms the WCF fee and course fee but not the licence fee itself. Confirm the current fee at Access PEI or in the 2026 Trapping Summary's licence table.",
+      "Junior licence age band is inconsistent across official sources: Fur Harvesting Regulations s. 2(2) says a junior trapping licence is for an applicant 'under 16 years of age', while Schedule B prices a junior licence for '12-17 years of age' and the hunting licence service treats youth as 12-17. Which band governs a junior trapping licence is unconfirmed.",
+      "Beaver Restricted Zone (Kensington-Malpeque-Darnley-Fox River-Long River): appears in secondary extractions of the 2026 summary as a named beaver trapping area with the general Nov 1 - Mar 31 dates. What is restricted there (devices, permits, access) was not verified against an official source.",
+      "Mandatory trapper harvest reporting: the annual summaries include a Trapper Harvest Log, and fur dealers have statutory monthly reporting duties (s. 13), but whether a licensed trapper must submit a harvest return was not verified in the sources read.",
+      "Raccoon night hunting: a secondary extraction of the 2026 summary indicates a permit is required for night hunting of raccoon. Not confirmed in the regulation text read in this pass.",
+      "Whether the September 2025 snare rules (public-land prohibition, bait prohibition, design requirements) apply to snowshoe hare snaring under a Snowshoe Hare Snaring Licence was not verified; hare snares are separately specified (single strand brass wire, 20-24 gauge, loop max 10 cm) in the Hunting Summary.",
+      "River otter: absence of an open season is certain (not in Schedule II), but whether PEI states an explicit protection instrument for otter beyond that absence was not verified.",
+      "Scientific names are standard taxonomy and are not stated in PEI's regulations (scientific_name_verified is false throughout, per convention)."
+    ],
+    "regulation_year_confirmed": false
+  },
+  "license_url": "https://www.princeedwardisland.ca/en/service/buy-a-hunting-licence-online",
+  "license_vendor": "Government of Prince Edward Island - Access PEI / Forests, Fish and Wildlife Division (trapping licences in person; hunting licences online and from vendors)",
+  "regs_url": "https://www.princeedwardisland.ca/en/information/environment-energy-and-climate-action/trapping-information-centre",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a Violation to a Conservation Officer",
+    "note": "Leave a detailed message anytime at 902-368-4884 to report a violation, including poaching or illegal trapping (Government of PEI, updated February 2, 2026). Forests, Fish and Wildlife Division: 902-368-4683 / 1-866-368-4683.",
+    "url": "https://www.princeedwardisland.ca/en/information/environment-energy-and-climate-action/trapping-information-centre"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_c": [
+      {
+        "models_approx": 22,
+        "models_transcribed": true,
+        "note": "Approved for use underwater and on land. Transcribed from Schedule C of the Fur Harvesting Regulations (office consolidation current to September 12, 2015): B.M.I. BT 300; Bélisle Classic 330; Bélisle Super X 280; Bélisle Super X 330; B.M.I. 280 Body Gripper; B.M.I. 330 Body Gripper; Bridger 330; Duke 330; LDL C280; LDL C280 Magnum; LDL C330; LDL C330 Magnum; Rudy 280; Rudy 330; Sauvageau 1000-11F; Sauvageau 2001-8; Sauvageau 2001-11; Sauvageau 2001-12; Species-Specific 330 Dislocator Half Magnum; Species-Specific 440 Dislocator Half Magnum; Woodstream Oneida Victor Conibear 280; Woodstream Oneida Victor Conibear 330.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 28,
+        "models_transcribed": true,
+        "note": "Approved for use on land. Transcribed from Schedule C (2015 consolidation): Bélisle Classic 220; Bélisle Super X 160; Bélisle Super X 220; Bélisle Super X 280; B.M.I. 160 Body Gripper; B.M.I. 220 Body Gripper; B.M.I. 280 Body Gripper; B.M.I 280 Magnum Body Gripper; Bridger 160; Bridger 220; Duke 160; Duke 220; Koro #2; LDL C 160; LDL C 220; LDL C 220 Magnum; LDL C 280 Magnum; Northwoods 155; Rudy 160; Rudy 160 Plus; Rudy 220; Rudy 220 Plus; Sauvageau 2001-6; Sauvageau 2001-7; Sauvageau 2001-8; Species-Specific 220 Dislocator Half Magnum; Woodstream Oneida Victor Conibear 160; Woodstream Oneida Victor Conibear 220.",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 20,
+        "models_transcribed": true,
+        "note": "Approved for use on land. Transcribed from Schedule C (2015 consolidation): Bélisle Super X 110; Bélisle Super X 120; B.M.I. Body Gripper 120; B.M.I. Body Gripper 120 Magnum; B.M.I. 126 Magnum; Bridger 120; Duke 120; Koro Muskrat; LDL B120 Magnum; Ouell 4-11-180; Ouell RM; Rudy 110; Rudy 120; Rudy 120 Magnum; Sauvageau 2001-5; Sauvageau C120 Magnum; Sauvageau C120 'Reverse Bend'; Triple M; Woodstream Oneida Victor Conibear 110; Woodstream Oneida Victor Conibear 120.",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": 20,
+        "models_transcribed": true,
+        "note": "Approved for use on land. Transcribed from Schedule C (2015 consolidation): Bélisle Super X 110; Bélisle Super X 120; B.M.I. #60; B.M.I. 120 Body Gripper Magnum; B.M.I. 126 Body Gripper Magnum; Bridger 120; Koro Muskrat Trap; Koro Rodent Trap; LDL B120 Magnum; Ouell 411-180; Quell 3-10; Ouell RM; Rudy 120 Magnum; Sauvageau C120 Magnum; Sauvageau C120 'Reverse Bend'; Sauvageau 2001-5; Triple M; Victor Rat Trap; Woodstream Oneida Victor Conibear 110; Woodstream Oneida Victor Conibear 120.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_restraining_traps": [],
+    "models_note": "Unlike Ontario, PEI's Schedule C model lists are short enough to transcribe in full, and they are transcribed above from the 2015 office consolidation of the Fur Harvesting Regulations. The current Schedule C may have been amended since 2015 (the schedule's amendment trail ends at EC539/15 in the consolidation read); re-verify against the current consolidation before launch. Certification is not the same as current manufacturing: several listed models are legacy/discontinued. Do not present the list as a shopping list without a retailer-availability check (not done in this pass).",
+    "models_transcribed": true,
+    "no_certified_trap_required": [
+      "Mink",
+      "Red fox",
+      "Coyote",
+      "Striped skunk",
+      "Red squirrel"
+    ],
+    "note": "PEI implements AIHTS through its own Schedule C of the Fur Harvesting Regulations (EC663/04): 'List of Approved Body-Gripping Traps (Certified under the Canadian Trap Certification Program and Approved for use as Killing Traps for Beaver, Muskrat, Raccoon and Weasel in Prince Edward Island)'. CONFIRMED: PEI adopts the Fur Institute of Canada / Canadian Trap Certification Program certified list, but only as filtered through Schedule C - a trap certified nationally is NOT legal for these species in PEI unless it appears in Schedule C. The requirement covers body-gripping (killing) traps only: on land for beaver, raccoon, muskrat and weasel (s. 5(6)), and underwater for beaver and muskrat (s. 5(7)). PEI has NO certified restraining-trap schedule; restraining traps are governed by design standards instead (modified foot-hold traps for coyote/fox, padded or foot-encapsulating traps for raccoon, drowning sets for beaver/mink/muskrat). Snares are not AIHTS-certified devices; since September 2025 PEI requires killing neck snare designs or live-restraining snares and prohibits snares on public land (announced changes; amended text not read in this pass). AIHTS was agreed in 1997 and ratified by Canada in June 1999; the FIC maintains the national certified-trap list (updated July 22, 2026).",
+    "pei_schedule_url": "https://www.princeedwardisland.ca/en/legislation/wildlife-conservation-act/fur-harvesting-regulations",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Body-gripping traps used to take beaver, raccoon, muskrat or weasel on land must be approved traps listed in Schedule C (Fur Harvesting Regulations s. 5(6)); the same applies underwater for beaver and muskrat, except a muskrat set that prevents resurfacing (s. 5(7)).",
+      "Body-gripping traps with jaw spread greater than 16 cm may be set only in or over water, in a dog-proof enclosure meeting the standards in s. 5(3)-(4), or at least 1.5 m off the ground (s. 5(2)).",
+      "Foot-hold traps: for beaver, mink or muskrat they must be attached to a drowning device (s. 6(1)(a)-(b)); for raccoon, jaws must be rubber-padded or the trap foot-encapsulating (s. 6(1)(d)); for coyote or red fox, jaws must be laminated, off-set, padded, or similarly modified (s. 6(1)(e) - the 'modified foot-hold trap'). No running pole or spring pole sets with foot-hold traps (s. 6(3)).",
+      "Permitted devices in wildlife habitat during open season are limited to: box traps; body-gripping traps designed to kill quickly; submarine traps; non-powered snares; steel-jawed traps with jaw spread under 19 cm; and foot-encapsulating traps (s. 8(2)). Toothed traps, deadfalls and hooks are prohibited (s. 7).",
+      "Snares (pre-September-2025 text): wire no larger than single strand brass wire of 20 gauge except during the fox/coyote snaring season (s. 4(1)); heavier snares need a self-locking device (s. 4(2)); no snare for coyote or red fox within 50 m of a bait unless the bait is concealed from the air or in an open field (s. 4(5)); no fox/coyote snare in a highway right-of-way (s. 4(6)); no snare within 200 m of an occupied dwelling without the occupier's permission, or a baited snare within 300 m (s. 9(1)(k)-(l)); fox/coyote snare wire minimum 1.98 mm (s. 9(1)(m)). September 2025 changes prohibit snares on public land and bait used with snares and restrict snares to killing neck snare or live-restraining designs (news release; amended text not read).",
+      "Trap-check intervals (s. 9(1)(h)-(i)): every trapping device must be examined at least once every 72 hours; traps designed to hold an animal alive must be examined at least once a day; snares designed to kill red fox or coyote must be examined at least once every 48 hours.",
+      "Every trap or snare must be clearly identified with the trapper's permanent trapper registration number (s. 2(4)-(5)). Metal dies are no longer required (2020 Hunting and Trapping Summary) but the ID marking requirement stands.",
+      "No trap may be placed in wildlife habitat before the first day of the open season for that species or left after its close (s. 8(1)). In February and March, beaver, muskrat and mink traps may be set only in or over water (s. 9(1)(d)); in March, weasel traps must be Victor rat traps (s. 9(1)(e)).",
+      "Trapping is restricted or closed on listed public lands (about 3,525 hectares closed province-wide, including demonstration woodlots, natural areas and trail properties named on the Trapping Information Centre page). Since September 2025, landowners may remove traps set on their property without permission, and permission standards for traps and snares on private land were tightened (news release)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "Prince Edward Island is a FIC Note 1 province (exclusive use of certified restraining traps for raccoon). [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Live-holding traps: daily. All trapping devices: at least once every 72 hours (Fur Harvesting Regulations s. 9(1)(h)-(i)).",
+      "killing": "Every 72 hours generally; snares designed to kill red fox/coyote: every 48 hours.",
+      "note": "Verified in regulation text (R2 Item 2); supersedes R1's unverified secondary summary of 'every 2-3 days'."
+    },
+    "tenure": "No tenure system - small, private-land-dominated province; landowner permission required before setting any traps.",
+    "trap_id_requirement": "REQUIRED - every trap and snare must be clearly identified with the trapper's permanent trapper registration number (Fur Harvesting Regulations s. 2(4)-(5)); possessing unmarked snares in wildlife habitat is also barred (s. 4(4)). Verified in regulation text. [R2 Item 6]",
+    "royalty": null,
+    "nuisance_route": "Department-issued nuisance permits to designated trappers (a nuisance beaver permit removing roughly 140-200 beavers a year; a nuisance coyote permit, 5 or fewer a year since 2020). Relocating problem beavers is not accepted - removal is lethal. No standing paid-operator licence; whether permit trappers are paid is not stated in the sources. [R2 Item 3]",
+    "harvest_reporting_and_sealing": "NONE - no mandatory trapper harvest report and no pelt sealing requirement in the Fur Harvesting Regulations (verified in regulation text). Instead: possession of a green hide/carcass from 5 days after season close to the next open season is prohibited without a Minister's permit (s. 10); fur dealers (not trappers) must report purchases monthly (s. 13); harvest data comes from a voluntary phone survey. [R2 Item 2]"
+  }
+}

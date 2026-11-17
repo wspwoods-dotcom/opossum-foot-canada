@@ -1,0 +1,1851 @@
+{
+  "schema_version": "1.1",
+  "state": "ON",
+  "state_name": "Ontario",
+  "season_year": "2026-27",
+  "provisional": false,
+  "retrieved_at": "2026-11-13",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set annually and can change. Always verify current regulations with the Ontario Ministry of Natural Resources before hunting or trapping. Trapping in Ontario is governed by the Fish and Wildlife Conservation Act, 1997 and O. Reg. 667/98 (Trapping) and O. Reg. 670/98 (Open Seasons - Wildlife). This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "on-trapping-summary",
+      "notes": "Ministry plain-language summary; states it is neither a legal document nor a complete collection of the regulations. Seasons table, licence fees, harvest-report rule, RCR rules, suspended-snare restricted areas. Read 2026-11-13.",
+      "title": "Ontario Trapping Regulations Summary",
+      "type": "agency_summary",
+      "url": "https://www.ontario.ca/page/ontario-trapping-regulations-summary"
+    },
+    {
+      "id": "o-reg-670-98-table6",
+      "notes": "The law. Consolidation period from January 1, 2023 to the e-Laws currency date; Table 6 last amended by O. Reg. 85/17. All trapping season dates in this dataset were cross-checked against this table 2026-11-13.",
+      "title": "O. Reg. 670/98 (Open Seasons - Wildlife), Table 6: Furbearing mammals - Open Season",
+      "type": "regulation",
+      "url": "https://www.ontario.ca/laws/regulation/980670"
+    },
+    {
+      "id": "o-reg-670-98-table2",
+      "notes": "Black bear trapping seasons per O. Reg. 667/98 s.2(1) (trap only in Table 2 areas during the Table 2 season). Item 3 date computed: Labour Day 2026 is Monday September 7, 2026, so the Tuesday next following is September 8, 2026.",
+      "title": "O. Reg. 670/98 (Open Seasons - Wildlife), Table 2: Black bear - Open Season",
+      "type": "regulation",
+      "url": "https://www.ontario.ca/laws/regulation/980670"
+    },
+    {
+      "id": "o-reg-667-98",
+      "notes": "Licences, quotas, harvest reporting, trap rules (ss. 18-27), Schedule 1 certified killing traps and Schedule 2 certified restraining traps. Last amended by O. Reg. 165/26 (filed June 4, 2026) and O. Reg. 197/25 (schedules). Read 2026-11-13.",
+      "title": "O. Reg. 667/98 (Trapping), consolidation July 1, 2026",
+      "type": "regulation",
+      "url": "https://www.ontario.ca/laws/regulation/980667"
+    },
+    {
+      "id": "on-hunting-summary-2026",
+      "notes": "Ministry booklet (ISSN 1925-3516 PDF). Furbearer hunting seasons pp. 88-89; wolf/coyote p. 84 (seasons, tag rule, 82-township closure list); small-game hunting requirements p. 91; report resource abuse 1-877-847-7667 (cover). Read 2026-11-13 via a mirror copy of the official PDF (posc.biz mirror; ISSN and content match the official document).",
+      "title": "2026 Ontario Hunting Regulations Summary (effective April 1, 2026)",
+      "type": "agency_booklet",
+      "url": "https://www.ontario.ca/document/ontario-hunting-regulations-summary"
+    },
+    {
+      "id": "fic-certified-traps-2026-07",
+      "notes": "National AIHTS certified-trap list. Ontario's operative list is Schedules 1 and 2 of O. Reg. 667/98; the FIC list is the certification source. AIHTS agreed 1997, ratified by Canada June 1999; 12 North American species; Phase 1 regulated species match Ontario's schedules; Phase 2 not regulated yet.",
+      "title": "Fur Institute of Canada - Certified Traps, AIHTS Implementation in Canada (updated July 22, 2026)",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    },
+    {
+      "id": "on-trapping-page",
+      "notes": "Licence types, qualifications, course requirement, AIHTS note. Read 2026-11-13.",
+      "title": "Trapping in Ontario (ontario.ca)",
+      "type": "agency_page",
+      "url": "https://www.ontario.ca/page/trapping-ontario"
+    },
+    {
+      "id": "o-reg-60-26-sar",
+      "notes": "Current protected-species list, in force March 30, 2026, replacing O. Reg. 230/08. American badger (both populations) Endangered; gray fox Threatened; wolverine Threatened; Eastern wolf Threatened. Cougar does not appear in this list - see verification.known_gaps.",
+      "title": "O. Reg. 60/26 (Protected Species in Ontario List), under the Species Conservation Act, 2025",
+      "type": "regulation",
+      "url": "https://www.ontario.ca/laws/regulation/260060"
+    },
+    {
+      "id": "on-report-violation",
+      "notes": "MNR TIPS line 1-877-847-7667 (1-877-TIPS-MNR); anonymous via Crime Stoppers 1-800-222-TIPS (8477). Updated January 22, 2026.",
+      "title": "Solve a natural resource case (ontario.ca)",
+      "type": "agency_page",
+      "url": "https://www.ontario.ca/page/solve-natural-resource-case"
+    }
+  ],
+  "license_summary": {
+    "certified_traps": "Only AIHTS-certified traps may be used for species listed in Schedule 1 (killing traps) and Schedule 2 (restraining traps) of O. Reg. 667/98 (s. 18). See the 'aihts' section of this dataset.",
+    "course": "Fur Harvest, Fur Management and Conservation Course (40 hours: 32 classroom + 8 hands-on) completed within the last 5 years; required for a first trapping licence (O. Reg. 667/98 s. 11).",
+    "fees": "Trapping licence $39.55; secondary (helper/youth) $16.95 (HST included). Outdoors Card $8.57 + HST.",
+    "harvest_report": "Mandatory Season-End Harvest Report: record the quantity of each species harvested within 24 hours of the close of the season for that species; submit by June 10 to the Ontario Fur Managers Federation or the applicable Provincial Treaty Organization (s. 13).",
+    "hunting_furbearers": "Arctic fox, raccoon, opossum, red fox, skunk and weasel may also be hunted under a Small Game Licence (Hunting Summary pp. 88-89). Wolf and coyote may be hunted under a Small Game Licence plus a Wolf/Coyote Tag in WMUs where a tag is required (max 2 tags per calendar year). A CITES export permit is required to export wolves from Canada. Furbearing mammals generally may not be hunted in provincial parks or Crown Game Preserves.",
+    "licence_types": "Landowner, resident, head trapper (Registered Trapline Area), helper trapper, youth. Only one registered trapline area per licence (s. 9).",
+    "licensing_transition": "The Fish and Wildlife Licensing Service (huntandfishontario.com) is being replaced by FishHuntON, launching December 10, 2026; the current system is unavailable December 7-9, 2026 (ontario.ca, October 30, 2026). Licence URLs in this dataset may go stale within a month of the retrieval date.",
+    "otter_incidental": "An otter taken out of season may only be possessed if it was incidentally killed while lawfully trapping beaver despite all due diligence, and the incident is recorded on the season-end harvest report (Trapping Regulations Summary, Pelt possession).",
+    "permission": "Trap only on land designated on the licence; written landowner permission required on private land (s. 8).",
+    "quotas": "Harvest quotas are fixed on the licence and are licence-specific (s. 6). Trapping less than 75% of the beaver quota fixed by the licence is an offence and can mean the licence is not renewed (s. 7). There are no bag limits in Table 6; harvest is governed by licence quotas.",
+    "report_violation": "MNR TIPS line 1-877-847-7667 (1-877-TIPS-MNR); anonymous via Crime Stoppers 1-800-222-TIPS (8477). Natural Resources Information and Support Centre: 1-800-387-7011.",
+    "trap_check": "Every live-holding trap must be inspected at least once a day (s. 25(3)), except in the parts of Ontario north of the most northerly east-west CNR line / Calstock-Nakina forest access road (s. 25(4)).",
+    "trapping_licence": "A trapping licence is required (O. Reg. 667/98). Adult: 16+, Ontario resident or Canadian citizen, valid Outdoors Card, hunter accreditation on file, and the Fur Harvest, Fur Management and Conservation Course completed within the last 5 years (40 hours: 32 classroom + 8 hands-on). Youth 12-15: course + parental consent, under direct supervision of a licensed trapper 18+. Trapping licences are paper applications to the MNR work centre; payment to the Ontario Fur Managers Federation or the applicable Provincial Treaty Organization.",
+    "wolf_coyote_reporting": "A wolf or coyote killed in WMUs 1-10, 11A, 11B, 12-42, 46-50 or 53-58 in protection of property must be reported immediately to a ministry office unless a Notice of Possession is submitted. Wolf/coyote tag holders must submit a mandatory hunter report (deadline January 14, 2027 for the 2026 season)."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Trapping less than 75% of the beaver quota fixed by the licence is an offence and can mean the licence is not renewed (s. 7).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Trapping less than 75% of the beaver quota fixed by the licence is an offence and can mean the licence is not renewed (s. 7).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Central WMU band (Table 6).",
+              "zone_id": "36, 37, 42-67, 69B",
+              "zone_name": "WMUs 36, 37, 42-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Trapping less than 75% of the beaver quota fixed by the licence is an offence and can mean the licence is not renewed (s. 7).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required (O. Reg. 667/98 Schedules 1 and 2). Body-gripping traps over 22 cm jaw spread are banned in WMUs 60-95 except in-water beaver/otter sets (s. 18.1(2)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Central WMU band (Table 6).",
+              "zone_id": "36, 37, 42-67, 69B",
+              "zone_name": "WMUs 36, 37, 42-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). An otter taken out of season may only be possessed if incidentally killed while lawfully trapping beaver despite all due diligence, and the incident is recorded on the season-end harvest report.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required (O. Reg. 667/98 Schedules 1 and 2). Leg-hold traps for bobcat must be certified.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required (O. Reg. 667/98 Schedules 1 and 2). Leg-hold traps for lynx must be certified.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern and central WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-67, 69B",
+              "zone_name": "WMUs 1-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). No leg-hold traps for fisher.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern and central WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-67, 69B",
+              "zone_name": "WMUs 1-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). No leg-hold traps for marten.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Central WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "36, 37, 42-67, 69B",
+              "zone_name": "WMUs 36, 37, 42-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap is required for mink (mink appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). Leg-hold traps for mink are permitted only in submersion sets (s. 19).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Central WMU band (Table 6).",
+              "zone_id": "36, 37, 42-67, 69B",
+              "zone_name": "WMUs 36, 37, 42-67, 69B"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-04-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Southern WMU band (Table 6).",
+              "zone_id": "68, 69A, 70-95",
+              "zone_name": "WMUs 68, 69A, 70-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1, including 'any jaw-type killing trap'); certified restraining traps required where restraining traps are used (Schedule 2: 'any jaw type leg-hold trap').",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6).",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for raccoon hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for raccoon hunting. Raccoon may be hunted under a Small Game Licence; generally may not be hunted in provincial parks or Crown Game Preserves.",
+              "zone_id": "1-50, 53-95",
+              "zone_name": "WMUs 1-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "Certified killing traps and certified restraining traps required for trapping (O. Reg. 667/98 Schedules 1 and 2). Leg-hold traps for raccoon must be certified.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Virginia opossum",
+      "scientific_name": "Didelphis virginiana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6).",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for opossum hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-05",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for opossum hunting. Opossum may be hunted under a Small Game Licence; generally may not be hunted in provincial parks or Crown Game Preserves.",
+              "zone_id": "1-50, 53-95",
+              "zone_name": "WMUs 1-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "No certified trap is required for opossum (opossum appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). No leg-hold traps for opossum.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 lists this band as open 'all year'. Modelled as continuous_open with the full season-year span; confirm against app season logic before launch.",
+              "zone_id": "36, 37, 42-95",
+              "zone_name": "WMUs 36, 37, 42-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for red fox hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for red fox hunting.",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for red fox hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88 lists this band as open 'all year'. Modelled as continuous_open with the full season-year span; confirm against app season logic before launch.",
+              "zone_id": "36, 37, 42-50, 53-95",
+              "zone_name": "WMUs 36, 37, 42-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "No certified trap is required for red fox (red fox appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). Leg-hold traps for fox are permitted only within the s. 19 size limits.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Arctic fox",
+      "scientific_name": "Vulpes lagopus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Far-north WMUs only (Table 6).",
+              "zone_id": "1-4, 16-18, 24-27",
+              "zone_name": "WMUs 1-4, 16-18, 24-27"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for Arctic fox hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for Arctic fox hunting.",
+              "zone_id": "1-4, 16-18, 24-27",
+              "zone_name": "WMUs 1-4, 16-18, 24-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "No certified trap is required for Arctic fox (Arctic fox appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). Season is limited to the far-north WMUs 1-4, 16-18, 24-27.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "No certified trap is required for red squirrel (red squirrel appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). Leg-hold traps for red squirrel are permitted only in enclosed killing sets (s. 19). There is no hunting season for red squirrel in the 2026 Hunting Regulations Summary; gray (black) and fox squirrels are small game, a different group.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Least weasel",
+      "scientific_name": "Mustela nivalis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year). Table 6 and the Hunting Summary group all weasels (least, long-tailed, short-tailed) under 'Weasel'.",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for weasel hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for weasel hunting. Weasel may be hunted under a Small Game Licence.",
+              "zone_id": "1-50, 53-95",
+              "zone_name": "WMUs 1-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). No leg-hold traps for weasel.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Long-tailed weasel",
+      "scientific_name": "Neogale frenata",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year). Table 6 and the Hunting Summary group all weasels (least, long-tailed, short-tailed) under 'Weasel'.",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for weasel hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for weasel hunting. Weasel may be hunted under a Small Game Licence.",
+              "zone_id": "1-50, 53-95",
+              "zone_name": "WMUs 1-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). No leg-hold traps for weasel.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Short-tailed weasel",
+      "scientific_name": "Mustela erminea",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Province-wide (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year). Table 6 and the Hunting Summary group all weasels (least, long-tailed, short-tailed) under 'Weasel'.",
+              "zone_id": "1-95",
+              "zone_name": "WMUs 1-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for weasel hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-10-25",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for weasel hunting. Weasel may be hunted under a Small Game Licence.",
+              "zone_id": "1-50, 53-95",
+              "zone_name": "WMUs 1-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "Certified killing traps required (O. Reg. 667/98 Schedule 1). No leg-hold traps for weasel.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Northern WMU band (Table 6). 'Last day of February' for the 2026-27 season is February 28, 2027 (2027 is not a leap year).",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 lists this band as open 'all year'. Modelled as continuous_open with the full season-year span; confirm against app season logic before launch.",
+              "zone_id": "36, 37, 42-95",
+              "zone_name": "WMUs 36, 37, 42-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for skunk hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88. No bag or possession limits stated for skunk hunting.",
+              "zone_id": "1-35, 38-41",
+              "zone_name": "WMUs 1-35, 38-41"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limits stated in the Hunting Summary for skunk hunting.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 88 lists this band as open 'all year'. Modelled as continuous_open with the full season-year span; confirm against app season logic before launch.",
+              "zone_id": "36, 37, 42-50, 53-95",
+              "zone_name": "WMUs 36, 37, 42-50, 53-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence"
+      ],
+      "notes": "No certified trap is required for skunk (skunk appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). No leg-hold traps for skunk.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Wolf/coyote tag holders: max 2 Wolf/Coyote Tags per calendar year (hunting).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 item 6, except the listed townships (closed). Closed townships (82 named in the Hunting Summary p. 84): Airy, Alice, Allen, Anson, Anstruther, Attlee, Ballantyne, Bevin, Boulter, Boyd, Bruton, Burleigh, Burns, Burwash, Butt, Caen, Calvin, Cameron, Cardiff, Carlyle, Cavendish, Chandos, Chisholm, Clancy, Clara, Clyde, Cox, Curtin, Dalton, Dickens, Dieppe, Digby, Dudley, Eden, Eyre, Finlayson, Foster, Franklin, Fraser, Goschen, Hagarty, Halifax, Hansen, Harburn, Harcourt, Harvey, Havelock, Head, Herschel, Humboldt, Killarney, Kilpatrick, Lauder, Laura, Livingstone, Longford, Lutterworth, Maria, McClintock, McClure, McCraney, McKay, Minden, Monmouth, Murchison, Papineau, Paxton, Petawawa, Richards, Rolph, Roosevelt, Ryde, Sabine, Sale, Secord, Servos, Sinclair, Struthers, Tilton, Truman, Waldie, Wylie. These townships surround Algonquin, Killarney, Queen Elizabeth II Wildlands and Kawartha Highlands Provincial Parks (Eastern wolf protection). Table 6's township list was not compared name-by-name against this list in this pass.",
+              "zone_id": "1-42, 46-50, 53-58",
+              "zone_name": "WMUs 1-42, 46-50, 53-58"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 item 7, except the listed townships (closed). Table 6 lists this band as open 'all year'; modelled as continuous_open with the full season-year span. Same 82-township closure list as the Sep 15-Mar 31 band (see that zone note for the full list).",
+              "zone_id": "43-45, 59-95",
+              "zone_name": "WMUs 43-45, 59-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Season bag is effectively limited by the tag rule: max 2 Wolf/Coyote Tags per calendar year. No daily or possession limit stated.",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 84. Wolf/Coyote Tag required (2026 tag for Sep 15-Dec 31; 2027 tag for Jan 1-Mar 31). Max 2 tags per calendar year. Closed in the 82 listed townships (marked * in the Summary: WMUs 42, 48, 50, 53A, 54, 55, 56, 57, 58 contain closed townships; full list in the trapping-season zone note). Note: the Hunting Summary list omits WMU 1B while Table 6 item 6 says '1 to 42' for trapping - whether WMU 1B is open for trapping is unconfirmed (see verification.known_gaps).",
+              "zone_id": "1A, 1C, 1D, 2-10, 11A, 11B, 12-41, 42, 46, 47, 48, 49, 50, 53A, 53B, 54-58",
+              "zone_name": "WMUs 1A, 1C, 1D, 2-10, 11A, 11B, 12-41, 42, 46, 47, 48, 49, 50, 53A, 53B, 54-58"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No harvest limits in the no-tag WMUs; co-operative hunting permitted without restriction on the number of animals harvested (Hunting Summary p. 85).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 84. Open 'all year'; no tag required. Modelled as continuous_open with the full season-year span. Closed in the listed townships (WMUs 60 and 75 contain closed townships; full 82-township list in the trapping-season zone note).",
+              "zone_id": "43-45, 59, 60, 61-74, 75, 76-95",
+              "zone_name": "WMUs 43-45, 59, 60, 61-74, 75, 76-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence",
+        "wolf_coyote_tag"
+      ],
+      "notes": "No certified trap is required for coyote (coyote appears in neither Schedule 1 nor Schedule 2 of O. Reg. 667/98). Leg-hold traps for coyote are permitted only within the s. 19 size limits. It is illegal to hunt or trap wolf or coyote in and around Algonquin, Killarney, Queen Elizabeth II Wildlands and Kawartha Highlands Provincial Parks. A CITES export permit is required to export wolves from Canada.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Wolf/coyote tag holders: max 2 Wolf/Coyote Tags per calendar year (hunting).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 item 6, except the listed townships (closed). Same 82-township closure list as coyote (see coyote entry, trapping-season zone note, for the full list). Eastern wolf (Canis sp. cf. lycaon) is listed as Threatened in Ontario (O. Reg. 60/26); the township closures protect Eastern wolf around Algonquin, Killarney, Queen Elizabeth II Wildlands and Kawartha Highlands Provincial Parks.",
+              "zone_id": "1-42, 46-50, 53-58",
+              "zone_name": "WMUs 1-42, 46-50, 53-58"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 6; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Table 6 item 7, except the listed townships (closed). Table 6 lists this band as open 'all year'; modelled as continuous_open with the full season-year span. Same 82-township closure list as coyote (see coyote entry, trapping-season zone note, for the full list).",
+              "zone_id": "43-45, 59-95",
+              "zone_name": "WMUs 43-45, 59-95"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Season bag is effectively limited by the tag rule: max 2 Wolf/Coyote Tags per calendar year. No daily or possession limit stated.",
+            "possession_limit": null,
+            "season_bag": 2
+          },
+          "close_date": "2027-03-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-09-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 84. Wolf/Coyote Tag required (2026 tag for Sep 15-Dec 31; 2027 tag for Jan 1-Mar 31). Max 2 tags per calendar year. Closed in the 82 listed townships (see coyote entry for the full list). Note: the Hunting Summary list omits WMU 1B while Table 6 item 6 says '1 to 42' for trapping - whether WMU 1B is open for trapping is unconfirmed (see verification.known_gaps).",
+              "zone_id": "1A, 1C, 1D, 2-10, 11A, 11B, 12-41, 42, 46, 47, 48, 49, 50, 53A, 53B, 54-58",
+              "zone_name": "WMUs 1A, 1C, 1D, 2-10, 11A, 11B, 12-41, 42, 46, 47, 48, 49, 50, 53A, 53B, 54-58"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No harvest limits in the no-tag WMUs; co-operative hunting permitted without restriction on the number of animals harvested (Hunting Summary p. 85).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-12-31",
+          "continuous_open": true,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "",
+          "open_date": "2026-01-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "Hunting Summary p. 84. Open 'all year'; no tag required. Modelled as continuous_open with the full season-year span. Closed in the listed townships (WMUs 60 and 75 contain closed townships; full 82-township list in the coyote entry, trapping-season zone note).",
+              "zone_id": "43-45, 59, 60, 61-74, 75, 76-95",
+              "zone_name": "WMUs 43-45, 59, 60, 61-74, 75, 76-95"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence",
+        "small_game_licence",
+        "wolf_coyote_tag"
+      ],
+      "notes": "Certified restraining traps required where restraining traps are used for wolf (O. Reg. 667/98 Schedule 2, 14 models). Leg-hold jaw spread max 23 cm for wolf with a certified trap (s. 24). It is illegal to hunt or trap wolf or coyote in and around Algonquin, Killarney, Queen Elizabeth II Wildlands and Kawartha Highlands Provincial Parks. A CITES export permit is required to export wolves from Canada; allow up to 21 days to obtain a permit.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Black bear",
+      "scientific_name": "Ursus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 2; harvest is governed by licence quotas (O. Reg. 667/98 s. 6). Cubs are protected during the spring season (May-June) - see Hunting Summary black bear section.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-06-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2027-05-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "O. Reg. 670/98 Table 2, Item 1 (spring season).",
+              "zone_id": "1A, 1C, 1D, 2-10, 11A, 11B, 12A, 12B, 13-50, 53A, 53B, 54-64, 66-68, 69A, 69B, 71-76",
+              "zone_name": "WMUs 1A, 1C, 1D, 2-10, 11A, 11B, 12A, 12B, 13-50, 53A, 53B, 54-64, 66-68, 69A, 69B, 71-76"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 2; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-10-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-08-15",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "O. Reg. 670/98 Table 2, Item 2 (fall season).",
+              "zone_id": "1A, 1C, 1D, 2-10, 11A, 11B, 12A, 12B, 13-45",
+              "zone_name": "WMUs 1A, 1C, 1D, 2-10, 11A, 11B, 12A, 12B, 13-45"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 2; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-11-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-08",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "O. Reg. 670/98 Table 2, Item 3: 'the Tuesday next following Labour Day to November 30'. Labour Day 2026 is Monday September 7, 2026, so the season opens Tuesday September 8, 2026 (verified by calendar check).",
+              "zone_id": "46, 47, 49, 50, 53A, 53B, 64, 66, 67, 69A, 69B, 71-76",
+              "zone_name": "WMUs 46, 47, 49, 50, 53A, 53B, 64, 66, 67, 69A, 69B, 71-76"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 2; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-11-30",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2026-09-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "O. Reg. 670/98 Table 2, Item 4.",
+              "zone_id": "48, 54, 55A, 55B, 56-63, 68",
+              "zone_name": "WMUs 48, 54, 55A, 55B, 56-63, 68"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limits in Table 2; harvest is governed by licence quotas (O. Reg. 667/98 s. 6).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-07",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "",
+          "open_date": "2027-05-01",
+          "open_time": null,
+          "timezone": "America/Toronto",
+          "zones": [
+            {
+              "area_type": "wmu_group",
+              "note": "O. Reg. 670/98 Table 2, Item 5 (Bruce Peninsula spring season, one week only).",
+              "zone_id": "83, 82A-Keppel-Sarawak, 84-Amabel",
+              "zone_name": "WMU 83 and the townships of Keppel and Sarawak (WMU 82A) and Amabel (WMU 84)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "trapping_licence"
+      ],
+      "notes": "Black bear may only be trapped with foot snares, box traps or culvert traps (O. Reg. 667/98 s. 20); no trapping within 400 m of a waste disposal site (s. 22). No certified trap is required for black bear (black bear appears in neither Schedule 1 nor Schedule 2). Whether a separate black bear tag is required to TRAP bear (a tag is required to hunt bear) was not verified in this pass - confirm before launch. The same Table 2 seasons govern bear hunting; see the Hunting Summary black bear section (p. 78) for hunting rules, cub protection and hunter-orange requirements.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray fox",
+      "scientific_name": "Urocyon cinereoargenteus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Table 6 of O. Reg. 670/98. Gray fox is listed as Threatened in Ontario (O. Reg. 60/26, Protected Species in Ontario List, in force March 30, 2026). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Table 6 of O. Reg. 670/98. Wolverine is listed as Threatened in Ontario (O. Reg. 60/26, Protected Species in Ontario List, in force March 30, 2026). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American badger",
+      "scientific_name": "Taxidea taxus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Table 6 of O. Reg. 670/98. American badger (both Northwestern Ontario and Southwestern Ontario populations) is listed as Endangered in Ontario (O. Reg. 60/26, Protected Species in Ontario List, in force March 30, 2026). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Table 6 of O. Reg. 670/98. Cougar was listed as Endangered under the former O. Reg. 230/08 (Species at Risk in Ontario List) but does not appear in the replacement list, O. Reg. 60/26 (in force March 30, 2026). Current protection status to be confirmed with MNR before launch - see verification.known_gaps. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All trapping season dates cross-checked between the Trapping Regulations Summary seasons table and O. Reg. 670/98 Table 6 (the law). Hunting seasons for Arctic fox, raccoon, opossum, red fox, skunk and weasel verified in the 2026 Ontario Hunting Regulations Summary pp. 88-89; wolf/coyote hunting seasons, tag rules and the 82-township closure list verified p. 84. Black bear seasons from O. Reg. 670/98 Table 2; computed dates verified by calendar check (Labour Day 2026 is Monday September 7, 2026, so the Tuesday next following is September 8, 2026; February 28, 2027 is the last day of February 2027, as 2027 is not a leap year). Species-at-risk statuses verified in O. Reg. 60/26 (in force March 30, 2026). MNR TIPS line 1-877-847-7667 verified on ontario.ca.",
+    "known_gaps": [
+      "WMU 1B: Table 6 item 6 lists wolf/coyote trapping WMUs as '1 to 42', but the Hunting Summary p. 84 hunting list is '1A, 1C, 1D, 2-10...' (1B omitted). Whether WMU 1B is open for trapping is unconfirmed - confirm with MNR.",
+      "Cougar protection status: formerly Endangered under O. Reg. 230/08; cougar does not appear in the replacement Protected Species in Ontario List, O. Reg. 60/26 (in force March 30, 2026). Confirm current protection status with MNR before launch.",
+      "Full model-by-model transcription of O. Reg. 667/98 Schedules 1 and 2 not done in this pass (structure and approximate counts only).",
+      "Table 6's closed-township list for wolf/coyote was not compared name-by-name against the Hunting Summary's 82-township list.",
+      "Black bear: whether a separate tag is required to TRAP bear (a tag is required to hunt bear) was not verified.",
+      "Timezone: dataset uses America/Toronto; northwestern Ontario (west of roughly 90W, e.g. Kenora, Dryden, Fort Frances) is Central Time (America/Winnipeg). The clone will need a timezone split for accurate open/close handling in the northwest.",
+      "Licensing URLs will change: the Fish and Wildlife Licensing Service (huntandfishontario.com) is replaced by FishHuntON on December 10, 2026; the service is unavailable December 7-9, 2026.",
+      "General hunting hours (time-of-day) for furbearer hunting were not transcribed; the Hunting Summary General Regulations section governs.",
+      "WMU boundaries: the dataset references WMU groups only. Individual WMU boundaries (95 WMUs plus sub-units) are a separate dataset task, not scoped here.",
+      "The 2026 Hunting Regulations Summary PDF was read via a mirror copy of the official document (posc.biz); the official ontario.ca PDF link was not directly fetchable in this session. Content matches the official document (ISSN 1925-3516, effective April 1, 2026), but the build should re-verify against the official PDF."
+    ],
+    "regulation_year_confirmed": true
+  },
+  "license_url": "https://www.huntandfishontario.com/",
+  "license_vendor": "Ontario Fish and Wildlife Licensing Service (FishHuntON from December 10, 2026)",
+  "regs_url": "https://www.ontario.ca/page/ontario-trapping-regulations-summary",
+  "regs_kind": "page",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a natural resource violation (MNR TIPS line)",
+    "note": "MNR TIPS line 1-877-847-7667 (1-877-TIPS-MNR); anonymous via Crime Stoppers 1-800-222-TIPS (8477). Natural Resources Information and Support Centre: 1-800-387-7011.",
+    "url": "https://www.ontario.ca/page/solve-natural-resource-case"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_1": [
+      {
+        "models_approx": 25,
+        "note": "Killing traps only; restraining (cage/live) traps are in Schedule 2.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 19,
+        "note": "",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 19,
+        "note": "",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 13,
+        "note": "",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 15,
+        "note": "",
+        "species": "American marten"
+      },
+      {
+        "models_approx": 38,
+        "note": "Includes 'any jaw-type killing trap'.",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": 16,
+        "note": "",
+        "species": "River otter"
+      },
+      {
+        "models_approx": 31,
+        "note": "",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 26,
+        "note": "Covers least, long-tailed and short-tailed weasel.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_restraining_traps_schedule_2": [
+      {
+        "models_approx": 7,
+        "note": "Cage/live traps.",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 6,
+        "note": "",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 4,
+        "note": "",
+        "species": "Canada lynx"
+      },
+      {
+        "models_approx": 1,
+        "note": "'Any jaw type leg-hold trap'.",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": 5,
+        "note": "",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 14,
+        "note": "",
+        "species": "Gray wolf"
+      }
+    ],
+    "models_note": "This pass captured schedule structure and approximate model counts per species, not the full model-by-model list. Full transcription of Schedules 1 and 2 is a defined follow-on task (see the scoping report). Certification is not the same as current manufacturing: several certified models are legacy/discontinued. Do not present the certified list as a shopping list without a retailer-availability check.",
+    "models_transcribed": false,
+    "no_certified_trap_required": [
+      "Mink",
+      "Virginia opossum",
+      "Striped skunk",
+      "Red fox",
+      "Coyote",
+      "Red squirrel",
+      "Arctic fox",
+      "Black bear"
+    ],
+    "note": "Ontario implements AIHTS through O. Reg. 667/98 ss. 18-18.1 and Schedules 1 (certified killing traps) and 2 (certified restraining traps). A 'certified trap' is a killing trap listed in Schedule 1 column 3 or a restraining trap listed in Schedule 2 column 3 for that species (s. 1(1)). The Fur Institute of Canada maintains the national certified-trap list (updated July 22, 2026); Ontario's schedules are drawn from it. AIHTS was agreed in 1997 and ratified by Canada in June 1999; it covers 12 North American species. Phase 1 regulated species match Ontario's schedules; Phase 2 species are not yet regulated.",
+    "ontario_schedules_url": "https://www.ontario.ca/laws/regulation/980667",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Only certified traps may be used for species listed in Schedules 1 and 2 (O. Reg. 667/98 s. 18).",
+      "Body-gripping traps with jaw spread over 22 cm are banned in WMUs 60-95 except in-water beaver/otter sets (s. 18.1(2)).",
+      "Leg-hold traps may only be used as permitted by s. 19: coyote and fox within size limits; beaver, muskrat, otter and mink in submersion sets; red squirrel in enclosed killing sets; certified leg-holds for raccoon, lynx and bobcat.",
+      "No leg-hold traps for fisher, marten, opossum, skunk or weasel.",
+      "Leg-hold jaw spread: max 18 cm on land, 21 cm in water; 23 cm for wolf with a certified trap (s. 24).",
+      "Trap chain max 31 cm (s. 25(1)); live-holding traps inspected at least once daily (s. 25(3)), except north of the CNR line (s. 25(4)).",
+      "Black bear: foot snares, box or culvert traps only (s. 20); no trapping within 400 m of a waste disposal site (s. 22).",
+      "Night dispatch of trapped animals: rim-fire firearm only (s. 27.1)."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "Exclusive use of certified restraining traps for raccoon is mandatory in Ontario (FIC list Note 1 provinces: ON, QC, PEI, NB, NS). Ontario implements AIHTS through O. Reg. 667/98 ss. 18-18.1 and Schedules 1 (certified killing) and 2 (certified restraining). [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Daily - every live-holding trap south of the most northerly east-west CN Rail line (O. Reg. 667/98 s. 25(3)); relaxing cable restraints daily everywhere.",
+      "killing": "No general check interval stated in the sources.",
+      "note": null
+    },
+    "tenure": "Registered trapline areas on Crown land (allocated by the Ministry as vacancies occur) plus private-land (landowner) licences; licence is area-specific and carries licence-specific quotas.",
+    "trap_id_requirement": "None found - no trap owner-ID marking requirement in the sources searched (follow-up pass, Nov 17); identification runs through licence/tenure and pelt seals instead. Near-miss: containers used to transport pelts must be marked with contents and consignor/consignee name and address - shipment marking, not trap marking.",
+    "royalty": "Royalty on pelts transported out of Ontario: 5.5% of the average Ontario auction price, payable before transport (O. Reg. 666/98 s. 32); an export licence is also required. [R2 Item 5; R1 s.5]",
+    "nuisance_route": "Paid route exists - FWCA s. 31 protection of property: an owner may harass, capture or kill damaging wildlife on their own land and may use an agent. Prescribed agent classes (O. Reg. 665/98 s. 132) include licensed trappers and persons whose business is primarily removing nuisance wildlife - but business-class agents may only harass or capture-and-release, NOT kill. Live-captured animals not killed must be released within 24 hours, within ~1 km of capture. Others act under a Minister's Term Agent Authorization (ongoing) or Individual Agent Authorization (one-off). [R1 s.4]",
+    "harvest_reporting_and_sealing": "Mandatory Season-End Harvest Report: record harvest within 24 hours of season close; submit by June 10 with numbers harvested, sold/shipped and remaining in possession, to OFMF or the applicable Provincial Treaty Organization. Failure is an offence. [R1 s.5]"
+  }
+}

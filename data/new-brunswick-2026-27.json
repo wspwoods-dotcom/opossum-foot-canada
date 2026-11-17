@@ -1,0 +1,1427 @@
+{
+  "schema_version": "1.1",
+  "state": "NB",
+  "state_name": "New Brunswick",
+  "season_year": "2026-27",
+  "provisional": true,
+  "retrieved_at": "2026-11-15",
+  "disclaimer": "Reminder reference only - NOT legal authority. Season dates, zones, and limits are set annually and can change. Always verify current regulations with the New Brunswick Department of Natural Resources and Energy Development (DNRED) before hunting or trapping. Trapping in New Brunswick is governed by the Fish and Wildlife Act and N.B. Regulation 84-124 (Fur Harvesting Regulation); seasons are in Schedule B of that regulation. The annual Hunt & Trap Regulations Summary is a plain-language guide and states that it is not a legal document. This dataset is for the separate Canada clone of Opossum Foot; it is NOT part of the US app, which stays US-only and untouched.",
+  "sources": [
+    {
+      "id": "nb-reg-84-124",
+      "notes": "The law. Read in full 2026-11-15: licences (s. 4), bobcat authorization/draw and lock seal tags (ss. 4.01-4.02), special coyote control permit (s. 4.1), carcass submission and export receipts (s. 4.2), trap rules and trap-check interval (s. 4(4)-(4.2)), fees (s. 18) and conservation fee (s. 18.1), Schedules A, A.1, A.2, A.3 (certified traps) and Schedule B (open seasons). Consolidation includes amendments to 2026-21. Every season date in this dataset comes from Schedule B.",
+      "title": "N.B. Regulation 84-124, Fur Harvesting Regulation - Fish and Wildlife Act (consolidated to April 21, 2026)",
+      "type": "regulation",
+      "url": "https://laws.gnb.ca/en/document/cr/84-124"
+    },
+    {
+      "id": "nb-hunt-trap-guide-2026-27",
+      "notes": "Official guide, ISBN 978-1-4605-4561-4 (online); imprint 26-02649 | 2026.05.15; information current as of April 30, 2026. Fur Harvesting Seasons table p. 43; licences p. 44; bobcat pp. 37-38; export/CITES p. 42. The guide states it is not a legal document. Direct fetch of this PDF was blocked in this session (HTTP 403 from www2.gnb.ca); its season table was cross-checked row by row against Schedule B via the guide's published tables as transcribed with page citations, and every date agreed except the hunting close dates flagged in known_gaps. Re-verify against the official PDF before build.",
+      "title": "Hunt & Trap: Regulations Summary 2026-2027 (Hunt & Trap Book), Province of New Brunswick, Department of Natural Resources",
+      "type": "agency_guide",
+      "url": "https://www2.gnb.ca/content/dam/gnb/Departments/nr-rn/pdf/en/Wildlife/HuntTrap.pdf"
+    },
+    {
+      "id": "nb-furbearer-harvest-report-2023-24",
+      "notes": "Official DNRED publication. AIHTS update: to comply with the AIHTS, New Brunswick's Fur Harvesting Regulations have been changed since the 2007 season 'so that only certified traps are now allowed for the harvesting of beaver, fisher, marten, raccoon, and muskrat', with the certified trap list printed in the Hunt & Trap Summary. Also records 969 fur harvester licences sold in 2023-24 (960 adult, 9 minor).",
+      "title": "New Brunswick Furbearer Harvest Report 2023-2024, Fish & Wildlife Branch, DNRED",
+      "type": "agency_publication",
+      "url": "https://www2.gnb.ca/content/dam/gnb/Departments/nr-rn/pdf/en/Publications/nb-furbearer-harvest-report-2023-2024.pdf"
+    },
+    {
+      "id": "nb-sara-registry-lynx",
+      "notes": "Official registry: Canada lynx (Lynx canadensis), SARA status Special Concern, COSSAR status Special Concern, last COSSAR assessment March 31, 2022; links the 2022 provincial status report and the 2025 Management Plan for Canada Lynx in New Brunswick.",
+      "title": "New Brunswick Species at Risk Public Registry - Canada Lynx",
+      "type": "agency_registry",
+      "url": "https://www1.gnb.ca/0078/SpeciesAtRisk/details-e.asp?ID=60"
+    },
+    {
+      "id": "nb-sara-registry-wolverine",
+      "notes": "Official registry: wolverine (Gulo gulo), SARA status Extirpated, COSSAR status Extirpated, last COSSAR assessment March 31, 2022; recovery feasibility statement (2022) concludes recovery is not feasible at this time.",
+      "title": "New Brunswick Species at Risk Public Registry - Wolverine",
+      "type": "agency_registry",
+      "url": "https://www1.gnb.ca/0078/SpeciesAtRisk/details-e.asp?ID=67"
+    },
+    {
+      "id": "eccc-lynx-ndf",
+      "notes": "Federal CITES non-detriment finding: 'Lynx harvest is prohibited in New Brunswick and Nova Scotia'; at the provincial level lynx is 'at risk' in New Brunswick and Nova Scotia while secure elsewhere in its Canadian range.",
+      "title": "Lynx: Non-Detriment Finding for Canada (Environment and Climate Change Canada)",
+      "type": "federal_finding",
+      "url": "https://www.canada.ca/en/environment-climate-change/services/convention-international-trade-endangered-species/non-detriment-findings/lynx.html"
+    },
+    {
+      "id": "nb-report-violations",
+      "notes": "Official page: report violations and illegal hunting, fishing and wood theft to a local DNRED office or Crime Stoppers at 1-800-222-TIPS (8477).",
+      "title": "Report Violations 1-800-222-TIPS (8477), DNRED (gnb.ca)",
+      "type": "agency_page",
+      "url": "https://www2.gnb.ca/content/gnb/en/departments/erd/fish-and-wildlife/content/Promo/ReportViolations1-800-222-TIPS.html"
+    },
+    {
+      "id": "nb-outdoors-card",
+      "notes": "Official page: an Outdoors Card number is required to purchase an angling, hunting or trapping licence, apply to draws, and register for a Conservation Education course; one-time registration, no fee, issued immediately; the card is not a licence and need not be carried.",
+      "title": "Outdoors Card, DNRED (gnb.ca)",
+      "type": "agency_page",
+      "url": "https://www2.gnb.ca/content/gnb/en/departments/erd/fish-and-wildlife/content/e-Licensing/OutdoorsCard.html"
+    },
+    {
+      "id": "nb-gnb-topic-hunting-fishing",
+      "notes": "Official index to DNRED trapping, possession/export/sale, specialty licences, Outdoors Card, available licences and draws, and report-violations pages. Read 2026-11-15.",
+      "title": "Hunting, fishing and outdoors (gnb.ca topic page)",
+      "type": "agency_page",
+      "url": "https://www.gnb.ca/en/topic/tourism-recreation/hunting-fishing.html"
+    },
+    {
+      "id": "fic-certified-traps-2026",
+      "notes": "National AIHTS certified-trap list. New Brunswick's Schedules A-A.3 track this list: model counts counted from Reg. 84-124 in this pass (beaver 25, bobcat 19, fisher 13, marten 16, muskrat 36 land + submersion rule, otter 16, raccoon 31, weasel 26) agree with the FIC list's per-species counts as captured in the Ontario pass. Certification is not the same as current manufacturing.",
+      "title": "Fur Institute of Canada - Certified Traps List (updated July 22, 2026)",
+      "type": "certification_list",
+      "url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf"
+    }
+  ],
+  "license_summary": {
+    "carcass_submission": "Every holder of a fur harvester's or minor's fur harvester's licence must deliver the entire skinned carcass (including head and organs) of every bobcat, otter, fisher and marten taken to a district ranger office not later than five days after the last day of the applicable open season; the Minister issues a receipt for each carcass (s. 4.2(1)-(2)).",
+    "certified_traps": "Only AIHTS-certified traps may be used where Reg. 84-124 prescribes them: killing traps for beaver, raccoon, muskrat, weasel, marten, fisher and otter must be Schedule A traps (s. 4(4.01)(a)); bobcat killing traps must be Schedule A traps and only from the Saturday of the second week in November to December 31 (s. 4(4.01)(c)); early-season raccoon trapping requires Schedule A.1 restraining traps (s. 4(4)(f.4)); bobcat leg-hold traps must be Schedule A.2 traps; beaver live holding traps must be Schedule A.3 traps (s. 4(4.02)). Killing traps are prohibited for coyote and fox (s. 4(4.01)(b)). See the aihts object.",
+    "course": "Before a first fur harvester's licence is issued, the applicant must show proof of (a) a recognized firearm safety and hunter education course (or bow hunter education, if hunting by bow/crossbow) and (b) a recognized trapper education course (s. 4(1.2)). Both course requirements are waived for an applicant born before January 1, 1981 who proves previous holding of the corresponding licence (ss. 4(1.201), 4(1.202)). Minors 12-15 must meet the same course requirements (s. 4(1.11)); a minor 10-11 may hunt, trap or snare only when accompanied at all times by an adult fur harvester licence holder (s. 4(1.12)), and minors under 12 may not carry a firearm (s. 4(4.5)).",
+    "export_permits": "An export permit under Fish and Wildlife Act s. 91 for bobcat, otter, fisher or marten pelts is issued only against the carcass receipts tendered - one pelt per receipt (s. 4.2(3)-(4)). Bobcat and river otter are CITES-listed; exporting their pelts from Canada also requires a CITES export permit (Hunt & Trap guide). Parts of fur bearing animals that may be bought, sold, bartered or exported are the claws, teeth, urine, tail, prepared pelt and scent glands of lawfully taken animals (s. 4.3).",
+    "fees": "Fees are set in Reg. 84-124 s. 18: fur harvester's licence $43 (under 65) / $22 (65 and over); minor's fur harvester's licence $0; application for a bobcat authorization $9; rabbit licence $8; minor's rabbit licence $0; resident fur trader's licence $37.50; non-resident fur trader's licence $150; resident hide dealer's licence $22.50; non-resident hide dealer's licence $75; replacement licence $5.25. A $5 conservation fee (Wildlife Trust Fund) is added to a fur harvester's licence or rabbit licence at purchase (s. 18.1) - so a rabbit licence costs $13.00 in total, matching the guide. The guide shows the bobcat application as '$9 plus HST'; whether HST applies to the licence fees themselves was not verified in this pass (see known gaps).",
+    "fur_harvesters_licence": "A fur harvester's licence (Fish and Wildlife Act s. 83; Reg. 84-124 s. 4(1)(a)) is required to hunt, trap or snare fur bearing animals and to possess or sell pelts. Issued to New Brunswick residents only, 16 years of age or over; NOT issued to non-residents (Hunt & Trap guide). A minor's fur harvester's licence covers ages 10-15 (s. 4(1)(c)). The licence expires annually on July 31 (s. 4(2)(a)); the guide states it is valid from October 1 to July 31 of the following year.",
+    "harvest_report": "Reg. 84-124 contains no Ontario-style mandatory season-end harvest report for fur harvesters. Reporting obligations are: the carcass-submission rule for bobcat, otter, fisher and marten (s. 4.2); a licence holder's duty to furnish information and wildlife parts when required by the Minister (s. 4(3)); the raccoon night-hunting permit report due January 31 (s. 13(3)(a)); the special coyote control permit report due within 14 days after the permit expires (s. 4.1(5)); and fur trader / hide dealer record-keeping and periodic reports (ss. 5, 8). DNRED publishes an annual Furbearer Harvest Report compiled from these sources.",
+    "hunting_furbearers": "The fur harvester's licence also covers hunting bobcat, fox, skunk, raccoon, coyote, squirrel and rabbit (varying hare) in season (s. 4(1)(a)(i)). Raccoon and skunk may also be hunted under a Bird and Small Game Licence or Deer and Game Bird Licence (Oct. 1 - Dec. 31, no limit). Coyote may also be hunted under a Varmint Licence (March-September) and under a Bear Licence during bear seasons. Hunting with hounds requires Minister-approved hounds and a permit (ss. 13, 15; maximum three hounds for bobcat or fox). Sunday hunting is restricted in New Brunswick under the Hunting Regulation; the general rule was not transcribed into this dataset (see known gaps).",
+    "licence_types": "Fur harvester's licence; minor's fur harvester's licence; rabbit licence; minor's rabbit licence; fur trader's licence (resident / non-resident); hide dealer's licence (resident / non-resident). Overlays: bobcat authorization with lock seal bobcat tags (draw); hound hunting permits (ss. 13, 15); special coyote control permit (s. 4.1); possession/cold-storage permits (s. 7).",
+    "outdoors_card": "An Outdoors Card number is required to purchase an angling, hunting or trapping licence, to apply to draws, and to register for a Conservation Education course. Registration is one-time and free; the card is not a licence and need not be carried (DNRED Outdoors Card page).",
+    "permission": "Unlike Ontario, Reg. 84-124 does not tie the licence to designated land and contains no registered-trapline system: the fur harvester's licence is valid by WMZ anywhere in the province (subject to the zone closures in s. 4(1.1)). No registered trapline / Crown land trapline tenure was found in the Fish and Wildlife Act or Reg. 84-124 in this pass - a negative finding flagged for DNRED confirmation (see known gaps). Traps or snares may not be disturbed by anyone but the owner or a conservation officer (s. 17). Wildlife Refuges and listed Wildlife Management Areas, parks and historical sites are closed to hunting, trapping and snaring (Hunt & Trap guide). Landowner-permission and trespass rules outside Reg. 84-124 were not verified in this pass.",
+    "quotas": "There are no bag limits in New Brunswick fur harvesting except rabbit (varying hare): daily 10, possession 20 (s. 4(8)). The one quota-controlled species is bobcat: the Minister sets an annual quota range for each of WMZs 1-25 (and may set zero), and authorizations are allocated by random computer draw so the number of lock seal tags issued falls within the range (s. 4.01(5)-(6)).",
+    "report_violation": "Report violations and illegal hunting, fishing and wood theft to Crime Stoppers at 1-800-222-TIPS (8477) or to a local DNRED office (DNRED 'Report Violations' page; the program is known as Target Poaching).",
+    "tagging": "Bobcat pelts must be tagged immediately on killing (hunting) or on taking possession (trapping/snaring) with a previously unused lock seal bobcat tag issued to that person, inserted through the eye hole and mouth of the pelt with the locking mechanism fully engaged (s. 4.02). Possession of an untagged bobcat pelt is prohibited. No other furbearer requires a pelt tag in Reg. 84-124.",
+    "trap_check": "Every restraining trap, live holding trap, leg hold trap, box trap or leg snare - excluding drowning sets - must be checked at least once every 48 hours after setting, and any wildlife taken must be removed immediately (s. 4(4.1)). All traps and snares must be removed not later than sunset on the last day of the open season (s. 4(5)). No person may possess a trap or snare in a resort of wildlife in a WMZ more than 48 hours before the season opens or more than 48 hours after it ends (s. 4(4.2)).",
+    "where_to_buy": "Licences are available through the Fish and Wildlife Licensing System at gnb.ca/fishwildlife, from authorized vendors, and at all Service New Brunswick centres (Hunt & Trap guide).",
+    "zones": "Seasons are keyed to Wildlife Management Zones (WMZs) 1-27, established under s. 12 of the Hunting Regulation (N.B. Reg. 84-133) and adopted for fur harvesting by Reg. 84-124 s. 3. Zone groupings used by Schedule B: 1-27 (province-wide), 1-12 / 13-27 (water furbearers), 1-26 (coyote/fox), 1-12 / 13-26 (coyote/fox snaring), 1-25 (bobcat), 1-12 / 13-25 (bobcat snaring), and 1-13, 15-17, 20 / 14, 18, 19, 21-27 (fisher/marten/skunk). WMZ 27 is Grand Manan Island."
+  },
+  "species": [
+    {
+      "common_name": "Beaver",
+      "scientific_name": "Castor canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping opens the second last Saturday in October (October 24, 2026), closes the last day in January.",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping opens the first Saturday after October 28 (October 31, 2026), closes the last day in January.",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B pairs the snaring close (last day in February) with the trapping row; the 2026-27 guide confirms snaring opens on the trapping opener. From the fourth Sunday of January (January 24, 2027) to the close of the snaring season, a beaver snare must be baited with fresh hardwood and placed entirely underwater (s. 4(4)(f.3)).",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Same snaring rule as WMZs 1-12; January 24, 2027 underwater/fresh-hardwood rule applies (s. 4(4)(f.3)).",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). Live holding traps for beaver must be prescribed in Schedule A.3 (s. 4(4.02)). Leg-hold traps for beaver may only be used as drowning sets with a jaw spread of 22 cm or less (s. 4(4)(f.1)(ii)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "River otter",
+      "scientific_name": "Lontra canadensis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping and snaring open the second last Saturday in October (October 24, 2026), close the last day in January.",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping and snaring open the first Saturday after October 28 (October 31, 2026), close the last day in January.",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). The entire skinned carcass of every otter taken (including head and organs) must be delivered to a district ranger office not later than five days after the last day of the otter season, and the receipt obtained is required before an export permit will be issued for the pelt (s. 4.2). A CITES export permit is required to export otter pelts from Canada (Hunt & Trap guide). Leg-hold traps for otter may only be used as drowning sets with a jaw spread of 22 cm or less (s. 4(4)(f.1)(ii)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Mink",
+      "scientific_name": "Neogale vison",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: opens the second last Saturday in October (October 24, 2026), closes the last day in January.",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: opens the first Saturday after October 28 (October 31, 2026), closes the last day in January.",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No certified trap is prescribed for mink. A mink trap must be set on the ground not more than three metres from the water's edge, or be a water-base set or a drowning set (s. 4(4)(f.2)). Leg-hold traps for mink may only be used as drowning sets with a jaw spread of 22 cm or less (s. 4(4)(f.1)(ii)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Muskrat",
+      "scientific_name": "Ondatra zibethicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Fall season. Schedule B: opens the second last Saturday in October (October 24, 2026), closes the last day in January.",
+          "open_date": "2026-10-24",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-01-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Fall season. Schedule B: opens the first Saturday after October 28 (October 31, 2026), closes the last day in January.",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-27",
+              "zone_name": "WMZs 13-27"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-05-15",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Spring season, WMZs 1-27. Schedule B: opens the Saturday of the third week of March. With the regulation's Sunday-start definition of 'week' (s. 2), the third week of March 2027 runs March 21-27 and its Saturday is March 27, 2027 - the date printed in the 2026-27 Hunt & Trap guide. Closes May 15.",
+          "open_date": "2027-03-27",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). Schedule A lists separate muskrat models for land use; underwater, any jaw-type trap (body-gripping or leg-hold) set as a submersion set qualifies. No trap or snare may be set inside a muskrat house (s. 4(4)(b)). Leg-hold traps for muskrat may only be used as drowning sets with a jaw spread of 22 cm or less (s. 4(4)(f.1)(ii)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Raccoon",
+      "scientific_name": "Procyon lotor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "From October 1 to the Friday before the last Saturday in October (October 30, 2026), only restraining traps prescribed in Schedule A.1 may be used for raccoon (s. 4(4)(f.4)); Schedule A killing (body-gripping) traps may be used from October 31, 2026. The guide prints these as 'Trapping (restraint only): Oct. 1 - Dec. 31' and 'Trapping (body gripping): Oct. 31 - Dec. 31'.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Raccoon may also be hunted under a Bird and Small Game Licence or Deer and Game Bird Licence (guide 'Other Species' table: 'Raccoon, Skunk', no limit). Night hunting with hounds and lights requires a raccoon hunting permit (s. 13); permit holders must report by January 31 (s. 13(3)(a)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting with hounds (Schedule B): opens the first Monday in August (August 3, 2026), closes the last day in December. Hounds must be Minister-approved (ss. 13, 15).",
+          "open_date": "2026-08-03",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). Early-season (Oct. 1-30) raccoon trapping is restraining-trap only (Schedule A.1, s. 4(4)(f.4)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Striped skunk",
+      "scientific_name": "Mephitis mephitis",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-31",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Also huntable under a Bird and Small Game Licence or Deer and Game Bird Licence (guide 'Other Species' table: 'Raccoon, Skunk', no limit).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-12",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B groups 'Fisher, Marten, Skunk' in these zones: opens the last Saturday in November (November 28, 2026) for 2 consecutive weeks, closing the second Saturday thereafter (December 12, 2026).",
+          "open_date": "2026-11-28",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "The only zone group open to marten trapping (Reg. 84-124 s. 4(1.1)(c)).",
+              "zone_id": "1-13, 15-17, 20",
+              "zone_name": "WMZs 1-13, 15-17, 20"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-19",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B groups 'Fisher, Skunk' in these zones: opens the last Saturday in November (November 28, 2026) for 3 consecutive weeks, closing the third Saturday thereafter (December 19, 2026).",
+          "open_date": "2026-11-28",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "Marten trapping is closed in these zones (Reg. 84-124 s. 4(1.1)(c)); fisher and skunk only.",
+              "zone_id": "14, 18, 19, 21-27",
+              "zone_name": "WMZs 14, 18, 19, 21-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No certified trap is prescribed for skunk. Note the split season structure: skunk hunting runs October 1 - December 31 province-wide, but skunk trapping is open only inside the short November-December fisher/marten window.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red squirrel",
+      "scientific_name": "Tamiasciurus hudsonicus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping opens the last Saturday in October (October 31, 2026), closes the last day in February. A trap set for squirrel must be entirely enclosed in a wooden or metal box with no opening larger than 3.75 cm in diameter (s. 4(4)(e.1)).",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Schedule B of the regulation closes this season on the last day of February (February 28, 2027). The 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table prints February 27, 2027 for the hunting close - see verification.known_gaps. The dataset follows the regulation, which is the law; the guide states it is not a legal document.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "The regulation's 'squirrel' is the red squirrel, the only squirrel species with a season in New Brunswick. No certified trap is prescribed for squirrel.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Weasel",
+      "scientific_name": "Mustela spp.",
+      "scientific_name_verified": false,
+      "scientific_name_note": "The regulation names only 'weasel'. The three species occurring in New Brunswick are short-tailed weasel (Mustela richardsonii), long-tailed weasel (Neogale frenata) and least weasel (Mustela nivalis); standard taxonomy, not stated in the regulation.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: trapping opens the last Saturday in October (October 31, 2026), closes the last day in February. A trap set for weasel must be entirely enclosed in a wooden or metal box with no opening larger than 3.75 cm in diameter (s. 4(4)(e.1)).",
+          "open_date": "2026-10-31",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). The regulation's single 'weasel' entry covers the three weasel species found in New Brunswick (short-tailed weasel / ermine, long-tailed weasel, least weasel); Schedule A's weasel list is a single combined list.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Coyote",
+      "scientific_name": "Canis latrans",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Killing traps may not be used for coyote or fox at all (s. 4(4.01)(b)). Trapping is by restraining (leg-hold) traps: for fox, jaw spread 20 cm or less, not in combination with a running pole or spring pole set; for coyote, jaw spread 20 cm or less with jaws laminated, offset or padded or otherwise modified to restrain humanely, and no running pole or spring pole set (s. 4(4)(f.1)). The 2026-27 guide labels this season 'Trapping (restraint only)'.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No coyote or fox season in WMZ 27 (Reg. 84-124 s. 4(1.1)(d)).",
+              "zone_id": "1-26",
+              "zone_name": "WMZs 1-26"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Schedule B of the regulation closes this season on the last day of February (February 28, 2027). The 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table prints February 27, 2027 for the hunting close - see verification.known_gaps. The dataset follows the regulation, which is the law; the guide states it is not a legal document.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No coyote or fox season in WMZ 27 (Reg. 84-124 s. 4(1.1)(d)).",
+              "zone_id": "1-26",
+              "zone_name": "WMZs 1-26"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the first week in November (November 7, 2026). Snares for coyote/fox: wire over 0.75 mm in diameter must be equipped with a locking device (s. 4(4)(d.1)).",
+          "open_date": "2026-11-07",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the second week in November (November 14, 2026). Snares for coyote/fox: wire over 0.75 mm in diameter must be equipped with a locking device (s. 4(4)(d.1)).",
+          "open_date": "2026-11-14",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-26",
+              "zone_name": "WMZs 13-26"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No limit (guide, Varmint Licence table).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-09-18",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Varmint Licence season (Hunt & Trap guide p. 28): coyote may be hunted under a Varmint Licence outside the fur harvesting season. The guide prints March 2 - September 19, 2026 and March 1 - September 18, 2027; the 2027 window is the one inside the 2026-27 season year. The Varmint Licence is issued under the Hunting Regulation (N.B. Reg. 84-133), not the Fur Harvesting Regulation.",
+          "open_date": "2027-03-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "province-wide",
+              "zone_name": "Province-wide (all WMZs)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No open season of any kind for coyote in WMZ 27 (s. 4(1.1)(d)). A special coyote control permit (s. 4.1) allows the Minister to authorize out-of-season coyote hunting, trapping or snaring for predation control for a specific 30-day period in a specific location; permit numbers must be affixed to all traps and snares used, and a report is due within 14 days after the permit expires. Coyote may also be hunted under a Bear Licence during bear seasons (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Red fox",
+      "scientific_name": "Vulpes vulpes",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Killing traps may not be used for coyote or fox at all (s. 4(4.01)(b)). Trapping is by restraining (leg-hold) traps: for fox, jaw spread 20 cm or less, not in combination with a running pole or spring pole set; for coyote, jaw spread 20 cm or less with jaws laminated, offset or padded or otherwise modified to restrain humanely, and no running pole or spring pole set (s. 4(4)(f.1)). The 2026-27 guide labels this season 'Trapping (restraint only)'.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No coyote or fox season in WMZ 27 (Reg. 84-124 s. 4(1.1)(d)).",
+              "zone_id": "1-26",
+              "zone_name": "WMZs 1-26"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Schedule B of the regulation closes this season on the last day of February (February 28, 2027). The 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table prints February 27, 2027 for the hunting close - see verification.known_gaps. The dataset follows the regulation, which is the law; the guide states it is not a legal document. Hunting fox with hounds (maximum three hounds, Minister-approved) requires a permit under s. 15; the guide's Hound Training and Hunting table gives fox hound hunting as November 14 - February 27 within this season.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No coyote or fox season in WMZ 27 (Reg. 84-124 s. 4(1.1)(d)).",
+              "zone_id": "1-26",
+              "zone_name": "WMZs 1-26"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the first week in November (November 7, 2026). Snares for coyote/fox: wire over 0.75 mm in diameter must be equipped with a locking device (s. 4(4)(d.1)).",
+          "open_date": "2026-11-07",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the second week in November (November 14, 2026). Snares for coyote/fox: wire over 0.75 mm in diameter must be equipped with a locking device (s. 4(4)(d.1)).",
+          "open_date": "2026-11-14",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-26",
+              "zone_name": "WMZs 13-26"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "No open season of any kind for fox in WMZ 27 (s. 4(1.1)(d)). The regulation's 'fox' is the red fox, the only fox species established in New Brunswick.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Bobcat",
+      "scientific_name": "Lynx rufus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B; harvest is controlled by quota and tags. A bobcat authorization is issued by random computer draw (one application per year, $9 application fee, applications close the last Friday of September - September 25, 2026). The Minister sets an annual quota range for each of WMZs 1-25 and may set a quota of zero. Each successful applicant receives one lock seal bobcat tag per draw selection; a bobcat may not be hunted, trapped or snared without the authorization and an unused tag (ss. 4.01-4.02).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B: opens the Saturday of the second week in November (November 14, 2026), closes the last day in February. Schedule A killing traps may be used only from November 14 to December 31, 2026; from January 1 to February 28, 2027 killing traps are prohibited for bobcat (s. 4(4.01)(c)) and only Schedule A.2 leg-hold (restraining) traps may be used. The guide prints this as 'Trapping (body gripping): Nov. 14 - Dec. 31; Trapping (restraint only): Nov. 14 - Feb. 28'.",
+          "open_date": "2026-11-14",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No bobcat season in WMZs 26 or 27 (Reg. 84-124 s. 4(1.1)(b)).",
+              "zone_id": "1-25",
+              "zone_name": "WMZs 1-25"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B; harvest is controlled by quota and tags. A bobcat authorization is issued by random computer draw (one application per year, $9 application fee, applications close the last Friday of September - September 25, 2026). The Minister sets an annual quota range for each of WMZs 1-25 and may set a quota of zero. Each successful applicant receives one lock seal bobcat tag per draw selection; a bobcat may not be hunted, trapped or snared without the authorization and an unused tag (ss. 4.01-4.02).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Schedule B of the regulation closes this season on the last day of February (February 28, 2027). The 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table prints February 27, 2027 for the hunting close - see verification.known_gaps. The dataset follows the regulation, which is the law; the guide states it is not a legal document. Hunting bobcat with hounds (maximum three hounds, Minister-approved) requires a permit under s. 15 and the bobcat authorization.",
+          "open_date": "2026-11-14",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "No bobcat season in WMZs 26 or 27 (Reg. 84-124 s. 4(1.1)(b)).",
+              "zone_id": "1-25",
+              "zone_name": "WMZs 1-25"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B; harvest is controlled by quota and tags. A bobcat authorization is issued by random computer draw (one application per year, $9 application fee, applications close the last Friday of September - September 25, 2026). The Minister sets an annual quota range for each of WMZs 1-25 and may set a quota of zero. Each successful applicant receives one lock seal bobcat tag per draw selection; a bobcat may not be hunted, trapped or snared without the authorization and an unused tag (ss. 4.01-4.02).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the first week in November (November 7, 2026) - a week before the trapping/hunting opener.",
+          "open_date": "2026-11-07",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-12",
+              "zone_name": "WMZs 1-12"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B; harvest is controlled by quota and tags. A bobcat authorization is issued by random computer draw (one application per year, $9 application fee, applications close the last Friday of September - September 25, 2026). The Minister sets an annual quota range for each of WMZs 1-25 and may set a quota of zero. Each successful applicant receives one lock seal bobcat tag per draw selection; a bobcat may not be hunted, trapped or snared without the authorization and an unused tag (ss. 4.01-4.02).",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Schedule B: snaring opens the Saturday of the second week in November (November 14, 2026).",
+          "open_date": "2026-11-14",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "13-25",
+              "zone_name": "WMZs 13-25"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence",
+        "bobcat_authorization",
+        "lock_seal_bobcat_tag"
+      ],
+      "notes": "Tagging is mandatory and immediate: on killing or taking possession of a bobcat, the hunter/trapper must affix an unused lock seal bobcat tag through the eye hole and the mouth of the pelt and fully engage the lock (s. 4.02). Possession of an untagged bobcat pelt is prohibited. The entire skinned carcass (including head and organs) must be delivered to a district ranger office not later than five days after the last day of the bobcat season, and the receipt is required before an export permit will be issued for the pelt (s. 4.2). A CITES export permit is required to export bobcat pelts from Canada (Hunt & Trap guide). No bobcat season in WMZs 26 or 27 (s. 4(1.1)(b)).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Fisher",
+      "scientific_name": "Pekania pennanti",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-12",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B groups 'Fisher, Marten, Skunk' in these zones: opens the last Saturday in November (November 28, 2026) for 2 consecutive weeks, closing the second Saturday thereafter (December 12, 2026).",
+          "open_date": "2026-11-28",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "The only zone group open to marten trapping (Reg. 84-124 s. 4(1.1)(c)).",
+              "zone_id": "1-13, 15-17, 20",
+              "zone_name": "WMZs 1-13, 15-17, 20"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-19",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B groups 'Fisher, Skunk' in these zones: opens the last Saturday in November (November 28, 2026) for 3 consecutive weeks, closing the third Saturday thereafter (December 19, 2026).",
+          "open_date": "2026-11-28",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "Marten trapping is closed in these zones (Reg. 84-124 s. 4(1.1)(c)); fisher and skunk only.",
+              "zone_id": "14, 18, 19, 21-27",
+              "zone_name": "WMZs 14, 18, 19, 21-27"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). The entire skinned carcass of every fisher taken (including head and organs) must be delivered to a district ranger office not later than five days after the last day of the fisher season, and the receipt obtained is required before an export permit will be issued for the pelt (s. 4.2). The fisher/marten/skunk trapping season is the shortest in the province: two or three weeks depending on zone group.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "American marten",
+      "scientific_name": "Martes americana",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "No bag limit in Schedule B of N.B. Reg. 84-124.",
+            "possession_limit": null,
+            "season_bag": null
+          },
+          "close_date": "2026-12-12",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "trapping",
+          "notes": "Schedule B groups 'Fisher, Marten, Skunk': opens the last Saturday in November (November 28, 2026) for 2 consecutive weeks, closing the second Saturday thereafter (December 12, 2026).",
+          "open_date": "2026-11-28",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "note": "The only zone group open to marten trapping (Reg. 84-124 s. 4(1.1)(c)).",
+              "zone_id": "1-13, 15-17, 20",
+              "zone_name": "WMZs 1-13, 15-17, 20"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence"
+      ],
+      "notes": "Certified traps required: Only killing traps prescribed in Schedule A of Reg. 84-124 for this species may be used, under the conditions prescribed in Schedule A (s. 4(4.01)(a)). Marten trapping is open ONLY in WMZs 1-13, 15-17 and 20; the licence does not entitle the holder to trap marten in WMZs 14, 18, 19 or 21-27 (s. 4(1.1)(c)). The entire skinned carcass of every marten taken (including head and organs) must be delivered to a district ranger office not later than five days after the last day of the marten season, and the receipt obtained is required before an export permit will be issued for the pelt (s. 4.2).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Varying hare",
+      "scientific_name": "Lepus americanus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "open",
+      "seasons": [
+        {
+          "bag_limits": {
+            "daily_bag": 10,
+            "limit_notes": "Daily limit 10 and possession limit 20 in or upon a resort of wildlife (s. 4(8)). The possession limit does not apply to fur traders, taxidermists and permit holders listed in s. 4(9).",
+            "possession_limit": 20,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "hunting",
+          "notes": "Hunting under a fur harvester's licence, a rabbit licence, or a Bird and Small Game Licence (guide: Oct. 1, 2026 - Feb. 27, 2027 under the small game licence, which expires February 27, 2027). Schedule B of the regulation closes this season on the last day of February (February 28, 2027). The 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table prints February 27, 2027 for the hunting close - see verification.known_gaps. The dataset follows the regulation, which is the law; the guide states it is not a legal document. Hunting rabbit with dogs requires a permit under s. 15.",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        },
+        {
+          "bag_limits": {
+            "daily_bag": null,
+            "limit_notes": "Possession limit 20 in or upon a resort of wildlife (s. 4(8)(b), exceptions in s. 4(9)). No daily snaring limit is stated in Schedule B.",
+            "possession_limit": 20,
+            "season_bag": null
+          },
+          "close_date": "2027-02-28",
+          "continuous_open": false,
+          "land_type": "all",
+          "method": "snaring",
+          "notes": "Snaring under a fur harvester's licence or a rabbit licence. The rabbit licence is valid October 1 to the last day of February (guide); the licence document expires annually on September 30 (s. 4(2)(b)).",
+          "open_date": "2026-10-01",
+          "open_time": null,
+          "timezone": "America/Moncton",
+          "zones": [
+            {
+              "area_type": "wmz_group",
+              "zone_id": "1-27",
+              "zone_name": "WMZs 1-27 (province-wide)"
+            }
+          ]
+        }
+      ],
+      "permit_requirements": [
+        "fur_harvesters_licence_or_rabbit_licence"
+      ],
+      "notes": "The regulation's 'rabbit (varying hare)' is the snowshoe/varying hare. A dedicated rabbit licence ($8 plus the $5 conservation fee) covers hunting and snaring hare only; a fur harvester's licence covers hare as well. Rabbit licences are not issued to non-residents (guide).",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Canada lynx",
+      "scientific_name": "Lynx canadensis",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the New Brunswick Species at Risk Public Registry (Lynx canadensis).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Schedule B of Reg. 84-124 and lynx is not among the species a fur harvester's licence entitles the holder to take. Lynx harvest is prohibited in New Brunswick (Environment and Climate Change Canada lynx non-detriment finding). Canada lynx is listed as Special Concern under the New Brunswick Species at Risk Act (NB Species at Risk Public Registry: COSSAR status Special Concern, assessed March 31, 2022; a provincial management plan was published in 2025). Incidental capture in sets for other species is a known risk in northern New Brunswick. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Wolverine",
+      "scientific_name": "Gulo gulo",
+      "scientific_name_verified": true,
+      "scientific_name_note": "Scientific name as stated in the New Brunswick Species at Risk Public Registry (Gulo gulo).",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Schedule B of Reg. 84-124. Wolverine is listed as Extirpated in the New Brunswick Species at Risk Public Registry (SARA and COSSAR status: Extirpated, assessed March 31, 2022; recovery assessed as not feasible at this time). Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Gray wolf",
+      "scientific_name": "Canis lupus",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Schedule B of Reg. 84-124 and wolf is not among the species a fur harvester's licence entitles the holder to take. The gray wolf is extirpated from New Brunswick (occasional unconfirmed sightings are reported). The individual NB Species at Risk Registry entry for wolf was not pulled in this pass - see verification.known_gaps. Do not trap.",
+      "county_notes": ""
+    },
+    {
+      "common_name": "Cougar",
+      "scientific_name": "Puma concolor",
+      "scientific_name_verified": false,
+      "scientific_name_note": "Standard accepted scientific name; not independently verified against a taxonomic authority in this pass.",
+      "iac_reference": "",
+      "season_status": "closed",
+      "seasons": [],
+      "permit_requirements": [],
+      "notes": "No open season in Schedule B of Reg. 84-124 and cougar is not among the species a fur harvester's licence entitles the holder to take. No established cougar population is confirmed in New Brunswick and no NB Species at Risk Registry listing for cougar was verified in this pass - the operative fact for the app (no open season) is certain; the protection-status wording needs DNRED confirmation, as in Ontario. Do not trap.",
+      "county_notes": ""
+    }
+  ],
+  "verification": {
+    "confirmation_notes": "All season dates are from Schedule B of N.B. Reg. 84-124 (Fur Harvesting Regulation), consolidated to April 21, 2026 including amendments to 2026-21, read in full 2026-11-15. Schedule B states seasons as relative dates; each was computed for 2026-27 and verified by calendar check: last Saturday in October 2026 = October 31; second last Saturday in October = October 24; first Saturday after October 28 = October 31; first Monday in August 2026 = August 3; with the regulation's Sunday-start definition of 'week' (s. 2), the Saturday of the first week of November 2026 = November 7 and of the second week = November 14; last Saturday in November = November 28, the second Saturday thereafter = December 12 and the third Saturday thereafter = December 19; last day of February 2027 = February 28 (2027 is not a leap year); last day of January = January 31, 2027; last day of December = December 31, 2026; fourth Sunday of January 2027 = January 24; Friday before the last Saturday in October = October 30, 2026; last Friday of September 2026 = September 25 (bobcat draw application deadline - matches the guide); Saturday of the third week of March 2027 = March 27 (weeks counted Sunday-start; the first week of March 2027 begins Sunday March 7, so the third week is March 21-27). Every computed date was cross-checked against the 2026-27 Hunt & Trap guide's Fur Harvesting Seasons table (p. 43): all trapping and snaring dates agree exactly, including the guide's printed spring muskrat opener of March 27, 2027, the fisher/marten/skunk windows of November 28 - December 12 and November 28 - December 19, and the beaver snaring close of February 28. The only disagreements are the hunting close dates in known_gaps. Licence fees cross-check: the guide's rabbit licence price of $13.00 equals the regulation's $8 fee plus the $5 conservation fee (ss. 18, 18.1). Zone closures in s. 4(1.1) (bobcat in WMZs 26-27; marten in WMZs 14, 18, 19, 21-27; coyote/fox in WMZ 27) agree with the zone groups printed in Schedule B and the guide. Beaver snaring: Schedule B prints the snaring close (last day in February) against the trapping row; the guide confirms snaring opens on the trapping opener in both zone groups.",
+    "known_gaps": [
+      "Hunting close dates: the 2026-27 guide's Fur Harvesting Seasons table prints February 27, 2027 as the close of the hunting seasons for rabbit, squirrel, coyote/fox and bobcat, where Schedule B of the regulation says 'last day in February' (February 28, 2027) for the combined rows. The dataset follows the regulation (the law; the guide states it is not a legal document), and the affected hunting rows carry a note. DNRED confirmation is needed before the dataset is treated as final - this is the single open date question in the pass.",
+      "The official Hunt & Trap 2026-27 PDF (www2.gnb.ca) and several gnb.ca content pages returned HTTP 403 to this session's fetcher and could not be read directly. The guide's season table was cross-checked via its published tables as transcribed with page citations, and DNRED's own publications (Furbearer Harvest Report, Species at Risk Registry, Outdoors Card and Report Violations pages) were read via the search index. Re-verify the dataset against the official PDF itself before build.",
+      "Registered traplines: no registered-trapline or Crown-land trapline tenure system was found in the Fish and Wildlife Act, in Reg. 84-124 (read in full), or in DNRED material surfaced in this pass. This is a negative finding, not a verified absence - one confirmation question to DNRED settles it. If a trapline system does exist outside the fur harvesting regulation, the clone may need a trapline field the dataset does not have.",
+      "HST on fees: the guide shows the bobcat authorization application as '$9 plus HST'. Whether HST is added to the fur harvester's, rabbit and other licence fees in s. 18 was not verified; the dataset records the regulation's fees and the $5 conservation fee only.",
+      "Sunday hunting: New Brunswick restricts hunting on Sundays under the Hunting Regulation (N.B. Reg. 84-133). The 2026-27 guide's general rule (hunting permitted only on Sundays falling between October 14 and December 31, as transcribed from the guide's general regulations) was not verified against Reg. 84-133 in this pass, and no Sunday rule is encoded in the season rows (open_time is null throughout). Verify before the clone displays hunting days.",
+      "Hound hunting and training seasons for fox and bobcat (guide pp. 38-39: training October 14 - February 27; hound hunting November 14 - February 27, permits under ss. 13 and 15) are permit overlays and are recorded in species notes, not as separate season rows. Only raccoon's hunting-with-hounds season, which appears in Schedule B itself, is modelled as a row.",
+      "Cougar and gray wolf protection-status wording: both are closed because Schedule B gives them no season and the fur harvester's licence does not cover them. No NB Species at Risk Registry listing for cougar was found, and the registry entry for gray wolf was not individually pulled in this pass (wolverine and lynx registry entries were). Confirm the status wording with DNRED before publishing closed-species notes.",
+      "French versions were not reviewed. New Brunswick is officially bilingual and every instrument used here (Reg. 84-124, the Hunt & Trap guide, DNRED pages) is published in French as well ('Reglement sur la recolte de fourrures', 'Chasse et piegeage'). No French-only material was encountered, but a bilingual dataset/UI pass is a real follow-on cost for this province - larger than for Ontario.",
+      "WMZ boundary data is not in this pass (same as Ontario): the dataset references WMZ groups only. A WMZ picker list is the minimum viable approach for the clone; boundary/map lookup is a separate task.",
+      "Nuisance wildlife control (N.B. Reg. 97-141, nuisance wildlife operator licences - including the 72-hour beaver trap/snare check for operators added by Reg. 2026-22) is a separate permit regime and is out of scope for this dataset.",
+      "Black bear is not a fur bearing animal under Reg. 84-124 and has no trapping season in New Brunswick; it is hunted under a separate Bear Licence (Hunting Regulation) and is therefore excluded from this dataset, unlike Ontario where bear trapping exists."
+    ],
+    "regulation_year_confirmed": true
+  },
+  "license_url": "https://www.gnb.ca/en/topic/tourism-recreation/hunting-fishing.html",
+  "license_vendor": "New Brunswick Fish and Wildlife Licensing System (e-licensing) via gnb.ca/fishwildlife; also Service New Brunswick centres and authorized vendors. An Outdoors Card number is required first (free, one-time).",
+  "regs_url": "https://laws.gnb.ca/en/document/cr/84-124",
+  "regs_kind": "regulation",
+  "trap_snare_rules": null,
+  "warden_directory": {
+    "kind": "hotline",
+    "label": "Report a violation (DNRED / Crime Stoppers)",
+    "note": "Crime Stoppers 1-800-222-TIPS (8477) for illegal hunting, fishing and wood theft, or contact a local Department of Natural Resources and Energy Development office (program known as Target Poaching).",
+    "url": "https://www2.gnb.ca/content/gnb/en/departments/erd/fish-and-wildlife/content/Promo/ReportViolations1-800-222-TIPS.html"
+  },
+  "aihts": {
+    "certified_killing_traps_schedule_a": [
+      {
+        "models_approx": 25,
+        "note": "",
+        "species": "Beaver"
+      },
+      {
+        "models_approx": 19,
+        "note": "Usable only from the Saturday of the second week in November to December 31 (s. 4(4.01)(c)(i)); killing traps are prohibited for bobcat from January 1 to the last day of February.",
+        "species": "Bobcat"
+      },
+      {
+        "models_approx": 13,
+        "note": "",
+        "species": "Fisher"
+      },
+      {
+        "models_approx": 16,
+        "note": "",
+        "species": "American marten"
+      },
+      {
+        "models_approx": 36,
+        "note": "Land use only. Underwater: 'any jaw type trap (body gripping or leg hold) set as a submersion set' qualifies (Schedule A).",
+        "species": "Muskrat"
+      },
+      {
+        "models_approx": 16,
+        "note": "",
+        "species": "River otter"
+      },
+      {
+        "models_approx": 31,
+        "note": "",
+        "species": "Raccoon"
+      },
+      {
+        "models_approx": 26,
+        "note": "Single combined list covering all weasel species.",
+        "species": "Weasel"
+      }
+    ],
+    "certified_leghold_traps_schedule_a2": [
+      {
+        "models_approx": 7,
+        "note": "Includes the Belisle Footsnare #6 and Belisle Selectif and specified Oneida Victor soft-catch/offset-laminated configurations.",
+        "species": "Bobcat"
+      }
+    ],
+    "certified_live_holding_traps_schedule_a3": [
+      {
+        "models_approx": 6,
+        "note": "Cage-type live beaver traps (e.g. Hancock, Comstock swim-through).",
+        "species": "Beaver"
+      }
+    ],
+    "certified_restraining_traps_schedule_a1": [
+      {
+        "models_approx": 5,
+        "note": "Bridger T3, Duffer's Raccoon Trap, Lil Grizz Get'rz, Duke DP Coon Trap, Egg Trap. Required for raccoon trapping October 1-30 (s. 4(4)(f.4)).",
+        "species": "Raccoon"
+      }
+    ],
+    "models_note": "This pass captured schedule structure and exact model counts per species counted from the consolidated regulation text, not the full model-by-model lists. Full transcription of Schedules A, A.1, A.2 and A.3 (about 150 models) is a defined follow-on task. Certification is not the same as current manufacturing: several certified models are legacy/discontinued. Do not present the certified list as a shopping list without a retailer-availability check, which was not done in this pass.",
+    "models_transcribed": false,
+    "nb_schedules_url": "https://laws.gnb.ca/en/document/cr/84-124",
+    "no_certified_trap_required": [
+      "Mink",
+      "Striped skunk",
+      "Red squirrel",
+      "Varying hare (rabbit)",
+      "Coyote and red fox (killing traps prohibited outright; leg-hold restraining traps are regulated by jaw-spread and jaw-modification rules, not by a certified list)"
+    ],
+    "note": "New Brunswick implements the AIHTS through N.B. Reg. 84-124 s. 4(4.01)-(4.02) and its own schedules: Schedule A (certified killing traps), Schedule A.1 (certified restraining traps - raccoon), Schedule A.2 (certified leg-hold traps - bobcat), Schedule A.3 (certified live holding traps - beaver). DNRED's Furbearer Harvest Report states that since the 2007 season the regulations have been changed so that only certified traps are allowed for beaver, fisher, marten, raccoon and muskrat, and points trappers to the certified trap list printed in the Hunt & Trap Summary; the regulation's schedules in fact extend certified-trap requirements to otter, weasel and (conditionally) bobcat as well. The schedules track the Fur Institute of Canada national certified-trap list (updated July 22, 2026). AIHTS was agreed in 1997 and ratified by Canada in June 1999; it covers 12 North American species.",
+    "source_updated": "2026-07-22",
+    "source_url": "https://fur.ca/wp-content/uploads/2026/07/CertifiedTrapsList_FIC_July-22-2026-_EN.pdf",
+    "trap_rules": [
+      "Only Schedule A killing traps may be used for beaver, raccoon, muskrat, weasel, marten, fisher or otter (Reg. 84-124 s. 4(4.01)(a)).",
+      "Killing traps are prohibited for coyote and fox (s. 4(4.01)(b)).",
+      "Killing traps for bobcat: Schedule A traps only, and only from the Saturday of the second week in November to December 31; prohibited January 1 to the last day of February (s. 4(4.01)(c)).",
+      "Only Schedule A.3 live holding traps may be used for beaver (s. 4(4.02)); only Schedule A.2 leg-hold traps may be used for bobcat (s. 4(4)(f.1)(i.02)); raccoon trapping October 1-30 requires Schedule A.1 restraining traps (s. 4(4)(f.4)).",
+      "Leg-hold traps: fox - jaw spread 20 cm or less, no running pole or spring pole set; coyote - jaw spread 20 cm or less, jaws laminated, offset or padded, no running pole or spring pole set; beaver, muskrat, otter and mink - drowning sets only, jaw spread 22 cm or less (s. 4(4)(f.1)).",
+      "Toothed traps, deadfalls and hooks are prohibited (s. 4(4)(f)). No trap or snare inside a muskrat house (s. 4(4)(b)). Weasel and squirrel traps must be entirely enclosed in a wooden or metal box with no opening larger than 3.75 cm (s. 4(4)(e.1)).",
+      "Mink traps: on the ground within three metres of the water's edge, or a water-base set or drowning set (s. 4(4)(f.2)). Beaver snares from the fourth Sunday of January to the season close must be baited with fresh hardwood and placed entirely underwater (s. 4(4)(f.3)).",
+      "Snares (other than power snares) of wire over 0.75 mm diameter must have a locking device (s. 4(4)(d.1)). No setting traps or snares between the close of the fox season and the opening of the muskrat season except for rabbit (s. 4(4)(e)).",
+      "Trap check: restraining, live holding, leg hold and box traps and leg snares (excluding drowning sets) at least once every 48 hours (s. 4(4.1))."
+    ]
+  },
+  "french_required": false,
+  "canada_only": {
+    "aihts": {
+      "canada_wide": "AIHTS in force in Canada since 1 June 1999 (Canada, the EU and Russia are parties; the US is not a party). FIC-certified traps mandatory per Phase 1 lists - killing traps: beaver, Canada lynx & bobcat, fisher, marten, muskrat (on land and underwater), otter, raccoon, weasels/ermine; restraining traps: beaver (cage), bobcat, Canada lynx, raccoon, wolf. Conventional steel-jawed leghold restraining traps on land are effectively banned for AIHTS species. Killing neck snares are NOT AIHTS traps and are not FIC-certified; provinces regulate snares separately. [R1 s.2a]",
+      "jurisdiction_specific": "New Brunswick is a FIC Note 1 province (exclusive use of certified restraining traps for raccoon). Secondary reporting puts certified coyote restraining traps mandatory in 2029-30. [R1 s.2a]"
+    },
+    "check_interval": {
+      "live_holding": "Restraining, live-holding, leg-hold, box traps and leg snares (excluding drowning sets): 48 hours (Reg. 2023-12 amending Fur Harvesting Reg. s. 4(4.1)).",
+      "killing": "Beaver killing traps/drowning sets under an operator's licence: 72 hours (Reg. 2026-22); no interval stated for other killing traps. Nuisance Wildlife Control Operator work: traps/snares every 24 hours, beaver sets every 72 hours.",
+      "note": null
+    },
+    "tenure": "No registered trapline system found - Fur Harvester's Licence is zone-based (Wildlife Management Zones 1-27).",
+    "trap_id_requirement": "PARTIAL - only holders of a special coyote control permit must affix the permit number to all traps and snares used under it (Fur Harvesting Regulation 84-124 s. 4.1(4)). No general trap-marking requirement for ordinary fur harvesters found. [R2 Item 6]",
+    "royalty": "None found in the Fish and Wildlife Act, Fur Harvesting Regulation 84-124, or GNB licence pages. [R2 Item 5]",
+    "nuisance_route": "Paid route exists - a Nuisance Wildlife Control Operator's Licence is required to operate (or work for) a nuisance wildlife control enterprise, i.e. removing/relocating nuisance wildlife for consideration (NB Reg 97-141; issued by the Minister; expires Dec 31; records per animal and an annual report due Jan 14). Kill or relocate both allowed, except six rabies-vector species (raccoon, skunk, fox, coyote, groundhog, mink) may not be relocated and must be humanely euthanized; bat work needs a separate permit. Verified in regulation text. [R2 Item 3]",
+    "harvest_reporting_and_sealing": "Bobcat, marten and otter carcasses must go to a district office within 5 days after season close, with trapper name, licence number and WMZ of capture - an offence to fail. Bobcat pelts need lock-seal tags attached through lip to eyehole immediately on taking possession; only properly tagged pelts may be possessed/sold. [R1 s.5]"
+  }
+}
