@@ -159,6 +159,16 @@ button, .btn {
    button renders capped automatically; title case can't sneak through again. */
 .regs-link { text-transform: uppercase; }
 .regs-link .dim { color: var(--accent-ink); opacity: 0.75; font-weight: 600; }
+/* hk (2026-11-19, Tanner): the warden link (Report a Violation) leaves
+   the yellow family — a solid rust-red, the stronger form of the
+   Seasons disclaimer's tint (#46221a, at #seasons-disclaimer), with
+   cream text. COLOR
+   ONLY: it keeps the .regs-link geometry it shares with the Official
+   Regulations link, and it stays a plain external link — it has no
+   menu or panel, so there is no bespoke menu to align. Scoped by id;
+   the regulations link keeps the yellow. */
+#seasons-warden { background: #6e2f28; color: #f5cf7a; }
+#seasons-warden .dim { color: #f5cf7a; }
 .btn-danger { background: #3a1f1b; color: #f0a49c; border: 1px solid #6e2f28; }
 .btn-small { min-height: 44px; font-size: 15px; padding: 8px 14px; width: auto; }
 button:disabled { opacity: .45; }
@@ -307,6 +317,18 @@ select.select-hint { color: var(--faint); }
 .mflow-close { margin-top: 2px; }
 .flow-steps { font-size: 13px; line-height: 1.55; margin-top: 0; }
 #home-bar .zip-jump { width: 76px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: #0f150a; color: #fff; font-size: 15px; text-align: center; }
+/* ho (2026-11-21, Q265, Tanner): the change-home panel composed — ZIP and
+   Go in ONE row at one height, the row the same width as the city field
+   under it, both rows aligned. The cancel × wears the standard close
+   treatment (the sheet ×: no border, no gold outline). */
+.home-jump-row { display: flex; gap: 8px; width: min(320px, 86vw); flex: 0 0 auto; }
+#home-bar .zip-jump { flex: 1; width: auto; height: var(--tap); box-sizing: border-box; }
+#home-bar #btn-home-zip { height: var(--tap); min-height: var(--tap); flex: 0 0 auto; }
+#home-bar #btn-home-cancel { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+/* ho (Q265): while the home picker is open the map chrome steps back —
+   the Show pill and the selection bar hide instead of colliding with
+   the panel. */
+body.home-picking #show-pill, body.home-picking #sel-bar { visibility: hidden; }
 /* Q118b (2026-10-01): Tanner — the home pin was rendering at 30px because the
    later `.pin` rule (same specificity) beat `.pin-home`'s 52px. Doubling the
    class wins the cascade so the Q118 bigger-home-pin fix actually shows. */
@@ -334,6 +356,21 @@ select.select-hint { color: var(--faint); }
    the old always-green #btn-add-gps override was removed. */
 .leaflet-bar a { background: var(--green); color: #0e150a; border-bottom: 1px solid rgba(0,0,0,.25); }
 .leaflet-bar a:hover, .leaflet-bar a:focus { background: var(--green); color: #0e150a; }
+/* hn (2026-11-21, Q263): Leaflet's .leaflet-disabled paints the zoom half
+   pale grey at the zoom limit, so the pill wore two colors (Tanner,
+   2026-11-21). The pill stays green at every zoom; only the glyph dims. */
+.leaflet-bar a.leaflet-disabled { background: var(--green); color: rgba(14,21,10,.35); }
+/* ho (2026-11-21, Q252, Tanner): on the set detail the status pill centers
+   under the (already centered) set name — name and pill read as one
+   centered stack. */
+#sd-badges { text-align: center; }
+/* ho (Q254): opened collapsible headers land just under the fixed bars. */
+.setsec-head, .totals-card-head { scroll-margin-top: 8px; }
+/* hn (2026-11-21, Tanner): the attribution bar, quieter — smaller type on a
+   translucent ground instead of the solid white strip. The imagery credits
+   are required by the providers' terms and stay legible; only the volume
+   comes down. */
+.leaflet-control-attribution { font-size: 9px; line-height: 1.5; padding: 0 5px; background: rgba(255,255,255,.55); color: #222; }
 .leaflet-control-layers-toggle { background-color: var(--green); }
 
 /* set pins */
@@ -351,6 +388,12 @@ body[data-pinscheme="pastel"] { --pin-active:#a9d6a5; --pin-sprung:#eacd7d; --pi
 /* Q68: trap-check clock — a set past its check interval without any activity
    turns its pin red, whatever its status color was. */
 .pin-overdue { background: #e5484d; }
+/* gz: a set picked in selection mode — gold ring in place of the white one
+   (the app's own gold, #E7C945: fix/draw handles, measure line) plus a gold
+   check badge, so the chosen sets read at a glance. The class rides the
+   icon HTML, so it survives pan/zoom and every marker re-render. */
+.pin-sel { border-color: #E7C945; box-shadow: 0 0 0 3px #E7C945, 0 2px 8px rgba(0,0,0,.6); }
+.pin-check { position: absolute; right: -8px; top: -8px; width: 17px; height: 17px; border-radius: 50%; background: #E7C945; color: #1c1a12; font-size: 11px; font-weight: 800; line-height: 17px; text-align: center; border: 2px solid #fff; box-sizing: border-box; }
 /* Q68: overdue check line on the set detail sheet. */
 .check-overdue { color: #ff7a7a; font-weight: 600; }
 /* Q17: wind arrow — small triangle orbiting the pin, pointing downwind
@@ -399,9 +442,15 @@ body[data-pinscheme="pastel"] { --pin-active:#a9d6a5; --pin-sprung:#eacd7d; --pi
    pin-scheme colors. */
 .map-status-filters .chip.on,
 .map-status-filters .chip:not(.on) { border-color: #fff; }
+/* hr (2026-11-21, Q274, Tanner): the set form's sections ran together —
+   bait, lure, urine and the rest flowed as one long stack and he could
+   misjudge which section a box belonged to. A faint divider line and a
+   breath of space above every section (.setfield) so each one reads as
+   its own block. Same --line the suggestion boxes already wear. */
+.setfield { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; }
 /* Q11: saved-entry suggestions under the bait/lure/urine inputs */
 .suggest { display: none; margin-top: -2px; }
-.suggest.show { display: block; }
+.suggest.show { display: block; } /* ik (Q306): the ij overlay is reverted — the list sits in the page, as before */
 .suggest-item { display: block; width: 100%; text-align: left; font-size: 15px; color: var(--text);
   background: var(--card); border: 1px solid var(--line); border-top: none; padding: 9px 12px; cursor: pointer; }
 .suggest-item:first-child { border-top: 1px solid var(--line); border-radius: 10px 10px 0 0; }
@@ -466,12 +515,18 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
    the element returned by onAdd, so the old descendant selector
    (.leaflet-control #weather-chip) never matched and the chip stayed
    transparent. Bare #weather-chip matches the element itself. */
+/* hc (2026-11-18, Tanner): the chip's own border was 1px rgba(0,0,0,.25)
+   while both .leaflet-bar controls beside it (zoom, layer cycle) compute
+   2px solid rgba(0,0,0,.2) — Leaflet's .leaflet-touch .leaflet-bar rule
+   outranks the app's border:none — so the chip read borderless next to
+   them. It now carries the identical 2px border; padding drops 1px a
+   side so the box keeps its exact size, radius and place. */
 #weather-chip {
   position: static; left: auto; bottom: auto; top: auto; right: auto;
-  background: var(--green) !important; border: 1px solid rgba(0,0,0,.25); color: #0e150a;
+  background: var(--green) !important; border: 2px solid rgba(0,0,0,.2); color: #0e150a;
   font-size: 13px; font-weight: 700; min-height: 0; border-radius: 14px;
   display: flex; flex-direction: column; align-items: center; line-height: 1.3;
-  padding: 5px 10px;
+  padding: 4px 9px;
 }
 /* Q130 (2026-10-01): Tanner — the left control stack (weather, zoom, layers)
    sits at the bottom-left of the map, where it used to be, with all three
@@ -512,7 +567,17 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
    green map buttons (weather chip, zoom +/-, layers), matching the
    right-side fab border treatment. Outline, not border, so sizing is
    untouched. */
-#weather-chip, .leaflet-bar, .leaflet-control-layers-toggle { outline: 2px solid #0d0d0d; }
+.leaflet-bar, .leaflet-control-layers-toggle { outline: 2px solid #0d0d0d; }
+/* ho (2026-11-21, Q258, Tanner): the chip's black ring kept VANISHING on
+   his iPhone while the zoom/layers rings beside it (same outline rule)
+   stayed — present in some screenshots, gone in others, and computed
+   correct in Chromium. The difference: the chip's CONTENT changes size
+   as the temperature lands, and WebKit intermittently fails to repaint
+   an outline after such a layout change. The chip therefore wears its
+   ring as a box-shadow (0 0 0 2px), which repaints with the element's
+   own layer, over the same drop shadow the leaflet bars carry. His
+   phone is the verdict, as ever. */
+#weather-chip { box-shadow: 0 0 0 2px #0d0d0d, 0 4px 14px rgba(0,0,0,.5); }
 
 /* set-detail status control (changed manually at check time) */
 .status-row { display: flex; align-items: center; gap: 10px; margin: 10px 0 4px; }
@@ -537,8 +602,14 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
 /* Q49: collapsible Settings sections — full-width header buttons with a
    chevron; the body shows/hides via the hidden attribute (reliable on iOS). */
 .setsec { padding: 0 14px; }
-.setsec-head { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; color: var(--ink); font-size: 18px; font-weight: 700; padding: 14px 0; margin: 0; min-height: 0; cursor: pointer; text-align: left; }
-.setsec-chev { color: var(--muted); font-size: 22px; line-height: 1; transition: transform .18s ease; }
+/* gw scope 5 (2026-11-18): ONE bar standard app-wide, set at Tanner's
+   midpoint between the old Paperwork bar (50px tall, 18px title, 22px
+   chevron) and the old Totals bar (52px, 20px, 15px): 51px tall, 19px
+   title, 18.5px chevron, the › glyph in muted cream. Every collapsible
+   header family (.setsec-head here, .totals-card-head, the Seasons
+   official heads, History group heads) is tuned to these numbers. */
+.setsec-head { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; color: var(--ink); font-size: 19px; font-weight: 700; line-height: 23px; padding: 14px 0; margin: 0; min-height: 0; cursor: pointer; text-align: left; }
+.setsec-chev { color: var(--muted); font-size: 18.5px; line-height: 1; transition: transform .18s ease; }
 .setsec.open .setsec-chev { transform: rotate(90deg); }
 .setsec-body { padding-bottom: 14px; }
 .setsec-body[hidden] { display: none; }
@@ -551,23 +622,48 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
    gold buttons above it: gold, caps, centered. It stays the only collapsible
    one (Q119); the chevron pins right so the label stays truly centered, and
    the opened body drops as a dark card below the gold button. Scoped to
-   #seasons-rules so sheet collapsibles are untouched. */
-#seasons-rules .card.setsec { background: none; border: none; padding: 0; margin: 12px 0; }
-#seasons-rules .setsec-head {
+   #seasons-rules so sheet collapsibles are untouched.
+   gw (2026-11-18): the scope extends to #seasons-gap — see the note below.
+   hk (2026-11-19): the scope extends to #seasons-deadlines — Deadlines
+   & Permits moved in from Paperwork and takes the identical official
+   treatment, so all three Seasons expanders match element for element. */
+#seasons-rules .card.setsec, #seasons-gap .card.setsec, #seasons-deadlines .card.setsec { background: none; border: none; padding: 0; margin: 12px 0; }
+#seasons-rules .setsec-head, #seasons-gap .setsec-head, #seasons-deadlines .setsec-head {
+  /* gw scope 5: the yellow color treatment stays (scope 1); the DIMENSIONS
+     join the app-wide bar standard — 19px title, 51px single-line bar.
+     gz (2026-11-18): the gap head's long title ("{State} — Tags,
+     Permission, Setbacks & Licensing") wraps to two lines, and at the old
+     10px vertical padding the wrapped box rendered 66px — off the
+     standard the rules head (one line) met. Vertical padding drops to
+     4px and the line-height to 21px, so a two-line head lands on the
+     same 51px box (min-height carries the one-line case, as before). */
   position: relative; display: flex; align-items: center; justify-content: center;
-  width: 100%; min-height: var(--tap); padding: 12px 40px; margin: 12px 0;
+  width: 100%; min-height: 51px; padding: 4px 40px; margin: 12px 0; line-height: 21px;
   background: var(--accent); color: var(--accent-ink); border: none; border-radius: var(--radius);
-  font-size: 17px; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer;
+  font-size: 19px; font-weight: 700; text-transform: uppercase; text-align: center; cursor: pointer;
 }
-#seasons-rules .setsec-chev {
+#seasons-rules .setsec-chev, #seasons-gap .setsec-chev, #seasons-deadlines .setsec-chev {
   position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
-  color: var(--accent-ink); font-size: 22px; line-height: 1; transition: transform .18s ease;
+  color: var(--accent-ink); font-size: 18.5px; line-height: 1; transition: transform .18s ease;
 }
-#seasons-rules .setsec.open .setsec-chev { transform: translateY(-50%) rotate(90deg); }
-#seasons-rules .setsec-body {
+#seasons-rules .setsec.open .setsec-chev, #seasons-gap .setsec.open .setsec-chev, #seasons-deadlines .setsec.open .setsec-chev { transform: translateY(-50%) rotate(90deg); }
+#seasons-rules .setsec-body, #seasons-gap .setsec-body, #seasons-deadlines .setsec-body {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   margin-top: 8px; padding: 14px;
 }
+/* Color-rule history for the regs-family cards: gp (2026-11-17) gave both
+   a filled-yellow .regs-card treatment; gv (2026-11-18) removed it for
+   the standard .card treatment; gw (2026-11-18, Tanner's correction from
+   his phone) splits the pair: in SEASONS the "{State} — Tags, Permission,
+   Setbacks & Licensing" item is a BUTTON like Trap & Snare Rules — gold
+   bar on top, and beneath it the SAME dark panel the rules open into
+   (the scoped rules above now cover #seasons-gap too, so the two panels
+   match element for element by construction). In PAPERWORK, "Deadlines
+   & Permits" keeps gv's standard green Paperwork treatment — that
+   instruction stands untouched. The .regs-card class stays gone.
+   hk (2026-11-19, Tanner) supersedes that last point: Deadlines &
+   Permits MOVED to Seasons and joins the official family above, so
+   Paperwork carries no deadlines section at all. */
 /* Q99 (2026-10-01): the notes/memos/photos collapsible on the set form, log
    form, and set detail — a divider sets it off from the fields above. */
 .sheet .setsec { border-top: 1px solid var(--line); margin-top: 10px; }
@@ -611,6 +707,11 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
   border: 1px solid var(--line); border-radius: 12px;
   padding: 14px; margin: 0 0 10px; font-size: 16px; cursor: pointer; }
 .stack-row:active { background: #2a2f26; }
+/* gz: in selection mode a stack row shows its picked state — a gold check
+   circle at the left (echoing the pin badge) and a gold-tinted row. */
+.stack-check { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); color: #1c1a12; font-size: 13px; font-weight: 800; line-height: 19px; text-align: center; box-sizing: border-box; }
+.stack-row-sel { border-color: #E7C945; background: #2c2413; }
+.stack-row-sel .stack-check { background: #E7C945; border-color: #E7C945; }
 .stack-name { flex: 1; min-width: 0; font-weight: 700; overflow: hidden;
   text-overflow: ellipsis; white-space: nowrap; }
 .badge.status-sprung { background: #3d2c10; color: #f5cf7a; }
@@ -648,6 +749,15 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
 .form-error { display: none; color: #f0a49c; font-weight: 700; font-size: 15px; margin: 10px 0 2px; }
 .form-error.show { display: block; }
 .warnbox .wb-title { font-weight: 800; margin-bottom: 4px; }
+/* hk (2026-11-19, Tanner): the Seasons disclaimer's box wears a deep
+   rust-red tint — the same darkness as the warnbox brown it replaces,
+   NOT a bright alarm red; its cream/gold text is unchanged. Scoped by
+   id to the Seasons box alone: .warnbox is shared (the Log a Catch
+   cautions, the set form's bait warning, Scorecard's Unspecified box)
+   and those keep the brown. The disclaimer box is one element whose
+   text renderSeasons swaps per state, so this one rule tints it for
+   every state. */
+#seasons-disclaimer { background: #46221a; border-color: #743c2c; }
 /* Q97 (2026-10-01): the bait-rule head is a standalone collapsible row, not
    inside a .setsec — slim, amber, chevron rotates on expand.
    Q160 (2026-10-06): Tanner — the rule box showed empty on his phone. Root
@@ -655,7 +765,7 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
    so the header never hid; its stale tap handler then revealed the emptied
    box. Explicit guard, matching the .attr-add pattern. */
 .baitrule-head[hidden] { display: none; }
-.baitrule-head { font-size: 16px; padding: 10px 0; color: #f5cf7a; }
+.baitrule-head { color: #f5cf7a; } /* gw scope 5: amber warning ink stays; size/padding now follow .setsec-head */
 .baitrule-head.open .setsec-chev { transform: rotate(90deg); }
 .reminder-tag { font-size: 13px; color: var(--muted); font-style: italic; margin-top: 8px; }
 
@@ -666,6 +776,13 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
 /* Species silhouettes are black-on-transparent; invert to light-on-dark theme. */
 .sp-icon { width: 40px; height: 40px; object-fit: contain; flex: none; filter: invert(1); }
 .sp-icon-lg { width: 56px; height: 56px; object-fit: contain; flex: none; filter: invert(1); }
+/* ho (2026-11-21, Q256 + Q255): the species detail header as one centered
+   stack, and the method + land label atop each season card. */
+.sp-detail-head { text-align: center; }
+.sp-detail-head .sp-icon-lg { display: block; margin: 0 auto; }
+.sp-detail-head h3 { margin: 6px 0 0; }
+.sp-detail-head .sp-sci { font-style: italic; margin: 2px 0 0; }
+.sp-season-ml { font-weight: 700; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 .sp-icon.sp-help { display: inline-flex; align-items: center; justify-content: center; filter: none; border: 2px solid currentColor; border-radius: 50%; font-weight: 700; font-size: 22px; line-height: 1; cursor: pointer; }
 
 .stepper { display: flex; align-items: center; gap: 14px; margin: 8px 0; }
@@ -707,7 +824,15 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
    searches — History and Seasons fields stick to the top of their pane, so
    they never scroll away and typing never moves them. (The Log a Catch
    species list carries a fixed height in its markup for the same reason;
-   the landowner field tops a full-height pane card and never exhibited it.) */
+   the landowner field tops a full-height pane card and never exhibited it.)
+   hb (2026-11-18): the stuck bar now wears the Guide bar's solid footing
+   (Q205: background var(--sheet)) — a proper header the results cannot
+   show through, instead of the bare field floating over the scroll.
+   hl (2026-11-20, Q244, Tanner): the brown footing comes OFF the fields
+   themselves — it was the one property breaking the field family. The
+   fields now compute to the standard input background (#10140c, fully
+   opaque, so the no-show-through purpose survives); in the Guide the
+   brown lives on a wrapper, never on the field. Nothing else changes. */
 #history-search, #seasons-search { position: sticky; top: 0; z-index: 6; }
 /* Q161 (2026-10-06): Tanner — a giant warnbox (e.g. the coyote county-rules
    alert in Log a Catch) made the sheet content taller than the sheet, and
@@ -770,6 +895,37 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
 @supports (-webkit-touch-callout: none) {
   .date-col > input[type=date] { width: calc(100% - 30px); }
 }
+/* gx (2026-11-18): the same iOS content-box overshoot hit the tag entry's
+   Date tagged input — it stands bare in its sheet (no .date-col around
+   it), so on Tanner's phone it ran ~30px wider than the tag number input
+   and photo button beside it and bled off the sheet's right edge. Same
+   fix as .date-col, extended to all three tag-entry surfaces: the catch
+   log form's Tag section, the post-catch sheet, and the History tag
+   editor.
+   gz (2026-11-18, Tanner's phone, Edit Set + Log a Catch screenshots):
+   the set form's Date Set (#sf-date) ran full-bleed off the screen edge
+   and the catch form's Date (#log-date) AND Time (#log-time) overshot
+   identically — WebKit gives input[type=time] the same intrinsic-sizing
+   treatment. A full sweep found every remaining bare temporal input in
+   the app, and all of them take the same treatment here: #sf-date,
+   #log-date, #log-time, and the two modal dates #m-trip-date (Log/Edit
+   trip) and #m-draw-date (Save drawn route). The only temporal inputs
+   NOT in this list sit inside .date-col wrappers (exp-from/exp-to,
+   purge-from/purge-to), which carry the same fix above. gz-check
+   asserts this coverage structurally so a future bare date/time field
+   cannot slip through. */
+#log-tag-date, #tag-date, #pc-tag-date, #sf-date, #log-date, #log-time, #m-trip-date, #m-draw-date { display: block; width: 100%; max-width: 100%;
+  min-width: 0; box-sizing: border-box; }
+#log-tag-date::-webkit-datetime-edit, #tag-date::-webkit-datetime-edit, #pc-tag-date::-webkit-datetime-edit,
+#log-tag-date::-webkit-datetime-edit-fields-wrapper, #tag-date::-webkit-datetime-edit-fields-wrapper,
+#pc-tag-date::-webkit-datetime-edit-fields-wrapper, #sf-date::-webkit-datetime-edit, #log-date::-webkit-datetime-edit,
+#log-time::-webkit-datetime-edit, #m-trip-date::-webkit-datetime-edit, #m-draw-date::-webkit-datetime-edit,
+#sf-date::-webkit-datetime-edit-fields-wrapper, #log-date::-webkit-datetime-edit-fields-wrapper,
+#log-time::-webkit-datetime-edit-fields-wrapper, #m-trip-date::-webkit-datetime-edit-fields-wrapper,
+#m-draw-date::-webkit-datetime-edit-fields-wrapper { min-width: 0; }
+@supports (-webkit-touch-callout: none) {
+  #log-tag-date, #tag-date, #pc-tag-date, #sf-date, #log-date, #log-time, #m-trip-date, #m-draw-date { width: calc(100% - 30px); }
+}
 /* Tanner 2026-10-01: compact button row — smaller, less clunky. */
 .btn-compact > .btn-secondary { padding: 8px 10px; font-size: 14px; min-height: 0; }
 /* Home-ground prompt (Q53): three equal buttons, no icon, all centered. */
@@ -826,7 +982,8 @@ body.route-locked #tabbar { pointer-events: none; opacity: .35; }
 .lic-item { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #000; aspect-ratio: 4/3; }
 .lic-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .lic-item button { position: absolute; top: 6px; right: 6px; width: 40px; height: 40px; min-height: 0; border-radius: 50%; background: rgba(0,0,0,.65); color: #fff; font-size: 18px; padding: 0; }
-.lic-link { position: absolute; left: 6px; bottom: 6px; background: rgba(0,0,0,.65); color: #fff; border-radius: 20px; padding: 4px 10px; font-size: 12px; pointer-events: none; }
+/* hl (2026-11-20, Q245): the .lic-link badge rule is gone with the
+   custom-link override it dressed. */
 
 /* ---------- memos / audio ---------- */
 .memo-card { padding: 8px 0; border-bottom: 1px solid var(--line); }
@@ -877,6 +1034,25 @@ body.placing #btn-add-gps,
 body.placing #show-pill,
 body.placing .leaflet-control-layers { pointer-events: none; opacity: .45; }
 /* B15: zoom stays live during placement — pan and zoom, nothing else. */
+
+/* gt (2026-11-18, Tanner): the editor lock — while Fix route is open or
+   Draw a route is up, the map's other tools rest: dimmed and inert, so
+   no panel can open over the work and bury it ("kind of like with the
+   issue we had before"). Same shape as the placing lock above. What
+   stays alive is what the work needs: pan, pinch, the +/− zoom control
+   and the basemap cycle button — neither is listed here. The set and
+   sign markers rest too, through the editor-lock checks in their own
+   tap handlers (app.js / markers.js), the way placing does it. */
+body.editor-lock #show-pill,
+body.editor-lock #weather-chip,
+body.editor-lock #route-back-chip,
+body.editor-lock #route-bar,
+body.editor-lock #btn-locate,
+body.editor-lock #btn-drop-pin,
+body.editor-lock #btn-add-gps,
+body.editor-lock #btn-mark,
+body.editor-lock #btn-measure,
+body.editor-lock #btn-track { pointer-events: none; opacity: .45; }
 
 /* ---- trap lines ---- */
 .line-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 12px; padding: 4px; }
@@ -948,15 +1124,37 @@ body.placing .leaflet-control-layers { pointer-events: none; opacity: .45; }
 .day-head { display: flex; align-items: center; gap: 6px; width: 100%; text-align: left;
   background: none; border: none; color: var(--accent); font-size: 15px; font-weight: 800;
   padding: 12px 0 4px; cursor: pointer; }
-.day-head .chev { margin-left: auto; color: var(--muted); }
+/* gw scope 5: the day divider's chevron joins the standard (›, 18.5px,
+   muted, rotates open); its 15px/800 accent date label stays — it is a
+   date divider inside the list, not a section bar. */
+.day-head .chev { margin-left: auto; color: var(--muted); font-size: 18.5px; line-height: 1; transition: transform .18s ease; }
+.day-head .chev.open { transform: rotate(90deg); }
 .lr-notes { font-size: 14px; color: var(--muted); margin-top: 4px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .log-row.expanded .lr-notes { white-space: normal; }
+/* gw: the History row's tag line rides the same expand as the notes —
+   invisible while collapsed, plain when open. */
+.log-row .tag-line { display: none; margin-top: 6px; align-items: center; gap: 8px; flex-wrap: wrap; }
+.log-row.expanded .tag-line { display: flex; }
+/* gw: My Tags rows in Paperwork — the log-row look, tappable. */
+.tag-row { padding: 12px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.tag-row:last-child { border-bottom: none; }
+.tag-row .tag-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.tag-row .tag-species { font-weight: 700; font-size: 17px; }
+.tag-row .tag-num { font-weight: 800; color: var(--accent); }
+.tag-row .tag-flex { display: flex; gap: 10px; align-items: flex-start; }
+.tag-row .tag-flex .tag-main { flex: 1; min-width: 0; }
+.tag-thumb { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; flex: 0 0 auto; }
 .sp-group { border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px; overflow: hidden; }
+/* gw scope 5: History group bars join the standard — 19px title, 51px
+   bar, › chevron at 18.5px rotating open (padding is 14px vertical to
+   land the same 51px inside the group's own horizontal padding). */
 .sp-head { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
   background: var(--panel); border: none; border-radius: 0; color: var(--text);
-  padding: 12px; min-height: 0; cursor: pointer; }
-.sp-name { font-weight: 700; font-size: 16px; }
+  padding: 14px 12px; min-height: 0; cursor: pointer; line-height: 23px; }
+.sp-name { font-weight: 700; font-size: 19px; }
+.sp-head .chev { font-size: 18.5px; line-height: 1; transition: transform .18s ease; }
+.sp-head .chev.open { transform: rotate(90deg); }
 .sp-total { font-weight: 800; color: var(--accent); font-size: 17px; margin-left: auto; }
 .sp-head .chev { color: var(--muted); }
 .sp-sub { padding: 0 12px 10px; }
@@ -977,6 +1175,10 @@ body.placing .leaflet-control-layers { pointer-events: none; opacity: .45; }
    Used by the mods section and the settings toggle groups. */
 .checkgrid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
 .checkgrid .checkline { padding: 7px 0; font-size: 15px; }
+/* gx (2026-11-18): every toggle in the Settings checkgrids carries its own
+   explanation under its label (Tanner's approved copy table) — same .dim
+   voice as the Feature Toggles explanations. */
+.checkgrid .tnote { margin: 0 0 8px; }
 /* Q103: coordinate footer, small and dim, tap to copy — only rendered when
    the Privacy toggle is on. */
 .coords-bottom { font-size: 11px; color: var(--muted); text-align: center; margin: 12px 0 4px; }
@@ -1015,7 +1217,6 @@ body.placing .leaflet-control-layers { pointer-events: none; opacity: .45; }
 .photo-thumb.sm { width: 48px; height: 48px; border-radius: 8px; }
 .log-photos { display: flex; gap: 6px; margin-top: 6px; }
 /* fx (2026-11-15): photo gallery — grid of every photo on the line, labeled. */
-.gal-open { width: 100%; margin: 0 0 10px; }
 .gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .gal-tile { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg2); cursor: pointer; }
 .gal-tile img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
@@ -1044,12 +1245,20 @@ body.placing .leaflet-control-layers { pointer-events: none; opacity: .45; }
 
 /* Q170: Sponsored Products directory on the Scorecard tab */
 #sc-sp-q { width: 100%; margin-top: 10px; }
-.sp-card { display: flex; align-items: center; gap: 10px; padding: 10px; margin-top: 8px;
+.sp-card { display: flex; align-items: center; flex-wrap: nowrap; gap: 10px; padding: 12px 14px; margin-top: 8px;
   border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
 .sp-card:active { opacity: .75; }
 .sp-logo { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex: 0 0 auto; }
 .sp-info { flex: 1 1 auto; min-width: 0; }
-.sp-product { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* il (Q307): Compare keeps its standard size beside the product instead
+   of wrapping under the row and stretching full-width. */
+#sc-sp-list [data-sp-compare] { flex: 0 0 auto; width: auto; } /* width:auto beats the .btn base width:100% — that base width was crushing the info block to zero */
+/* ij (Q304): the Sponsored tag in the standard row dress — a small gold
+   label in the row, not the one-off pill. */
+.sp-tag { display: inline-block; margin-top: 3px; color: #E7C945; font-size: 12px;
+  font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+/* ig (Q302): product names read whole — they wrap instead of cutting off at 'Ghost\u2026' */
+.sp-product { font-weight: 700; white-space: normal; }
 .sp-brand { font-size: 12px; }
 
 /* Q171: sponsor bio full-screen sheet (the demo design) */
@@ -1171,9 +1380,23 @@ body.placing #route-back-chip { display: none; }
 #hist-disp-chips .chip { flex: 1 1 28%; text-align: center; padding: 10px 6px; font-size: 14px; }
 
 /* Totals section cards: tappable collapsing headers (Tanner 2026-09-30). */
-.totals-card-head { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; padding: 0; margin: 0 0 2px; cursor: pointer; color: inherit; font: inherit; text-align: left; }
-.totals-card-head h3 { margin: 0; }
-.totals-card-head .tchev { color: var(--accent); font-size: 15px; }
+/* gw scope 5: Totals bars join the app-wide standard (51px, 19px title,
+   18.5px › in muted cream, rotating on open like .setsec) — the h3 inside
+   sheds the .card h3 border/padding so the button's own box is the bar. */
+/* gz (2026-11-18, Tanner's gx phone check): the gw midpoint standard was
+   applied to the HEAD alone (51px), but the Totals cards are plain .card
+   wrappers carrying 14px of padding above AND below the head, so the box
+   Tanner actually sees rendered 81px and never slimmed. The totals card
+   now carries no vertical padding of its own — the head is the box
+   (51px + the card's 2px of border = 53, the same rendered size as the
+   .card.setsec sections) — and the expanded body takes the bottom
+   padding the card used to lend it. Horizontal padding is unchanged. */
+.totals-card { padding: 0 14px; }
+.totals-card-body { padding-bottom: 14px; }
+.totals-card-head { display: flex; align-items: center; justify-content: space-between; width: 100%; background: none; border: none; padding: 14px 0; margin: 0; min-height: 0; cursor: pointer; color: inherit; font: inherit; line-height: 23px; text-align: left; }
+.totals-card-head h3 { margin: 0; font-size: 19px; line-height: 23px; border-top: none; padding-top: 0; }
+.totals-card-head .tchev { color: var(--muted); font-size: 18.5px; line-height: 1; transition: transform .18s ease; }
+.totals-card-head[aria-expanded="true"] .tchev { transform: rotate(90deg); }
 
 /* Landowner phone rows: number plus one-tap Call / Text (Tanner 2026-09-30). */
 .lo-phone { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 6px 0; }
@@ -1215,7 +1438,16 @@ body.placing #route-back-chip { display: none; }
 .mk-kind-ic .mk-glyph { width: 22px; height: 22px; }
 .mk-kind-ic.big { width: 46px; height: 46px; }
 .mk-kind-ic.big .mk-glyph { width: 30px; height: 30px; }
-.mk-kind-choice { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 13px; font-size: 16px; background: var(--card, #fff); border: 1.5px solid var(--line); border-radius: 10px; color: inherit; margin-bottom: 12px; }
+/* gy (2026-11-18, Tanner's screenshot of live he): this wore a
+   --card variable with a pure-white fallback — and --card is defined
+   nowhere, so the button rendered WHITE with the sheet's pale ink on
+   it, unreadable, while
+   every other field wears the dark treatment. It now carries the
+   standard field treatment verbatim (the base field rule / .ms-select
+   family): #10140c ground, var(--ink) text, 1px var(--line) border,
+   var(--radius), var(--tap) min-height. One element serves the New and
+   Edit marker forms (markers.js openForm), so both are covered. */
+.mk-kind-choice { width: 100%; min-height: var(--tap); display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; font-family: inherit; font-size: 17px; background: #10140c; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); margin-bottom: 12px; }
 .mk-kind-choice #mk-kind-name { display: inline-flex; align-items: center; gap: 8px; }
 .mk-kind-choice .mk-kind-ic { width: 28px; height: 28px; margin: 0; }
 .mk-kind-choice .mk-kind-ic .mk-glyph { width: 18px; height: 18px; }
@@ -1242,20 +1474,48 @@ body.placing #route-back-chip { display: none; }
    and the gold button appears only when the filter is narrowed to one
    status. The old bottom bulk bar (.bulk-bar, Q229) is gone, and with it
    the bulk-on fab lift. */
-.show-pill { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); z-index: 600; display: flex; align-items: center; gap: 10px; max-width: 92vw; background: rgba(18,22,14,.88); border: 3px solid #fff; border-radius: 999px; padding: 4px 8px 4px 16px; }
+.show-pill { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); z-index: 600; display: flex; align-items: center; gap: 10px; width: max-content; max-width: 92vw; background: rgba(18,22,14,.88); border: 3px solid #fff; border-radius: 999px; padding: 4px 8px 4px 16px; }
 .show-btn { flex: 1 1 auto; min-width: 0; min-height: 0; background: none; border: none; padding: 0; font-size: 16px; font-weight: 700; color: #f5efdd; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* Q232 fix (2026-11-06): the label rides in a block span so a too-long label
    ellipsizes from the START — a bare <button> centers its text and clips
    both ends with no ellipsis, in Safari and in Chromium alike (Tanner's
    06:51 screenshot). The span shrink-to-fits and centers itself, so short
-   labels stay centered in the pill. */
-.show-label { display: block; width: fit-content; max-width: 100%; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+   labels stay centered in the pill.
+   hl (2026-11-20, Q242, Tanner): the ellipsis retires. The span now wraps —
+   each status is a .show-part that never breaks internally, so a list too
+   long for one line beside the Pick sets button folds BETWEEN statuses
+   into a second row and every toggled-on status reads whole (the same
+   two-row cure as build ec's status seg). One row whenever it fits,
+   exactly as before; rows center like the pill itself. Mechanism,
+   measured on the bench (not guessed): the span is a plain wrapping
+   block, and the pill takes width: max-content capped by its existing
+   max-width: 92vw — so the pill is exactly as wide as the one-line
+   label whenever that fits (hk's geometry, unchanged), and only at
+   the cap does the button get a definite width for the label to wrap
+   inside. Left to its old shrink-to-fit, the pill collapsed to the
+   widest single status and stacked all six on their own lines. */
+.show-label { display: block; margin: 0 auto; text-align: center; white-space: normal; }
+.show-part { white-space: nowrap; }
 .show-pill .bulk-btn { flex: 0 0 auto; background: var(--accent); color: var(--accent-ink); border: none; border-radius: 24px; padding: 4px 14px; min-height: 0; font-size: 16px; font-weight: 800; white-space: nowrap; }
 #btn-bulk[hidden] { display: none; }
 /* Q232: Edit-all sheet rows — label above a full-width select. */
 .bulk-edit-row { display: block; margin: 12px 0; font-size: 16px; font-weight: 700; color: var(--ink); }
 .bulk-edit-row select { display: block; width: 100%; margin-top: 6px; padding: 10px; font-size: 16px; border-radius: 10px; border: 1px solid var(--line); background: #10150c; color: #fff; }
-.bulk-status-row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 10px; background: none; border: none; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 17px; font-weight: 700; text-align: left; min-height: var(--tap); }
+/* hp (Q269): the Edit-all fields are text combos now, like the set form's */
+.bulk-edit-row input[type="text"] { margin-top: 6px; }
+/* gx (2026-11-18): the bulk rows' old ghost treatment (background: none,
+   hairline-only border — the .bulk-status-row rule that stood here) matched
+   no other menu or sheet in the app; Tanner's order was the standard sheet
+   dress. The Actions menu and Edit all now use the standard buttons
+   (btn-secondary / btn-danger / btn-primary in a .sheet-actions stack), and
+   the status picker's rows are solid btn-secondary buttons carrying their
+   status dot — .bulk-pick-row only spaces them. The family's modal card
+   takes the sheets' own panel treatment via .sheet-dress (opt-in per open,
+   removed by showModal): same var(--sheet) panel, 2px var(--line) border,
+   20px radius, sheet insets, and the 21px sheet-title size. */
+.bulk-pick-row { margin-bottom: 10px; }
+#modal.sheet-dress .modal-card { border: 2px solid var(--line); border-radius: 20px; padding: 20px 16px 24px; }
+#modal.sheet-dress h3 { font-size: 21px; }
 .bulk-dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; vertical-align: -2px; }
 .show-row { display: flex; align-items: center; gap: 12px; padding: 11px 4px; border-bottom: 1px solid var(--line); font-size: 17px; cursor: pointer; }
 .show-row input[type="checkbox"] { margin-left: auto; width: 22px; height: 22px; accent-color: #7fa650; }
@@ -1266,8 +1526,37 @@ body.placing #route-back-chip { display: none; }
 .show-chev { opacity: .55; font-size: 14px; flex: 0 0 auto; }
 .show-names { padding-left: 30px; }
 .show-setname { display: block; width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid var(--line); color: inherit; font: inherit; font-size: 16px; padding: 9px 4px; cursor: pointer; }
+/* hc (2026-11-18) picker dress, kept by hd for the Pick list's rows (the
+   picker moved to its own sheet — see renderPickList): the check circle
+   mirrors the stack rows' (gz): an empty ring until picked, then
+   gold-filled with the dark check; the picked row tints gold like a
+   picked stack row. */
+.show-setname-pick { display: flex; align-items: center; }
+.show-setcheck { flex: 0 0 auto; width: 22px; height: 22px; margin-right: 10px; border-radius: 50%; border: 2px solid var(--line); color: #1c1a12; font-size: 13px; font-weight: 800; line-height: 19px; text-align: center; box-sizing: border-box; }
+.show-setname-sel { background: #2c2413; color: #f5cf7a; }
+.show-setname-sel .show-setcheck { background: #E7C945; border-color: #E7C945; }
+/* hj (2026-11-19): the Pick list's per-status Select all / Clear all row —
+   a setname row's exact dress and size (the classes above); the label
+   carries weight so it reads as the group's control, not another set. */
+.show-pickall .show-setname-label { font-weight: 700; letter-spacing: .02em; }
 .show-noname { display: block; padding: 9px 4px; font-size: 15px; }
 .show-dot { flex: 0 0 auto; width: 15px; height: 15px; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); }
+/* ho (2026-11-21, Q247, Tanner): in the Pick list every row's circle sits
+   at ONE left margin — the top Select-all-shown row, each group's Select
+   all, and every set — in a straight column under the group header's
+   status dot. The 30px names indent belongs to the Show (jump) list,
+   whose rows carry no circle; the pick rows drop it. */
+#pick-list .show-names { padding-left: 0; }
+/* The global button rule centers a button's content as a group
+   (justify-content: center) — on the pick rows that centered the
+   circle+name unit, so the circles wandered with name length. The pick
+   rows start at the left, always. */
+.show-setname-pick { justify-content: flex-start; }
+/* ho (2026-11-21, Q253): the selection Actions sheet's picked-names list —
+   left-aligned, scrolls when long; a tap on a name unpicks that set. */
+.sel-names { max-height: 36vh; overflow-y: auto; margin: 10px 0 2px; border-top: 1px solid var(--line); }
+.sel-name-row { display: flex; align-items: center; justify-content: flex-start; width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid var(--line); color: inherit; font: inherit; font-size: 16px; padding: 9px 4px; cursor: pointer; }
+.sel-name-row .sel-name-x { margin-left: auto; color: var(--accent); font-weight: 700; padding-left: 12px; }
 .show-name { flex: 1; }
 .show-count { opacity: .6; font-size: 13.5px; }
 .show-fam { padding-left: 30px; font-size: 15.5px; }
@@ -1280,13 +1569,63 @@ body.placing #route-back-chip { display: none; }
 /* Q200: the saved-route bar — same family as the place/track bars. */
 #route-bar { flex: 0 0 auto; z-index: 500; display: none; align-items: center; justify-content: center; gap: 10px; padding: 10px 14px; font-size: 15px; font-weight: 600; background: #1d2a12; color: #fff; border-bottom: 1px solid var(--line); }
 #route-bar.show { display: flex; }
+#fix-bar { flex: 0 0 auto; z-index: 500; display: none; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 10px 14px; font-size: 15px; font-weight: 600; background: #1d2a12; color: #fff; border-bottom: 1px solid var(--line); }
+#fix-bar.show { display: flex; }
+#fix-bar-miles { font-variant-numeric: tabular-nums; opacity: .85; }
+/* gt: the standalone Draw a route bar — same family as the fix bar. */
+#draw-bar { flex: 0 0 auto; z-index: 500; display: none; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 10px 14px; font-size: 15px; font-weight: 600; background: #1d2a12; color: #fff; border-bottom: 1px solid var(--line); }
+#draw-bar.show { display: flex; }
+#draw-bar-miles { font-variant-numeric: tabular-nums; opacity: .85; }
+/* hv (Q282, Tanner): the route-editing bars tidy — the label takes its
+   own full line, centered; the miles and the buttons share one even row
+   under it, every button the same width, so nothing wraps ragged or
+   hangs alone the way Done used to. The route bar and the selection bar
+   keep their single-row dress; these two bars carry too many buttons
+   for one row. */
+#fix-bar, #draw-bar { align-items: stretch; gap: 8px; }
+.bar-head { display: flex; align-items: flex-start; gap: 10px; flex: 0 0 100%; }
+#fix-bar-label, #draw-bar-label { flex: 1 1 auto; text-align: center; }
+#fix-bar-miles, #draw-bar-miles { flex: 0 0 auto; }
+#fix-bar button, #draw-bar button { flex: 1 1 0; min-width: 0; padding-left: 5px; padding-right: 5px; }
+/* gz: the set-selection bar — same bar family as track/fix/draw, but the
+   panel dress follows the sheets (var(--sheet) over the sheet-dress 2px
+   line), since the bulk family it launches wears that dress (gx). */
+/* he (2026-11-18): the bar is ONE row — count, Pick from list, Actions,
+   Done. No wrap; tighter gap/padding than the three-row gz bar so the
+   four pieces fit a phone width without squeezing the buttons (the
+   buttons keep their .btn-small dress untouched). */
+#sel-bar { flex: 0 0 auto; z-index: 500; display: none; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 8px; padding: 10px; font-size: 15px; font-weight: 600; background: var(--sheet); color: #fff; border-bottom: 2px solid var(--line); }
+
+#sel-bar.show { display: flex; }
+/* gy (2026-11-18, Tanner — "hint line until the first pick"): the entry
+   hint under the selection bar. A separate slim element (the bar's own
+   one-row height never changes); its text wears the helper family —
+   .dim's muted ink at 14px, the picklist sheet's helper line — on the
+   bar's own sheet ground so it reads as one block with the bar. */
+#sel-hint { flex: 0 0 auto; z-index: 500; display: none; padding: 7px 14px; text-align: center; background: var(--sheet); color: var(--muted); font-size: 14px; border-bottom: 2px solid var(--line); }
+#sel-hint.show { display: block; }
+#sel-bar-count { font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+/* he: the buttons never wrap or squeeze (their .btn-small dress is the
+   family standard) — the count span absorbs any width pressure. */
+#sel-bar button { flex: 0 0 auto; white-space: nowrap; }
+/* gp: fix-mode points are draggable handles — a 30px touch target with a
+   ~14px visible dot (red; gold and bigger when picked for a cut). */
+.fix-pt { background: none; border: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+.fix-pt i { display: block; width: 14px; height: 14px; margin: 8px; border-radius: 50%; background: #e5484d; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45); box-sizing: border-box; }
+.fix-pt-sel i { width: 20px; height: 20px; margin: 5px; background: #e7c945; }
+/* gu: Draw a route points are the same handles in miniature — a 30px
+   touch target with a ~12px red dot; gold and bigger while a point is
+   picked for Remove / Close the loop. */
+.draw-pt { background: none; border: none; }
+.draw-pt i { display: block; width: 12px; height: 12px; margin: 9px; border-radius: 50%; background: #e5484d; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45); box-sizing: border-box; }
+.draw-pt-sel i { width: 20px; height: 20px; margin: 5px; background: #e7c945; }
 #track-dot { width: 11px; height: 11px; border-radius: 50%; background: #e5484d; flex: 0 0 auto; }
 #track-stats { font-variant-numeric: tabular-nums; }
 
 /* ===== Q186/Q187 (2026-10-18): city jump + locating state ===== */
-.home-city-row { width: 100%; position: relative; display: flex; justify-content: center; }
-.city-jump { width: min(320px, 86vw); padding: 7px 11px; font-size: 15px; border-radius: 9px; border: 1px solid var(--line); background: #10150c; color: #fff; }
-.city-matches { position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); width: min(320px, 86vw); background: #10150c; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; z-index: 700; box-shadow: 0 8px 22px rgba(0,0,0,.5); }
+.home-city-row { width: min(320px, 86vw); margin: 0 auto; position: relative; display: flex; justify-content: center; }
+.city-jump { width: 100%; height: var(--tap); box-sizing: border-box; padding: 7px 11px; font-size: 15px; border-radius: 9px; border: 1px solid var(--line); background: #10150c; color: #fff; }
+.city-matches { position: absolute; top: calc(100% + 4px); left: 0; width: 100%; background: #10150c; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; z-index: 700; box-shadow: 0 8px 22px rgba(0,0,0,.5); }
 .city-match { display: block; width: 100%; text-align: left; padding: 10px 12px; font-size: 15.5px; background: none; border: none; border-bottom: 1px solid rgba(255,255,255,.08); color: #fff; cursor: pointer; }
 .city-match:last-child { border-bottom: none; }
 #locate-hint { background: var(--accent); color: var(--accent-ink); display: none; flex: 0 0 auto; z-index: 500; padding: 9px 14px; font-size: 14.5px; font-weight: 600; text-align: center; }
