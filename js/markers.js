@@ -59,15 +59,15 @@ var Markers = (function () {
       if (!visible(mk)) return;
       if (mk.poly && mk.poly.length > 2) {
         var p = L.polygon(mk.poly, { className: 'mk-area', color: '#f0d28a', weight: 2, fillColor: '#2c3e2d', fillOpacity: 0.45 });
-        p.on('click', function () { if (document.body.classList.contains('placing')) return; openDetail(mk.id); });
+        p.on('click', function () { if (document.body.classList.contains('placing') || document.body.classList.contains('editor-lock')) return; openDetail(mk.id); });
         layer.addLayer(p);
         var c = p.getBounds().getCenter();
         var cm = L.marker(c, { icon: pinIcon(mk), title: mk.name });
-        cm.on('click', function () { if (document.body.classList.contains('placing')) return; openDetail(mk.id); });
+        cm.on('click', function () { if (document.body.classList.contains('placing') || document.body.classList.contains('editor-lock')) return; openDetail(mk.id); });
         layer.addLayer(cm);
       } else if (isFinite(+mk.lat) && isFinite(+mk.lng)) {
         var m = L.marker([+mk.lat, +mk.lng], { icon: pinIcon(mk), title: mk.name });
-        m.on('click', function () { if (document.body.classList.contains('placing')) return; openDetail(mk.id); });
+        m.on('click', function () { if (document.body.classList.contains('placing') || document.body.classList.contains('editor-lock')) return; openDetail(mk.id); });
         layer.addLayer(m);
       }
     });
@@ -233,9 +233,14 @@ var Markers = (function () {
     var newFiles = formPhotoFiles;
     if (newFiles.length) {
       var mid = formCtx.editId;
+      /* hj (2026-11-19): the photo carries the owning marker's lineId,
+         stamped at write time from the parent record — line-less photo
+         records were the root of the License Wallet misfiling. */
+      var owner = data().filter(function (m) { return m.id === mid; })[0];
+      var mLineId = (owner && owner.lineId) || null;
       newFiles.forEach(function (file) {
         downscalePhoto(file, function (blob) {
-          IDB.put('photos', { id: uid('p'), markerId: mid, blob: blob, createdAt: Date.now() }).then(function () { renderFormPhotos(mid); });
+          IDB.put('photos', { id: uid('p'), markerId: mid, lineId: mLineId, blob: blob, createdAt: Date.now() }).then(function () { renderFormPhotos(mid); });
         });
       });
       formPhotoFiles = [];
@@ -422,7 +427,12 @@ var Markers = (function () {
   }
   function wire() {
     var fab = $('btn-mark');
-    if (fab) fab.onclick = function () { openSheet('sheet-marker-add'); };
+    if (fab) fab.onclick = function () {
+      /* ho (Q259, Tanner): opening Mark ends the other tap-modes first —
+         Measure's banner and measurement clear, so nothing stacks. */
+      if (window.cancelAllMapModes) window.cancelAllMapModes('mark');
+      openSheet('sheet-marker-add');
+    };
     $('btn-mk-add-pin').onclick = function () { closeSheets(); Markers.startPinPlace(); };
     $('btn-mk-add-area').onclick = function () { closeSheets(); Markers.startAreaPlace(); };
     $('btn-mk-place-ok').onclick = function () { Markers.finishPin(); };
