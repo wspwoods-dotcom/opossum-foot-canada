@@ -54,8 +54,7 @@ can change it any time in Settings.
 - **History** — Every catch and event you've logged. Flip between By date
   and By Trap Type, search the lot, filter by disposition, and switch
   between this season, last season, and all time. (Species counts live on
-  Totals now.) The **Photo gallery** button at the top gathers every photo
-  on the line in one place. (Reports and CSV exports live on the Data tab.)
+  Totals now.) (Reports and CSV exports live on the Data tab.)
 - **Totals** — Your season numbers in four cards: By Species, By Set, By
   Disposition, and By Month. Rows show the title and kept count only — tap
   one to see the details. Tap a card's header to fold it away or open it
@@ -64,9 +63,10 @@ can change it any time in Settings.
   species.
 - **Paperwork** — Your license photos plus the landowner notebook: names,
   phone numbers, permission slips, and boundary notes for every property
-  you run.
-- **Settings** — Tab toggles, feature toggles, set-field toggles, Backup &
-  Reports, and Erase Everything.
+  you run. The **Photo gallery** button sits beside the License Wallet
+  and gathers every photo on the line in one place.
+- **Settings** — the Toggles menus (features, tabs on the bottom bar,
+  fields on the set form), Backup & Reports, and Erase Everything.
 
 ## Trap lines
 
@@ -276,7 +276,7 @@ got a signal.
 Zoom in close (14 or tighter) and every pin grows a little wind arrow. It
 points where your scent is going — downwind, not where the wind's coming
 from. The arrows refresh on their own; turn them off in Settings under
-Feature Toggles if they're clutter.
+Toggles → Feature Toggles if they're clutter.
 
 ## Finding a set from the Show pill
 
@@ -321,12 +321,56 @@ line across ground it didn't record, and the miles count only the path
 actually traveled.
 
 Trips file as one-line rows — date, miles, and whether the run was a
-**GPS track** or an **Odometer** entry (odometer rows show their readings
-right on the line). Tap a row to open it: the passed-sets readout, the
-odometer photos, **Show on map**, and the trip's editing all live inside
-the open row.
+**GPS track**, a **Drawn route**, or an **Odometer** entry (odometer rows
+show their readings right on the line). Tap a row to open it: the
+passed-sets readout, the odometer photos, **Show on map**, and the trip's
+editing all live inside the open row.
 
-The on/off switch is **Mileage log** in Settings → Feature Toggles, and it
+A saved GPS route can be repaired after the fact with **Fix route**,
+inside the open trip row. Every recorded point lands on the map as a dot
+you can grab: drag a point to where it should be and the line reshapes
+around it — pull two or three points along a bend to make the line
+follow a curve. For a stretch that never happened at all — a spike to a
+field you never set foot in — tap the last good point before it and the
+first good point after it, then tap **Cut it**: the points between come
+out and the route breaks there honestly. **Join** does the opposite —
+it reconnects stretches the app broke apart: tap a point on each side
+of a break and tap **Join**, and the line draws through again with
+that leg counted. A lone dot sitting by itself mid-route is one brief
+fix the app stranded between two breaks; join it to the stretch on
+each side to make the route whole, or leave it be — a stranded point
+draws nothing and counts no miles either way. **Draw** covers the
+stretch the phone never recorded at all — no points to drag, nothing to
+join. Tap **Draw**, tap one end of a stretch to start from it, then tap
+along the map: each tap lays a point by hand, and the line and the miles
+follow. When the drawn stretch reaches the end of another stretch, tap
+that end and tap **Connect** to make them one route; tap the far end of
+the same stretch and the route closes into a loop. **Stop here** leaves
+the stretch open where it stands, and **Undo** takes back the last point
+laid. Points you draw are marked as drawn by hand in the record, and
+from then on they are ordinary points — drag them in a later session
+like any other. The trip's miles in the bar
+update as you work. Nothing is saved until you tap **Done**; **Cancel**
+throws the whole edit away and the trip stays exactly as it was. When
+you tap **Done**, the fixed route stays on screen so you can check it;
+**Back** returns to Paperwork when you're satisfied. While you fix or
+draw, the map's other tools rest — nothing else can open over your work
+until you are done.
+
+A route can also be drawn whole, with no track behind it at all — a
+line you are planning, or one you ran the day the phone stayed in the
+truck. Tap **Draw a route** beside Log Trip: the map opens empty, you
+tap along the route while the miles count up, **Undo** takes back a
+point, and **Save** asks for the date and files it as a trip on the
+line. A point that lands wrong is fixed right there, not after: drag
+it to where it belongs, or tap it and **Remove this dot**. Tap the
+first point instead and the bar offers **Close the loop** — the route
+ties back to its start, with the closing stretch counted in the miles. It reads **Drawn route** in the log, so the record always says
+how the route came to be, and its miles count in the line's total like
+any other trip. From there it is a trip like any other: **Show on map**
+draws it, **Fix route** opens on it, and it deletes the same way.
+
+The on/off switch is **Mileage log** in Settings → Toggles → Feature Toggles, and it
 only governs recording *new* trips. Turn it off and your recorded trips,
 the Route and Mileage section, and the CSV export all stay right where
 they were — you just can't add new ones until you turn it back on. The
@@ -355,9 +399,9 @@ each pin on the map.
 
 ## Photos — the gallery, zoom, and sharing them
 
-The **Photo gallery** button at the top of History gathers the active
-line's photos in one grid, each labeled by what it belongs to — a set, a
-catch, or paperwork. Tap any photo anywhere in the app to open it full
+The **Photo gallery** button on the Paperwork tab, beside the License
+Wallet, gathers the active line's photos in one grid, each labeled by
+what it belongs to — a set, a catch, or paperwork. Tap any photo anywhere in the app to open it full
 screen, and pinch to zoom — zoom works on every photo, not just some.
 
 Every photo viewer has a **Save Photo** button. It hands the photo to your
@@ -424,6 +468,24 @@ permission slips, and boundary notes for every property you run sets on.
 Tap a landowner's number to call or text them straight from the notebook —
 no copying numbers out of the app.
 
+**Tag records** live here too, in the **My Tags** section. In half the
+states, some pelts — bobcat and otter in Iowa — have to be tagged or
+sealed, and the tag number is the kind of paper that gets lost. When you
+log a catch of a species your state tags, the catch form offers a small
+**Tag** section: the tag or sealing number, the date you got it tagged,
+and a photo of the tag on the pelt. The same three fields sit under the
+tagging note on the "Catch logged!" sheet, too. Every part of it is
+optional, and an untouched section changes nothing — the catch saves
+just like always.
+Most tagging happens days after the catch, at a station, so you can fill
+it in later: open the catch in History and tap **Tag record**, or open
+My Tags here, where every tagged catch — and every catch still waiting
+on its tag, with the state's deadline beside it — is gathered in one
+place for when the warden or the fur buyer asks. If you never trap a
+species that gets tagged, turn **Tag records (catch sheet + My Tags)**
+off under Settings → Toggles → Feature Toggles and the whole thing
+disappears; anything you already saved stays saved.
+
 ## Backing up — read this one twice
 
 There is no account and no cloud. Everything lives on your phone, which means
@@ -455,7 +517,7 @@ the reports live in that one place.
   completely (swipe it away) and reopen the app from the home-screen icon.
   Nine times out of ten, that fixes it.
 - **Tabs or features went missing:** they're probably just toggled off.
-  Check Settings — Tab Toggles and Feature Toggles are per trap line, so
+  Check Settings — Tabs on the Bottom Bar and Feature Toggles are per trap line, so
   one line can run lean while another keeps everything.
 - **Your location dot won't show:** check that you allowed location access
   for the browser, and that you're not in airplane mode.
