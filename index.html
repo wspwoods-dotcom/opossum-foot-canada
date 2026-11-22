@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="referrer" content="unsafe-url"><!-- hg (2026-11-19): Mapbox's token restriction prefix-matches the full page URL, so the document presents it in full on subresource (tile) requests. The app URL carries no user data — state lives in localStorage — so this discloses nothing. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Opossum Foot Canada</title>
 <meta name="description" content="Opossum Foot — a pocket trapping notebook. Your spots never leave your phone.">
@@ -80,10 +81,26 @@
   <div id="track-bar"><span id="track-dot" aria-hidden="true"></span><span>Tracking</span><span id="track-stats">0.0 mi · 0:00</span><button class="btn-small btn-secondary" id="btn-track-pause" type="button">Pause</button><button class="btn-small btn-primary" id="btn-track-stop" type="button">Stop</button></div>
   <!-- Q200: a drawn saved route gets a bar in the same family, with the one
        thing it never had — a way to turn it off. -->
-  <div id="route-bar"><span id="route-bar-label">Route on the map</span><button class="btn-small btn-primary" id="btn-route-save" type="button" style="display:none">Save route</button><button class="btn-small btn-secondary" id="btn-route-hide" type="button">Hide route</button></div>
+  <div id="route-bar"><span id="route-bar-label">Route on the map</span><button class="btn-small btn-primary" id="btn-route-save" type="button" style="display:none">Save route</button><button class="btn-small btn-secondary" id="btn-route-discard" type="button" style="display:none">Discard</button><button class="btn-small btn-secondary" id="btn-route-fix" type="button" style="display:none">Fix route</button><button class="btn-small btn-secondary" id="btn-route-hide" type="button">Hide route</button><button class="btn-small btn-primary" id="btn-route-done" type="button" style="display:none">Done</button></div>
+  <!-- go: route-fix mode — the bar carries the instructions, what the
+       cut will remove, and the way out (Done). Same bar family.
+       gp: points are draggable handles now, the working trip's miles
+       ride the bar live, and Done/Cancel bracket the deferred save —
+       nothing is written to the trip until Done. -->
+  <div id="fix-bar"><div class="bar-head"><span id="fix-bar-label">Fix route — drag a point to move it, tap two points to connect them straight, or Draw to lay a stretch by hand.</span><span id="fix-bar-miles"></span></div><button class="btn-small btn-primary" id="btn-fix-apply" type="button" style="display:none">Cut it</button><button class="btn-small btn-secondary" id="btn-fix-remove" type="button" style="display:none">Remove point</button><button class="btn-small btn-secondary" id="btn-fix-cut" type="button" style="display:none">Cut it</button><button class="btn-small btn-secondary" id="btn-fix-draw" type="button">Draw</button><button class="btn-small btn-secondary" id="btn-fix-undo" type="button" style="display:none">Undo</button><button class="btn-small btn-primary" id="btn-fix-connect" type="button" style="display:none">Connect</button><button class="btn-small btn-secondary" id="btn-fix-stop" type="button" style="display:none">Stop here</button><button class="btn-small btn-secondary" id="btn-fix-back" type="button" style="display:none">Back</button><button class="btn-small btn-secondary" id="btn-fix-cancel" type="button">Cancel</button><button class="btn-small btn-primary" id="btn-fix-done" type="button">Save</button></div>
+  <!-- gt: standalone Draw a route — a route laid by hand on the map, no
+       GPS track behind it. Same bar family as fix/track; its own layer
+       and state live in tracking.js. -->
+  <div id="draw-bar"><div class="bar-head"><span id="draw-bar-label">Draw a route — tap the map to lay the route, point by point.</span><span id="draw-bar-miles"></span></div><button class="btn-small btn-primary" id="btn-draw-apply" type="button" style="display:none">Remove this dot</button><button class="btn-small btn-secondary" id="btn-draw-undo" type="button" style="display:none">Undo</button><button class="btn-small btn-secondary" id="btn-draw-cancel" type="button">Cancel</button><button class="btn-small btn-primary" id="btn-draw-save" type="button" disabled>Save</button></div>
+  <!-- gz: set-selection mode — tap pins to pick sets, then the bulk
+       actions (Change status / Edit all / Delete all) fall on the picked
+       sets only. Same bar family as track/fix/draw; the panel dress
+       follows the sheets (var(--sheet) with the sheet-dress 2px line). -->
+  <div id="sel-bar"><span id="sel-bar-count">0 selected</span><button class="btn-small btn-secondary" id="btn-sel-picklist" type="button">Pick from list</button><button class="btn-small btn-secondary" id="btn-sel-actions" type="button">Actions</button><button class="btn-small btn-primary" id="btn-sel-done" type="button">Done</button></div>
+<div id="sel-hint">Tap sets on the map to pick them, or use Pick from list.</div>
   <div id="place-bar"><span>Drag the pin onto the exact spot.</span><button class="btn-small btn-primary" id="btn-place-ok" type="button"><img class="pb-ic" src="assets/icons/check.png" alt="">Looks right</button><button class="btn-small btn-ghost" id="btn-place-cancel" type="button" aria-label="Cancel"><img class="pb-ic" src="assets/icons/x.png" alt=""></button></div>
   <!-- B26: home-ground picker — two clear choices, not steps; cancel stays inline; tight bar -->
-  <div id="home-bar"><span id="home-bar-prompt">Where's your home ground?</span><div class="home-bar-actions"><input id="home-zip" class="zip-jump" type="text" inputmode="numeric" maxlength="5" placeholder="ZIP" aria-label="Jump to ZIP code" autocomplete="off"><button class="btn-small btn-secondary" id="btn-home-zip" type="button">Go</button><button class="btn-small btn-primary" id="btn-home-ok" type="button" hidden>Set home here</button><button class="btn-small btn-ghost" id="btn-home-cancel" type="button" aria-label="Cancel"><img class="pb-ic" src="assets/icons/x.png" alt=""></button></div><div class="home-city-row"><input id="home-city" class="city-jump" type="text" placeholder="Or type a city…" aria-label="Jump to a city" autocomplete="off"><div id="home-city-matches" class="city-matches" hidden></div></div></div>
+  <div id="home-bar"><span id="home-bar-prompt">Where's your home ground?</span><div class="home-bar-actions"><div class="home-jump-row" id="home-jump-row"><input id="home-zip" class="zip-jump" type="text" inputmode="numeric" maxlength="5" placeholder="ZIP" aria-label="Jump to ZIP code" autocomplete="off"><button class="btn-small btn-secondary" id="btn-home-zip" type="button">Go</button></div><button class="btn-small btn-primary" id="btn-home-ok" type="button" hidden>Set home here</button><button class="sheet-x" id="btn-home-cancel" type="button" aria-label="Cancel"><img class="pb-ic" src="assets/icons/x.png" alt=""></button></div><div class="home-city-row"><input id="home-city" class="city-jump" type="text" placeholder="Or type a city…" aria-label="Jump to a city" autocomplete="off"><div id="home-city-matches" class="city-matches" hidden></div></div></div>
   <div id="locate-hint">Finding you… tap the crosshair again to cancel.</div>
 
   <!-- MAP PANE -->
@@ -94,7 +111,7 @@
          the filter is narrowed to one status. The old bottom bulk bar is gone. -->
     <div id="show-pill" class="show-pill">
       <button type="button" id="btn-show" class="show-btn" aria-label="Choose what shows on the map">Show: All</button>
-      <button type="button" id="btn-bulk" class="bulk-btn" hidden>Select all</button>
+      <button type="button" id="btn-bulk" class="bulk-btn" hidden>Pick sets</button>
     </div>
     <button type="button" id="weather-chip" class="chip weather-chip" aria-label="Weather details">🌤️</button>
     <!-- Q8: way back to the mileage dialog while a route estimate is drawn -->
@@ -138,7 +155,10 @@
   <div id="pane-history" class="pane">
     <div class="pane-head"><h2>History</h2><p>Every catch, newest first.</p></div>
     <div class="scroll">
-      <button class="btn-secondary gal-open" id="btn-gallery" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Photo gallery</button>
+      <!-- hl (2026-11-20, Q243, Tanner): the Photo gallery left History —
+           History opens straight into the season summary and filters.
+           The gallery button stands in Paperwork now, beside the License
+           Wallet (see pane-licenses below). -->
       <div id="hist-summary" class="hist-summary"></div>
       <div class="seg compact" id="hist-season-seg">
         <button type="button" data-season="this">This season</button>
@@ -148,6 +168,7 @@
       <div class="seg compact" id="hist-view-seg">
         <button type="button" data-view="date">By Date</button>
         <button type="button" data-view="traptype">By Trap Type</button>
+        <button type="button" data-view="activity">Activity</button>
       </div>
       <div class="chip-row" id="hist-disp-chips"></div>
       <input type="search" id="history-search" placeholder="Search species, sets, traps, notes…" aria-label="Search history">
@@ -172,11 +193,12 @@
     <div class="pane-head"><h2 id="seasons-title">Season Reminders</h2><p id="seasons-sub"></p></div>
     <div class="scroll">
       <div class="warnbox" id="seasons-disclaimer"></div>
-      <a id="seasons-regs" class="regs-link" target="_blank" rel="noopener" hidden></a>
       <a id="seasons-warden" class="regs-link" target="_blank" rel="noopener" hidden></a>
+      <a id="seasons-regs" class="regs-link" target="_blank" rel="noopener" hidden></a>
       <div id="seasons-rules" hidden></div>
       <div id="seasons-gap" hidden></div>
       <div id="seasons-nu-note" hidden></div>
+      <div id="seasons-deadlines" hidden></div>
       <input type="search" id="seasons-search" placeholder="Search species…" aria-label="Search species">
       <div style="height:10px"></div>
       <div id="seasons-list"></div>
@@ -194,10 +216,35 @@
         <div class="setsec-body" id="setsec-license-body" hidden>
           <!-- Tanner 2026-10-07: the add button sits below the photos and looks
                like the + Add landowner button. Title case on the label. -->
-          <p class="dim" style="margin:0 0 8px">Tap a photo to view it — or attach its website link, like the DNR page where you bought it.</p>
+          <p class="dim" style="margin:0 0 8px">Tap a photo to view it — pinch to zoom so the warden can read it, and the official state license site rides along.</p>
           <input type="file" id="license-input" class="hidden-file" accept="image/*" multiple>
           <div class="lic-grid" id="license-grid"></div>
           <button class="btn-secondary" id="btn-add-license" type="button">＋ Add Document</button>
+        </div>
+      </div>
+      <!-- hl (2026-11-20, Q243, Tanner): the Photo gallery stands here now,
+           beside the License Wallet — the app's two photo collections side
+           by side, in the tab whose charter is kept records. Same button,
+           same sheet (sheet-gallery); it lived at the top of History
+           until this build. -->
+      <!-- if (2026-11-21, Q299, Tanner): the gallery button wears the
+           same dress as every other Paperwork section head — a card
+           box, the big bold left-aligned label, the chevron — because
+           a plain button centered its label and shrank its font no
+           matter what the stylesheet said. It still opens the same
+           gallery sheet (the btn-gallery binding is by id). -->
+      <div class="card setsec" id="setsec-gallery">
+        <button type="button" class="setsec-head" id="btn-gallery"><span>Photo Gallery</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+      </div>
+      <!-- gw (2026-11-18): My Tags — every tag record on the active line,
+           gathered from the catches themselves (the records live on the
+           catch; this is the show-the-warden view). Hidden entirely when
+           Tag records are off (renderMyTags). -->
+      <div class="card setsec" id="setsec-mytags" style="display:none">
+        <button type="button" class="setsec-head" id="setsec-mytags-head" data-sec="setsec-mytags" aria-expanded="false"><span>My Tags</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <div class="setsec-body" id="setsec-mytags-body" hidden>
+          <p class="dim" style="margin:0 0 8px">Tag and sealing numbers for this line's catches — the number, the date, and the tag photo when you took one. Tap a row to open its tag record.</p>
+          <div id="mytags-list"></div>
         </div>
       </div>
       <div class="card setsec" id="setsec-landowner">
@@ -219,16 +266,11 @@
           <div id="paperwork-mileage-lines"></div>
         </div>
       </div>
-      <!-- gn (2026-11-17): state deadlines card — pelt sealing, harvest
-           reporting, and sell-by deadlines for the active line's state,
-           from the gap-regulation research. Renders only when the state
-           has entries (renderPaperworkDeadlines). -->
-      <div class="card setsec" id="setsec-deadlines" style="display:none">
-        <button type="button" class="setsec-head" id="setsec-deadlines-head" data-sec="setsec-deadlines" aria-expanded="false"><span id="setsec-deadlines-title">Deadlines &amp; Permits</span><span class="setsec-chev" aria-hidden="true">›</span></button>
-        <div class="setsec-body" id="setsec-deadlines-body" hidden>
-          <div id="paperwork-deadlines"></div>
-        </div>
-      </div>
+      <!-- hk (2026-11-19, Tanner): the gn state-deadlines card left
+           Paperwork — Deadlines & Permits stands on the Seasons tab
+           now, an official item under the Tags card
+           (renderSeasonsDeadlines). Paperwork keeps License Wallet,
+           My Tags, the Landowner Notebook, and Route and Mileage. -->
     </div>
   </div>
 
@@ -239,32 +281,42 @@
   <div id="pane-reports" class="pane">
     <div class="pane-head"><h2>Data</h2><p>Back up your data and download reports.</p></div>
     <div class="scroll">
-      <div class="card">
-        <h3>Keep your data safe</h3>
+      <!-- gz (2026-11-18): the Data pane's three cards are collapsible
+           setsec sections now — the same bar standard as every other
+           tab's sections, starting collapsed like their siblings. Every
+           control inside is unchanged; the setsec wiring picks the new
+           heads up with the rest. -->
+      <div class="card setsec" id="setsec-data-safe">
+        <button type="button" class="setsec-head" id="setsec-data-safe-head" data-sec="setsec-data-safe" aria-expanded="false"><span>Keep your data safe</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <div class="setsec-body" id="setsec-data-safe-body" hidden>
         <div class="sheet-actions">
           <button class="btn-secondary" id="btn-backup" type="button"><img class="bi" src="assets/icons/disk.png" alt="">Back up all data (JSON)</button>
           <p class="imp-cap">Saves one file with everything — your lines, sets, and logs. Import it back after a reinstall or on a new phone.</p>
           <button class="btn-secondary" id="btn-export-media" type="button">⬇ Export photos &amp; files (ZIP)</button>
           <p class="imp-cap">Every photo and voice memo from <strong>every line</strong>, in one file. The backup above holds your data but not your pictures — this file is their backup.</p>
         </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Move data in or out</h3>
+      <div class="card setsec" id="setsec-data-move">
+        <button type="button" class="setsec-head" id="setsec-data-move-head" data-sec="setsec-data-move" aria-expanded="false"><span>Move data in or out</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <div class="setsec-body" id="setsec-data-move-body" hidden>
         <div class="sheet-actions">
           <button class="btn-secondary" id="btn-share-line" type="button">⬆ Share this line</button>
           <p class="imp-cap">Send the line you are on — its sets and logs only — to another trapper (AirDrop, Nearby Share, Messages, email…). On their phone it lands as a new line of their own. Photos do not ride along.</p>
-          <button class="btn-secondary" id="btn-import" type="button"><img class="bi" src="assets/icons/upload.png" alt="">Import data (JSON)</button>
-          <p class="imp-cap">Bring in a backup file to restore your data, or a line another trapper sent you. A shared line lands as a new line of your own.</p>
-          <input type="file" id="import-file" class="hidden-file" accept=".json,application/json">
+          <button class="btn-secondary" id="btn-import" type="button"><img class="bi" src="assets/icons/upload.png" alt="">Import data</button>
+          <p class="imp-cap">Bring in a backup file to restore your data, a media ZIP to put your photos and voice memos back, or a line another trapper sent you. A shared line lands as a new line of your own.</p>
+          <input type="file" id="import-file" class="hidden-file" accept=".json,application/json,.zip">
           <button class="btn-secondary" id="btn-import-pins" type="button"><img class="bi" src="assets/icons/mappin.png" alt="">Import pins from Google Maps</button>
           <p class="imp-cap">Bring in pins you saved in Google Maps, My Maps, or Google Takeout.</p>
           <input type="file" id="import-pins-file" class="hidden-file" accept=".kml,.kmz,.geojson,.json,.csv,application/vnd.google-earth.kml+xml,application/vnd.google-earth.kmz,application/geo+json,text/csv">
           <button class="btn-secondary" id="btn-paste-pin" type="button"><img class="bi" src="assets/icons/mappin.png" alt="">Paste a Maps link</button>
           <p class="imp-cap">One pin at a time: in Google Maps tap Share, copy the link, and paste it here.</p>
         </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Reports</h3>
+      <div class="card setsec" id="setsec-data-reports">
+        <button type="button" class="setsec-head" id="setsec-data-reports-head" data-sec="setsec-data-reports" aria-expanded="false"><span>Reports</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <div class="setsec-body" id="setsec-data-reports-body" hidden>
         <p class="dim" style="margin-top:0">Set the filters, watch the match count, then download the report you want. The filters shape the <strong>catches</strong> report only — the sets and mileage downloads always include everything.</p>
         <div class="date-row">
           <div class="date-col"><label class="field" for="exp-from">From</label><input type="date" id="exp-from" aria-label="Export start date"></div>
@@ -282,6 +334,7 @@
           <p class="imp-cap">Downloads your sets as a spreadsheet file (.csv).</p>
           <button class="btn-secondary" id="btn-export-mileage" type="button">⬇ Export mileage (CSV)</button>
           <p class="imp-cap">Downloads this line's trip log as a spreadsheet file (.csv).</p>
+        </div>
         </div>
       </div>
     </div>
@@ -321,73 +374,91 @@
       </div>
       <!-- Q91 (2026-10-01): Tanner — trap check alerts live in Feature Toggles now. -->
       <!-- Q53 home ground now lives in the Where You Trap card (Q90) -->
+      <!-- gx (2026-11-18): Tanner — the three toggle menus live under one
+           "Toggles" layer in Settings, on the same collapsible bar
+           standard, starting collapsed like its sibling menus. Section
+           open state is not stored anywhere, so nothing is lost for
+           existing users; the three menus keep their own collapse. -->
+      <div class="card setsec" id="setsec-toggles">
+        <button type="button" class="setsec-head" id="setsec-toggles-head" data-sec="setsec-toggles" aria-expanded="false"><span>Toggles</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <div class="setsec-body" id="setsec-toggles-body" hidden>
+        <p class="dim" style="margin:0 0 8px">Every switch in the app: features, bottom-bar tabs, and set-form fields.</p>
       <div class="card setsec" id="setsec-features">
         <button type="button" class="setsec-head" id="setsec-features-head" data-sec="setsec-features" aria-expanded="false"><span>Feature Toggles</span><span class="setsec-chev" aria-hidden="true">›</span></button>
         <div class="setsec-body" id="setsec-features-body" hidden>
+        <p class="dim" style="margin:0 0 8px">On/off switches for app features — alerts, weather, wind, voice, and map tools. Most apply to the whole app; the ones set per trap line say so.</p>
+        <!-- Q182 (2026-10-14): per-line catch alerts — lives beside the trap
+             check alerts because it is the same kind of switch, but it writes
+             to the active trap line, not the whole app. -->
+        <label class="checkline"><input type="checkbox" id="settings-catchalerts"> Catch warnings — season &amp; limits</label>
+        <p class="dim" style="margin:-6px 0 10px">When you log a catch, warning boxes flag season and bag-limit trouble before you save. Set per trap line — the active line only (<strong id="catchalerts-line-name"></strong>); the season badges on the animal list stay either way, they're just information.</p>
+        <label class="checkline"><input type="checkbox" id="settings-ruler" checked> Map ruler</label>
+        <p class="dim" style="margin:-6px 0 10px">Shows the ruler button on the map — tap two points to measure a distance in feet, yards, or miles. Off hides the button and ends any measuring underway.</p>
+        <!-- Q205 (2026-10-19): the Sign & Forage Reference moved out of Settings
+             into the Trapper's Guide (its own chapter there, with search). -->
+        <label class="checkline"><input type="checkbox" id="settings-mileage"> Route &amp; mileage tracking</label>
+        <p class="dim" style="margin:-6px 0 12px">Records your trips and routes per line — read them in Paperwork under Route and Mileage, and export the mileage CSV from Data. Off stops new recording; trips already saved stay put.</p>
+        <label class="checkline"><input type="checkbox" id="settings-markers" checked> Sign &amp; forage markers</label>
+        <p class="dim" style="margin:-6px 0 10px">Shows the sign and forage layer on the map — animal sign, forage, and finds, each with its own icon — plus the map button for adding them. Off hides the layer and the button; markers already saved stay saved.</p>
+        <!-- gw (2026-11-18): tag records — optional by default, removable by
+             choice, blocking never. Off hides the catch-sheet section and
+             My Tags; stored records are never deleted by the toggle. -->
+        <label class="checkline"><input type="checkbox" id="settings-tagrecords" checked> Tag records (catch sheet + My Tags)</label>
+        <p class="dim" style="margin:-6px 0 10px">Adds a Tag section on the catch sheet for the tag or sealing number, the date tagged, and a photo of the tag — for species your state tags, like bobcat and otter. Always optional; off hides the section and My Tags in Paperwork, and records already saved stay on this phone.</p>
         <!-- Q91 (2026-10-01): Tanner — trap check alerts live here now. Toggling
              it on reveals the check-interval entry as a sub-menu. -->
         <label class="checkline"><input type="checkbox" id="settings-checkclock"> Trap check alerts</label>
+        <p class="dim" style="margin:-6px 0 10px">Sets that go past your check interval with no activity turn red on the map, with a due countdown on the set's details. Any edit, catch, or check-in restarts the clock; off hides the red pins and countdowns.</p>
         <div id="checkalert-sub" hidden>
           <label class="field" for="settings-checkinterval" style="margin-top:2px">Check interval (hours)</label>
           <input type="number" id="settings-checkinterval" min="1" step="1" inputmode="numeric" placeholder="24">
           <p class="dim" style="margin-top:8px">Sets past this long without any activity turn red on the map. Any edit, catch, or check-in restarts the clock. The quick &ldquo;Checked &mdash; nothing changed&rdquo; button only restarts the clock &mdash; it saves nothing to History. Turn alerts off to hide the red pins and countdowns.</p>
         </div>
-        <!-- Q182 (2026-10-14): per-line catch alerts — lives beside the trap
-             check alerts because it is the same kind of switch, but it writes
-             to the active trap line, not the whole app. -->
-        <label class="checkline"><input type="checkbox" id="settings-catchalerts"> Catch alerts</label>
-        <p class="dim" style="margin:-6px 0 10px">Season and bag-limit reminders while you log a catch — for the active trap line only (<strong id="catchalerts-line-name"></strong>). Turn it off on a line where you know the rules cold. The season badges on the animal list stay either way; they're just information.</p>
-        <label class="checkline"><input type="checkbox" id="settings-weather"> Weather (map chip + auto-record)</label>
-        <p class="dim" style="margin:-6px 0 10px">Map chip with current conditions and the next 12 hours; weather auto-attaches to new sets and catches. Sends coordinates to Open-Meteo, a free weather service — needs a connection.</p>
-        <label class="checkline"><input type="checkbox" id="settings-windarrows"> Wind arrows on set pins</label>
-        <p class="dim" style="margin:-6px 0 10px">Small arrows at the edge of each pin show the downwind direction — where your scent goes. They appear when you're zoomed in close, and use live wind data when you're online.</p>
         <label class="checkline"><input type="checkbox" id="settings-voice"> Voice entry &amp; memos</label>
-        <p class="dim" style="margin:-6px 0 12px">Dictate notes and record voice memos. Transcription uses your phone's speech recognition and needs a connection; recordings stay on this phone.</p>
-        <label class="checkline"><input type="checkbox" id="settings-mileage"> Route &amp; mileage tracking</label>
-        <p class="dim" style="margin:-6px 0 12px">Odometer trips per line, the route estimate, and the standalone mileage CSV — its own report for your records or reimbursement.</p>
-        <label class="checkline"><input type="checkbox" id="settings-markers" checked> Sign &amp; forage markers</label>
-        <p class="dim" style="margin:-6px 0 10px">The map layer for animal sign, forage, and finds — 71 sign kinds and the Forage &amp; finds family, each with its own icon. Off hides the layer and its map button entirely.</p>
-        <label class="checkline"><input type="checkbox" id="settings-ruler" checked> Map ruler</label>
-        <p class="dim" style="margin:-6px 0 10px">The ruler button on the map — tap two points to measure a distance in feet, yards, or miles. Off hides the button entirely.</p>
-        <!-- Q205 (2026-10-19): the Sign & Forage Reference moved out of Settings
-             into the Trapper's Guide (its own chapter there, with search). -->
+        <p class="dim" style="margin:-6px 0 12px">Adds the dictation and voice-memo buttons on set and catch notes. Transcription uses your phone's speech recognition and needs a connection; the recordings themselves stay on this phone.</p>
+        <label class="checkline"><input type="checkbox" id="settings-weather"> Weather (map chip + auto-record)</label>
+        <p class="dim" style="margin:-6px 0 10px">Shows current conditions and the next 12 hours on the map chip, and attaches the weather to new sets and catches on its own. Sends your coordinates to Open-Meteo for the forecast — needs a connection.</p>
+        <label class="checkline"><input type="checkbox" id="settings-windarrows"> Wind arrows on set pins</label>
+        <p class="dim" style="margin:-6px 0 10px">A small arrow at the edge of each set pin points downwind — the way your scent carries. Arrows show when you're zoomed in close, and use live wind when you're online.</p>
         <button class="btn-secondary" id="btn-features-reset" type="button">Reset features to defaults</button>
         </div>
       </div>
       <div class="card setsec" id="setsec-tabs">
-        <button type="button" class="setsec-head" id="setsec-tabs-head" data-sec="setsec-tabs" aria-expanded="false"><span>Tab Toggles</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <button type="button" class="setsec-head" id="setsec-tabs-head" data-sec="setsec-tabs" aria-expanded="false"><span>Tabs on the Bottom Bar</span><span class="setsec-chev" aria-hidden="true">›</span></button>
         <div class="setsec-body" id="setsec-tabs-body" hidden>
-        <p class="dim" style="margin:0 0 8px">Choose which tabs appear on the bottom bar for the active trap line (<strong id="tabs-line-name"></strong>). Map, Data, and Settings always show.</p>
+        <p class="dim" style="margin:0 0 8px">Choose which tabs ride on the bottom bar for the active trap line (<strong id="tabs-line-name"></strong>). Map, Data, and Settings always show.</p>
         <div class="checkgrid">
-        <label class="checkline"><input type="checkbox" id="settings-tab-history"> History tab</label>
-        <label class="checkline"><input type="checkbox" id="settings-tab-scorecard"> Scorecard tab</label>
-        <label class="checkline"><input type="checkbox" id="settings-tab-seasons"> Seasons tab</label>
-        <label class="checkline"><input type="checkbox" id="settings-tab-licenses"> Paperwork tab</label>
-        <label class="checkline"><input type="checkbox" id="settings-tab-totals"> Totals tab</label>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-tab-history"> History tab</label><p class="dim tnote">Shows the History tab on the bottom bar for the active line — the running log of checks, catches, and changes. Off hides the tab; nothing in it is deleted.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-tab-scorecard"> Scorecard tab</label><p class="dim tnote">Shows the Scorecard tab on the bottom bar for the active line — your season at a glance. Off hides the tab; nothing in it is deleted.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-tab-seasons"> Seasons tab</label><p class="dim tnote">Shows the Seasons tab on the bottom bar for the active line — season dates and rules for your state. Off hides the tab; nothing in it is deleted.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-tab-licenses"> Paperwork tab</label><p class="dim tnote">Shows the Paperwork tab on the bottom bar for the active line — licenses, tags, landowners, and mileage. Off hides the tab; nothing in it is deleted.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-tab-totals"> Totals tab</label><p class="dim tnote">Shows the Totals tab on the bottom bar for the active line — your season totals, broken down by species, set, and trap. Off hides the tab; nothing in it is deleted.</p></div>
         </div>
         </div>
       </div>
       <div class="card setsec" id="setsec-setfields">
-        <button type="button" class="setsec-head" id="setsec-setfields-head" data-sec="setsec-setfields" aria-expanded="false"><span>Set Field Toggles</span><span class="setsec-chev" aria-hidden="true">›</span></button>
+        <button type="button" class="setsec-head" id="setsec-setfields-head" data-sec="setsec-setfields" aria-expanded="false"><span>Fields on the Set Form</span><span class="setsec-chev" aria-hidden="true">›</span></button>
         <div class="setsec-body" id="setsec-setfields-body" hidden>
-        <p class="dim" style="margin:0 0 8px">Choose which fields appear when you add a set. Set name, Status, and Date set always show — they're required.</p>
+        <p class="dim" style="margin:0 0 8px">Choose which fields show when you add a set. Set name, Status, and Date set always show — they're required.</p>
         <div class="checkgrid">
-        <label class="checkline"><input type="checkbox" id="settings-sf-traptype"> Trap type</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-trapdetail"> Trap details</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-settype"> Set type</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-bait"> Bait</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-lure"> Lure</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-urine"> Urine</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-visual"> Visual</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-audio"> Audio</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-other"> Other attractants</label>
-        <label class="checkline"><input type="checkbox" id="settings-sf-notes"> Notes</label>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-traptype"> Trap type</label><p class="dim tnote">Shows the Trap type field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-trapdetail"> Trap details</label><p class="dim tnote">Shows the Trap details field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-settype"> Set type</label><p class="dim tnote">Shows the Set type field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-bait"> Bait</label><p class="dim tnote">Shows the Bait field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-lure"> Lure</label><p class="dim tnote">Shows the Lure field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-urine"> Urine</label><p class="dim tnote">Shows the Urine field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-visual"> Visual</label><p class="dim tnote">Shows the Visual field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-audio"> Audio</label><p class="dim tnote">Shows the Audio field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-other"> Other attractants</label><p class="dim tnote">Shows the Other attractants field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
+        <div class="toggle-cell"><label class="checkline"><input type="checkbox" id="settings-sf-notes"> Notes</label><p class="dim tnote">Shows the Notes field when you add a set. Off hides the field, and sets saved while it's off leave it blank.</p></div>
         </div>
       <div class="card setsec" id="setsec-appearance">
         <button type="button" class="setsec-head" id="setsec-appearance-head" data-sec="setsec-appearance" aria-expanded="false"><span>Appearance</span><span class="setsec-chev" aria-hidden="true">›</span></button>
         <div class="setsec-body" id="setsec-appearance-body" hidden>
         <p class="dim" style="margin:0 0 8px">Pin colors — applies to the map pins and the four status filter chips.</p>
         <div id="pinscheme-list"></div>
+        </div>
+      </div>
         </div>
       </div>
         </div>
@@ -399,9 +470,9 @@
         <p class="dim">Opossum Foot has no account, no login, and no cloud. Every set, catch, photo, and voice memo is stored only in this phone's browser storage. Nothing you enter is stored anywhere else — the only network traffic is map tiles, the app's own files, weather lookups (only if you turn weather on), and live voice transcription (only when you tap the microphone and have a connection).</p>
         <p class="dim"><strong>The honest catch:</strong> because there's no cloud backup, a lost phone, a wiped phone, or clearing this browser's data can destroy your records. Export a CSV backup regularly — that's your safety net.</p>
         <label class="checkline"><input type="checkbox" id="settings-showcoords"> Show GPS coordinates</label>
-        <p class="dim" style="margin:-6px 0 10px">Coordinates stay hidden so screenshots are safe to share. Turn this on to see the county and exact coordinates on set details and the weather tab.</p>
+        <p class="dim" style="margin:-6px 0 10px">Shows the county and exact coordinates on a set's details and on the weather tab. Off keeps them hidden, so screenshots are safe to share.</p>
         <label class="checkline"><input type="checkbox" id="settings-exportcoords"> Include GPS coordinates in reports</label>
-        <p class="dim" style="margin:-6px 0 10px">Off by default, so shared spreadsheets never carry your pins. Turn this on when you want Latitude and Longitude columns in the CSV exports.</p>
+        <p class="dim" style="margin:-6px 0 10px">Adds Latitude and Longitude columns to the CSV exports you download from Data. Off by default, so a spreadsheet you share never carries your pins.</p>
         </div>
       </div>
       <div class="card setsec" id="setsec-about">
@@ -547,12 +618,11 @@
     <div class="sheet-head"><h2>Track finished</h2><button class="sheet-x" data-close type="button">×</button></div>
     <div class="sheet-body">
       <p id="track-done-stats" style="font-size:17px"></p>
-      <div class="card"><p id="track-done-cov" style="margin:0"></p></div>
       <p class="dim">Saving files this as a trip in Route and Mileage for the active line, with the route kept on the record.</p>
       <div class="sheet-actions" style="flex-direction:column;align-items:stretch;gap:10px">
-        <button class="btn-primary" id="btn-track-save" type="button">Save to mileage log</button>
+        <button class="btn-secondary" id="btn-track-save" type="button">Save to mileage log</button>
         <button class="btn-secondary" id="btn-track-show" type="button">Show the route on the map</button>
-        <button class="btn-ghost" id="btn-track-discard" type="button">Discard this track</button>
+        <button class="btn-secondary" id="btn-track-discard" type="button">Discard this track</button>
       </div>
     </div>
   </div>
@@ -563,6 +633,31 @@
     <div class="sheet-body">
       <div id="show-list"></div>
       <p class="dim" style="margin-top:10px">The colored dot on each line is that pin's color on the map.</p>
+    </div>
+  </div>
+
+  <!-- hd (2026-11-18): the picker's one door — opened only by the selection
+       bar's "Pick from list" button; name taps here toggle the selection. -->
+  <div id="sheet-picklist" class="sheet">
+    <div class="sheet-grab"></div>
+    <div class="sheet-head"><h2>Pick sets</h2><button class="sheet-x" data-close type="button">×</button></div>
+    <div class="sheet-body">
+      <div id="pick-list"></div>
+      <p class="dim" style="margin-top:10px">Tap a name to pick it. Tap it again to let it go.</p>
+    </div>
+    <!-- gy (2026-11-18): a plain Done at the foot — a pure close; picking
+         stays live on every tap, the X and the scrim keep working too.
+         hj (2026-11-19): Clear joins the foot stack, same size, above
+         Done — it empties the picks and the list re-renders in place;
+         the sheet stays open and Done stays plain "Done".
+         hk (2026-11-19): the stack becomes one row — Clear left, Done
+         right, the house .btn-row — handing the second row's height
+         back to the list. Same buttons, same order, same actions. -->
+    <div class="sheet-actions">
+      <div class="btn-row">
+        <button class="btn-secondary" id="btn-pick-clear" type="button">Clear</button>
+        <button class="btn-primary" id="btn-pick-done" type="button">Done</button>
+      </div>
     </div>
   </div>
 
@@ -594,14 +689,11 @@
     <div class="suggest" id="sf-name-suggest"></div>
     <div class="setfield" id="setfield-traptype">
     <label class="field" for="sf-maker">Trap Manufacturer</label>
-    <select id="sf-maker" data-has-other="1"></select>
-    <div class="other-wrap" id="sf-maker-otherwrap" hidden><label class="field" for="sf-maker-othertext">What is it?</label><input type="text" id="sf-maker-othertext" placeholder="Type the manufacturer" autocomplete="off"></div>
+    <input type="text" id="sf-maker" placeholder="e.g. Bridger" autocomplete="off">
+    <div class="suggest" id="sf-maker-suggest"></div>
     <label class="field" for="sf-type">Trap Type</label>
-    <select id="sf-type" data-has-other="1">
-      <option>Bodygrip / Conibear</option><option>Cage live trap</option><option>Colony trap</option>
-      <option>Dog-proof</option><option>Foothold</option><option>Snare</option><option>Other</option>
-    </select>
-    <div class="other-wrap" id="sf-type-otherwrap" hidden><label class="field" for="sf-type-othertext">What is it?</label><input type="text" id="sf-type-othertext" placeholder="Type the trap type" autocomplete="off"></div>
+    <input type="text" id="sf-type" placeholder="e.g. Foothold" autocomplete="off">
+    <div class="suggest" id="sf-type-suggest"></div>
     </div>
     <div class="setfield" id="setfield-trapdetail">
     <label class="field">Trap Details</label>
@@ -609,18 +701,15 @@
     </div>
     <div class="setfield" id="setfield-settype">
     <label class="field" for="sf-settype">Set Type</label>
-    <select id="sf-settype" data-has-other="1">
-      <!-- options built by renderSetTypeOptions() — Q29 researched taxonomy -->
-    </select>
-    <div class="other-wrap" id="sf-settype-otherwrap" hidden><label class="field" for="sf-settype-othertext">What is it?</label><input type="text" id="sf-settype-othertext" placeholder="Type the set type" autocomplete="off"></div>
+    <!-- ho (Q249): a type-to-filter combo now; the option list is computed
+         by renderSetTypeOptions() — Q29 researched taxonomy. -->
+    <input type="text" id="sf-settype" autocomplete="off">
+    <div class="suggest" id="sf-settype-suggest"></div>
     <!-- Q212: the foundation above is the structure; the variation is the
          dressing (T-bone, Bean Duff, your own name for it). -->
     <label class="field" for="sf-setvariation">Variation</label>
-    <select id="sf-setvariation">
-      <option value="">— None —</option>
-    </select>
-    <label class="field" for="sf-setvariation-custom">Custom variation</label>
-    <input type="text" id="sf-setvariation-custom" placeholder="Or type your own variation" autocomplete="off">
+    <input type="text" id="sf-setvariation" autocomplete="off">
+    <div class="suggest" id="sf-setvariation-suggest"></div>
     </div>
     <div class="setfield" id="setfield-bait">
     <label class="field">Bait</label>
@@ -722,7 +811,7 @@
     <div id="setform-photos">
     <label class="field">Photos</label>
     <div class="btn-row" style="margin-top:8px">
-      <button class="btn-small btn-secondary" id="btn-sf-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Take a photo</button>
+      <button class="btn-small btn-secondary" id="btn-sf-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add a photo</button>
     </div>
     <!-- Q179: photos below the Take a photo button -->
     <div class="photo-strip" id="sf-photos" style="margin-top:8px"></div>
@@ -764,8 +853,9 @@
     <!-- Q177 (2026-10-08): Tanner — small field labels like the Edit form, not big subheadings -->
     <label class="field" style="margin-top:18px" id="sd-memos-label">Voice memos</label>
     <div id="sd-memos"></div>
-    <label class="field" style="margin-top:18px">Photos</label>
+    <label class="field" style="margin-top:18px" id="sd-photos-label">Photos</label>
     <div class="photo-strip" id="sd-photos"></div>
+    <p class="dim" id="sd-notes-empty" hidden>No notes, memos, or photos yet.</p>
     </div>
     </div>
     <!-- Q203 (2026-10-19): Tanner — the catches list folds up like the notes
@@ -775,6 +865,14 @@
     <button type="button" class="setsec-head" id="setdetail-catchessec-head" data-sec="setdetail-catchessec" aria-expanded="false"><span>Catches at This Set <span class="dim" id="sd-catches-count"></span></span><span class="setsec-chev" aria-hidden="true">›</span></button>
     <div class="setsec-body" id="setdetail-catchessec-body" hidden>
     <div id="sd-logs"></div>
+    </div>
+    </div>
+    <!-- Q272 (2026-11-21, Tanner): the set's activity trail — edits, status
+         changes, pulls, and Other events, folded like the catches box. -->
+    <div class="card setsec" id="setdetail-activitysec">
+    <button type="button" class="setsec-head" id="setdetail-activitysec-head" data-sec="setdetail-activitysec" aria-expanded="false"><span>Activity <span class="dim" id="sd-activity-count"></span></span><span class="setsec-chev" aria-hidden="true">›</span></button>
+    <div class="setsec-body" id="setdetail-activitysec-body" hidden>
+    <div id="sd-activity"></div>
     </div>
     </div>
     <div class="sheet-actions">
@@ -872,16 +970,62 @@
     </div>
     <label class="field" for="btn-log-photo" style="margin-top:12px">Photos</label>
     <div class="btn-row" style="margin-top:8px">
-      <button class="btn-small btn-secondary" id="btn-log-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add photo</button>
+      <button class="btn-small btn-secondary" id="btn-log-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add a photo</button>
     </div>
     <!-- Q179: photos below the Add photo button -->
     <div class="photo-strip" id="log-photos" style="margin-top:8px"></div>
     <input type="file" id="log-photo-input" class="hidden-file" accept="image/*">
     </div>
     </div>
+    <!-- gw (2026-11-18): tag record — shown only when the picked species is
+         a tagging/sealing species in this state (gap Cat 2) and Tag records
+         are on. Every field optional; nothing here can block a save. -->
+    <div class="setsec" id="logform-tagsec" hidden>
+    <button type="button" class="setsec-head" id="logform-tagsec-head" data-sec="logform-tagsec" aria-expanded="false"><span>Tag <span class="dim">— optional</span></span><span class="setsec-chev" aria-hidden="true">›</span></button>
+    <div class="setsec-body" id="logform-tagsec-body" hidden>
+    <p class="dim" id="log-tag-rule" style="margin:0 0 8px"></p>
+    <label class="field" for="log-tag-number">Tag / sealing number <span class="dim">(optional)</span></label>
+    <input type="text" id="log-tag-number" placeholder="The number on the tag or seal" autocomplete="off">
+    <label class="field" for="log-tag-date" style="margin-top:12px">Date tagged <span class="dim">(optional)</span></label>
+    <input type="date" id="log-tag-date">
+    <label class="field" for="btn-log-tagphoto" style="margin-top:12px">Tag photo <span class="dim">(optional)</span></label>
+    <div class="btn-row" style="margin-top:8px">
+      <button class="btn-small btn-secondary" id="btn-log-tagphoto" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add tag photo</button>
+    </div>
+    <div class="photo-strip" id="log-tag-photos" style="margin-top:8px"></div>
+    <input type="file" id="log-tag-photo-input" class="hidden-file" accept="image/*">
+    <p class="dim" style="margin:8px 0 0">No hurry — most tagging happens days later, at a station. You can fill this in any time from History or Paperwork → My Tags.</p>
+    </div>
+    </div>
     <div class="form-error" id="logform-error" role="alert"></div>
     <div class="sheet-actions">
       <button class="btn-primary" id="btn-save-log" type="button">Save catch</button>
+    </div>
+  </div>
+</div>
+
+<!-- gw (2026-11-18): tag record editor — opened from History (expanded
+     catch row) and Paperwork → My Tags. Tagging usually happens days after
+     the catch, so this is where the number, date, and photo land. -->
+<div id="sheet-tag" class="sheet">
+  <div class="sheet-grab"></div>
+  <div class="sheet-head"><h2>Tag Record</h2><button class="sheet-x" data-close type="button">×</button></div>
+  <div class="sheet-body">
+    <div class="dim" id="tag-edit-line"></div>
+    <p class="dim" id="tag-edit-rule" style="margin:8px 0 0"></p>
+    <label class="field" for="tag-number">Tag / sealing number <span class="dim">(optional)</span></label>
+    <input type="text" id="tag-number" placeholder="The number on the tag or seal" autocomplete="off">
+    <label class="field" for="tag-date" style="margin-top:12px">Date tagged <span class="dim">(optional)</span></label>
+    <input type="date" id="tag-date">
+    <label class="field" for="btn-tag-photo" style="margin-top:12px">Tag photo <span class="dim">(optional)</span></label>
+    <div class="btn-row" style="margin-top:8px">
+      <button class="btn-small btn-secondary" id="btn-tag-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add tag photo</button>
+      <button class="btn-small btn-danger" id="btn-tag-photo-remove" type="button" hidden>Remove photo</button>
+    </div>
+    <div class="photo-strip" id="tag-photos" style="margin-top:8px"></div>
+    <input type="file" id="tag-photo-input" class="hidden-file" accept="image/*">
+    <div class="sheet-actions">
+      <button class="btn-primary" id="btn-save-tag" type="button">Save tag record</button>
     </div>
   </div>
 </div>
@@ -895,6 +1039,24 @@
     <p class="dim">Trap, set type, bait, lure — anything that changed.</p>
     <div class="card"><dl class="kv" id="pc-fields"></dl></div>
     <div id="pc-gap-note"></div>
+    <!-- gw scope 3 (2026-11-18): the tag ENTRY lives directly beneath the
+         tagging note in this sheet — same fields, same catch record as
+         the log form / History editor. Fully optional; entries write
+         straight to the catch, so closing this sheet any way keeps them
+         and skipping them costs nothing. -->
+    <div id="pc-tag-entry" hidden>
+      <label class="field" for="pc-tag-number">Tag / sealing number <span class="dim">(optional)</span></label>
+      <input type="text" id="pc-tag-number" placeholder="The number on the tag or seal" autocomplete="off">
+      <label class="field" for="pc-tag-date" style="margin-top:12px">Date tagged <span class="dim">(optional)</span></label>
+      <input type="date" id="pc-tag-date">
+      <label class="field" for="btn-pc-tagphoto" style="margin-top:12px">Tag photo <span class="dim">(optional)</span></label>
+      <div class="btn-row" style="margin-top:8px">
+        <button class="btn-small btn-secondary" id="btn-pc-tagphoto" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add tag photo</button>
+        <button class="btn-small btn-danger" id="btn-pc-tagphoto-remove" type="button" hidden>Remove photo</button>
+      </div>
+      <div class="photo-strip" id="pc-tag-photos" style="margin-top:8px"></div>
+      <input type="file" id="pc-tag-photo-input" class="hidden-file" accept="image/*">
+    </div>
     <div class="sheet-actions">
       <button class="btn-primary" id="btn-pc-update" type="button">Update this set</button>
     </div>
