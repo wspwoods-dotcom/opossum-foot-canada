@@ -24,8 +24,7 @@ var STATES = [
   { code: "YT", name: "Yukon", file: "yukon-2026-27.json", provisional: true }
 ];
 var REMINDER_LINE = 'Reminder only — always verify with your provincial or territorial agency and local ordinances.';
-var APP_VERSION = 'beta 0.1 · build 2026-11-17-ca2';
-/* Canada clone: metric is the default unit system (Settings → Where You Trap). */
+var APP_VERSION = 'beta 0.1 · build 2026-11-21-ca3';
 function unitsMetric() { return !(typeof Store !== 'undefined' && Store.data && Store.data.units === 'imperial'); }
 function wxTempUnit() { return unitsMetric() ? '°C' : '°F'; }
 function wxWindUnit() { return unitsMetric() ? 'km/h' : 'mph'; }
@@ -435,6 +434,13 @@ function openSheet(id) {
      mid-scroll from where it was last closed. */
   var body = $(id).querySelector('.sheet-body');
   if (body) body.scrollTop = 0;
+  /* ij (2026-11-21, Q304, Tanner): the clear × is ONE rule for every
+     type-in box — it was added field by field (Q236, Q248, gm) and some
+     boxes never got one, which he kept tripping over. Every sheet sweeps
+     its full-width text boxes on open and wires any that lack the ×
+     (ensureClearInput no-ops on boxes already wrapped). Paired boxes in
+     a .btn-row keep their shared dress and are skipped. */
+  try { sweepClearInputs($(id)); } catch (e) {}
 }
 function closeSheets() {
   var sheets = document.querySelectorAll('.sheet.show');
@@ -458,6 +464,7 @@ function closeSheets() {
 function showModal(html) {
   $('modal-card').innerHTML = html;
   $('modal').classList.remove('sponsor-sheet'); /* Q171: sheet mode is opt-in per open */
+  $('modal').classList.remove('sheet-dress'); /* gx: the bulk family's sheet dress is opt-in per open, same pattern */
   $('modal').classList.add('show');
 }
 function closeModal() { $('modal').classList.remove('show'); }
@@ -708,6 +715,14 @@ function speciesSeasonTotal(name, seasonYear) {
   return n;
 }
 
+/* ho (Q255): a season record's method + land label, e.g. "Trapping ·
+   Public land". Land "all" carries no tag — the season runs everywhere. */
+function seasonMethodLand(s) {
+  if (!s) return '';
+  var m = s.method === 'trapping' ? 'Trapping' : s.method === 'hunting' ? 'Hunting' : s.method === 'both' ? 'Trapping & hunting' : '';
+  var l = s.land_type === 'private' ? 'Private land' : s.land_type === 'public' ? 'Public land' : '';
+  return [m, l].filter(Boolean).join(' · ');
+}
 function limitText(limits) {
   if (!limits) return '';
   var parts = [];
@@ -1025,7 +1040,12 @@ function paintWeather(j, staleNote) {
       '<span>' + Math.round(j.hourly.temperature_2m[t]) + wxTempUnit() + '</span><span class="dim">' + j.hourly.precipitation_probability[t] + '% precip</span></div>';
   }
   $('weather-hourly').innerHTML = rows || '<p class="dim">No hourly data.</p>';
-  wxOmStamp = staleNote || 'Updated just now · Open-Meteo';
+  /* ho (2026-11-21, Q257, Tanner): every freshness stamp names its own
+     provider — a bare "just now" riding beside another provider's stale
+     note read as a claim about the stale data ("53 hr ago · NWS just
+     now"). A stamp may only ever describe the data its own provider
+     fetched in this load. */
+  wxOmStamp = staleNote || 'Open-Meteo updated just now';
   paintWeatherUpdated();
 }
 function showCachedWeather(msg) {
@@ -1136,12 +1156,9 @@ function paintNWS(nws) {
 function noteNwsUpdated(cached) {
   wxNwsStamp = (cached && Store.data.weatherNwsCache)
     ? 'NWS cached ' + timeAgo(Store.data.weatherNwsCache.at)
-    : 'NWS just now';
+    : 'NWS updated just now'; /* ho (Q257): provider-scoped, like Open-Meteo's */
   paintWeatherUpdated();
 }
-/* Returns true when a cached NWS forecast was painted. When there is no
-   cache it leaves the cards alone — renderWeatherTab chains the ECCC
-   cache and the Open-Meteo daily fallback before showing a dead end. */
 function showCachedNWS() {
   var c = Store.data.weatherNwsCache;
   if (c && c.payload && c.payload.daily) {
@@ -1282,12 +1299,20 @@ function paintEcccForecast(item) {
   });
   dEl.innerHTML = dh || '<p class="dim">No forecast data.</p>';
 }
+/* ---- Environment and Climate Change Canada (ECCC) GeoMet ----
+   api.weather.gc.ca is keyless with open CORS and serves the City Page
+   Weather collection: current conditions, hourly + daily forecasts and
+   warnings for Canadian locations. NWS (above) 404s outside the US, so
+   this is the forecast/alerts source for Canada — and, per Tanner's
+   direction, the now/hourly source there too. Values arrive metric
+   (°C, km/h) and are converted when the app is set to imperial. */
 function noteEcccUpdated(cached) {
   wxNwsStamp = (cached && Store.data.weatherEcccCache)
     ? 'Environment Canada cached ' + timeAgo(Store.data.weatherEcccCache.at)
     : 'Environment Canada just now';
   paintWeatherUpdated();
 }
+
 function showCachedEccc() {
   var c = Store.data.weatherEcccCache;
   if (c && c.payload && c.payload.properties) {
@@ -1297,8 +1322,7 @@ function showCachedEccc() {
   }
   return false;
 }
-/* Last-resort daily: Open-Meteo is global, so its 7-day hi/lo can fill the
-   forecast card when neither ECCC nor NWS serves the point. */
+
 function paintOmDaily(j) {
   var dEl = $('weather-daily');
   if (!dEl || !j || !j.daily || !j.daily.time || !j.daily.weather_code) return false;
@@ -1314,7 +1338,6 @@ function paintOmDaily(j) {
   if (aEl) { aEl.style.display = 'none'; aEl.innerHTML = ''; }
   return true;
 }
-
 function renderWeatherTab() {
   if (weatherTabBusy) return;
   weatherTabBusy = true;
@@ -1453,7 +1476,7 @@ function lineCatchAlerts() {
   var l = activeLine();
   return !l || l.catchAlerts !== false;
 }
-/* Q182: syncs the Settings Catch alerts switch to the active line.
+/* Q182: syncs the Settings Catch warnings switch to the active line.
    Called from the same places as renderTabToggles so a line switch
    re-binds it to the new line. */
 function renderCatchAlertsToggle() {
@@ -1667,6 +1690,7 @@ function customOptionsFor(id) {
 function rememberCustomOption(id, v) {
   v = (v || '').trim();
   if (!v) return;
+  if (v.toLowerCase() === 'none') return; /* in (Q309): None is a face, never a learned custom */
   if (!Store.data || typeof Store.data !== 'object') Store.data = {};
   var arr = customOptionsFor(id), li = -1;
   for (var i = 0; i < arr.length; i++) {
@@ -1707,6 +1731,17 @@ function toggleOtherWrap(sel) {
 function selVal(id) {
   var sel = $(id);
   if (!sel) return '';
+  /* ho (Q249): combo fields are INPUTs — the typed text IS the value.
+     Novel text (not among the field's current options) is remembered as
+     a custom option, the Q55 rule carried over; the maker's mixed-brands
+     label resolves to the '__mixed' sentinel the readers already know. */
+  if (sel.tagName === 'INPUT') {
+    var iv = sel.value.trim();
+    if (iv === 'None' && sel._noneFace) return ''; /* in (Q309): the face reads back as empty */
+    if (id === 'sf-maker' && iv === MIXED_MAKER_LABEL) return '__mixed';
+    if (iv && comboBaseCache[id] && comboBaseCache[id].indexOf(iv) === -1) rememberCustomOption(id, iv);
+    return iv;
+  }
   var v = sel.value;
   if (v === OTHER_VALUE || v === 'Other') {
     var t = $(id + '-othertext');
@@ -1792,10 +1827,114 @@ function sponsorSuggests(key, q) {
    products starting with C appear. A value already in the field stays put
    (auto-saved — no need to look it up again). Other suggest fields keep the
    old focus-pop behavior. */
-function attachSuggest(inputId, boxId, key, typeToFilter) {
+/* ---- hr (2026-11-21, Q273, Tanner): a typing field must sit where he can
+   see it AND its suggestion list. On his phone the form never scrolled:
+   tap a lure box low in the form, the keyboard rises, and the list opens
+   UNDER the field — straight behind the keyboard (his screenshot: the
+   "Cedar Creek Lures…" row sliced in half at the keyboard's top edge,
+   and the field itself riding low instead of centered). After any
+   suggest render that shows the box, pull the field up to about 30% of
+   the VISIBLE height (visualViewport — the part the keyboard does not
+   cover) inside its scroll container, leaving the list room beneath it.
+   Two passes: one quick (typing, keyboard already up) and one after the
+   keyboard finishes rising (focus); a pass no-ops when the field
+   already sits right or is no longer focused. */
+function comboReveal(input, box) {
+  if (!input || !box) return;
+  /* ik (2026-11-21, Q306, Tanner): the ij overlay experiment is REVERTED
+     in full — on his iPhone the floating list sprawled across the form,
+     its rows overlapping the fields below; he ruled the in-page list
+     better and the jumping acceptable. This function is back to its
+     ih form: hr's reveal, run after every show-render. */
+  [60, 380].forEach(function (delay) {
+    setTimeout(function () {
+      if (!box.className || box.className.indexOf('show') === -1) return;
+      if (document.activeElement !== input) return;
+      var sc = input.closest ? input.closest('.scroll') : null;
+      if (!sc) {
+        var p = input.parentElement;
+        while (p && p !== document.body) {
+          var cs = getComputedStyle(p);
+          if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && p.scrollHeight > p.clientHeight) { sc = p; break; }
+          p = p.parentElement;
+        }
+      }
+      var vv = window.visualViewport;
+      var visH = vv ? vv.height : window.innerHeight;
+      var ir = input.getBoundingClientRect();
+      var br = box.getBoundingClientRect();
+      var target = Math.max(10, visH * 0.30);
+      var listWanted = Math.min(br.height, 230);
+      if (ir.top >= 0 && ir.top <= target + 4 && ir.bottom + listWanted <= visH + 4) return;
+      if (sc) sc.scrollTop += ir.top - target;
+      else if (input.scrollIntoView) input.scrollIntoView(true);
+    }, delay);
+  });
+}
+/* ---- hs (2026-11-21, Q275, Tanner): tapping a filled box selects the
+   whole entry, so typing replaces it — the way most form boxes behave.
+   His report, with a screenshot: the cursor landed exactly where his
+   finger tapped, mid-word, and his typing went in there ("Not sure /
+   mixed brands" became "Notdu sure / mixed brands"). One delegated
+   focusin listener covers every fillable box in the app, including rows
+   built on the fly. His exception: Notes and memo boxes keep placing
+   the cursor — they are all <textarea>s, never touched here — and
+   date/time/pick fields are not text boxes. A second tap in an
+   already-focused box still places the cursor where he points: focus
+   does not refire, so nothing re-selects. The select is deferred a tick
+   because WebKit places the tap's caret after focus fires; selecting
+   after that placement is what makes it stick on his phone. */
+document.addEventListener('focusin', function (e) {
+  var el = e.target;
+  if (!el || el.tagName !== 'INPUT' || el.readOnly || el.disabled) return;
+  var t = (el.type || 'text').toLowerCase();
+  if (t !== 'text' && t !== 'search' && t !== 'number' && t !== 'tel' && t !== 'url' && t !== 'email') return;
+  if (!el.value) return;
+  setTimeout(function () {
+    if (document.activeElement !== el) return;
+    try { el.select(); } catch (err) { /* a type that refuses keeps its cursor */ }
+  }, 0);
+});
+/* hs (2026-11-21, Q276): is this saved entry one of the sponsors'
+   products for this section? His bag holds two shapes: the plain
+   product name (what picking a sponsor row fills) and the
+   "Sponsor - Product" string (what bulk edits and his own typing
+   leave). Compare alphanumerics-only so "Cavens - Terminator" and
+   "Caven's Terminator" are the same product. */
+function sponsorEntryMatch(key, entry) {
+  var norm = function (s) { return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ''); };
+  var e = norm(entry);
+  if (!e) return null;
+  for (var i = 0; i < SPONSORS.length; i++) {
+    var sp = SPONSORS[i];
+    var products = sp.products || (sp.product ? [{ name: sp.product }] : []);
+    for (var j = 0; j < products.length; j++) {
+      var name = products[j] && products[j].name ? String(products[j].name) : '';
+      if (!name) continue;
+      var psec = (products[j] && products[j].section) || sp.section;
+      if (psec !== key) continue;
+      if (e === norm(name) || e === norm(sp.name + ' ' + name)) return { sp: sp, name: name };
+    }
+  }
+  return null;
+}
+/* ij (Q304): sweep a container's full-width type-in boxes and wire any
+   that lack the clear ×. Shared by sheets (on open) and panes (on tab
+   switch); idempotent — ensureClearInput no-ops on wrapped boxes. */
+function sweepClearInputs(root) {
+  if (!root || !root.querySelectorAll) return;
+  root.querySelectorAll('input[type="text"], input[type="search"], input:not([type])').forEach(function (inp) {
+    if (inp.classList.contains('hidden-file')) return;
+    if (inp.closest && inp.closest('.btn-row')) return;
+    ensureClearInput(inp);
+  });
+}
+function attachSuggest(inputId, boxId, key, typeToFilter, noneFace) {
   var input = $(inputId), box = $(boxId);
   if (!input || !box || input._suggestWired) return;
   input._suggestWired = true;
+  /* in (Q309): noneFace boxes open wearing None when they hold nothing. */
+  if (noneFace) { input._noneFace = true; if (!input.value) input.value = 'None'; }
   /* Q236 (2026-11-07): an × that wipes the field in one tap — the manual
      entries auto-populate from the last thing used, and clearing them took
      deleting every letter. The button rides inside the input's right edge
@@ -1816,15 +1955,14 @@ function attachSuggest(inputId, boxId, key, typeToFilter) {
   wrap.appendChild(clearBtn);
   clearBtn.onclick = function (e) {
     if (e && e.stopPropagation) e.stopPropagation();
-    input.value = '';
+    input.value = noneFace ? 'None' : '';
     input.dispatchEvent(new Event('input', { bubbles: true }));
     input.focus();
   };
-  function updateClear() { clearBtn.hidden = !input.value; }
+  function updateClear() { clearBtn.hidden = !input.value || (noneFace && input.value === 'None'); }
   function fillFrom(btn) {
     input.value = btn.getAttribute('data-v');
     box.className = 'suggest'; box.innerHTML = '';
-    input.focus();
     /* ft: the input event below fires render — without this flag it would
        pop the box straight back up with matches for the value just picked. */
     input._justFilled = true;
@@ -1832,16 +1970,30 @@ function attachSuggest(inputId, boxId, key, typeToFilter) {
        "+ Add Another" button never appeared after tapping a suggestion.
        Dispatch it so the button (and the bait-rule check) update. */
     input.dispatchEvent(new Event('input', { bubbles: true }));
+    /* ht (2026-11-21, Q277, Tanner): a pick FINISHES the field — one
+       action, not two. This used to call input.focus() here, which left
+       him sitting in the filled box (value highlighted under hs's
+       select-all) with the keyboard's checkmark still to tap. Now the
+       pick fills, the highlight drops, and the keyboard goes away. */
+    input.blur();
   }
-  function render() {
-    /* ft: a just-picked value closes the box and keeps it closed; an empty
-       query on a type-to-filter field shows nothing at all. */
+  function render(bagMode) {
+    /* ft: a just-picked value closes the box and keeps it closed. */
     if (input._justFilled) { input._justFilled = false; box.className = 'suggest'; box.innerHTML = ''; return; }
-    var q = input.value.trim().toLowerCase();
-    if (typeToFilter && !q) { box.className = 'suggest'; box.innerHTML = ''; return; }
-    var sps = sponsorSuggests(key, q);
+    var q = (noneFace && input.value.trim() === 'None') ? '' : input.value.trim().toLowerCase(); /* in (Q309): the face reads as empty, so the bag + pin render */
+    /* hs (2026-11-21, Q276, Tanner — reversing the ft type-to-filter call
+       at his word; he named the back-and-forth himself): on an attractant
+       field, an empty box — tapped into, or typed back to empty — shows
+       HIS BAG: every entry he has put in this kind of box so far. Typing
+       takes over from there: the list filters by letter and the sponsor
+       products come in, as before. A bag entry that IS a sponsor product
+       carries its Sponsored pill + logo tag (see the items map below). */
+    var bag = typeToFilter && (bagMode === 'bag' || !q);
+    var sps = bag ? [] : sponsorSuggests(key, q);
     var items = savedEntries(key).filter(function (v) {
       var vl = v.toLowerCase();
+      if (input._noneFace && vl === 'none') return false; /* in (Q309): the pinned row covers it */
+      if (bag) return true;
       return vl !== q && (!q || vl.indexOf(q) === 0); /* Q238: saved entries filter by prefix too */
     });
     /* fg: saved entries sort alphabetically in the suggestion list. */
@@ -1849,10 +2001,13 @@ function attachSuggest(inputId, boxId, key, typeToFilter) {
       var al = a.toLowerCase(), bl = b.toLowerCase();
       return al < bl ? -1 : (al > bl ? 1 : 0);
     });
-    items = items.slice(0, 6);
+    if (!bag) items = items.slice(0, 6); /* the bag shows whole — his word: "all of them" */
     /* fg: a "None" row tops every attractant suggestion box — shown
-       when the field is empty or the query matches "none" by prefix. */
-    var showNone = (!q || 'none'.indexOf(q) === 0) && q !== 'none';
+       when the field is empty or the query matches "none" by prefix.
+       hs: not in the bag view — the bag is his entries, nothing else.
+       in (Q309, Tanner's remedy, superseding the hs exclusion): None
+       leads EVERY view of a noneFace box, the bag included. */
+    var showNone = !!input._noneFace && (!q || 'none'.indexOf(q) === 0) && q !== 'none';
     if (!sps.length && !items.length && !showNone) { box.className = 'suggest'; box.innerHTML = ''; return; }
     var noneHtml = showNone
       ? '<div class="suggest-row"><button type="button" class="suggest-item" data-v="None">None</button></div>'
@@ -1863,6 +2018,17 @@ function attachSuggest(inputId, boxId, key, typeToFilter) {
       var del = isSeedEntry(key, v)
         ? ''
         : '<button type="button" class="suggest-del" data-v="' + esc(v) + '" aria-label="Remove from list">×</button>';
+      /* hs (Q276): a bag entry that is a sponsor product wears the tag —
+         the Sponsored pill and the sponsor's logo eye, same as its row
+         in the sponsor list below. */
+      var m = sponsorEntryMatch(key, v);
+      if (m) {
+        var mark = m.sp.badge
+          ? '<img class="sponsor-logo" src="' + esc(m.sp.badge) + '" alt="' + esc(m.sp.name) + ' logo">'
+          : '&#128065;';
+        return '<div class="suggest-row"><button type="button" class="suggest-item" data-v="' + esc(v) + '"><span class="suggest-name">' + esc(v) + '</span> <span class="pill">Sponsored</span></button>' +
+          '<button type="button" class="sponsor-eye" data-sp="' + esc(m.sp.id) + '" aria-label="About ' + esc(m.sp.name) + '">' + mark + '</button>' + del + '</div>';
+      }
       return '<div class="suggest-row"><button type="button" class="suggest-item" data-v="' + esc(v) + '">' + esc(v) + '</button>' + del + '</div>';
     }).join('') + sps.map(function (r) { return sponsorSuggestRowHtml(r.sp, r.name); }).join('');
     box.innerHTML = html;
@@ -1886,16 +2052,140 @@ function attachSuggest(inputId, boxId, key, typeToFilter) {
         openSponsorBio(this.getAttribute('data-sp'));
       };
     }
+    comboReveal(input, box); /* hr (Q273): keep the field + list above the keyboard */
   }
-  input.addEventListener('input', render);
+  input.addEventListener('input', function () { render(); });
   input.addEventListener('input', updateClear); /* Q236: the × shows only while the field has text */
-  /* ft: type-to-filter fields do NOT pop the box on focus — only typing
-     opens it. Every other suggest field keeps the old focus-pop. */
-  if (!typeToFilter) input.addEventListener('focus', render);
+  /* ft was: type-to-filter fields do NOT pop the box on focus. hs (Q276)
+     reverses that for attractant fields at Tanner's word: focus pops
+     HIS BAG. Every other suggest field keeps the old focus-pop. */
+  input.addEventListener('focus', function () { render(typeToFilter ? 'bag' : undefined); });
   input.addEventListener('blur', function () {
     setTimeout(function () { box.className = 'suggest'; }, 160);
   });
 }
+/* ================= ho (2026-11-21, Q249 + Q248, Tanner) =================
+   TYPE-TO-FILTER COMBO FIELDS. Every list field on the set form is now a
+   text field with a suggestion box, on the pattern he ruled: tap the field
+   and the FULL list opens with the keyboard up; typing filters the list
+   live; tapping a row fills the field; text that matches nothing simply
+   IS the entry, and is remembered for next time (the Q55 custom-option
+   memory, now keyed by the field). The old <select> + "Other…" + "What is
+   it?" two-step is gone for these fields — typing replaced it. Notes are
+   the one exception (Q249): they stay plain writing boxes.
+   A pick dispatches a bubbling 'change', so every existing cascade that
+   listened for a select's change (maker → types → details, foundation →
+   variations, spring → sizes) fires exactly as before. The field also
+   carries the Q248 clear × (the Q236 .clear-wrap/.input-clear pattern).
+   getOptions() returns strings or {v, label} pairs and is read live on
+   every render, so cascades never need the box rebuilt. */
+var comboBaseCache = {}; /* id -> last option values, for selVal's remember-guard */
+var pendingCombos = [];  /* selHtml-built fields awaiting attachment */
+function comboAttach(inputId, boxId, getOptions, opts) {
+  var input = $(inputId), box = $(boxId);
+  if (!input || !box) return;
+  opts = opts || {};
+  /* in (Q309, Tanner's remedy): a combo whose none label is exactly
+     'None' wears None as the FACE of empty — the box opens reading
+     None, the None row leads the menu, clearing returns to None, and
+     the readers (selVal) translate the face back to empty. Bulk-edit's
+     '(no change)' is a different job and stays untouched. */
+  var noneFace = (opts.noneLabel === 'None');
+  if (noneFace) input._noneFace = true;
+  if (!input._comboWired) {
+    input._comboWired = true;
+    var wrap = document.createElement('span');
+    wrap.className = 'clear-wrap';
+    input.parentNode.insertBefore(wrap, input);
+    wrap.appendChild(input);
+    var clearBtn = document.createElement('button');
+    clearBtn.type = 'button';
+    clearBtn.className = 'input-clear';
+    clearBtn.setAttribute('aria-label', 'Clear');
+    clearBtn.textContent = '×';
+    clearBtn.hidden = !input.value || (noneFace && input.value === 'None');
+    wrap.appendChild(clearBtn);
+    clearBtn.onclick = function (e) {
+      if (e && e.stopPropagation) e.stopPropagation();
+      input.value = noneFace ? 'None' : '';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.focus();
+    };
+    input._comboClear = clearBtn;
+    input.addEventListener('input', function () { clearBtn.hidden = !input.value || (noneFace && input.value === 'None'); renderCombo(false); });
+    input.addEventListener('focus', function () { renderCombo(true); });
+    input.addEventListener('blur', function () {
+      setTimeout(function () { box.className = 'suggest'; }, 160);
+    });
+  }
+  function renderCombo(showAll) {
+    var raw = getOptions() || [];
+    var values = raw.map(function (o) { return (o && typeof o === 'object') ? o.v : o; });
+    comboBaseCache[inputId] = values;
+    var q = showAll ? '' : ((noneFace && input.value.trim() === 'None') ? '' : input.value.trim().toLowerCase()); /* in (Q309): the face filters as empty */
+    var rows = raw.filter(function (o) {
+      var lbl = ((o && typeof o === 'object') ? o.label : o) || '';
+      var v = (o && typeof o === 'object') ? o.v : o;
+      return !q || lbl.toLowerCase().indexOf(q) !== -1 || String(v).toLowerCase().indexOf(q) !== -1;
+    });
+    var html = '';
+    if (opts.noneLabel && (!q || opts.noneLabel.toLowerCase().indexOf(q) !== -1)) {
+      html += '<div class="suggest-row"><button type="button" class="suggest-item" data-v="' + (noneFace ? 'None' : '') + '">' + esc(opts.noneLabel) + '</button></div>';
+    }
+    html += rows.map(function (o) {
+      var v = (o && typeof o === 'object') ? o.v : o;
+      var lbl = (o && typeof o === 'object') ? o.label : o;
+      return '<div class="suggest-row"><button type="button" class="suggest-item" data-v="' + esc(v) + '">' + esc(lbl) + '</button></div>';
+    }).join('');
+    if (!html) { box.className = 'suggest'; box.innerHTML = ''; return; }
+    box.innerHTML = html;
+    box.className = 'suggest show';
+    box.querySelectorAll('.suggest-item').forEach(function (b) {
+      b.onclick = function () {
+        input.value = this.getAttribute('data-v');
+        if (input._comboClear) input._comboClear.hidden = !input.value || (noneFace && input.value === 'None');
+        box.className = 'suggest'; box.innerHTML = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        if (opts.onPick) opts.onPick(input.value);
+        input.blur(); /* ht (Q277): a pick finishes the field */
+      };
+    });
+    comboReveal(input, box); /* hr (Q273) */
+  }
+  input._comboRender = renderCombo;
+}
+/* selHtml-built combo fields attach once their HTML lands in the DOM. */
+function drainCombos() {
+  var list = pendingCombos; pendingCombos = [];
+  list.forEach(function (c) {
+    comboAttach(c.id, c.id + '-suggest', function () { return c.options; }, { noneLabel: c.noneLabel });
+  });
+}
+/* Q248: the clear × for a plain typed field that has none (Set Name model). */
+function ensureClearInput(input) {
+  if (!input || input.closest('.clear-wrap') || input._clearWired) return;
+  input._clearWired = true;
+  var wrap = document.createElement('span');
+  wrap.className = 'clear-wrap';
+  input.parentNode.insertBefore(wrap, input);
+  wrap.appendChild(input);
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'input-clear';
+  btn.setAttribute('aria-label', 'Clear');
+  btn.textContent = '×';
+  btn.hidden = !input.value;
+  wrap.appendChild(btn);
+  btn.onclick = function (e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    input.value = '';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    input.focus();
+  };
+  input.addEventListener('input', function () { btn.hidden = !input.value; });
+}
+
 /* ---- gm (2026-11-17, Tanner): Set Name clear × + live suggestions ----
    The gl build made the Set Name field plain; Tanner reversed that on his
    phone: renaming a set meant backspacing the whole name by hand, and the
@@ -1944,14 +2234,15 @@ function renderSetNameSuggest() {
       inp.value = this.getAttribute('data-v');
       hideSetNameSuggest();
       updateSetNameClear();
-      inp.focus();
-      /* Set AFTER focus() — the same order attachSuggest uses: refocusing
-         fires a focus render that would reopen the box, and the flag is
-         what the input render below consumes to keep it shut. */
+      /* The flag is what the input render below consumes to keep the box
+         shut over the value just picked. ht (Q277): no refocus — a pick
+         finishes the field, so blur instead of the old focus(). */
       inp._justFilled = true;
       inp.dispatchEvent(new Event('input', { bubbles: true }));
+      inp.blur();
     };
   }
+  comboReveal(inp, box); /* hr (Q273) */
 }
 function wireSetNameField() {
   var inp = $('sf-name'), box = $('sf-name-suggest');
@@ -2006,7 +2297,8 @@ function updateAttrAdd(field) {
   if (host) {
     var inputs = host.querySelectorAll('.attr-row-input');
     for (var i = 0; i < inputs.length; i++) {
-      if ((inputs[i].value || '').trim()) { filled = true; break; }
+      var iv98 = (inputs[i].value || '').trim();
+      if (iv98 && iv98 !== 'None') { filled = true; break; } /* in (Q309): the face is not a fill */
     }
   }
   if (filled) add.removeAttribute('hidden'); else add.setAttribute('hidden', '');
@@ -2028,7 +2320,7 @@ function renderAttrRows(field, values, minRows) {
   host.innerHTML = html;
   for (var j = 0; j < vals.length; j++) {
     /* ft: the product rows are type-to-filter — nothing pops until typing. */
-    attachSuggest('sf-' + field + '-row-' + j, 'sf-' + field + '-row-' + j + '-suggest', field, true);
+    attachSuggest('sf-' + field + '-row-' + j, 'sf-' + field + '-row-' + j + '-suggest', field, true, true); /* in (Q309): noneFace */
   }
   /* Q30: refresh the bait-rule warning whenever bait rows re-render. */
   if (field === 'bait' && typeof updateBaitWarn === 'function') updateBaitWarn();
@@ -2096,6 +2388,9 @@ function collectAttrRows(field) {
     seen[lk] = true;
     out.push(v);
   }
+  /* in (Q309): a 'None' row among real entries is just the empty face
+     showing — it drops out; a lone 'None' is the stated none. */
+  if (out.length > 1) out = out.filter(function (v) { return v.toLowerCase() !== 'none'; });
   return out;
 }
 function applySetFieldToggles() {
@@ -2134,18 +2429,16 @@ var SNARE_LOCKS = ['Cam', 'Relaxing', 'Washer'];
 var SNARE_LENS = ['30"', '48"', '60"', '84"'];
 
 function selHtml(id, label, options, val) {
-  /* Q55: the trapper's remembered customs ride with the base options, and
-     every dropdown grows an Other… escape hatch (unless it has one). */
-  var opts = mergeCustomOptions(id, options);
-  if (!hasOtherOption(opts)) opts = opts.concat([OTHER_VALUE]);
-  var h = '<label class="field" for="' + id + '">' + label + '</label>' +
-    '<select id="' + id + '" data-has-other="1">';
-  h += '<option value="">—</option>';
-  for (var i = 0; i < opts.length; i++) {
-    var ov = opts[i], ol = (ov === OTHER_VALUE) ? 'Other…' : ov;
-    h += '<option value="' + esc(ov) + '"' + (val === ov ? ' selected' : '') + '>' + esc(ol) + '</option>';
-  }
-  return h + '</select>' + otherWrapHtml(id);
+  /* ho (Q249): a combo field now, not a <select> — the trapper's
+     remembered customs ride with the base options (mergeCustomOptions),
+     typing filters them, and novel typed text is the entry (remembered
+     at read time by selVal). The Other… hatch is gone: typing is the
+     hatch. Attachment happens in drainCombos() once the HTML lands. */
+  var opts = mergeCustomOptions(id, options).filter(function (o) { return o !== OTHER_VALUE && o !== 'Other'; });
+  pendingCombos.push({ id: id, options: opts, noneLabel: 'None' });
+  return '<label class="field" for="' + id + '">' + label + '</label>' +
+    '<input type="text" id="' + id + '" autocomplete="off" value="' + esc(val || '') + '">' +
+    '<div class="suggest" id="' + id + '-suggest"></div>';
 }
 /* ---- Q39: manufacturer-first trap picker ----
    Flow: Manufacturer -> trap type -> size/model. Picking "Not sure / mixed
@@ -2158,49 +2451,46 @@ function paintSelectHint(sel) {
 }
 /* Populate the manufacturer select once (options live in trap-catalog.js). */
 function renderMakerOptions() {
-  var sel = $('sf-maker');
-  if (!sel) return;
-  var cur = sel.value; /* Q55: rebuild keeps the trapper's pick */
-  var h = '<option value="">e.g. Bridger</option>';
-  h += '<option value="__mixed">' + esc(MIXED_MAKER_LABEL) + '</option>';
+  /* ho (Q249): the maker field is a combo input now — its options are
+     computed live by makerComboOptions() at render time, so there is no
+     option list to rebuild on form open. This stub stays for its caller. */
+  return;
+}
+function makerComboOptions() {
+  var out = [{ v: 'None', label: 'None' }, { v: MIXED_MAKER_LABEL, label: MIXED_MAKER_LABEL }];
+  var seen = { 'none': 1 };
+  seen[MIXED_MAKER_LABEL.toLowerCase()] = 1;
   MAKER_ORDER.forEach(function (m) {
-    var label = m + (TRAP_MAKERS[m].legacy ? ' (legacy)' : '');
-    h += '<option value="' + esc(m) + '">' + esc(label) + '</option>';
+    out.push({ v: m, label: m + (TRAP_MAKERS[m].legacy ? ' (legacy)' : '') });
+    seen[m.toLowerCase()] = 1;
   });
-  /* Q55: the trapper's custom makers + the Other… escape hatch. */
-  var seenMakers = {};
-  MAKER_ORDER.forEach(function (m) { seenMakers[m.toLowerCase()] = 1; });
-  customOptionsFor('sf-maker').forEach(function (m) {
-    if (!seenMakers[m.toLowerCase()]) h += '<option value="' + esc(m) + '">' + esc(m) + '</option>';
+  customOptionsFor('sf-maker').forEach(function (t) {
+    if (!seen[t.toLowerCase()]) { out.push({ v: t, label: t }); seen[t.toLowerCase()] = 1; }
   });
-  h += '<option value="' + OTHER_VALUE + '">Other…</option>';
-  sel.innerHTML = h;
-  if (cur) sel.value = cur;
-  sel.innerHTML = h;
-  paintSelectHint(sel);
+  return out;
 }
 /* Type options for the picked maker. keepKey re-selects a picker type key
    when it exists in the new list. */
 function renderTrapTypeOptions(maker, keepKey) {
   var sel = $('sf-type');
+  if (maker === MIXED_MAKER_LABEL) maker = '__mixed'; /* ho: combo holds the label */
   var entry = maker && TRAP_MAKERS[maker];
   var keys = entry ? Object.keys(entry.types) : ALL_TRAP_TYPES.slice();
-  /* Q57-B: the cascade keeps its "Other" escape hatch — the unfiltered list
-     has one and no other dropdown loses options, so a picked maker must not
-     strand the trapper without an out. Not stored in the catalog. */
-  if (entry && keys.indexOf('Other') === -1) keys.push('Other');
-  /* Q55: the trapper's custom types ride along so a remembered value reselects. */
+  /* ho (Q249): no "Other" hatch in the combo list (Q57-B's escape hatch
+     is the typing itself now). The trapper's custom types ride along so
+     a remembered value reselects (Q55). The list is stashed for the
+     combo's live getOptions; the field's text is set, not rebuilt. */
+  keys = keys.filter(function (k) { return k !== 'Other'; });
   var seenTypes = {};
   keys.forEach(function (k) { seenTypes[k.toLowerCase()] = 1; });
   customOptionsFor('sf-type').forEach(function (t) {
     if (!seenTypes[t.toLowerCase()]) { keys.push(t); seenTypes[t.toLowerCase()] = 1; }
   });
+  window._sfTypeOpts = keys;
   var cur = sel.value;
-  var h = '<option value="">e.g. Foothold</option>';
-  keys.forEach(function (k) { h += '<option value="' + esc(k) + '">' + esc(k) + '</option>'; });
-  sel.innerHTML = h;
   if (keepKey && keys.indexOf(keepKey) >= 0) sel.value = keepKey;
   else if (keys.indexOf(cur) >= 0) sel.value = cur;
+  else sel.value = '';
   paintSelectHint(sel);
 }
 /* Maker switched: try to keep the same stored trap type across the switch. */
@@ -2209,6 +2499,7 @@ function resolvedTrapType() {
      blank Other → blank, never the literal "Other". */
   var sel = $('sf-type');
   var raw = sel ? sel.value : '';
+  if (raw === 'None') raw = ''; /* in (Q309): the face is not a type */
   if (raw === 'Other' || raw === OTHER_VALUE) return { t: selVal('sf-type'), spring: '' };
   return resolveTrapType(raw);
 }
@@ -2233,8 +2524,10 @@ function onMakerChange() {
 function trapDetailValues() {
   var f = function (id) { var el = $(id); return el ? el.value : ''; };
   var modelSel = $('sf-trapmodel-select'), trapModel = '';
-  if (modelSel) trapModel = modelSel.value === MODEL_CUSTOM ? f('sf-trapmodel').trim() : modelSel.value;
-  else trapModel = f('sf-trapmodel').trim();
+  /* ho (Q249): the maker-path model is a combo input now — its text is
+     the value, resolved (and remembered when novel) through selVal. */
+  if (modelSel) trapModel = selVal('sf-trapmodel-select');
+  else { var tm0 = f('sf-trapmodel').trim(); trapModel = (tm0 === 'None') ? '' : tm0; } /* in (Q309) */
   var mv = trapModValues();
   return {
     /* Q55: Other-capable dropdowns resolve through selVal — typed customs
@@ -2287,32 +2580,14 @@ function renderModsHtml(t, v, forceCheck) {
     '<div class="setsec-body" id="setform-modssec-body" hidden>' +
     '<div class="mods-hint">Work you did after buying the trap. Factory options are already in the model name above.</div>';
   if (t === 'Foothold') {
-    /* Q55: pan size is an Other-capable dropdown like the rest. */
+    /* ho (Q249): pan size is a combo field like the rest (was an
+       Other-capable dropdown under Q55; typing is the hatch now). */
     var pv = v.panSize || 'Stock';
-    var pans = mergeCustomOptions('sf-pansize', PAN_SIZES);
-    if (!hasOtherOption(pans)) pans = pans.concat([OTHER_VALUE]);
-    h += '<label class="field" for="sf-pansize">Pan size</label><select id="sf-pansize" data-has-other="1">';
-    pans.forEach(function (p) {
-      var pl = (p === OTHER_VALUE) ? 'Other…' : p;
-      h += '<option value="' + esc(p) + '"' + (pv === p ? ' selected' : '') + '>' + esc(pl) + '</option>';
-    });
-    h += '</select>' + otherWrapHtml('sf-pansize');
+    h += selHtml('sf-pansize', 'Pan size', PAN_SIZES, pv);
     /* Q102 (2026-10-01): Tanner — round jaw vs square jaw, footholds only. */
-    var jv = v.jawShape || '';
-    h += '<label class="field" for="sf-jawshape">Jaw shape</label><select id="sf-jawshape">';
-    h += '<option value="">Select…</option>';
-    ['Round jaw', 'Square jaw'].forEach(function (j) {
-      h += '<option value="' + j + '"' + (jv === j ? ' selected' : '') + '>' + j + '</option>';
-    });
-    h += '</select>';
+    h += selHtml('sf-jawshape', 'Jaw shape', ['Round jaw', 'Square jaw'], v.jawShape || '');
     /* Tanner 2026-10-01 — jaw closure: offset vs closed, footholds only. */
-    var jcv = v.jawClose || '';
-    h += '<label class="field" for="sf-jawclose">Jaw closure</label><select id="sf-jawclose">';
-    h += '<option value="">Select…</option>';
-    ['Offset', 'Closed'].forEach(function (j) {
-      h += '<option value="' + j + '"' + (jcv === j ? ' selected' : '') + '>' + j + '</option>';
-    });
-    h += '</select>';
+    h += selHtml('sf-jawclose', 'Jaw closure', ['Offset', 'Closed'], v.jawClose || '');
   }
   h += '<div class="checkgrid">';
   pre.forEach(function (m) { h += box(m); });
@@ -2344,6 +2619,7 @@ function bindModAdd() {
    forceCheck optionally checks just-added custom mods. */
 function renderTrapDetailFields(saved, forceCheck) {
   var maker = $('sf-maker') ? $('sf-maker').value : '';
+  if (maker === MIXED_MAKER_LABEL) maker = '__mixed'; /* ho: the combo holds the label; readers key on the sentinel */
   var pickerType = $('sf-type').value;
   var rt = resolvedTrapType();
   var v = saved || trapDetailValues();
@@ -2352,20 +2628,14 @@ function renderTrapDetailFields(saved, forceCheck) {
   var models = (entry && entry.types[pickerType]) || null;
   var h = '';
   if (models) {
-    /* Maker-filtered size/model list + an Other/custom escape hatch. */
+    /* ho (Q249): the maker-filtered size/model list is a combo field —
+       the saved model, or the list's first model as the select used to
+       preselect; anything typed past the list is the entry. */
     var mv = v.trapModel || '';
-    var inList = models.indexOf(mv) >= 0;
-    var selVal = mv ? (inList ? mv : MODEL_CUSTOM) : models[0];
-    h += '<label class="field" for="sf-trapmodel-select">Size / model</label><select id="sf-trapmodel-select">';
-    models.forEach(function (m) {
-      h += '<option value="' + esc(m) + '"' + (selVal === m ? ' selected' : '') + '>' + esc(m) + '</option>';
-    });
-    h += '<option value="' + MODEL_CUSTOM + '"' + (selVal === MODEL_CUSTOM ? ' selected' : '') + '>Other / custom&hellip;</option></select>';
-    var customText = inList ? '' : mv;
-    h += '<div id="trapmodel-customwrap"' + (selVal === MODEL_CUSTOM ? '' : ' style="display:none"') + '>' +
-      '<label class="field" for="sf-trapmodel">Custom size / model</label>' +
-      '<input type="text" id="sf-trapmodel" placeholder="Describe it" autocomplete="off" value="' + esc(customText) + '">'
-      + '<div class="suggest" id="sf-trapmodel-suggest"></div></div>';
+    pendingCombos.push({ id: 'sf-trapmodel-select', options: mergeCustomOptions('sf-trapmodel-select', models) });
+    h += '<label class="field" for="sf-trapmodel-select">Size / model</label>' +
+      '<input type="text" id="sf-trapmodel-select" autocomplete="off" value="' + esc(mv || models[0]) + '">' +
+      '<div class="suggest" id="sf-trapmodel-select-suggest"></div>';
   } else {
     /* Unfiltered path: today's generic detail fields for the trap type. */
     var cfg = TRAP_SUB[rt.t];
@@ -2405,13 +2675,9 @@ function renderTrapDetailFields(saved, forceCheck) {
   if (!modsFresh) { var mb = $('setform-modssec-body'); modsWasOpen = !!(mb && !mb.hidden); }
   modsRenderSeq = setFormOpenSeq;
   host.innerHTML = h;
+  drainCombos(); /* ho (Q249): wire the combo fields this render built */
   /* Q12: custom model text learns from use */
-  if ($('sf-trapmodel')) attachSuggest('sf-trapmodel', 'sf-trapmodel-suggest', 'trapmodel');
-  var msel = $('sf-trapmodel-select');
-  if (msel) msel.onchange = function () {
-    var w = $('trapmodel-customwrap');
-    if (w) w.style.display = (msel.value === MODEL_CUSTOM) ? '' : 'none';
-  };
+  if ($('sf-trapmodel')) attachSuggest('sf-trapmodel', 'sf-trapmodel-suggest', 'trapmodel', false, true); /* in (Q309): noneFace */
   var springEl = $('sf-trapspring');
   if (springEl) springEl.onchange = function () { renderTrapDetailFields(); };
   bindModAdd();
@@ -2486,23 +2752,53 @@ function initMap() {
     return;
   }
   map = L.map('map', { zoomControl: false, attributionControl: true, maxZoom: 22 }).setView([39.5, -98.35], 4);
-  var street = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 22, maxNativeZoom: 19, attribution: '© Esri, HERE, Garmin, © OpenStreetMap contributors' });
-  var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 22, maxNativeZoom: 19, attribution: 'Imagery © Esri' });
-  var topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-    { maxZoom: 22, maxNativeZoom: 17, attribution: '© OpenTopoMap © OpenStreetMap contributors' });
-  /* Esri reference overlays: roads + place labels, drawn over imagery/topo */
-  var esriRef = function (svc) {
-    return L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' + svc + '/MapServer/tile/{z}/{y}/{x}',
-      { maxZoom: 22, maxNativeZoom: 19, attribution: '© Esri' });
-  };
-  var roads = esriRef('Reference/World_Transportation');
-  var labels = esriRef('Reference/World_Boundaries_and_Places');
-  var streetL = L.layerGroup([street]);
-  var satL = L.layerGroup([satellite, labels, roads]);
-  var topoL = L.layerGroup([topo, roads]);
-  satL.addTo(map);
+  /* hn (2026-11-21, Tanner): drop the Leaflet name-and-flag prefix from the
+     attribution bar. The imagery credits themselves (Mapbox / OpenStreetMap
+     / Maxar / USGS) are contractual and stay, legible — see styles.css. */
+  if (map.attributionControl) map.attributionControl.setPrefix(false);
+  /* Q10 / gy (2026-11-18): Mapbox Satellite became the default aerial.
+     The provider comparison (research_notes/map-provider-comparison-
+     20261118) found it the freshest deep-zoom rural imagery feeding
+     Leaflet, and its terms allow the app's on-device tile cache capped
+     at 30 days. The token is a PUBLIC token, URL-restricted to the
+     app's own origins; it is meant to ship here.
+     hg (2026-11-19): the Mapbox layers carry referrerPolicy
+     'unsafe-url' (Leaflet 1.9.4's TileLayer option — createTile
+     assigns it to each tile <img>) and index.html sets the same
+     policy document-wide. hf did the referrer work from sw.js with a
+     worker-constructed fetch instead; WebKit refused to play along
+     and the map stayed black on the phone — see the note above
+     fetchTile in sw.js. hh took the worker out of the chain entirely
+     (Mapbox tiles bypass it), and hi convicted the true cause at the
+     wire: WebKit sends only the bare origin as Referer, and the
+     token's restriction now admits that origin (console change,
+     2026-11-19) — the map paints on the phone.
+     hi amendment (2026-11-19, Tanner — "build Mapbox into the app
+     and take ESRI completely out of the app"): the stack below is
+     the whole story now. Esri is GONE — World_Street_Map,
+     World_Imagery, and the Reference roads/labels overlays that
+     rode over every aerial are all removed. satellite-streets-v12
+     bakes its roads and labels into the imagery, so no overlay is
+     needed anywhere; streets-v12 takes the Street seat and
+     outdoors-v12 the Topo seat, all on the same token, all with
+     the same handling (real tiles to z19, Leaflet upscales to the
+     z22 map cap; tiles bypass sw.js per hh). NAIP stays as the one
+     non-Mapbox aerial, now standing bare. */
+  var MAPBOX_TOKEN = 'pk.eyJ1Ijoib3Bvc3N1bWZvb3RhcHAiLCJhIjoiY213bXhmaThzMDRndjMwcGxmOXpsNjUwOCJ9.v0VzgWCuGzscCePZmw2AjQ';
+  var mapboxSat = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/256/{z}/{x}/{y}?access_token=' + MAPBOX_TOKEN,
+    { maxZoom: 22, maxNativeZoom: 19, referrerPolicy: 'unsafe-url', attribution: 'Imagery © Mapbox © OpenStreetMap © Maxar' });
+  /* gy: second aerial — USDA NAIP (public domain), served as standard
+     tiles by the USGS National Map's USGSImageryOnly cache. (USDA's own
+     FPAC ImageServer exposes no XYZ tile cache — its metadata calls it a
+     test service — and the APFO endpoint does not answer.) Native NAIP
+     detail ends near z18; past that Leaflet upscales. */
+  var naip = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 22, maxNativeZoom: 18, attribution: 'Imagery © USGS' });
+  var mapboxStreet = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/256/{z}/{x}/{y}?access_token=' + MAPBOX_TOKEN,
+    { maxZoom: 22, maxNativeZoom: 19, referrerPolicy: 'unsafe-url', attribution: '© Mapbox © OpenStreetMap' });
+  var mapboxTopo = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v12/tiles/256/{z}/{x}/{y}?access_token=' + MAPBOX_TOKEN,
+    { maxZoom: 22, maxNativeZoom: 19, referrerPolicy: 'unsafe-url', attribution: '© Mapbox © OpenStreetMap' });
+  mapboxSat.addTo(map);
   /* Q74 (2026-10-01): Tanner — left-side stack is layers, zoom, weather, top
      to bottom. Leaflet stacks same-corner controls in add order. The weather
      chip joins as a real control so it rides the stack instead of floating. */
@@ -2516,12 +2812,20 @@ function initMap() {
      the button becomes an icon that changes per active view — satellite
      glyph on Satellite, road-map glyph on Street, mountain/topo glyph on
      Topo. Tap-cycle behavior unchanged. */
+  /* gy (2026-11-18): Q10 lands — the cycle grows the two fallback aerials.
+     Settled order then: Mapbox Satellite (default) → Esri Satellite →
+     NAIP → Street → Topo.
+     hi amendment (2026-11-19): Esri leaves the cycle with the rest of
+     Esri, and the Street and Topo seats become Mapbox's. Settled order
+     now: Mapbox Satellite (default) → NAIP → Mapbox Street → Mapbox
+     Topo → back to Satellite. */
   var baseLayers = [
-    { name: 'Satellite', layer: satL, icon: '🛰️' },
-    { name: 'Street', layer: streetL, icon: '🗺️' },
-    { name: 'Topo', layer: topoL, icon: '⛰️' }
+    { name: 'Mapbox Satellite', layer: mapboxSat, icon: '🛰️' },
+    { name: 'NAIP', layer: naip, icon: '🛩️' },
+    { name: 'Mapbox Street', layer: mapboxStreet, icon: '🗺️' },
+    { name: 'Mapbox Topo', layer: mapboxTopo, icon: '⛰️' }
   ];
-  var baseIdx = 0; /* satL is already on the map */
+  var baseIdx = 0; /* mapboxSat is already on the map */
   var layerCtl = L.control({ position: 'bottomleft' });
   layerCtl.onAdd = function () {
     var el = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
@@ -2559,6 +2863,10 @@ function initMap() {
       startPlacePin(e.latlng);
     } else if (measureMode) {
       measureTap(e.latlng);
+    } else if (window.Tracking && Tracking.mapTap(e)) {
+      /* gt: while the route editor owns the map (Fix route's Draw, or
+         standalone Draw a route), map taps are drawing taps — they
+         never fall through to marker placement. */
     } else if (window.Markers) {
       Markers.onMapClick(e);
     }
@@ -2661,9 +2969,13 @@ function refreshPinWinds() {
 function setIcon(set) {
   /* Q68: an overdue check turns the pin red, whatever the status color was. */
   var pinCls = isCheckOverdue(set) ? 'pin-overdue' : 'pin-' + esc(normStatus(set.status));
+  /* gz: a set picked in selection mode wears the gold ring + check (the
+     class rides the icon HTML, so refreshMarkers re-applies it on every
+     re-render and Leaflet carries it through pan/zoom). */
+  var sel = selMode && selIds[set.id];
   return L.divIcon({
     className: '',
-    html: '<div class="pin ' + pinCls + '">' + windArrowHtml(set) + '</div>',
+    html: '<div class="pin ' + pinCls + (sel ? ' pin-sel' : '') + '">' + (sel ? '<span class="pin-check">✓</span>' : '') + windArrowHtml(set) + '</div>',
     iconSize: [30, 30], iconAnchor: [15, 15]
   });
 }
@@ -2682,7 +2994,7 @@ function refreshMarkers() {
     if (!mapStatusFilter[normStatus(s.status)]) return;
     var m = L.marker([s.lat, s.lng], { icon: setIcon(s), title: s.name });
     /* B15: no opening set details mid-placement — finish the pin first. */
-    m.on('click', function () { if (document.body.classList.contains('placing') || measureMode) return; openSetOrStack(s.id); });
+    m.on('click', function () { if (document.body.classList.contains('placing') || document.body.classList.contains('editor-lock') || measureMode) return; if (selMode) { selTapSet(s.id); return; } openSetOrStack(s.id); });
     m._setId = s.id;
     markersLayer.addLayer(m);
   });
@@ -2697,11 +3009,26 @@ function refreshMarkers() {
    Every mode entry runs cancelAllMapModes() first; `except` keeps the mode
    being entered from cancelling itself. */
 function cancelAllMapModes(except) {
+  /* gz: one map command at a time extends to set-selection mode — every
+     editor (Fix route / Draw, via tracking.js) and every picking mode
+     enters through here, so entering any of them ends selection mode. */
+  if (selMode || bulkSelCtx) exitSelMode();
   if (except !== 'pin' && dropPinMode) setDropPinMode(false);
   if (except !== 'measure' && measureMode) setMeasureMode(false);
   if (except !== 'home' && homePickMode) cancelHomePick();
   cancelPlacePin();
   if (window.Markers) Markers.cancelAll();
+  /* ho (2026-11-21, Q259, Tanner): the Mark sheet itself is part of the
+     Mark tap-mode — another mode starting closes it, so its sheet never
+     stacks over a live Measure/editor banner. Tracking is exempt by his
+     ruling: nothing here touches the recorder. */
+  if (except !== 'mark') {
+    var ms = $('sheet-marker-add');
+    if (ms && ms.classList.contains('show')) {
+      ms.classList.remove('show');
+      if (!document.querySelector('.sheet.show')) $('scrim').classList.remove('show');
+    }
+  }
 }
 
 function setDropPinMode(on) {
@@ -2882,12 +3209,20 @@ function startHomePick() {
   var l0 = activeLine();
   if (l0) { l0.homeAsked = true; Store.save(); } /* asked once per line — Settings re-opens it */
   cancelAllMapModes('home'); /* fw: one picking mode at a time */
+  /* ho (2026-11-21, Q266, Tanner): follow stands down while the picker
+     owns the map — its guard was dragging the map back to his physical
+     position within seconds of a ZIP/city jump, so the jump never held.
+     The established jump doctrine (Q246): follow pauses and stays paused
+     until the user taps the crosshair again. */
+  pauseFollow();
   homePickMode = true; homeMapLive = true;
+  document.body.classList.add('home-picking'); /* ho (Q265): map chrome steps back */
   /* Tanner 2026-10-01: no A/B choice — the GPS button duplicated the previous
      screen. Straight to pin drop: tap the map, drag the pin, tap OK. */
   $('home-bar').classList.add('show');
   $('home-bar-prompt').textContent = 'Tap the map to drop your home pin, then drag it onto the exact spot.';
   $('btn-home-ok').hidden = true;
+  var jr = $('home-jump-row'); if (jr) jr.style.display = ''; /* ho (Q265): the jump row returns for a fresh pick */
   setPlacingLock(true); /* B15: same modal lock as pin placement */
   /* B13: bar just changed the map height — re-measure before centering. */
   map.invalidateSize();
@@ -2901,6 +3236,7 @@ function startHomePick() {
 }
 function cancelHomePick() {
   homePickMode = false; homeMapLive = false;
+  document.body.classList.remove('home-picking'); /* ho (Q265) */
   if (homeMarker && map) { try { map.removeLayer(homeMarker); } catch (e) {} homeMarker = null; }
   var bar = $('home-bar'); if (bar) bar.classList.remove('show');
   setPlacingLock(false);
@@ -2974,6 +3310,7 @@ function placeHomePin(latlng) {
   homeMarker = L.marker(latlng, { draggable: true, icon: homeIcon() }).addTo(map);
   map.panTo(latlng);
   $('btn-home-ok').hidden = false;
+  var jr2 = $('home-jump-row'); if (jr2) jr2.style.display = 'none'; /* ho (Q265): the jump row's work is done once the pin is down */
 }
 function confirmHomePin() {
   if (!homeMarker) { toast('Drop the pin on your home ground first.'); return; }
@@ -3220,8 +3557,15 @@ function drawFix(fix, final) {
     else gpsCircle = L.circle([fix.lat, fix.lng],
       { radius: Math.max(fix.acc, 1), color: '#2f8ff0', weight: 1, opacity: 0.6, fillColor: '#2f8ff0', fillOpacity: 0.15, interactive: false }).addTo(map);
     if (final) {
-      /* BQ2: one crosshair tap always ends zoomed tight (19) — no
-         accuracy-based wide zoom that forces a second tap. */
+      /* BQ2/gs/gx: one crosshair tap always ends at the working zoom
+         (19) — no accuracy-based wide zoom that forces a second tap.
+         History: the landing was 19 under the old BQ2 rule; gs
+         (2026-11-18) dropped it to 17 on Tanner's driving field report
+         (one tap left him staring at smeared pixels with the accuracy
+         circle filling the screen; Esri rural imagery is only sharp to
+         ~17). gx (2026-11-18, Tanner's verdict after living with 17 on
+         his own ground): restore 19. He can still pinch tighter or
+         wider by hand (map maxZoom unchanged). */
       map.setView([fix.lat, fix.lng], 19, { animate: false });
     }
   }
@@ -3381,9 +3725,11 @@ function startAcquire() {
 
 /* Crosshair tap centers on the fix AND zooms in when the view is wide —
    an explicit locate tap should put you on yourself, not just pan. */
-/* B22: every crosshair tap ends zoomed in tight on the latest fix —
-   no conditional half-zoom. Q70: tighter than 18 — the recenter puts you
-   right on yourself at working zoom. */
+/* B22: every crosshair tap ends zoomed in on the latest fix —
+   no conditional half-zoom. gs (2026-11-18) landed the recenter at 17,
+   the same working zoom as the acquire landing in drawFix; gx
+   (2026-11-18) restores 19 on Tanner's verdict after living with 17
+   (see the BQ2/gs/gx note in drawFix). */
 function centerOnFix() {
   if (!map || !lastFix || lastFix.lat == null) return;
   /* Q234: re-measure before centering — a stale cached container size (B13)
@@ -3571,7 +3917,7 @@ function openSetForm(coords, setId) {
   $('sf-name').placeholder = s ? '' : 'e.g. Creek crossing';
   updateSetNameClear(); hideSetNameSuggest(); /* gm: the × mirrors the prefilled name; the suggestion box starts shut */
   renderMakerOptions();
-  $('sf-maker').value = s ? (s.trapMaker || '__mixed') : (tmpl ? (tmpl.trapMaker || '__mixed') : '');
+  $('sf-maker').value = s ? (s.trapMaker || MIXED_MAKER_LABEL) : (tmpl ? (tmpl.trapMaker || MIXED_MAKER_LABEL) : '');
   var pk = (s && s.trapMaker) ? pickerTypeFor(s.trapMaker, s.trapType, s.trapSpring, s.trapModel)
     : (s ? (s.trapType || '') : (tmpl ? pickerTypeFor(tmpl.trapMaker, tmpl.trapType, tmpl.trapSpring, tmpl.trapModel) : ''));
   renderTrapTypeOptions($('sf-maker').value, pk);
@@ -3587,9 +3933,9 @@ function openSetForm(coords, setId) {
   var svar = s ? (s.variation || '') : (tmpl ? (tmpl.variation || '') : '');
   if (!s && !setFieldOn('settype')) svar = ''; /* Q162/Q208: off means blank, carried template included */
   if (stv === 'Other') {
-    /* Q55: a legacy literal Other becomes the Other… escape hatch with the
-       "What is it?" box revealed, ready to be typed for real. */
-    $('sf-settype').value = OTHER_VALUE;
+    /* ho (Q249): a legacy literal Other opens on a blank foundation
+       field — the trapper types the real name (Q55's intent, one step). */
+    $('sf-settype').value = '';
     renderVariationOptions();
     setVariationFields('', svar);
   } else if (stv) {
@@ -3668,7 +4014,21 @@ function openSetForm(coords, setId) {
   var fc = s ? { lat: s.lat, lng: s.lng } : pendingCoords;
   wireCoordsBottom('setform-coords-bottom', showCoords() &&
     (fc && isFinite(+fc.lat) && isFinite(+fc.lng)) ? fmtCoords(fc.lat, fc.lng) : '');
+  applyNoneFaces(); /* in (Q309) */
   openSheet('sheet-setform');
+}
+
+/* in (Q309): None is the face of empty. After a form's values land,
+   every noneFace box still blank puts its face on; the readers turn
+   the face back into empty at save, so records, reports and exports
+   never see it. The maker box joins by id — its 'None' is a catalog
+   value the readers already treat as no maker. */
+function applyNoneFaces() {
+  document.querySelectorAll('input').forEach(function (el) {
+    if (el._noneFace && !el.value.trim()) el.value = 'None';
+  });
+  var mk = $('sf-maker');
+  if (mk && !mk.value.trim()) mk.value = 'None';
 }
 
 function getSet(id) {
@@ -3746,6 +4106,198 @@ function nextSetName() {
   }
   return 'Trap 1';
 }
+/* hp (Q270): the purge half of a set delete, without deleteSet's own
+   confirm and UI flow — used by Save over it, whose confirm is the
+   caller's. Same Q38 rule: the set, its catch logs (History included),
+   its photos and its voice memos all go, for good. */
+function purgeSetEverywhere(id) {
+  Store.data.sets = Store.data.sets.filter(function (x) { return x.id !== id; });
+  Store.data.logs = Store.data.logs.filter(function (l) { return l.setId !== id; });
+  if (Array.isArray(Store.data.activity)) Store.data.activity = Store.data.activity.filter(function (a) { return a.setId !== id; }); /* Q272 */
+  IDB.all('photos').then(function (all) {
+    all.forEach(function (p) {
+      if (p.setId !== id) return;
+      if (photoURLs[p.id]) { URL.revokeObjectURL(photoURLs[p.id]); delete photoURLs[p.id]; }
+      delete photoById[p.id];
+      IDB.del('photos', p.id);
+    });
+  }).catch(function () { /* noop */ });
+  IDB.all('memos').then(function (all) {
+    all.forEach(function (m) {
+      if (m.setId !== id) return;
+      if (memoURLs[m.id]) { URL.revokeObjectURL(memoURLs[m.id]); delete memoURLs[m.id]; }
+      IDB.del('memos', m.id);
+    });
+  }).catch(function () { /* noop */ });
+  Store.save();
+}
+/* hp (Q270, Tanner 2026-11-21): Save over it — the second, explicit
+   warning before the name's current owner is deleted and the set being
+   saved takes its name. */
+function confirmSaveOverSet(ds) {
+  var line = lineById(Store.data, ds.lineId);
+  var lineName = line ? line.name : 'another line';
+  var nLogs = Store.data.logs.filter(function (l) { return l.setId === ds.id; }).length;
+  showModal('<h3>Save over &ldquo;' + esc(ds.name) + '&rdquo;?</h3>' +
+    '<p>The set named &ldquo;' + esc(ds.name) + '&rdquo; on the ' + esc(lineName) + ' line will be deleted' +
+    (nLogs ? ' with its ' + nLogs + ' catch log' + (nLogs > 1 ? 's' : '') : '') +
+    ', its photos and voice memos — gone for good, History included. The set you are saving takes the name.</p>' +
+    '<div class="btn-row"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
+    '<button class="btn-primary" id="m-ok" type="button">Delete it and save mine</button></div>');
+  $('m-cancel').onclick = closeModal;
+  $('m-ok').onclick = function () {
+    purgeSetEverywhere(ds.id);
+    closeModal();
+    saveSetForm();
+  };
+}
+/* ================= Q272 (2026-11-21, Tanner): SET ACTIVITY TRAIL ======
+   Every edit, status change, pull, and bulk change writes a dated entry
+   on the set — what changed, old -> new — with the weather stamped the
+   way a catch stamps it. Entries live in Store.data.activity:
+   { id, setId, lineId, ts, kind, lines, weather }.
+   kind: 'created' | 'edit' | 'status' | 'bulk'.
+   Other events are NOT duplicated here: both readers union the set's
+   Other-event logs in directly, so a deleted log leaves no ghost and
+   the logs' own Q38 purge covers them. Deleting a set purges its
+   entries (deleteSet / purgeSetEverywhere). Forward-only — the trail
+   starts with this build; nothing backfills.
+   Surfaces (Tanner's ruling): the set detail sheet's Activity section
+   AND a History view beside By Date / By Trap Type. */
+function activityArr() {
+  if (!Store.data) return [];
+  if (!Array.isArray(Store.data.activity)) Store.data.activity = [];
+  return Store.data.activity;
+}
+function recordActivity(s, kind, lines) {
+  if (!s || !lines || !lines.length) return null;
+  var act = { id: uid('a'), setId: s.id, lineId: s.lineId || activeLineId(), ts: Date.now(), kind: kind, lines: lines.slice() };
+  activityArr().push(act);
+  Store.save();
+  stampLogWeather(s, act); /* async: fills act.weather + saves, like a catch */
+  return act;
+}
+function attrChangeLines(label, oldV, newV) {
+  var o = toAttrArray(oldV), n = toAttrArray(newV);
+  var oL = o.map(function (x) { return String(x).toLowerCase(); });
+  var nL = n.map(function (x) { return String(x).toLowerCase(); });
+  var out = [];
+  n.forEach(function (x) { if (oL.indexOf(String(x).toLowerCase()) === -1) out.push(label + ' added: ' + x); });
+  o.forEach(function (x) { if (nL.indexOf(String(x).toLowerCase()) === -1) out.push(label + ' removed: ' + x); });
+  return out;
+}
+function setSnapshot(s) {
+  return { name: s.name, status: normStatus(s.status), setType: s.setType || '', trapType: s.trapType || '',
+    bait: toAttrArray(s.bait), lure: toAttrArray(s.lure), urine: toAttrArray(s.urine),
+    visual: toAttrArray(s.visual), audio: toAttrArray(s.audio), other: toAttrArray(s.other) };
+}
+function snapshotDiffLines(before, s) {
+  var lines = [];
+  if (before.name !== s.name) lines.push('Renamed: ' + before.name + ' → ' + (s.name || ''));
+  if (before.status !== normStatus(s.status)) lines.push('Status: ' + statusLabel(before.status) + ' → ' + statusLabel(normStatus(s.status)));
+  if (before.setType !== (s.setType || '')) lines.push('Set type: ' + (before.setType || '—') + ' → ' + (s.setType || '—'));
+  if (before.trapType !== (s.trapType || '')) lines.push('Trap: ' + (before.trapType || '—') + ' → ' + (s.trapType || '—'));
+  lines = lines.concat(attrChangeLines('Bait', before.bait, s.bait));
+  lines = lines.concat(attrChangeLines('Lure', before.lure, s.lure));
+  lines = lines.concat(attrChangeLines('Urine', before.urine, s.urine));
+  lines = lines.concat(attrChangeLines('Visual', before.visual, s.visual));
+  lines = lines.concat(attrChangeLines('Audio', before.audio, s.audio));
+  lines = lines.concat(attrChangeLines('Other attractant', before.other, s.other));
+  return lines;
+}
+var ACTIVITY_KIND_TITLES = { created: 'Set created', edit: 'Edited', status: 'Status change', bulk: 'Edit all', event: 'Event' };
+function activityItemsForSet(s) {
+  var items = [];
+  activityArr().forEach(function (a) {
+    if (a.setId === s.id) items.push({ ts: a.ts || 0, kind: a.kind, title: ACTIVITY_KIND_TITLES[a.kind] || 'Activity', lines: a.lines || [], weather: a.weather || null });
+  });
+  (Store.data.logs || []).forEach(function (l) {
+    if (l.setId !== s.id || !l.otherType) return;
+    var t = OTHER_LABELS[l.otherType] || 'Other event';
+    var line = t + (l.species ? ' — ' + l.species : '') + (l.notes ? ' · ' + l.notes : '');
+    items.push({ ts: l.createdAt || 0, date: l.date || '', kind: 'event', title: t, lines: [line], weather: l.weather || null });
+  });
+  items.sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); });
+  return items;
+}
+function activityDayOf(item) {
+  if (item.date) return item.date;
+  var d = new Date(item.ts || 0);
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function activityRowHtml(item, setName) {
+  var when = item.ts ? new Date(item.ts) : null;
+  var timeTxt = when ? when.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) : '';
+  var html = '<div class="log-row"><div class="lr-top"><span class="lr-species">' + esc(item.title) + '</span>' +
+    (setName ? '<span class="dim">' + esc(setName) + '</span>' : '') + '</div>' +
+    '<div class="dim">' + esc(fmtDate(activityDayOf(item))) + (timeTxt ? ' · ' + esc(timeTxt) : '') + '</div>';
+  (item.lines || []).forEach(function (ln) { html += '<div>' + esc(ln) + '</div>'; });
+  if (item.weather) html += '<div class="dim">🌤 ' + esc(weatherText(item.weather)) + '</div>';
+  return html + '</div>';
+}
+function renderSetActivity(s) {
+  var box = $('sd-activity');
+  if (!box) return;
+  var items = activityItemsForSet(s);
+  var cnt = $('sd-activity-count');
+  if (cnt) cnt.textContent = items.length ? '· ' + items.length : '';
+  box.innerHTML = items.length ? items.map(function (it) { return activityRowHtml(it, null); }).join('')
+    : '<p class="dim">Nothing here yet — edits, status changes, and other events at this set will file here.</p>';
+}
+/* History's Activity view: the whole active line's trail — entries plus
+   Other-event logs (Empty check-ins included; History's catch views hide
+   them, the trail is their home). Season scope + search apply. */
+function renderHistActivity() {
+  var f = histUI, q = (f.q || '').toLowerCase();
+  var lineId = activeLineId();
+  var thisSY = seasonYearOf(todayISO()), lastSY = prevSeasonLabel(thisSY);
+  var items = [];
+  activityArr().forEach(function (a) {
+    if (a.lineId !== lineId) return;
+    var s = getSet(a.setId);
+    items.push({ ts: a.ts || 0, kind: a.kind, title: ACTIVITY_KIND_TITLES[a.kind] || 'Activity', lines: a.lines || [], weather: a.weather || null, setName: s ? s.name : '' });
+  });
+  (Store.data.logs || []).forEach(function (l) {
+    if (!l.otherType) return;
+    var s = getSet(l.setId);
+    if (!s || s.lineId !== lineId) return;
+    var t = OTHER_LABELS[l.otherType] || 'Other event';
+    var line = t + (l.species ? ' — ' + l.species : '') + (l.notes ? ' · ' + l.notes : '');
+    items.push({ ts: l.createdAt || 0, date: l.date || '', kind: 'event', title: t, lines: [line], weather: l.weather || null, setName: s.name });
+  });
+  items.sort(function (a, b) { return (b.ts || 0) - (a.ts || 0); });
+  items = items.filter(function (it) {
+    if (f.season === 'this' || f.season === 'last') {
+      var sy = seasonYearOf(activityDayOf(it));
+      if (sy && sy !== (f.season === 'this' ? thisSY : lastSY)) return false;
+    }
+    if (q) {
+      var hay = ((it.setName || '') + ' ' + (it.title || '') + ' ' + (it.lines || []).join(' ')).toLowerCase();
+      if (hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+  if (!items.length) return '<div class="empty"><div class="big"><img class="bi inv" src="assets/icons/logbook.png" alt=""></div>No activity yet.<br>Edits, status changes, and other events on this line will file here.</div>';
+  var html = '', lastSY2 = null, curDay = null;
+  items.forEach(function (it) {
+    var day = activityDayOf(it);
+    var sy = seasonYearOf(day);
+    if (sy !== lastSY2) {
+      if (curDay !== null) { html += '</div>'; curDay = null; }
+      html += '<div class="season-group-head">Season ' + esc(sy) + '</div>';
+      lastSY2 = sy;
+    }
+    if (day !== curDay) {
+      if (curDay !== null) html += '</div>';
+      html += '<div class="day-group"><div class="day-head">' + esc(dayLabel(day)) + '</div><div class="day-body">';
+      curDay = day;
+    }
+    html += activityRowHtml(it, it.setName);
+  });
+  if (curDay !== null) html += '</div>';
+  return html;
+}
+
 function saveSetForm() {
   var name = $('sf-name').value.trim();
   var status = $('sf-status').value;
@@ -3763,16 +4315,26 @@ function saveSetForm() {
      ambiguous. Compare trimmed, case-insensitive; the set being edited is
      allowed to keep its own name. The auto-numbered name from nextSetName
      passes through the same check. */
-  var dupName = null;
+  var dupSet = null;
   for (var di = 0; di < Store.data.sets.length; di++) {
     var ds = Store.data.sets[di];
     if (editingSetId && ds.id === editingSetId) continue;
-    if (String(ds.name || '').trim().toLowerCase() === name.toLowerCase()) { dupName = ds.name; break; }
+    if (String(ds.name || '').trim().toLowerCase() === name.toLowerCase()) { dupSet = ds; break; }
   }
-  if (dupName) {
-    showModal('<h3>That name is already taken</h3><p>There is already a set named &ldquo;' + esc(dupName) + '&rdquo;. Give this set a different name.</p>' +
-      '<div class="btn-row"><button class="btn-primary" id="m-ok" type="button">OK</button></div>');
+  if (dupSet) {
+    /* hp (Q270, Tanner 2026-11-21): the warning NAMES the line the
+       living set sits on — the old modal never said where it was, so a
+       name deleted on one line still blocked on another — and offers
+       Save over it beside OK: one more explicit warning
+       (confirmSaveOverSet), then the old set is purged (Q38) and this
+       save proceeds under the name. OK stays the rename-only path. */
+    var dupLine = lineById(Store.data, dupSet.lineId);
+    var dupLineName = dupLine ? dupLine.name : 'another line';
+    showModal('<h3>That name is already taken</h3><p>There is already a set named &ldquo;' + esc(dupSet.name) + '&rdquo; on the ' + esc(dupLineName) + ' line. Give this set a different name — or save over it, which deletes that set and puts this one in its place.</p>' +
+      '<div class="btn-row"><button class="btn-secondary" id="m-ok" type="button">OK</button>' +
+      '<button class="btn-primary" id="m-over" type="button">Save over it</button></div>');
     $('m-ok').onclick = closeModal;
+    $('m-over').onclick = function () { confirmSaveOverSet(dupSet); };
     return;
   }
   var td = trapDetailValues();
@@ -3805,6 +4367,7 @@ function saveSetForm() {
   if (editingSetId) {
     var s = getSet(editingSetId);
     if (!s) { closeSheets(); return; }
+    var actBefore = setSnapshot(s); /* Q272: the trail diffs against this */
     s.name = name;
     s.trapType = rt.t;
     s.trapMaker = td.trapMaker;
@@ -3836,6 +4399,8 @@ function saveSetForm() {
     if (s.missingDetail) rememberEntry('missingdetail', s.missingDetail); /* Q12 */
     if (s.status === 'pulled' && !s.datePulled) s.datePulled = todayISO();
     if (s.status !== 'pulled' && s.datePulled) delete s.datePulled;
+    var actLines = snapshotDiffLines(actBefore, s); /* Q272 */
+    if (actLines.length) recordActivity(s, 'edit', actLines);
     touchSet(s); /* Q68: any edit restarts the check clock */
     Store.save(); refreshMarkers();
     /* Q71: photos added on the Edit Set form (plain or citation) attach here. */
@@ -3888,6 +4453,7 @@ function saveSetForm() {
     if (ns.status === 'pulled') ns.datePulled = ns.dateSet;
     ns.lineId = activeLineId();
     Store.data.sets.push(ns);
+    recordActivity(ns, 'created', ['Set created']); /* Q272: the trail's first entry */
     Store.save(); refreshMarkers(); closeSheets();
     if (ns.trapModel) rememberEntry('trapmodel', ns.trapModel); /* Q12 */
     if (ns.missingDetail) rememberEntry('missingdetail', ns.missingDetail); /* Q12 */
@@ -3911,6 +4477,20 @@ function saveSetForm() {
       ns.weather = w; Store.save();
       if (typeof detailSetId !== 'undefined' && detailSetId === ns.id) openSetDetail(ns.id);
     });
+    /* hm (2026-11-20, Tanner's word — the he follow-up he flagged on
+       2026-11-18 and approved today): the save fly-to takes the wheel
+       exactly as a Show-list jump does (jumpToSet, he). While following,
+       the follow watch and the Q234 guard would drag the view back to
+       his fix on the next fix/tick, snapping off the set he just saved;
+       a programmatic flyTo never fires dragstart, so nothing paused it.
+       Pause follow through the same pauseFollow() the jump and a drag
+       use — the watch keeps running, the dot stays live, the crosshair
+       tap resumes. A pending acquire is cancelled for the jump's reason:
+       its landing would setView to his fix and enter follow over the
+       set he just saved. The save flow, destination, and zoom are
+       unchanged — only the follow interaction. */
+    if (locateState === 'following') pauseFollow();
+    else if (locateState === 'acquiring') { stopLocateWatch(); setLocateSearching(false); locateState = 'idle'; }
     if (map) map.flyTo([ns.lat, ns.lng], Math.max(map.getZoom(), 14), { duration: 0.8 });
   }
 }
@@ -4018,7 +4598,9 @@ function openSetDetail(id) {
   /* Q178 (2026-10-08): view-only div, not a textarea. */
   renderSetNotes(s); /* ga: dated entries, newest first */
   refreshNotesBox('setdetail-notessec', 'sd-notes', 'sd-memos', 'sd-photos'); /* Q99 */
+  renderSetActivity(s); /* Q272: the set's activity trail */
   setSectionOpen('setdetail-catchessec', false); /* Q203: every open starts folded */
+  setSectionOpen('setdetail-activitysec', false); /* Q272: folded too */
   openSheet('sheet-setdetail');
 }
 /* ================= ga (2026-11-15): SET NOTES AS DATED ENTRIES ==============
@@ -4163,6 +4745,7 @@ function deleteSet(id) {
       'Delete', function () {
         Store.data.sets = Store.data.sets.filter(function (x) { return x.id !== id; });
         Store.data.logs = Store.data.logs.filter(function (l) { return l.setId !== id; });
+        if (Array.isArray(Store.data.activity)) Store.data.activity = Store.data.activity.filter(function (a) { return a.setId !== id; }); /* Q272: the trail dies with the set */
         IDB.all('photos').then(function (all) {
           all.forEach(function (p) {
             if (p.setId !== id) return;
@@ -4240,6 +4823,9 @@ function deleteLog(logId) {
 
 /* ================= 8. CATCH LOGGING ================= */
 var logSetId = null, logSpecies = null, logCount = 1, logDisposition = 'kept', pendingLogPhotos = [], pendingLogMemos = [];
+/* gw: the unsaved catch's tag photo — one photo, { blob } like the catch
+   photos, saved with kind 'tag' when the catch saves. */
+var pendingTagPhoto = null;
 /* Catch-memo finish: true while the log sheet is open for an unsaved catch.
    A memo that finishes landing after the sheet closed is an orphan. */
 var logSheetLive = false;
@@ -4293,6 +4879,8 @@ function openLogSheet(setId) {
   var s = getSet(setId);
   if (!s) return;
   logSetId = setId; logSpecies = null; logCount = 1; logDisposition = 'kept'; pendingLogPhotos = []; pendingLogMemos = [];
+  pendingTagPhoto = null; renderPendingTagPhoto(); /* gw */
+  $('log-tag-number').value = ''; $('log-tag-date').value = ''; /* gw: fresh tag fields per catch */
   logSheetLive = true;
   logEventType = 'catch'; logOtherType = 'sprung';
   renderPendingLogPhotos();
@@ -4339,6 +4927,7 @@ function setLogEventType(t) {
   renderLogWarnings();
   updateLogDispositionRow();
   updateOtherSubtypeRows();
+  updateLogTagSection(); /* gw: Other events never show the Tag section */
 }
 
 /* Q68: the "Empty — nothing changed" subtype is a pure check-in — no
@@ -4404,6 +4993,41 @@ function renderPendingLogPhotos() {
     box.appendChild(img);
   });
 }
+/* gw: the log form's Tag section lives and dies by three conditions —
+   Tag records on, a Catch (never an Other event), and a picked species
+   the state actually tags. It starts collapsed and every field in it is
+   optional; an untouched section saves nothing and blocks nothing. */
+function updateLogTagSection() {
+  var sec = $('logform-tagsec');
+  if (!sec) return;
+  var entry = (logEventType === 'catch' && logSpecies) ? tagEntryForSpecies(logSpecies) : null;
+  var show = tagRecordsOn() && !!entry;
+  sec.hidden = !show;
+  if (!show) { setSectionOpen('logform-tagsec', false); return; }
+  var rule = $('log-tag-rule');
+  if (rule) rule.textContent = tagRuleText(entry);
+}
+function renderPendingTagPhoto() {
+  var box = $('log-tag-photos');
+  if (!box) return;
+  box.innerHTML = '';
+  if (!pendingTagPhoto) return;
+  var img = document.createElement('img');
+  img.className = 'photo-thumb'; img.alt = 'Tag photo';
+  img.src = URL.createObjectURL(pendingTagPhoto.blob);
+  img.title = 'Tap to enlarge';
+  img.onclick = function () {
+    var url = URL.createObjectURL(pendingTagPhoto.blob);
+    showModal('<img src="' + url + '" style="width:100%;border-radius:8px" alt="Tag photo">' +
+      '<div class="btn-row" style="margin-top:10px"><button class="btn-danger" id="m-tph-del" type="button">Remove</button>' +
+      '<button class="btn-secondary" id="m-close" type="button">Close</button></div>');
+    wirePhotoZoom($('modal-card'));
+    $('m-close').onclick = closeModal;
+    $('m-tph-del').onclick = function () { pendingTagPhoto = null; renderPendingTagPhoto(); closeModal(); };
+  };
+  box.appendChild(img);
+}
+
 /* Viewer for a catch photo that hasn't been saved yet: tap enlarges,
    removal is an explicit choice inside the viewer. */
 function openPendingPhotoViewer(idx) {
@@ -4532,6 +5156,7 @@ function renderSpeciesList(filter) {
       logSpecies = this.getAttribute('data-sp');
       renderSpeciesList($('log-species-search').value);
       renderLogWarnings();
+      updateLogTagSection(); /* gw: the Tag section follows the picked species */
     };
   }
 }
@@ -4646,6 +5271,13 @@ function saveLog() {
     memoIds: pendingLogMemos.slice(),
     createdAt: Date.now()
   };
+  /* gw: the tag record rides on the catch — only when the Tag section
+     applied to this catch's species, and exactly as filled (blank fields
+     stay blank; the section untouched is a perfectly good save). */
+  if (tagRecordsOn() && !isOther && species && isTagSpecies(species)) {
+    log.tagNumber = ($('log-tag-number').value || '').trim();
+    log.tagDate = $('log-tag-date').value || '';
+  }
   log.lineId = activeLineId();
   Store.data.logs.push(log);
   touchSet(getSet(logSetId)); /* Q68: a logged catch, event, or empty check restarts the clock */
@@ -4659,6 +5291,17 @@ function saveLog() {
       lat: s ? s.lat : null, lng: s ? s.lng : null, createdAt: Date.now()
     }).catch(function () { /* noop */ });
   });
+  /* gw: the pending tag photo saves as the catch's tag photo — same
+     store, same shape as a catch photo, marked kind 'tag' so My Tags
+     and the photo pack can tell it from the catch's own photos. */
+  if (pendingTagPhoto && log.tagNumber !== undefined) {
+    IDB.put('photos', {
+      id: uid('p'), setId: log.setId, logId: log.id, kind: 'tag', blob: pendingTagPhoto.blob,
+      mime: pendingTagPhoto.blob.type || 'image/jpeg',
+      lat: s ? s.lat : null, lng: s ? s.lng : null, createdAt: Date.now()
+    }).catch(function () { /* noop */ });
+  }
+  pendingTagPhoto = null;
   pendingLogPhotos = [];
   pendingLogMemos = [];
   closeSheets();
@@ -4691,6 +5334,51 @@ function saveLog() {
    changed when they remade the set. "Update this set" opens the full Edit
    Set form; "Keep as-is" just closes. Editing never rewrites past catches. */
 var postCatchSetId = null;
+/* gw scope 3: the post-catch sheet's tag entry. The sheet has no save of
+   its own, so these fields WRITE THROUGH to the just-saved catch as they
+   change — closing the sheet any way (Update, ×, scrim) keeps whatever
+   was entered and loses nothing; untouched fields change nothing. */
+var postCatchLogId = null;
+var pcTagPhoto = null; /* { existing } — the photo saves the moment it's picked */
+function setupPcTagEntry(log) {
+  var wrap = $('pc-tag-entry');
+  if (!wrap) return;
+  postCatchLogId = null; pcTagPhoto = null;
+  var show = !!(log && tagRecordsOn() && tagEntryForSpecies(log.species));
+  wrap.hidden = !show;
+  if (!show) return;
+  postCatchLogId = log.id;
+  pcTagPhoto = { existing: null };
+  $('pc-tag-number').value = log.tagNumber || '';
+  $('pc-tag-date').value = log.tagDate || '';
+  renderPcTagPhoto();
+  IDB.all('photos').then(function (all) {
+    if (postCatchLogId !== log.id || !pcTagPhoto) return;
+    (all || []).forEach(function (p) { if (p && p.logId === log.id && p.kind === 'tag') pcTagPhoto.existing = p; });
+    renderPcTagPhoto();
+  }).catch(function () { /* noop */ });
+}
+function renderPcTagPhoto() {
+  var box = $('pc-tag-photos');
+  if (!box) return;
+  box.innerHTML = '';
+  var has = !!(pcTagPhoto && pcTagPhoto.existing);
+  var rm = $('btn-pc-tagphoto-remove');
+  if (rm) rm.hidden = !has;
+  if (!has) return;
+  var img = document.createElement('img');
+  img.className = 'photo-thumb'; img.alt = 'Tag photo';
+  img.src = photoURL(pcTagPhoto.existing);
+  img.onclick = function () { if (pcTagPhoto && pcTagPhoto.existing) openPhotoViewer(pcTagPhoto.existing, null, true); };
+  box.appendChild(img);
+}
+function pcTagWrite() {
+  var l = postCatchLogId ? tagLogById(postCatchLogId) : null;
+  if (!l) return;
+  l.tagNumber = ($('pc-tag-number').value || '').trim();
+  l.tagDate = $('pc-tag-date').value || '';
+  Store.save();
+}
 function openPostCatchPrompt(setId, log) {
   var s = getSet(setId);
   if (!s) return;
@@ -4708,6 +5396,7 @@ function openPostCatchPrompt(setId, log) {
         '<div class="reminder-tag">' + esc(REMINDER_LINE) + '</div></div>';
     }).join('');
   }
+  setupPcTagEntry(log); /* gw scope 3: the tag entry under the note */
   var html = '';
   function pcRow(label, val) {
     if (val) html += '<dt>' + esc(label) + '</dt><dd>' + esc(val) + '</dd>';
@@ -4877,6 +5566,9 @@ function renderSetPhotos(list) {
     };
     box.appendChild(img);
   });
+  /* ho (Q251): photos land async — re-run the section's empty-state pass
+     so the Photos part (and the all-empty line) reflect what arrived. */
+  if (detailSetId) refreshNotesBox('setdetail-notessec', 'sd-notes', 'sd-memos', 'sd-photos');
 }
 /* Q28: "Save to camera roll" — a PWA can't write to the camera roll
    directly, so hand the photo to the OS share sheet (Web Share API with
@@ -5506,8 +6198,13 @@ function renderShowButton() {
   }
   else if (onStatus.length === 1) html = 'Show: ' + countOf(onStatus[0]) + ' ' + nameHtml(onStatus[0]) + (signOn ? ' · ' + signHtml : '');
   else {
-    var parts = onStatus.map(function (v) { return nameHtml(v) + ' <span style="color:#f5efdd">' + countOf(v) + '</span>'; });
-    if (signOn) parts.push(signHtml);
+    /* hl (2026-11-20, Q242, Tanner): each status rides in a .show-part
+       span that never breaks internally, so when the list outgrows one
+       line the label wraps BETWEEN statuses into a second row instead
+       of ellipsizing (his hk-check screenshot: "…Pulled 23 · Missi…",
+       with Prospect and Sign never showing at all). */
+    var parts = onStatus.map(function (v) { return '<span class="show-part">' + nameHtml(v) + ' <span style="color:#f5efdd">' + countOf(v) + '</span></span>'; });
+    if (signOn) parts.push('<span class="show-part">' + signHtml + '</span>');
     size = items <= 2 ? 16 : (items <= 4 ? 14 : 11);
     html = items <= 3 ? 'Show: ' + parts.join(' · ') : parts.join(' · ');
   }
@@ -5544,8 +6241,30 @@ function jumpToSet(id) {
     if (window.Markers) Markers.render();
     afterShowToggle();
   }
+  /* he (2026-11-18, Tanner's field report on hd): an explicit jump takes
+     the wheel, exactly as a drag does (hookFollowDrag → pauseFollow).
+     While following, the follow watch (onFollowFix) and the Q234 guard
+     both re-pan to his fix whenever the dot sits past the deadband —
+     and a programmatic flyTo never fires dragstart, so the jump landed
+     on the set and the next fix (or the next 4 s guard tick) snapped
+     the map straight back to his position. Proven in the bench both
+     ways before this fix. Pausing keeps the watch running (the dot
+     stays live) and the crosshair tap resumes + re-centers, as with a
+     drag pause. A pending acquire is cancelled for the same reason:
+     its landing would setView to his fix and enter follow over the
+     jump he just asked for. */
+  if (locateState === 'following') pauseFollow();
+  else if (locateState === 'acquiring') { stopLocateWatch(); setLocateSearching(false); locateState = 'idle'; }
   closeSheets();
-  if (map) map.flyTo([s.lat, s.lng], Math.max(map.getZoom(), 14), { duration: 0.8 });
+  /* hi amendment (2026-11-19, Tanner, from the field with the Mapbox map
+     live): the jump arrived too far out — Math.max(zoom, 14) stopped at
+     14 from his usual working view, so he had to pinch in by hand after
+     every pick. He ordered the jump to land at the crosshair's extent.
+     The crosshair's rule (drawFix, final fix) is an absolute setView to
+     19 — always 19, whether the view sits shallower or deeper — so the
+     jump now flies to exactly 19 under the same rule. The flight itself
+     stays animated; only the landing zoom changes. */
+  if (map) map.flyTo([s.lat, s.lng], 19, { duration: 0.8 });
 }
 function renderShowList() {
   var host = $('show-list'); if (!host) return;
@@ -5585,7 +6304,8 @@ function renderShowList() {
         row += '<div class="show-names"><span class="dim show-noname">No sets</span></div>';
       } else {
         row += '<div class="show-names">' + names.map(function (s) {
-          return '<button type="button" class="show-setname" data-jump-set="' + s.id + '">' + esc(s.name || 'Unnamed set') + '</button>';
+          return '<button type="button" class="show-setname" data-jump-set="' + s.id + '">' +
+            '<span class="show-setname-label">' + esc(s.name || 'Unnamed set') + '</span></button>';
         }).join('') + '</div>';
       }
     }
@@ -5621,8 +6341,15 @@ function renderShowList() {
       renderShowList();
     });
   });
+  /* hd (2026-11-18, Tanner — "We only want one door"): a name here JUMPS,
+     in every mode. hc briefly made these names pick while selection mode
+     was open; he superseded that the same evening — picking lives behind
+     the selection bar's "Pick from list" button and its own sheet
+     (renderPickList), never on the Show road. */
   host.querySelectorAll('[data-jump-set]').forEach(function (b) {
-    b.addEventListener('click', function () { jumpToSet(this.getAttribute('data-jump-set')); });
+    b.addEventListener('click', function () {
+      jumpToSet(this.getAttribute('data-jump-set'));
+    });
   });
   host.querySelectorAll('input[data-show-fam]').forEach(function (cb) {
     cb.addEventListener('change', function () {
@@ -5663,9 +6390,16 @@ function renderMapStatusFilters() {
   if (bulkBtn && !bulkBtn._wired) {
     bulkBtn._wired = true;
     bulkBtn.onclick = function () {
-      openBulkActions(); /* Q237 (2026-11-07): one tap opens the menu — the Select-all step is gone */
+      /* hj (2026-11-19, Tanner): the button (renamed "Pick sets" — see
+         renderBulkBar) enters selection mode DIRECTLY. The menu that
+         used to intercept this tap (openBulkActions) is removed
+         entirely; the bulk operations live in the selection bar's
+         Actions sheet, aimed at the picked sets. */
+      bulkSelCtx = null; /* a fresh pick aims at no frozen bulk flow */
+      enterSelMode();
     };
   }
+  wireSelBar(); /* gz: the selection bar's buttons, wired once */
   renderBulkBar();
 }
 /* Q229 (2026-11-05, Tanner; widened same day on the ff check): bulk status
@@ -5690,6 +6424,360 @@ function bulkFilteredSets() {
   var lid = activeLineId();
   return ((Store.data && Store.data.sets) || []).filter(function (s) { return s.lineId === lid && normStatus(s.status) === st; });
 }
+/* he (2026-11-18): every set the Show filter is currently showing on the
+   active line — any status on. bulkFilteredSets() is the single-status
+   special case of this; the pill button's reachability (below) is
+   measured against this wider set. */
+function shownLineSets() {
+  var m = showModel();
+  var lid = activeLineId();
+  return ((Store.data && Store.data.sets) || []).filter(function (s) {
+    return s.lineId === lid && m[normStatus(s.status)] !== false;
+  });
+}
+/* gz (2026-11-18, Tanner): SET-SELECTION MODE. The Actions menu's bulk
+   operations take everything the narrowed Show filter holds; Tanner's
+   line doesn't sort that way — 12 dog-proof sets sharing one bait and one
+   lure can stand among 14 other varieties, and he needs to grab JUST the
+   12 and Edit all of them the same. "Select sets" in the Actions menu
+   enters this mode: tap pins to pick (tap again to unpick; a stack opens
+   its list and each row toggles), the selection bar counts live and
+   carries the same three bulk operations retargeted at the selection,
+   plus Select all shown / Clear / Done. (he, 2026-11-18: the bar itself
+   was slimmed to one row — count, Pick from list, Actions, Done — and
+   the five operations re-homed into the Actions sheet; see
+   openSelActions.) Session state only — nothing is
+   persisted, no stored keys, no data-model change. While a bulk flow
+   launched from the bar is open, bulkSelCtx freezes the picked ids so
+   every step of the flow (picker, confirm, apply) aims at the same sets;
+   the classic flows read bulkFlowSets(), which is bulkFilteredSets()
+   untouched whenever no selection flow is in flight. A completed
+   operation exits the mode and clears the pick; Done exits changing
+   nothing. Entering any editor or picking mode (cancelAllMapModes)
+   also ends it, and switching lines ends it — a pick belongs to the
+   line and filter it was made on. */
+var selMode = false;
+var selIds = {};
+/* gy: the entry hint lived until the session's first pick. hf
+   (2026-11-18, Tanner): the hint grows a SECOND stage — the first
+   pick swaps its text instead of retiring it, and it then lives
+   until the Actions sheet first opens. selHintPicked marks stage 2
+   reached (sticky for the session, Clear-proof); selHintDone marks
+   the retirement (also sticky). enterSelMode resets both. */
+var SEL_HINT_STAGE1 = 'Tap sets on the map to pick them, or use Pick from list.';
+var SEL_HINT_STAGE2 = 'Now tap Actions to change the picked sets together.';
+var selHintPicked = false;
+var selHintDone = false;
+var bulkSelCtx = null;
+function selCount() { return Object.keys(selIds).length; }
+function bulkFlowSets() {
+  if (bulkSelCtx) {
+    return ((Store.data && Store.data.sets) || []).filter(function (s) { return bulkSelCtx.ids[s.id]; });
+  }
+  return bulkFilteredSets();
+}
+function enterSelMode() {
+  if (selMode) return;
+  /* Unavailable while an editor or a placement owns the map — the same
+     guards the pin taps themselves answer to. */
+  if (document.body.classList.contains('editor-lock') || document.body.classList.contains('placing') || measureMode) return;
+  selMode = true;
+  selIds = {};
+  selHintPicked = false; /* hf: a fresh session starts at stage 1 again */
+  selHintDone = false;
+  document.body.classList.add('sel-mode');
+  renderSelBar();
+  renderBulkBar(); /* hides the Actions button — the bar replaces it */
+  /* B13's lesson, gz's miss: the bar is a flex sibling, so showing it
+     shrinks the map container — but Leaflet caches its size, so without
+     a re-measure the pins keep the stale geometry and the far ones land
+     outside the shrunken pane, untappable. Re-measure first. */
+  if (map) map.invalidateSize();
+  refreshMarkers();
+  toast('Tap pins to select sets.');
+}
+function exitSelMode() {
+  if (!selMode && !bulkSelCtx) return;
+  selMode = false;
+  selIds = {};
+  bulkSelCtx = null;
+  document.body.classList.remove('sel-mode');
+  renderSelBar();
+  renderBulkBar();
+  if (map) map.invalidateSize(); /* the bar hid — the map grew back (B13) */
+  refreshMarkers();
+}
+function renderSelBar() {
+  var bar = $('sel-bar'); if (!bar) return;
+  bar.classList.toggle('show', selMode);
+  var hint = $('sel-hint');
+  if (!selMode) { if (hint) hint.classList.remove('show'); return; }
+  $('sel-bar-count').textContent = selCount() + ' selected';
+  /* he: the bar carries no operation buttons anymore (they live in the
+     Actions sheet, openSelActions) — the 0-picked disablement is applied
+     there, at open time, where the rows are rendered.
+     hj (2026-11-19, Tanner — picking splits from acting): the
+     disablement moves onto the bar's Actions button itself. At 0
+     picked it is disabled — the house dress dims it (button:disabled)
+     and a tap opens nothing; the first pick by ANY door (pin tap,
+     list circle, per-status Select all, Select all shown) lands
+     through this render and lights it, the same moment the hint
+     reaches stage 2; back at 0 (Clear, or the last set unpicked) it
+     dims again. */
+  var ab = $('btn-sel-actions');
+  if (ab) ab.disabled = selCount() === 0;
+  /* gy (2026-11-18, Tanner — "hint line until the first pick"): a slim
+     entry hint under the bar. hf (same night, Tanner): the hint is now
+     TWO stages. Stage 1 (nothing picked yet this session) reads
+     SEL_HINT_STAGE1. The first pick — pin, picker, Select all shown,
+     all of them land here through renderSelBar — does NOT retire it:
+     the text swaps to SEL_HINT_STAGE2, pointing at the Actions sheet,
+     and stage 2 persists for the rest of the session, even if the
+     picks are Cleared back to zero (its advice is the point of the
+     mode). Opening the Actions sheet (openSelActions) retires the
+     hint for good that session. The text swap changes no geometry
+     (one line either way); only a visibility flip re-measures the
+     map — the hint is a flex sibling like the bar (the B13 lesson). */
+  if (hint) {
+    if (selCount() > 0) selHintPicked = true;
+    var want = !selHintDone;
+    var txt = selHintPicked ? SEL_HINT_STAGE2 : SEL_HINT_STAGE1;
+    if (hint.textContent !== txt) hint.textContent = txt;
+    if (want !== hint.classList.contains('show')) {
+      hint.classList.toggle('show', want);
+      if (map) map.invalidateSize();
+    }
+  }
+}
+function toggleSel(id) {
+  if (selIds[id]) delete selIds[id]; else selIds[id] = true;
+  refreshMarkers(); /* re-renders the pins with/without the gold ring */
+  renderSelBar();
+}
+function selTapSet(id) {
+  var s = getSet(id); if (!s) return;
+  var stack = setsAtSpot(s.lat, s.lng);
+  if (stack.length >= 2) { openSelStack(stack); return; }
+  toggleSel(id);
+}
+/* The stack list in selection dress: same sheet, same rows, each row
+   carrying its picked state; tapping a row toggles it and the list
+   re-renders in place — no set detail sheet opens in this mode. */
+function openSelStack(stack) {
+  stack = stack.slice().sort(function (a, b) { return a.name < b.name ? -1 : 1; });
+  $('stack-title').textContent = stack.length + ' sets at this spot';
+  $('stack-list').innerHTML = stack.map(function (x) {
+    var st = normStatus(x.status);
+    var on = !!selIds[x.id];
+    return '<button type="button" class="stack-row' + (on ? ' stack-row-sel' : '') + '" data-stack-id="' + x.id + '">' +
+      '<span class="stack-check">' + (on ? '✓' : '') + '</span>' +
+      '<span class="stack-name">' + esc(x.name) + '</span>' +
+      '<span class="badge status-' + esc(st) + '">' + esc(statusLabel(st)) + '</span>' +
+      '<span class="dim">' + esc(x.trapType || '—') + '</span></button>';
+  }).join('');
+  openSheet('sheet-stackmenu');
+}
+/* Launch one of the existing bulk flows at the frozen pick. */
+function selLaunch(fn) {
+  if (!selCount()) return;
+  var ids = {};
+  Object.keys(selIds).forEach(function (k) { ids[k] = true; });
+  bulkSelCtx = { ids: ids };
+  fn();
+}
+/* hd (2026-11-18, Tanner): picking gets ONE door — this sheet, opened
+   only by the selection bar's "Pick from list" button. hc had hung the
+   picker on the Show sheet's list (the road in ran through the Show
+   pill); he found it, called it confusing, and then ruled the Show road
+   back to jumping in every mode. So the picker is its own sheet: the
+   same grouped list (statuses of the active line, one expanded at a
+   time, names A–Z, every status shown whatever the Show filter says),
+   the same dress (hc's gold tint + check circle, the stack rows'
+   family), and the marks rendered from selIds on every render — the
+   one selection the pins also write to, so a pick made by either road
+   shows on both. A name tap here toggles and re-renders in place: no
+   map flight, no detail sheet, and the mode and its count wait behind
+   the sheet untouched. The Sign families stay on the Show sheet — this
+   list is for sets. */
+var pickExpandedStatuses = new Set(); /* which status groups are expanded here */
+/* hk (2026-11-19, Tanner): the groups stay open together now. hj's
+   one-at-a-time accordion (the hd note above) made "see them all"
+   impossible on a real line — opening Pulled folded Active shut — so
+   the single pickExpandedStatus became a set: tapping a header joins
+   or leaves the open set and every other group stays as it is. The
+   sheet still opens with every group closed, as hj did. The Show
+   sheet keeps its own one-at-a-time accordion (showExpandedStatus) —
+   untouched. */
+function renderPickList() {
+  var host = $('pick-list'); if (!host) return;
+  var statusCount = function (v) {
+    var n = 0;
+    activeSets().forEach(function (s) { if (normStatus(s.status) === v) n++; });
+    return ' <span class="show-count">' + n + (n === 1 ? ' set' : ' sets') + '</span>';
+  };
+  /* hp (Q268, Tanner 2026-11-21): the "Select all shown" row that rode
+     at the TOP of this sheet since hj is REMOVED at his ruling — each
+     status group carries its own Select all / Clear all, and the
+     sheet's Clear empties the whole pick, so the cross-group row was
+     one control too many. Picking is group by group now. */
+  host.innerHTML = STATUS_VALUES.map(function (v) {
+    var c = pinSchemeById(pinSchemeId()).colors[v];
+    var open = pickExpandedStatuses.has(v);
+    var row = '<div class="show-row"><span class="show-dot" style="background:' + c + '"></span>' +
+      '<button type="button" class="show-name-btn" data-pick-expand="' + v + '" aria-expanded="' + open + '">' +
+      '<span class="show-name">' + esc(STATUS_LABELS[v]) + statusCount(v) + '</span>' +
+      '<span class="show-chev">' + (open ? '▾' : '▸') + '</span></button></div>';
+    if (open) {
+      var names = showSetsFor(v);
+      if (!names.length) {
+        row += '<div class="show-names"><span class="dim show-noname">No sets</span></div>';
+      } else {
+        /* hj (2026-11-19, Tanner): directly under the status header, a
+           Select all for the group — one tap picks every set the sheet
+           lists under the status; once the whole group is picked the
+           same control reads Clear all and lets just that group go.
+           It wears a setname row's dress and size; the picked dress
+           (gold tint + filled check) is the group's all-picked state,
+           the same signal a picked row gives. */
+        var allPicked = names.every(function (s) { return !!selIds[s.id]; });
+        row += '<div class="show-names">' +
+          '<button type="button" class="show-setname show-setname-pick show-pickall' + (allPicked ? ' show-setname-sel' : '') + '" data-pick-all="' + v + '">' +
+          '<span class="show-setcheck">' + (allPicked ? '✓' : '') + '</span>' +
+          '<span class="show-setname-label">' + (allPicked ? 'Clear all' : 'Select all') + '</span></button>' +
+          names.map(function (s) {
+          var picked = !!selIds[s.id];
+          return '<button type="button" class="show-setname show-setname-pick' + (picked ? ' show-setname-sel' : '') + '" data-pick-set="' + s.id + '">' +
+            '<span class="show-setcheck">' + (picked ? '✓' : '') + '</span>' +
+            '<span class="show-setname-label">' + esc(s.name || 'Unnamed set') + '</span></button>';
+        }).join('') + '</div>';
+      }
+    }
+    return row;
+  }).join('');
+  host.querySelectorAll('[data-pick-expand]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var v = this.getAttribute('data-pick-expand');
+      if (pickExpandedStatuses.has(v)) pickExpandedStatuses.delete(v); else pickExpandedStatuses.add(v);
+      renderPickList();
+    });
+  });
+  host.querySelectorAll('[data-pick-set]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      toggleSel(this.getAttribute('data-pick-set'));
+      renderPickList();
+    });
+  });
+  host.querySelectorAll('[data-pick-all]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      togglePickGroup(this.getAttribute('data-pick-all'));
+      renderPickList();
+    });
+  });
+}
+/* hj (2026-11-19, Tanner): the pick list's per-status Select all. It
+   writes the same selIds the name taps and pin taps write — only the
+   sets this sheet lists for the current line under that one status —
+   and lands through the same refreshMarkers + renderSelBar a single
+   toggle lands through, so the count, the pins' gold rings and the
+   two-stage hint move exactly as they do for manual picks. A group
+   only partly picked completes; a group fully picked clears, and
+   only that group. */
+function togglePickGroup(v) {
+  var names = showSetsFor(v);
+  if (!names.length) return;
+  var allPicked = names.every(function (s) { return !!selIds[s.id]; });
+  names.forEach(function (s) {
+    if (allPicked) delete selIds[s.id]; else selIds[s.id] = true;
+  });
+  refreshMarkers();
+  renderSelBar();
+}
+function openSelPickList() {
+  pickExpandedStatuses = new Set();
+  renderPickList();
+  /* gy (2026-11-18, Tanner's field report on hd — "there is no 'OK'
+     button, you just have to X out"): the sheet carries a plain Done in
+     its footer. A pure close — the identical end state the X gives
+     (closeSheets): picks are already live in selIds, the mode persists.
+     The label is plain "Done" at all times (Tanner's final ruling). */
+  $('btn-pick-done').onclick = function () { closeSheets(); };
+  /* hj: Clear — the picking tool that moved out of the Actions sheet.
+     Empties every pick (selClearSelection lands through renderSelBar,
+     so the bar count falls and its Actions dims again) and the list
+     re-renders in place, marks gone; the sheet stays open. */
+  $('btn-pick-clear').onclick = function () { selClearSelection(); renderPickList(); };
+  openSheet('sheet-picklist');
+}
+/* he (2026-11-18, Tanner — the hd bar was "really busy"): the selection
+   bar is slimmed to one row — the count, Pick from list, Actions, Done —
+   and the five operations move into an Actions sheet wearing the same
+   standard sheet treatment as the bulk Actions menu (gx). A re-homing,
+   not a behavior change: every row runs the identical handler the bar
+   button ran (the three bulk flows through selLaunch, Select all shown
+   and Clear through the two functions below), and the three bulk rows
+   render disabled at 0 picked, exactly as the bar disabled them.
+   hj (2026-11-19, Tanner): the split is completed — Select all shown
+   and Clear LEAVE this sheet for the Pick sets sheet (they pick; this
+   sheet acts), leaving only Change status / Edit all / Delete all
+   over the Cancel row. The 0-picked disablement moved to the bar's
+   Actions button (renderSelBar), so the sheet can no longer open at
+   0 picked and its rows no longer need the disabled dress. */
+function selClearSelection() {
+  selIds = {};
+  refreshMarkers();
+  renderSelBar();
+}
+function openSelActions() {
+  if (!selMode) return;
+  if (selCount() === 0) return; /* hj: at 0 picked the bar button is inert; this is the same wall behind it */
+  selHintDone = true; /* hf: opening Actions retires the hint for the session */
+  renderSelBar();
+  showModal('<div id="sa-body"></div>');
+  $('modal').classList.add('sheet-dress'); /* gx: standard sheet dress for the bulk family */
+  renderSelActions();
+}
+/* ho (2026-11-21, Q253, Tanner): the Actions sheet names what is picked —
+   left-aligned under the count, scrollable when long — and tapping a name
+   UNPICKS that set: count, selection bar, map pin and the Pick-from-list
+   row all move together because every surface reads the one selIds state.
+   The list only subtracts; adding still happens solely through Pick from
+   list and the map. At 0 picked the action buttons go dim and inert (the
+   hj rule), with the sheet left open so the state is plain to see. */
+function renderSelActions() {
+  var host = $('sa-body'); if (!host) return;
+  var n = selCount();
+  var picked = activeSets().filter(function (s) { return !!selIds[s.id]; });
+  host.innerHTML = '<h3>' + n + ' selected</h3>' +
+    (picked.length ? '<div class="sel-names">' + picked.map(function (s) {
+      return '<button type="button" class="sel-name-row" data-unpick="' + s.id + '"><span>' + esc(s.name || 'Unnamed set') + '</span><span class="sel-name-x">✕</span></button>';
+    }).join('') + '</div>' : '<p class="dim">Nothing picked. Pick sets from the list or the map.</p>') +
+    '<div class="sheet-actions">' +
+    '<button type="button" class="btn-secondary" id="sa-status"' + (n ? '' : ' disabled') + '>Change status</button>' +
+    '<button type="button" class="btn-secondary" id="sa-edit"' + (n ? '' : ' disabled') + '>Edit all</button>' +
+    '<button type="button" class="btn-danger" id="sa-delete"' + (n ? '' : ' disabled') + '>Delete all</button></div>' +
+    '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button></div>';
+  host.querySelectorAll('[data-unpick]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      toggleSel(this.getAttribute('data-unpick'));
+      renderSelActions();
+      renderPickList(); /* the pick sheet behind reads the same state */
+    });
+  });
+  $('m-cancel').onclick = function () { closeModal(); };
+  if (n) {
+    $('sa-status').onclick = function () { closeModal(); selLaunch(openBulkStatusPicker); };
+    $('sa-edit').onclick = function () { closeModal(); selLaunch(openBulkEdit); };
+    $('sa-delete').onclick = function () { closeModal(); selLaunch(openBulkDeleteConfirm); };
+  }
+}
+function wireSelBar() {
+  var bar = $('sel-bar');
+  if (!bar || bar._wired) return;
+  bar._wired = true;
+  $('btn-sel-picklist').onclick = function () { openSelPickList(); };
+  $('btn-sel-actions').onclick = function () { openSelActions(); };
+  $('btn-sel-done').onclick = function () { exitSelMode(); };
+}
 /* Q232 (2026-11-06): the bulk bar is gone — the control lives in the Show
    pill. renderBulkBar now only drives the pill's gold button: it shows when
    the filter is narrowed to ANY one status with sets on this line and reads
@@ -5698,44 +6786,68 @@ function bulkFilteredSets() {
    needs one status. The count itself lives in renderShowButton, refreshed
    here and on every marker refresh. bulkSelected is vestigial — the bulk
    actions reset it after they run, but nothing reads it for the label/flow
-   anymore. */
+   anymore.
+   he (2026-11-18, Tanner's field report on hd — "my button on the top is
+   gone", pill reading "Active 34 · Pulled 23"): gz moved selection mode's
+   only door INTO this button's menu, so fi's hide rule stranded it — with
+   2+ statuses on there was no way into Select sets / Pick from list at
+   all. The button now shows whenever at least one status with sets is
+   showing on the active line; with 2+ on, its menu offers the Select sets
+   door only (openBulkActions) — the classic bulk ops still aim at one
+   status, and there is still no multi-status Select all (fi's intent).
+   Hidden only when nothing is showing, and while selection mode owns the
+   bar (gz, below).
+   hj (2026-11-19, Tanner): the button is renamed and its menu is gone.
+   It reads "Pick sets" now, and one tap enters selection mode
+   directly — no "N sets showing / Select sets / Cancel" prompt (the
+   2+ branch) and no classic bulk menu (the one-status branch) in
+   between. The three bulk operations live where he put them in he:
+   the selection bar's Actions sheet, aimed at the picked sets through
+   selLaunch ("Select all shown" there reproduces the old filter-wide
+   aim). "Actions" survives only on that bar button — the one the
+   two-stage hint names. */
 function renderBulkBar() {
   var btn = $('btn-bulk');
   if (!btn) return;
+  /* gz: while selection mode owns the bulk work, the Pick sets button
+     rests — the selection bar is the bulk control until Done. */
+  if (selMode) { btn.hidden = true; renderShowButton(); return; }
   var st = bulkFilterStatus();
-  var sets = bulkFilteredSets();
-  if (!st || !sets.length) {
+  var sets = st ? bulkFilteredSets() : shownLineSets();
+  if (!sets.length) {
     btn.hidden = true;
     bulkSelected = false;
   } else {
     btn.hidden = false;
-    btn.textContent = 'Actions'; /* Q237: the button reads Actions from the start — no Select-all step */
+    btn.textContent = 'Pick sets'; /* hj: renamed from Actions (Q237) — it is the picking door; the bar's Actions keeps the name alone */
   }
   renderShowButton();
 }
-/* Q232: the actions menu — what the second tap opens. Change status keeps
-   the Q229 picker + confirm; Edit all and Delete all are new (below). */
-function openBulkActions() {
-  var st = bulkFilterStatus();
-  var sets = bulkFilteredSets();
-  if (!st || !sets.length) { renderBulkBar(); return; }
-  showModal('<h3>' + sets.length + ' sets selected</h3>' +
-    '<button type="button" class="bulk-status-row" id="ba-status">Change status</button>' +
-    '<button type="button" class="bulk-status-row" id="ba-edit">Edit all</button>' +
-    '<button type="button" class="bulk-status-row" id="ba-delete" style="color:#e5484d">Delete all</button>' +
-    '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button></div>');
-  $('m-cancel').onclick = function () { closeModal(); };
-  $('ba-status').onclick = function () { closeModal(); openBulkStatusPicker(); };
-  $('ba-edit').onclick = function () { closeModal(); openBulkEdit(); };
-  $('ba-delete').onclick = function () { closeModal(); openBulkDeleteConfirm(); };
-}
+/* hj (2026-11-19, Tanner): openBulkActions is REMOVED — the whole menu,
+   both branches. It was the intermediate prompt on the counts-bar
+   button's road: "N sets showing / Select sets / Cancel" with 2+
+   statuses on, and the classic bulk menu ("N sets selected": Change
+   status / Edit all / Select sets / Delete all) with one status on.
+   The button — renamed "Pick sets" — now enters selection mode
+   directly (see renderMapStatusFilters), and the three bulk
+   operations live in the selection bar's Actions sheet, aimed at the
+   picked sets through selLaunch. The flows themselves
+   (openBulkStatusPicker / openBulkEdit / openBulkDeleteConfirm,
+   below) are unchanged and still read bulkFlowSets(). */
 /* Q232: Edit all — one menu with ALL the shared fields, so the sets can all
    be changed to look the same in one pass. Options come from the app's own
    lists: set-type foundations (+ his remembered customs), all trap types
    (+ customs), and his remembered attractant values (Q11). Only fields that
    are toggled on are offered (visual has no toggle — always on). Every
-   select starts at "(no change)": a field left alone keeps each set's own
-   value, never blanked. */
+   field starts at "(no change)": a field left alone keeps each set's own
+   value, never blanked.
+   hp (Q269, Tanner 2026-11-21): the fields are the SAME type-to-filter
+   combos as the normal set form — tap opens the full list, typing
+   filters, typed text becomes the value and is remembered. Attractant
+   lists are the normal form's lists too: the sponsor products plus his
+   remembered entries, not remembered entries alone. "(no change)" is
+   the pinned top row (empty value), exactly the bulk editor's standing
+   leave-alone rule. */
 function bulkEditOptions() {
   var out = [];
   if (setFieldOn('settype')) {
@@ -5761,71 +6873,125 @@ function bulkEditOptions() {
     });
     out.push({ field: 'trapType', label: 'Trap type', options: ttOpts });
   }
+  /* hp (Q269): attractant options = the normal form's lists — sponsor
+     products for the section plus his remembered entries, one A–Z run. */
+  var attrOptions = function (key) {
+    var seen = {}, list = [];
+    sponsorSuggests(key, '').forEach(function (p) {
+      var k = p.name.toLowerCase();
+      if (!seen[k]) { seen[k] = 1; list.push(p.name); }
+    });
+    savedEntries(key).forEach(function (v) {
+      var k = String(v).toLowerCase();
+      if (!seen[k]) { seen[k] = 1; list.push(v); }
+    });
+    list.sort(function (a, b) {
+      var al = String(a).toLowerCase(), bl = String(b).toLowerCase();
+      return al < bl ? -1 : (al > bl ? 1 : 0);
+    });
+    return list;
+  };
   [['bait', 'Bait'], ['lure', 'Lure'], ['urine', 'Urine']].forEach(function (pair) {
     if (!setFieldOn(pair[0])) return;
-    out.push({ field: pair[0], label: pair[1], options: savedEntries(pair[0]).slice() });
+    out.push({ field: pair[0], label: pair[1], options: attrOptions(pair[0]) });
   });
-  out.push({ field: 'visual', label: 'Visual', options: savedEntries('visual').slice() });
+  out.push({ field: 'visual', label: 'Visual', options: attrOptions('visual') });
   return out;
 }
 function openBulkEdit() {
-  var sets = bulkFilteredSets();
+  var sets = bulkFlowSets(); /* gz: the frozen pick when launched from the selection bar */
   if (!sets.length) { renderBulkBar(); return; }
   var fields = bulkEditOptions();
   var rows = fields.map(function (f) {
-    var opts = '<option value="">(no change)</option>' + f.options.map(function (o) {
-      return '<option value="' + esc(o) + '">' + esc(o) + '</option>';
-    }).join('');
+    /* hp (Q269): combo fields, built like the normal form's — an input
+       plus its suggestion box inside the row's label. */
     return '<label class="bulk-edit-row">' + esc(f.label) +
-      '<select id="be-' + f.field + '">' + opts + '</select></label>';
+      '<input type="text" id="be-' + f.field + '" autocomplete="off" placeholder="(no change)">' +
+      '<div class="suggest" id="be-' + f.field + '-suggest"></div></label>';
   }).join('');
   showModal('<h3>Edit all ' + sets.length + ' sets</h3>' +
-    '<p>Set as many fields as you want — fields you leave alone stay as they are on each set.</p>' + rows +
+    '<p>Set as many fields as you want — fields you leave alone stay as they are on each set. Bait, lure, urine and visual are added to what each set already has — never taken away.</p>' + rows +
     '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
     '<button class="btn-primary" id="m-ok" type="button">Review changes</button></div>');
+  $('modal').classList.add('sheet-dress'); /* gx: standard sheet dress for the bulk family */
+  fields.forEach(function (f) {
+    comboAttach('be-' + f.field, 'be-' + f.field + '-suggest',
+      function () { return f.options; }, { noneLabel: '(no change)' });
+  });
   $('m-cancel').onclick = function () { closeModal(); };
   $('m-ok').onclick = function () {
     var changes = [];
     fields.forEach(function (f) {
-      var v = ($('be-' + f.field) || {}).value || '';
-      if (v) changes.push({ field: f.field, label: f.label, value: v });
+      var v = (($('be-' + f.field) || {}).value || '').trim();
+      if (v && v !== '(no change)') changes.push({ field: f.field, label: f.label, value: v });
     });
     if (!changes.length) { closeModal(); toast('Nothing to change.'); return; }
+    /* hp (Q269): a typed value is remembered exactly as the normal
+       form remembers it — attractants into their entry lists, novel
+       set/trap types into their custom lists. */
+    changes.forEach(function (c) {
+      if (c.field === 'setType') {
+        if (allFoundationNames().indexOf(c.value) === -1) rememberCustomOption('sf-settype', c.value);
+      } else if (c.field === 'trapType') {
+        if (ALL_TRAP_TYPES.indexOf(c.value) === -1) rememberCustomOption('sf-type', c.value);
+      } else {
+        rememberEntry(c.field, c.value);
+      }
+    });
     closeModal(); openBulkEditConfirm(changes);
   };
 }
 function openBulkEditConfirm(changes) {
-  var sets = bulkFilteredSets();
+  var sets = bulkFlowSets(); /* gz: same target as the Edit-all form showed */
   if (!sets.length) { renderBulkBar(); return; }
   var n = sets.length;
   var lines = changes.map(function (c) {
     var note = c.field === 'setType' ? ' (variations cleared)'
-      : (c.field === 'bait' || c.field === 'lure' || c.field === 'urine' || c.field === 'visual') ? ' (replaces what is there now)' : '';
+      : (c.field === 'bait' || c.field === 'lure' || c.field === 'urine' || c.field === 'visual') ? ' (added to what is there now)' : '';
     return '<p>' + esc(c.label) + ' → ' + esc(c.value) + note + '</p>';
   }).join('');
   showModal('<h3>Change ' + n + ' sets?</h3>' + lines +
     '<p>Fields you left alone stay as they are on each set.</p>' +
     '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
     '<button class="btn-primary" id="m-ok" type="button">Change ' + n + ' sets</button></div>');
+  $('modal').classList.add('sheet-dress'); /* gx: standard sheet dress for the bulk family */
   $('m-cancel').onclick = function () { closeModal(); };
   $('m-ok').onclick = function () { closeModal(); applyBulkEdit(changes); };
 }
 function applyBulkEdit(changes) {
-  var sets = bulkFilteredSets();
+  var sets = bulkFlowSets(); /* gz: applies to exactly the sets the flow counted */
   if (!sets.length) { renderBulkBar(); return; }
   var n = sets.length;
   sets.forEach(function (s) {
+    var actLines = []; /* Q272: what Edit all actually changed on this set */
     changes.forEach(function (c) {
-      if (c.field === 'setType') { s.setType = c.value; s.variation = ''; } /* the old variation belongs to the old foundation */
-      else if (c.field === 'trapType') { s.trapType = c.value; } /* maker + trap details untouched */
-      else { s[c.field] = [c.value]; } /* attractants ride as arrays; bulk replaces the whole list */
+      if (c.field === 'setType') {
+        if ((s.setType || '') !== c.value) actLines.push('Set type: ' + (s.setType || '—') + ' → ' + c.value);
+        s.setType = c.value; s.variation = '';
+      } /* the old variation belongs to the old foundation */
+      else if (c.field === 'trapType') {
+        if ((s.trapType || '') !== c.value) actLines.push('Trap: ' + (s.trapType || '—') + ' → ' + c.value);
+        s.trapType = c.value;
+      } /* maker + trap details untouched */
+      else { /* hp (Q271, Tanner 2026-11-21): attractants ADD — the value
+               joins what the set already carries, exactly as adding a
+               row in the one-set form; never a duplicate, never a
+               replacement. Set type and trap type above still replace:
+               a set carries exactly one of each. */
+        var arr = toAttrArray(s[c.field]).slice();
+        var dupe = arr.some(function (x) { return String(x).toLowerCase() === c.value.toLowerCase(); });
+        if (!dupe) { arr.push(c.value); actLines.push((c.label || c.field) + ' added: ' + c.value); }
+        s[c.field] = arr;
+      }
     });
+    if (actLines.length) recordActivity(s, 'bulk', actLines); /* Q272 */
     touchSet(s); /* Q68: any edit restarts the check clock */
   });
   Store.save();
   refreshMarkers();
   bulkSelected = false;
   renderBulkBar();
+  if (bulkSelCtx) exitSelMode(); /* gz: a finished operation ends selection mode */
   toast(n + ' sets updated.');
 }
 /* Q232: Delete all — the clone-a-line cleanup (Tanner, 2026-11-06). Same
@@ -5833,16 +6999,22 @@ function applyBulkEdit(changes) {
    logs (History included), photos, and voice memos — one confirm naming
    the counts, with the gone-forever warning, before anything is removed. */
 function openBulkDeleteConfirm() {
-  var st = bulkFilterStatus();
-  var sets = bulkFilteredSets();
-  if (!st || !sets.length) { renderBulkBar(); return; }
+  var sets = bulkFlowSets(); /* gz: the frozen pick when launched from the selection bar */
+  if (!sets.length) { renderBulkBar(); return; }
   var n = sets.length;
   var ln = lineById(Store.data, activeLineId());
   var ids = {};
   sets.forEach(function (s) { ids[s.id] = true; });
+  /* The warning names the status when every set in the pile shares one —
+     always true of the classic filter pile, whose status is the filter's.
+     A mixed pick is worded to the count instead: "N selected sets". */
+  var froms = {};
+  sets.forEach(function (s) { froms[normStatus(s.status)] = true; });
+  var fromKeys = Object.keys(froms);
+  var pile = fromKeys.length === 1 ? n + ' ' + STATUS_LABELS[fromKeys[0]] + ' sets' : n + ' selected sets';
   var nLogs = (Store.data.logs || []).filter(function (l) { return ids[l.setId]; }).length;
   function ask(nPhotos, nMemos) {
-    var bits = [n + ' ' + STATUS_LABELS[st] + ' sets from “' + esc(ln ? ln.name : '') + '” will be permanently deleted'];
+    var bits = [pile + ' from “' + esc(ln ? ln.name : '') + '” will be permanently deleted'];
     if (nLogs) bits.push('their ' + nLogs + ' catch log' + (nLogs > 1 ? 's' : '') + ' (removed from History too)');
     if (nPhotos) bits.push(nPhotos + ' photo' + (nPhotos > 1 ? 's' : ''));
     if (nMemos) bits.push(nMemos + ' voice memo' + (nMemos > 1 ? 's' : ''));
@@ -5860,6 +7032,7 @@ function openBulkDeleteConfirm() {
 function applyBulkDelete(ids, n) {
   Store.data.sets = Store.data.sets.filter(function (x) { return !ids[x.id]; });
   Store.data.logs = Store.data.logs.filter(function (l) { return !ids[l.setId]; });
+  if (Array.isArray(Store.data.activity)) Store.data.activity = Store.data.activity.filter(function (a) { return !ids[a.setId]; }); /* Q272 */
   IDB.all('photos').then(function (all) {
     all.forEach(function (p) {
       if (!ids[p.setId]) return;
@@ -5878,26 +7051,54 @@ function applyBulkDelete(ids, n) {
   Store.save(); refreshMarkers(); renderHistory(); renderTotals();
   bulkSelected = false;
   renderBulkBar();
+  if (bulkSelCtx) exitSelMode(); /* gz: a finished operation ends selection mode */
   toast(n + ' sets deleted.');
 }
 function openBulkStatusPicker() {
+  if (bulkSelCtx) { openBulkStatusPickerSel(); return; } /* gz: a pick may span statuses — its own picker below */
   var st = bulkFilterStatus();
   var sets = bulkFilteredSets();
   if (!st || !sets.length) { renderBulkBar(); return; }
   var colors = pinSchemeById(pinSchemeId()).colors;
   var rows = STATUS_VALUES.filter(function (k) { return k !== st && k !== 'missing'; }).map(function (k) {
-    return '<button type="button" class="bulk-status-row" data-st="' + k + '">' +
+    return '<button type="button" class="btn-secondary bulk-pick-row" data-st="' + k + '">' +
       '<span class="bulk-dot" style="background:' + colors[k] + '"></span>' + esc(STATUS_LABELS[k]) + '</button>';
   }).join('');
   showModal('<h3>Change ' + sets.length + ' sets to…</h3>' + rows +
     '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button></div>');
+  $('modal').classList.add('sheet-dress'); /* gx: standard sheet dress for the bulk family */
   $('m-cancel').onclick = function () { closeModal(); };
-  var btns = document.querySelectorAll('#modal-card .bulk-status-row');
+  var btns = document.querySelectorAll('#modal-card .bulk-pick-row');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].onclick = function () { var t = this.getAttribute('data-st'); closeModal(); openBulkConfirm(t); };
+  }
+}
+/* gz: the status picker for a hand pick. Missing stays one-at-a-time
+   (it needs a reason per set — the same rule as the classic picker), and
+   the one status every picked set already wears is not offered; a mixed
+   pick offers every other status. The header counts the pick. */
+function openBulkStatusPickerSel() {
+  var sets = bulkFlowSets();
+  if (!sets.length) { bulkSelCtx = null; renderSelBar(); return; }
+  var froms = {};
+  sets.forEach(function (s) { froms[normStatus(s.status)] = true; });
+  var uniform = Object.keys(froms).length === 1 ? Object.keys(froms)[0] : null;
+  var colors = pinSchemeById(pinSchemeId()).colors;
+  var rows = STATUS_VALUES.filter(function (k) { return k !== 'missing' && k !== uniform; }).map(function (k) {
+    return '<button type="button" class="btn-secondary bulk-pick-row" data-st="' + k + '">' +
+      '<span class="bulk-dot" style="background:' + colors[k] + '"></span>' + esc(STATUS_LABELS[k]) + '</button>';
+  }).join('');
+  showModal('<h3>Change ' + sets.length + ' sets to…</h3>' + rows +
+    '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button></div>');
+  $('modal').classList.add('sheet-dress'); /* gx: standard sheet dress for the bulk family */
+  $('m-cancel').onclick = function () { closeModal(); };
+  var btns = document.querySelectorAll('#modal-card .bulk-pick-row');
   for (var i = 0; i < btns.length; i++) {
     btns[i].onclick = function () { var t = this.getAttribute('data-st'); closeModal(); openBulkConfirm(t); };
   }
 }
 function openBulkConfirm(target) {
+  if (bulkSelCtx) { openBulkConfirmSel(target); return; } /* gz: a pick may come from several statuses */
   var st = bulkFilterStatus();
   var sets = bulkFilteredSets();
   if (!st || !sets.length) { renderBulkBar(); return; }
@@ -5918,7 +7119,42 @@ function openBulkConfirm(target) {
   $('m-cancel').onclick = function () { closeModal(); };
   $('m-ok').onclick = function () { closeModal(); applyBulkStatus(target); };
 }
+/* gz: the confirm for a hand pick — same shape as the classic confirm,
+   but the "from" side is honest about a mixed pick: one shared status
+   reads as the classic from → to; several read as a counted list. */
+function openBulkConfirmSel(target) {
+  var sets = bulkFlowSets();
+  if (!sets.length) { bulkSelCtx = null; renderSelBar(); return; }
+  var n = sets.length;
+  var ln = lineById(Store.data, activeLineId());
+  var colors = pinSchemeById(pinSchemeId()).colors;
+  var dateLine = target === 'active'
+    ? '<p>Date set becomes today, ' + fmtDate(todayISO()) + '.</p>'
+    : '';
+  var counts = {};
+  sets.forEach(function (s) { var k = normStatus(s.status); counts[k] = (counts[k] || 0) + 1; });
+  var keys = Object.keys(counts);
+  var fromLine;
+  if (keys.length === 1) {
+    fromLine = '<p><span class="bulk-dot" style="background:' + colors[keys[0]] + '"></span> ' + esc(STATUS_LABELS[keys[0]]) + ' → ' +
+      '<span class="bulk-dot" style="background:' + colors[target] + '"></span> ' + esc(STATUS_LABELS[target]) + '</p>';
+  } else {
+    fromLine = '<p>Currently: ' + keys.map(function (k) {
+      return '<span class="bulk-dot" style="background:' + colors[k] + '"></span> ' + esc(STATUS_LABELS[k]) + ' ×' + counts[k];
+    }).join(' · ') + '</p>';
+  }
+  showModal('<h3>Change ' + n + ' sets to ' + esc(STATUS_LABELS[target]) + '?</h3>' +
+    '<p>' + esc(ln ? ln.name : '') + '</p>' +
+    fromLine +
+    dateLine +
+    '<p>You can change any set back one at a time from Edit this set.</p>' +
+    '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
+    '<button class="btn-primary" id="m-ok" type="button">Change ' + n + ' sets</button></div>');
+  $('m-cancel').onclick = function () { closeModal(); };
+  $('m-ok').onclick = function () { closeModal(); applyBulkStatus(target); };
+}
 function applyBulkStatus(target) {
+  if (bulkSelCtx) { applyBulkStatusSel(target); return; } /* gz: per-set from-status rules below */
   var st = bulkFilterStatus();
   var sets = bulkFilteredSets();
   if (!st || !sets.length) { renderBulkBar(); return; }
@@ -5930,6 +7166,7 @@ function applyBulkStatus(target) {
     if (target === 'pulled' && !s.datePulled) s.datePulled = today;
     if (target !== 'pulled' && s.datePulled) delete s.datePulled;
     if (st === 'missing') { s.missingReason = null; s.missingDetail = null; } /* Q229: leaving Missing clears the reason/detail, like the Edit save */
+    if (normStatus(st) !== normStatus(target)) recordActivity(s, 'status', ['Status: ' + statusLabel(st) + ' → ' + statusLabel(target)]); /* Q272 */
     touchSet(s); /* Q68: any edit restarts the check clock */
   });
   Store.save();
@@ -5944,6 +7181,35 @@ function applyBulkStatus(target) {
   refreshMarkers();
   bulkSelected = false;
   renderBulkBar();
+  toast(n + ' sets now ' + STATUS_LABELS[target] + '.');
+}
+/* gz: bulk status change over a hand pick. Each set follows the classic
+   rules from its OWN status: a move to Active restarts that set's date,
+   leaving Missing clears that set's reason/detail. The Q235 filter
+   follow is softened to match a mixed pick — the target status turns ON
+   so the changed sets land in view, but nothing turns off (the pick may
+   span statuses, and the unpicked sets keep the filter they had). The
+   finished operation exits selection mode. */
+function applyBulkStatusSel(target) {
+  var sets = bulkFlowSets();
+  if (!sets.length) { bulkSelCtx = null; renderSelBar(); return; }
+  var n = sets.length;
+  var today = todayISO();
+  sets.forEach(function (s) {
+    var from = normStatus(s.status);
+    s.status = target;
+    s.dateSet = activeDateFor(from, target, s.dateSet, today);
+    if (target === 'pulled' && !s.datePulled) s.datePulled = today;
+    if (target !== 'pulled' && s.datePulled) delete s.datePulled;
+    if (from === 'missing') { s.missingReason = null; s.missingDetail = null; } /* Q229: leaving Missing clears the reason/detail */
+    if (from !== normStatus(target)) recordActivity(s, 'status', ['Status: ' + statusLabel(from) + ' → ' + statusLabel(target)]); /* Q272 */
+    touchSet(s); /* Q68: any edit restarts the check clock */
+  });
+  Store.save();
+  var m = showModel();
+  m[target] = true;
+  saveShowModel();
+  exitSelMode(); /* refreshes markers + the pill, clears the pick */
   toast(n + ' sets now ' + STATUS_LABELS[target] + '.');
 }
 function logStatus(l) {
@@ -6170,7 +7436,17 @@ function logRowHtml(l, showDate) {
     (meta ? '<div class="dim">' + meta + '</div>' : '') +
     (l.notes ? '<div class="lr-notes">' + esc(l.notes) + '</div>' : '') +
     logMemoHtml(l) +
-    (l.weather ? '<div class="dim">🌤 ' + esc(weatherText(l.weather)) + '</div>' : '') + '</div>';
+    (l.weather ? '<div class="dim">🌤 ' + esc(weatherText(l.weather)) + '</div>' : '') +
+    /* gw: tag-species catches carry a tag line + editor button, visible
+       when the row is expanded (CSS rides .expanded like the notes). */
+    (function () {
+      if (l.otherType || !l.species || !tagRecordsOn() || !isTagSpecies(l.species)) return '';
+      var sum = (l.tagNumber || '').trim()
+        ? 'Tag № ' + esc(l.tagNumber) + (l.tagDate ? ' · tagged ' + esc(fmtDate(l.tagDate)) : '')
+        : 'Not tagged yet';
+      return '<div class="tag-line"><span class="dim">' + sum + '</span>' +
+        '<button type="button" class="btn-small btn-secondary" data-tag-edit="' + l.id + '">Tag record</button></div>';
+    })() + '</div>';
 }
 
 function renderHistByDate(list) {
@@ -6200,7 +7476,7 @@ function renderHistByDate(list) {
       var shut = !!f.collapsed[l.date];
       html += '<div class="day-group"><button type="button" class="day-head" data-day="' + esc(l.date) + '">' +
         esc(dayLabel(l.date)) + ' <span class="dim">· ' + dayCatches + ' catch' + (dayCatches === 1 ? '' : 'es') + '</span>' +
-        '<span class="chev">' + (shut ? '▸' : '▾') + '</span></button>' +
+        '<span class="chev' + (shut ? '' : ' open') + '">›</span></button>' + /* gw scope 5: standard chevron */
         '<div class="day-body"' + (shut ? ' hidden' : '') + '>';
       curDay = l.date;
     }
@@ -6241,7 +7517,7 @@ function renderHistByTrapType(list) {
     html += '<div class="sp-group"><button type="button" class="sp-head tt-head" data-tt="' + esc(tt) + '">' +
       '<span class="sp-name">' + esc(tt) + '</span>' +
       '<span class="sp-total">×' + g.total + '</span>' +
-      '<span class="chev">' + (open ? '▾' : '▸') + '</span></button>' +
+      '<span class="chev' + (open ? ' open' : '') + '">›</span></button>' + /* gw scope 5: standard chevron */
       '<div class="dim sp-sub">' + esc(parts.join(' · ') || 'no catches') + '</div>';
     if (open) {
       html += '<div class="sp-body">';
@@ -6273,6 +7549,17 @@ function renderHistory() {
       sbtns[j].classList.toggle('selected', sbtns[j].getAttribute('data-season') === histUI.season);
     }
   }
+  /* Q272: the Activity view reads the trail, not the catch list — it
+     renders even on a line with no catches yet. The disposition chips
+     are catch furniture and hide here. */
+  var dispChips = $('hist-disp-chips');
+  if (dispChips) dispChips.style.display = (histUI.view === 'activity') ? 'none' : '';
+  if (histUI.view === 'activity') {
+    renderHistSummary(histFilteredLogs());
+    box.innerHTML = renderHistActivity();
+    holdListHeight(box, histFiltering);
+    return;
+  }
   if (!logs.length) {
     renderHistSummary([]);
     box.innerHTML = '<div class="empty"><div class="big"><img class="bi inv" src="assets/icons/logbook.png" alt=""></div>No catches logged yet.<br>Tap a set pin on the map to log your first catch.</div>';
@@ -6300,7 +7587,7 @@ function renderHistory() {
    attractants mid-season never rewrites past catches. Unstamped catches sit
    in an "Unspecified" bucket below the rankings: honest numbers, never
    competing in them. */
-var scoreUI = { season: 'this', by: 'lure', species: '', h2hA: '', h2hB: '', spCat: '', spQ: '' };
+var scoreUI = { season: 'this', by: 'lure', species: '', h2hA: '', h2hB: '' };
 function prevSeasonYear(sy) {
   var y = parseInt((sy || '').split('-')[0], 10) || 0;
   return (y - 1) + '-' + String(y).slice(2);
@@ -6367,14 +7654,14 @@ function renderScorecardTab() {
   if (u.species && !seen[u.species]) u.species = '';
   var data = scorecardGroups(u.by, u.season, u.species);
   var names = data.rows.map(function (r) { return r.name; });
-  /* Q170 (2026-10-08): head-to-head can also compare sponsored products, even
-     ones with no logged catches yet — sponsor names join the picker options. */
+  /* im (2026-11-21, Q308, Tanner): the head-to-head lists ONLY products
+     with results in this view — his ruling, superseding Q170's sponsor
+     append. A sponsored product joins the list the moment he has caught
+     with it, the same as any other product; one he has never used has
+     no results to compare and stays out ("comparing apples and
+     oranges"). Both picks therefore always have a results card. */
   function h2hNames() {
-    var opts = names.slice();
-    SPONSORS.forEach(function (sp) {
-      if (sp.section === u.by && opts.indexOf(sp.product) === -1) opts.push(sp.product);
-    });
-    return opts;
+    return names.slice();
   }
   var h2hAll = h2hNames();
   if (u.h2hA && h2hAll.indexOf(u.h2hA) === -1) u.h2hA = '';
@@ -6438,21 +7725,19 @@ function renderScorecardTab() {
       return '<option value="' + esc(n) + '"' + (sel === n ? ' selected' : '') + '>' + esc(n) + '</option>';
     }).join('');
   }
-  html += '<div class="card" style="margin-top:12px"><h3>Head-to-Head</h3>' +
+  html += '<div class="card" id="sc-h2h-card" style="margin-top:12px"><h3>Head-to-Head</h3>' +
     '<div class="btn-row"><div><label class="field" for="sc-h2h-a">First</label>' +
     '<select id="sc-h2h-a"><option value="">Pick one…</option>' + h2hOpts(u.h2hA) + '</select></div>' +
     '<div><label class="field" for="sc-h2h-b">Second</label>' +
     '<select id="sc-h2h-b"><option value="">Pick one…</option>' + h2hOpts(u.h2hB) + '</select></div></div>' +
     h2h + '</div>';
-  /* Q170 (2026-10-08): Sponsored Products — a searchable, sponsor-only directory
-     sitting between head-to-head and the honesty line (which stays dead last).
-     One search box + category chips; every card wears the gold SPONSORED pill;
-     Compare drops the product into the head-to-head picker. */
-  var spCat = u.spCat || u.by;
-  html += '<div class="card" style="margin-top:12px"><h3>Sponsored Products</h3>' +
-    segBtns('sc-sp-seg', 'spcat', [['lure', 'Lures'], ['bait', 'Bait'], ['urine', 'Urine'], ['visual', 'Visual'], ['audio', 'Audio'], ['other', 'Other']]) +
-    '<input type="search" id="sc-sp-q" placeholder="Search sponsored products…" value="' + esc(u.spQ || '') + '" aria-label="Search sponsored products">' +
-    '<div id="sc-sp-list"></div></div>';
+  /* im (Q308, Tanner): the Sponsored Products directory is OUT of the
+     Scorecard — redundant, by his reasoning: a sponsored product he has
+     used already stands in the rankings above wearing its logo chip,
+     and one he has not used has no results and does not belong on a
+     results page. Sponsors keep the rankings chip (opens their bio),
+     the bait/lure lists, and the back of the app. The honesty line
+     stays dead last. */
   html += '<div class="scorecard-honesty"><strong>Scorecard rankings are earned from real catch data \u2014 never bought.</strong></div>';
   box.innerHTML = html;
   var sub = $('scorecard-sub');
@@ -6481,74 +7766,6 @@ function renderScorecardTab() {
   $('sc-species').onchange = function () { u.species = this.value; u.h2hA = ''; u.h2hB = ''; renderScorecardTab(); };
   $('sc-h2h-a').onchange = function () { u.h2hA = this.value; renderScorecardTab(); };
   $('sc-h2h-b').onchange = function () { u.h2hB = this.value; renderScorecardTab(); };
-  /* Q170: Sponsored Products wiring — chips re-render the tab, search filters
-     the list in place (no re-render, so the keyboard stays up). */
-  renderSpList();
-  (function () {
-    var seg = $('sc-sp-seg');
-    if (!seg) return;
-    var btns = seg.querySelectorAll('button');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.toggle('selected', btns[i].getAttribute('data-spcat') === (u.spCat || u.by));
-      btns[i].onclick = (function (b) {
-        return function () { u.spCat = b.getAttribute('data-spcat'); renderScorecardTab(); };
-      })(btns[i]);
-    }
-  })();
-  var spq = $('sc-sp-q');
-  if (spq) spq.oninput = function () { u.spQ = this.value; renderSpList(); };
-  var splist = $('sc-sp-list');
-  if (splist) splist.addEventListener('click', function (e) {
-    var cmp = e.target && e.target.closest ? e.target.closest('[data-sp-compare]') : null;
-    if (cmp) { e.stopPropagation(); spCompare(cmp.getAttribute('data-sp-compare')); return; }
-    var card = e.target && e.target.closest ? e.target.closest('[data-sp]') : null;
-    if (card) openSponsorBio(card.getAttribute('data-sp'));
-  });
-  if (splist) splist.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    if (e.target && e.target.closest && e.target.closest('[data-sp-compare]')) return;
-    var card = e.target && e.target.closest ? e.target.closest('[data-sp]') : null;
-    if (card) { e.preventDefault(); openSponsorBio(card.getAttribute('data-sp')); }
-  });
-}
-/* Q170 (2026-10-08): sponsor-only product list for the Scorecard tab.
-   Only real sponsors appear — typed-in/autofilled products never do. */
-function renderSpList() {
-  var list = $('sc-sp-list');
-  if (!list) return;
-  var u = scoreUI;
-  var cat = u.spCat || u.by;
-  var q = String(u.spQ || '').toLowerCase().trim();
-  var PHRASE = { lure: 'lures', bait: 'baits', urine: 'urines', visual: 'visual attractants', audio: 'audio attractants', other: 'other attractants' };
-  var items = SPONSORS.filter(function (sp) {
-    if (sp.section !== cat) return false;
-    if (!q) return true;
-    return (String(sp.product) + ' ' + String(sp.name)).toLowerCase().indexOf(q) !== -1;
-  });
-  if (!items.length) {
-    list.innerHTML = '<p class="dim" style="margin:8px 0 0">No sponsored ' + esc(PHRASE[cat] || cat) + ' yet.</p>';
-    return;
-  }
-  list.innerHTML = items.map(function (sp) {
-    var logo = sp.badge || sp.brandLogo || '';
-    return '<div class="sp-card" data-sp="' + esc(sp.id) + '" role="button" tabindex="0" aria-label="About ' + esc(sp.name) + '">' +
-      (logo ? '<img class="sp-logo" src="' + esc(logo) + '" alt="' + esc(sp.name) + ' logo">' : '') +
-      '<div class="sp-info"><div class="sp-product">' + esc(sp.product) + '</div>' +
-      '<div class="sp-brand dim">' + esc(sp.name) + '</div></div>' +
-      '<span class="pill">Sponsored</span>' +
-      '<button type="button" class="btn-small btn-secondary" data-sp-compare="' + esc(sp.id) + '">Compare</button></div>';
-  }).join('');
-}
-/* Q170: drop a sponsored product into head-to-head — the scorecard switches
-   to the product's section and it becomes the First pick. */
-function spCompare(id) {
-  var sp = sponsorById(id);
-  if (!sp) return;
-  scoreUI.by = sp.section;
-  scoreUI.spCat = sp.section;
-  scoreUI.h2hA = sp.product;
-  scoreUI.h2hB = '';
-  renderScorecardTab();
 }
 /* Q5: one-tap backfill — when a set's attractants are filled in from blank,
    offer to stamp them onto that set's past unstamped catches. Q26: values
@@ -6677,20 +7894,20 @@ function renderTotals() {
   function totalsCardHead(key, title) {
     var closed = !!totalsCollapsed()[key];
     return '<button type="button" class="totals-card-head" data-tsec="' + key + '" aria-expanded="' + (!closed) + '">' +
-      '<h3>' + title + '</h3><span class="tchev">' + (closed ? '▸' : '▾') + '</span></button>';
+      '<h3>' + title + '</h3><span class="tchev">›</span></button>'; /* gw scope 5: one glyph, rotation shows state */
   }
   function totalsSectionCards() {
     var tc = totalsCollapsed(), cards = '';
-    cards += '<div class="card">' + totalsCardHead('species', 'By Species') + '<div class="totals-card-body"' + (tc.species ? ' hidden' : '') + '>' + rows(bySpecies, false) + '</div></div>';
-    cards += '<div class="card">' + totalsCardHead('set', 'By Set') + '<div class="totals-card-body"' + (tc.set ? ' hidden' : '') + '>' + rows(bySet, true) + '</div></div>';
-    cards += '<div class="card">' + totalsCardHead('settype', 'By Set Type') + '<div class="totals-card-body"' + (tc.settype ? ' hidden' : '') + '>' + rows(bySetType, false, 'st:') + '</div></div>';
-    cards += '<div class="card">' + totalsCardHead('traptype', 'By Trap Type') + '<div class="totals-card-body"' + (tc.traptype ? ' hidden' : '') + '>' + rows(byTrapType, false, 'tt:') + '</div></div>';
+    cards += '<div class="card totals-card">' + totalsCardHead('species', 'By Species') + '<div class="totals-card-body"' + (tc.species ? ' hidden' : '') + '>' + rows(bySpecies, false) + '</div></div>';
+    cards += '<div class="card totals-card">' + totalsCardHead('set', 'By Set') + '<div class="totals-card-body"' + (tc.set ? ' hidden' : '') + '>' + rows(bySet, true) + '</div></div>';
+    cards += '<div class="card totals-card">' + totalsCardHead('settype', 'By Set Type') + '<div class="totals-card-body"' + (tc.settype ? ' hidden' : '') + '>' + rows(bySetType, false, 'st:') + '</div></div>';
+    cards += '<div class="card totals-card">' + totalsCardHead('traptype', 'By Trap Type') + '<div class="totals-card-body"' + (tc.traptype ? ' hidden' : '') + '>' + rows(byTrapType, false, 'tt:') + '</div></div>';
     {
       var names = [['kept', 'Dispatched'], ['alive', 'Kept alive'], ['released', 'Released'], ['transported', 'Transported']];
       /* Q86 (2026-10-01): Tanner — sort largest count first, it reads cleaner. */
       names.sort(function (a, b) { return (byDisp[b[0]] || 0) - (byDisp[a[0]] || 0); });
       /* Q61: each disposition row taps open to show what was caught under it. */
-      cards += '<div class="card">' + totalsCardHead('disposition', 'By Disposition') + '<div class="totals-card-body"' + (tc.disposition ? ' hidden' : '') + '>' + names.map(function (n) {
+      cards += '<div class="card totals-card">' + totalsCardHead('disposition', 'By Disposition') + '<div class="totals-card-body"' + (tc.disposition ? ' hidden' : '') + '>' + names.map(function (n) {
         var b = n[0], sp = byDispSp[b];
         var keys = Object.keys(sp).sort(function (a, c) { return sp[c] - sp[a]; });
         var hasDetail = keys.length > 0;
@@ -6707,7 +7924,7 @@ function renderTotals() {
         return dhtml;
       }).join('') + '</div></div>';
     }
-    cards += '<div class="card">' + totalsCardHead('month', 'By Month') + '<div class="totals-card-body"' + (tc.month ? ' hidden' : '') + '>' + monthRows() + '</div></div>';
+    cards += '<div class="card totals-card">' + totalsCardHead('month', 'By Month') + '<div class="totals-card-body"' + (tc.month ? ' hidden' : '') + '>' + monthRows() + '</div></div>';
     return cards;
   }
   /* ge: By Month rows — chronological, so the season reads in the order it
@@ -6756,6 +7973,32 @@ function holdListHeight(listEl, filtering) {
   }
 }
 
+/* hb (2026-11-18): Tanner's gz phone check — in Seasons he typed "Bo" and
+   got a blank pane: the search bar sticks at the pane top while the
+   filtered list restarts at its own top, which — with the pane scrolled —
+   sits up behind the bar/pane head, so the matches were nowhere visible.
+   After a filter render with a live query, if the first match is not
+   already sitting visible beneath the bar, scroll the pane so the bar
+   tops the view and the match follows right under it. No-op when the
+   match already sits right, and when the query is empty. */
+function revealFirstMatch(input, row) {
+  if (!input || !row || !input.value) return;
+  var sc = input.closest ? input.closest('.scroll') : null;
+  if (!sc) return;
+  var ir = input.getBoundingClientRect(), rr = row.getBoundingClientRect(),
+      sr = sc.getBoundingClientRect();
+  if (rr.top >= ir.bottom - 1 && rr.top >= sr.top && rr.bottom <= sr.bottom + 1) return;
+  if (ir.top - sr.top <= 16) {
+    /* The bar is perched at the pane top and its rect will not move while
+       it stays perched, so one live-rect delta lands the first match
+       right under it. (scrollIntoView cannot do this: for a stuck
+       element it aligns the stuck position and barely scrolls.) */
+    sc.scrollTop += rr.top - (ir.bottom + 6);
+  } else {
+    input.scrollIntoView(true);
+  }
+}
+
 function renderSeasons(filter) {
   var d = stateData();
   var entry = stateEntry(activeStateCode());
@@ -6789,17 +8032,36 @@ function renderSeasons(filter) {
     return;
   }
   if (nuNote) { nuNote.hidden = true; nuNote.innerHTML = ''; }
+  renderSeasonsDeadlines(d);
+  renderSeasonsList(filter);
+}
+
+/* gw: the animal list is its OWN render, and the search box calls only
+   this — the way every other search bar in the app behaves (the log
+   form's species search re-renders its list, History's search its
+   rows). Before gw, each keystroke ran the whole renderSeasons: the
+   rules and gap cards above the search were rebuilt shut, the page
+   above the list collapsed by hundreds of pixels, the scroll lurched,
+   and the matched rows ended up scrolled out of sight above the sticky
+   search — the list area read as blank (Tanner's field report,
+   2026-11-18). Filtering now touches nothing above the search bar. */
+function renderSeasonsList(filter) {
+  var d = stateData();
+  if (!d) {
+    $('seasons-list').innerHTML = '<p class="dim">No season data loaded.</p>';
+    return;
+  }
   var q = (filter || '').toLowerCase();
   var list = sortSpeciesAlpha(stateSpecies().filter(function (sp) {
     return !q || sp.common_name.toLowerCase().indexOf(q) !== -1;
   }));
-  $('seasons-list').innerHTML = list.map(function (sp) {
+  $('seasons-list').innerHTML = list.length ? list.map(function (sp) {
     var info = speciesSeasonInfo(sp);
     return '<button type="button" class="species-row" data-sp="' + esc(sp.common_name) + '">' + speciesIcon(sp.common_name) +
       '<span class="sp-name">' + esc(sp.common_name) +
       (sp.scientific_name ? '<span class="sci">' + esc(sp.scientific_name) + '</span>' : '') + '</span>' +
       '<span class="badge ' + info.badgeClass + '">' + info.badge + '</span>' + '</button>';
-  }).join('');
+  }).join('') : '<p class="dim">No species match.</p>';
   var btns = $('seasons-list').querySelectorAll('.species-row');
   for (var i = 0; i < btns.length; i++) {
     btns[i].onclick = function (e) {
@@ -6851,19 +8113,26 @@ function renderSeasonsCompliance(d) {
 }
 
 /* ================= 10b. CANADA REQUIREMENT DATA (ca1, 2026-11-17) ======
-   The Canada clone's counterpart to the US gap sweep: requirement data the
-   season files never carried — trap-check intervals, AIHTS certified-trap
-   notes, licence summaries, tenure, trap identification, harvest reporting
-   and sealing, fur royalties, and nuisance-wildlife routes.
-   Data: js/canada-data.js, generated from canada-data-pack.json by
-   tools/build-canada-data.js. The pack's trap_snare_rules is null for every
-   jurisdiction, so the Seasons rules card is built from canada_only +
-   license_summary fields that exist — nothing is invented, and a section
-   with no data is omitted. Reminder-grade reference only. */
-function canadaData(code) {
-  var all = window.OPOSSUM_FOOT_CANADA_DATA || {};
-  return all[code || activeStateCode()] || null;
-}
+   The gap sweep: requirement categories the season data never carried —
+   trap owner-ID tags (1), permission (5), snare construction (10),
+   setbacks (11), carcass/waste (12), trapper education (6) and
+   nonresident rules (7) render here on the Seasons tab; pelt sealing (2),
+   harvest reporting (3) and sell-by deadlines (4) plus the nuisance
+   operator note (8) render on the Paperwork tab; incidental-catch
+   procedures (9) and sealing notes ride the post-catch confirmation.
+   hk (2026-11-19, Tanner): (2), (3), (4) and (8) moved to the Seasons
+   tab too — they stand there as the Deadlines & Permits card under
+   the Tags card (renderSeasonsDeadlines); Paperwork no longer
+   carries them. The sentence above is the gn record.
+   Data: js/gap-data.js, generated from data/us-gap-categories.json by
+   tools/build-gap-data.js. Reminder-grade reference only, like
+   everything else on these tabs. */
+var GAP_CAT_LABELS = {
+  1: 'Trap tags (owner ID)', 2: 'Pelt tagging & sealing', 3: 'Harvest reporting',
+  4: 'Selling & holding pelts', 5: 'Permission to trap', 6: 'Trapper education',
+  7: 'Nonresident trappers', 8: 'Nuisance wildlife work', 9: 'Incidental catch',
+  10: 'Snare construction', 11: 'Setbacks', 12: 'Carcasses & waste'
+};
 function isRightsBased() {
   return !!(Store.data && Store.data.profileType === 'rights-based');
 }
@@ -7029,6 +8298,51 @@ function renderSeasonsGap(d) {
     else { body.removeAttribute('hidden'); card.classList.add('open'); }
   };
 }
+/* hk (2026-11-19, Tanner): Deadlines & Permits moved here from the
+   Paperwork tab (gn's card, 2026-11-17) and stands as a Seasons
+   official item under the Tags card — same card markup, same toggle,
+   same yellow bar and dark panel as its two neighbours (the scoped
+   CSS covers #seasons-deadlines with them). The CONTENT is gn's
+   verbatim: pelt sealing (2), harvest reporting (3) and sell-by
+   deadlines (4) — live-verified entries only — plus the nuisance
+   operator note (8) where one exists, and the Reminder-only footer
+   inside the panel. The whole card hides when the state has none of
+   these, exactly as it did in Paperwork. No data changed. */
+function renderSeasonsDeadlines(d) {
+  var box = $('seasons-deadlines');
+  if (!box) return;
+  var code = activeStateCode();
+  var rec = canadaData(code);
+  var h = '';
+  if (rec) {
+    if (rec.harvest_reporting_and_sealing) {
+      h += '<p class="rules-sec">Harvest reporting &amp; sealing</p><ul class="rules-list"><li>' +
+        esc(rec.harvest_reporting_and_sealing) + '</li></ul>';
+    }
+    if (typeof rec.royalty === 'string' && rec.royalty && rec.royalty !== 'None') {
+      h += '<p class="rules-sec">Fur royalty</p><ul class="rules-list"><li>' +
+        esc(rec.royalty) + '</li></ul>';
+    }
+    if (rec.nuisance_route && !/^none found/i.test(rec.nuisance_route)) {
+      h += '<p class="rules-sec">Nuisance wildlife work</p><ul class="rules-list"><li>' +
+        esc(rec.nuisance_route) + '</li></ul>';
+    }
+  }
+  if (!h) { box.innerHTML = ''; box.hidden = true; return; }
+  box.innerHTML = '<div class="card setsec" id="deadlines-card">' +
+    '<button type="button" class="setsec-head" id="deadlines-toggle"><span>Deadlines &amp; Permits — ' + esc(d ? d.state_name : code) + '</span>' +
+    '<span class="setsec-chev">›</span></button>' +
+    '<div class="setsec-body" hidden>' + h +
+    '<p class="dim rules-src">' + esc(REMINDER_LINE) + '</p></div></div>';
+  box.hidden = false;
+  $('deadlines-toggle').onclick = function () {
+    var card = $('deadlines-card');
+    var body = card.querySelector('.setsec-body');
+    var open = !body.hasAttribute('hidden');
+    if (open) { body.setAttribute('hidden', ''); card.classList.remove('open'); }
+    else { body.removeAttribute('hidden'); card.classList.add('open'); }
+  };
+}
 /* Does a rule text name this species? Matches the full common name, its
    last word, and a few everyday aliases. */
 function gapSpeciesTerms(name) {
@@ -7055,16 +8369,142 @@ function gapNotesForCatch(species) {
   return hit ? [{ cat: 2, entry: { rule: hr, deadline: null } }] : [];
 }
 
+/* ================= gw: TAG RECORDS =================
+   Tanner's law for this feature (2026-11-18): optional by default,
+   removable by choice, blocking never. The record lives ON the catch
+   (log.tagNumber / log.tagDate, plus one photo record with kind 'tag'
+   and the catch's logId) — Paperwork → My Tags is a view over catches,
+   not a second store, so deleting a catch takes its tag record with it
+   everywhere, per the Q38 rule. The Settings toggle hides every surface
+   and deletes nothing. */
+function tagRecordsOn() { return Store.data.tagRecordsOn !== false; }
+/* The app has no global log-by-id helper (the one logById in the file is
+   nested inside the gallery section) — tag records use this one. */
+function tagLogById(id) {
+  var logs = Store.data.logs || [];
+  for (var i = 0; i < logs.length; i++) if (logs[i].id === id) return logs[i];
+  return null;
+}
+
+/* The Cat 2 (pelt tagging & sealing) entry covering this species in the
+   active line's state, or null — the same matching the post-catch
+   sealing note uses, so the form, History, and My Tags always agree
+   about which species get tagged. */
+function tagEntryForSpecies(species) {
+  var notes = gapNotesForCatch(species);
+  for (var i = 0; i < notes.length; i++) if (notes[i].cat === 2) return notes[i].entry;
+  return null;
+}
+function isTagSpecies(species) { return !!tagEntryForSpecies(species); }
+function tagRuleText(entry) {
+  return entry ? entry.rule + (entry.deadline ? ' Deadline: ' + entry.deadline + '.' : '') : '';
+}
+/* A catch "carries tag data" when any of the three fields is filled. */
+function logHasTagData(l, tagPhotos) {
+  if (!l) return false;
+  if ((l.tagNumber || '').trim() || l.tagDate) return true;
+  return !!(tagPhotos && tagPhotos[l.id]);
+}
+
+/* The tag record editor (sheet-tag): opened from an expanded History row
+   or a My Tags row. Prefilled with whatever is stored; every field stays
+   optional, and saving an untouched sheet changes nothing of substance. */
+var tagEditLogId = null;
+/* photo state: existing = the saved photo record (or null); blob = a
+   newly picked replacement; removed = the saved photo is to be deleted.
+   Nothing touches IndexedDB until Save. */
+var tagEditPhoto = null;
+function openTagEditor(logId) {
+  var l = tagLogById(logId);
+  if (!l) return;
+  tagEditLogId = logId;
+  tagEditPhoto = { existing: null, blob: null, removed: false };
+  $('tag-edit-line').innerHTML = '<strong>' + esc(l.species || 'Catch') + '</strong>' +
+    ' · ' + esc(fmtDate(l.date)) + (l.setName ? ' · ' + esc(l.setName) : '');
+  $('tag-edit-rule').textContent = tagRuleText(tagEntryForSpecies(l.species));
+  $('tag-number').value = l.tagNumber || '';
+  $('tag-date').value = l.tagDate || '';
+  renderTagEditPhoto();
+  IDB.all('photos').then(function (all) {
+    if (tagEditLogId !== logId) return;
+    (all || []).forEach(function (p) { if (p && p.logId === logId && p.kind === 'tag') tagEditPhoto.existing = p; });
+    renderTagEditPhoto();
+  }).catch(function () { /* noop */ });
+  openSheet('sheet-tag');
+}
+function renderTagEditPhoto() {
+  var box = $('tag-photos');
+  if (!box) return;
+  box.innerHTML = '';
+  var rm = $('btn-tag-photo-remove');
+  var has = !!(tagEditPhoto && (tagEditPhoto.blob || (tagEditPhoto.existing && !tagEditPhoto.removed)));
+  if (rm) rm.hidden = !has;
+  if (!tagEditPhoto) return;
+  var img = document.createElement('img');
+  img.className = 'photo-thumb'; img.alt = 'Tag photo';
+  if (tagEditPhoto.blob) {
+    img.src = URL.createObjectURL(tagEditPhoto.blob);
+    img.onclick = function () { openFullPhoto(tagEditPhoto.blob); };
+  } else if (tagEditPhoto.existing && !tagEditPhoto.removed) {
+    img.src = photoURL(tagEditPhoto.existing);
+    img.onclick = function () { openPhotoViewer(tagEditPhoto.existing, null, true); };
+  } else return;
+  box.appendChild(img);
+}
+function deleteTagPhotoRec(p) {
+  if (!p) return;
+  if (photoURLs[p.id]) { URL.revokeObjectURL(photoURLs[p.id]); delete photoURLs[p.id]; }
+  delete photoById[p.id];
+  IDB.del('photos', p.id).catch(function () { /* noop */ });
+}
+function saveTagRecord() {
+  var l = tagLogById(tagEditLogId);
+  if (!l) { closeSheets(); return; }
+  l.tagNumber = ($('tag-number').value || '').trim();
+  l.tagDate = $('tag-date').value || '';
+  var ph = tagEditPhoto;
+  if (ph) {
+    if (ph.removed && ph.existing) deleteTagPhotoRec(ph.existing);
+    if (ph.blob) {
+      if (ph.existing && !ph.removed) deleteTagPhotoRec(ph.existing);
+      IDB.put('photos', {
+        id: uid('p'), setId: l.setId, logId: l.id, kind: 'tag', blob: ph.blob,
+        mime: ph.blob.type || 'image/jpeg',
+        lat: (l.lat != null ? l.lat : null), lng: (l.lng != null ? l.lng : null),
+        createdAt: Date.now()
+      }).catch(function () { /* noop */ });
+    }
+  }
+  tagEditPhoto = null; tagEditLogId = null;
+  Store.save();
+  closeSheets();
+  renderHistory();
+  renderMyTags();
+  toast('Tag record saved.');
+}
+
 function showSpeciesDetail(name) {
   var sp = findSpecies(name);
   if (!sp) return;
   var info = speciesSeasonInfo(sp);
   var d = stateData();
-  var html = '<div style="display:flex;align-items:center;gap:12px">' + speciesIcon(name, 'sp-icon-lg') + '<h3 style="margin:0">' + esc(sp.common_name) + '</h3></div>';
-  if (sp.scientific_name) html += '<p class="dim" style="font-style:italic;margin-top:-8px">' + esc(sp.scientific_name) + '</p>';
-  html += '<p><span class="badge ' + info.badgeClass + '">' + info.badge + '</span></p>';
+  /* ho (2026-11-21, Q256, Tanner): the species header is one centered
+     stack — silhouette on top, common name under it, scientific name
+     under the name, status pill beneath — while the season cards below
+     stay left-aligned reading text. (Titles and pills center; lists and
+     reading text align left — the house rule with Q247/Q252.) */
+  var html = '<div class="sp-detail-head">' + speciesIcon(name, 'sp-icon-lg') + '<h3>' + esc(sp.common_name) + '</h3>';
+  if (sp.scientific_name) html += '<p class="dim sp-sci">' + esc(sp.scientific_name) + '</p>';
+  html += '<p><span class="badge ' + info.badgeClass + '">' + info.badge + '</span></p></div>';
   (sp.seasons || []).forEach(function (s) {
-    html += '<div class="card" style="margin:10px 0"><div class="dim">';
+    html += '<div class="card" style="margin:10px 0">';
+    /* ho (2026-11-21, Q255, Tanner): every season bubble carries its
+       method + land label — two records with identical dates and limits
+       (Iowa raccoon: trapping/public and hunting/public) were rendering
+       as the same bubble twice because neither was ever shown. */
+    var ml = seasonMethodLand(s);
+    if (ml) html += '<div class="sp-season-ml">' + esc(ml) + '</div>';
+    html += '<div class="dim">';
     if (s.continuous_open) html += 'Open continuously.';
     else if (s.open_date && s.close_date) html += esc(fmtDate(s.open_date)) + ' → ' + esc(fmtDate(s.close_date));
     else html += 'Dates not listed.';
@@ -7085,13 +8525,24 @@ function showSpeciesDetail(name) {
   $('m-close').onclick = closeModal;
 }
 
+function canadaData(code) {
+  var all = window.OPOSSUM_FOOT_CANADA_DATA || {};
+  return all[code || activeStateCode()] || null;
+}
+
 /* ================= 11. LICENSES ================= */
 var licURLs = {};
 /* License wallet is per trap line. Photos saved before lines existed
        have no lineId and belong to the first line.
    Q52: landowner-notebook photos carry landownerId and never show here. */
 function isLicenseWalletPhoto(p, lid, firstId) {
-  if (!p || p.setId || p.logId || p.landownerId) return false;
+  /* hj (2026-11-19): tripId and markerId join the owner exclusions —
+     trip photos and sign/forage marker photos carry no lineId, so the
+     legacy fallback below routed them all into the FIRST line's
+     wallet. The wallet's taxonomy now matches the export and gallery
+     classifiers, which already test both fields. Display-side only:
+     no data is moved or rewritten. */
+  if (!p || p.setId || p.logId || p.landownerId || p.tripId || p.markerId) return false;
   return (p.lineId || firstId) === lid;
 }
 /* Tanner 2026-10-07: trips live on the Paperwork tab, not in a modal.
@@ -7128,14 +8579,18 @@ function tripRowHTML(tr) {
     '<div class="line-main">' +
     '<span class="line-name">' + esc(fmtDate(tr.date)) + ' \u00b7 ' + esc(fmtMiles(tripMiles(tr))) + '</span>';
   var chev = '</div><span class="trip-chev">\u25b8</span></div>';
-  if (tr.source === 'gps-track') {
+  /* gt: a hand-drawn route files in the same row family as a GPS
+     track — Show on map, Fix route, Delete — wearing its own honest
+     label: Drawn route. The record says how it came to be. */
+  if (tr.source === 'gps-track' || tr.source === 'drawn-route') {
     var det = tripDetail(tr);
     return '<div class="trip-block">' +
-      head + '<span class="dim">GPS track</span>' + chev +
+      head + '<span class="dim">' + (tr.source === 'drawn-route' ? 'Drawn route' : 'GPS track') + '</span>' + chev +
       '<div class="trip-body">' +
       (det ? '<div class="dim" style="margin-bottom:8px">' + esc(det) + '</div>' : '') +
       '<div class="btn-row">' +
-      '<button type="button" class="btn-secondary" data-trip-show="' + esc(tr.id) + '">Show on map</button>' +
+      '<button type="button" class="btn-secondary" data-trip-show="' + esc(tr.id) + '">' + ((window.Tracking && Tracking.drawnTripId && Tracking.drawnTripId() === tr.id) ? 'Hide on map' : 'Show on map') + '</button>' +
+      (tr.track && tr.track.length > 1 ? '<button type="button" class="btn-secondary" data-trip-fix="' + esc(tr.id) + '">Fix route</button>' : '') +
       '<button type="button" class="btn-ghost" data-trip-gdel="' + esc(tr.id) + '">Delete</button>' +
       '</div>' +
       '</div>' +
@@ -7168,7 +8623,7 @@ function fillTripThumbs(box) {
           item.className = 'lic-item';
           var img = document.createElement('img');
           img.src = photoURL(p);
-          img.alt = p.kind === 'map' ? 'Road directions screenshot' : 'Odometer photo';
+          img.alt = p.kind === 'map' ? 'Road directions screenshot' : (p.kind === 'note' ? 'Note photo' : 'Odometer photo');
           /* dg: the trip box opens the edit form — photo taps must not bubble. */
           img.onclick = function (ev) { ev.stopPropagation(); openFullPhoto(p.blob); };
           var del = document.createElement('button');
@@ -7187,6 +8642,81 @@ function deleteTripPhoto(photoId) {
   confirmModal('Delete this photo?', 'It will be removed from this phone.', 'Delete', function () {
     IDB.del('photos', photoId).then(function () { renderPaperworkMileage(); });
   });
+}
+/* gr (2026-11-18, Tanner): the trip-map context. While a saved trip's
+   route is drawn from this readout — Show on map, or the landing after
+   a Fix route Done — the route bar carries Fix route for that same
+   trip, so the route (and a repair just made to it) can be checked
+   right where it landed; the drawn route stays on the map, as Show on
+   map has always left it. hu (2026-11-21, Q278, Tanner): the bar's
+   third button is Done now, not Back — Back only jumped to the
+   Paperwork tab, which the tab bar already does; Done dismisses the
+   bar and leaves him on the map (the dismissal lives in tracking.js). */
+function tripMapCtx(tr) {
+  return {
+    tripId: tr.id, /* if (Q298): the drawn route knows its trip, so the trip's own button can read Hide on map */
+    fix: function () { openTripFix(tr); }
+  };
+}
+/* go/gp/gq: Fix route — Tracking owns the map work and the working
+   copy; this callback fires ONCE, when Tanner taps Done in the fix
+   bar, and writes the finished edit to the trip and saves, so the
+   readout, the map, and the mileage agree and survive a reload.
+   Cancel never calls back at all.
+   gr: after the write, the saved trip is drawn the way Show on map
+   draws it, with its context — Done lands on the fixed route itself
+   instead of leaving a blank map behind. */
+function openTripFix(tr) {
+  switchTab('map');
+  Tracking.startFix(tr.track, function (res) {
+    tr.track = res.track; tr.miles = res.miles;
+    Store.save(); renderPaperworkMileage();
+    /* ig (2026-11-21, Q301, Tanner): the landing draws the fixed route
+       with NO bar — the landing's job is to look at the route; Fix and
+       Hide live in Paperwork. The bar survives only on a route that
+       has not been saved yet, where its Save/Discard are the only door. */
+    var fctx = tripMapCtx(tr); fctx.noBar = true;
+    Tracking.drawSaved(tr.track, fctx);
+  });
+}
+/* gt (2026-11-18, Tanner): Draw a route — the standalone drawing
+   hand. Tracking owns the map work; when he taps Save in the draw
+   bar, this asks for the trip's date the way Log Trip does (a date
+   field, today filled in) and files the trip on the line he drew it
+   from. The record is honest about its making: source 'drawn-route',
+   and every stored point carries the hand flag. Points round to the
+   same five decimals a saved GPS track keeps. Cancelling the date
+   prompt leaves the drawn route on the map, untouched; saving lands
+   where Log Trip's save lands — back on the Paperwork readout. */
+function openDrawRoute(lineId) {
+  switchTab('map');
+  if (window.Tracking) Tracking.startDrawRoute(function (res) { openDrawnTripSave(lineId, res); });
+}
+function openDrawnTripSave(lineId, res) {
+  showModal(
+    '<h3>Save drawn route</h3>' +
+    '<p class="dim" style="margin:0 0 6px">' + esc(fmtMiles(res.miles)) + ' drawn by hand on the map.</p>' +
+    '<label class="field" for="m-draw-date">Date</label>' +
+    '<input type="date" id="m-draw-date" value="' + esc(todayISO()) + '">' +
+    '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
+    '<button class="btn-primary" id="m-ok" type="button">Save route</button></div>'
+  );
+  $('m-cancel').onclick = function () { closeModal(); };
+  $('m-ok').onclick = function () {
+    var date = $('m-draw-date').value;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '')) { toast('Pick a date for the trip.'); return; }
+    if (!Array.isArray(Store.data.trips)) Store.data.trips = [];
+    Store.data.trips.push({
+      id: uid('trip'), lineId: lineId, createdAt: Date.now(), date: date,
+      source: 'drawn-route', miles: res.miles,
+      track: res.pts.map(function (p) { return [Math.round(p.lat * 1e5) / 1e5, Math.round(p.lng * 1e5) / 1e5, 1]; }),
+      notes: ''
+    });
+    Store.save();
+    if (window.Tracking) Tracking.endDrawRoute();
+    closeModal(); renderPaperworkMileage(); switchTab('licenses');
+    toast('Drawn route filed in the mileage log.');
+  };
 }
 function renderPaperworkMileage() {
   var box = $('paperwork-mileage-lines');
@@ -7216,8 +8746,9 @@ function renderPaperworkMileage() {
   var actions = on
     ? '<div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">' +
       '<button type="button" class="btn-secondary" data-pm-logtrip="' + esc(ln.id) + '">\uFF0B Log Trip</button>' +
-      '<button type="button" class="btn-secondary" data-pm-track="' + esc(ln.id) + '"><span style="color:#e5484d">\u25CF</span> Track a route</button></div>'
-    : '<p class="dim" style="margin-top:10px">Mileage is off \u2014 these trips stay here to read. To record new trips, turn on Mileage log in Settings \u2192 Feature Toggles.</p>';
+      '<button type="button" class="btn-secondary" data-pm-track="' + esc(ln.id) + '"><span style="color:#e5484d">\u25CF</span> Track a route</button>' +
+      '<button type="button" class="btn-secondary" data-pm-draw="' + esc(ln.id) + '">Draw a route</button></div>'
+    : '<p class="dim" style="margin-top:10px">Mileage is off \u2014 these trips stay here to read. To record new trips, turn on Mileage log in Settings \u2192 Toggles \u2192 Feature Toggles.</p>';
   box.innerHTML = '<div class="pm-line" data-pm-line-block="' + esc(ln.id) + '">' +
     '<div class="pm-line-head"><span><strong>' + esc(ln.name) + '</strong> ' +
     '<span class="dim">' + esc(fmtMiles(lineTripTotal(ln.id))) + '</span></span></div>' +
@@ -7230,7 +8761,7 @@ function renderPaperworkMileage() {
   var trk = box.querySelectorAll('[data-pm-track]');
   for (var t = 0; t < trk.length; t++) {
     trk[t].onclick = function () {
-      if (Store.data.mileageOn === false) { toast('Route & mileage tracking is off — turn it on in Settings \u2192 Feature Toggles.'); return; }
+      if (Store.data.mileageOn === false) { toast('Route & mileage tracking is off — turn it on in Settings \u2192 Toggles \u2192 Feature Toggles.'); return; }
       switchTab('map');
       if (window.Tracking) Tracking.start();
     };
@@ -7240,6 +8771,17 @@ function renderPaperworkMileage() {
     (function (el) {
       el.onclick = function () { showTripModal(el.getAttribute('data-pm-logtrip'), null); };
     })(lts[i]);
+  }
+  /* gt: Draw a route — same visibility rules as Track a route (the
+     actions block only renders while mileage recording is on). */
+  var drs = box.querySelectorAll('[data-pm-draw]');
+  for (var d2 = 0; d2 < drs.length; d2++) {
+    (function (el) {
+      el.onclick = function () {
+        if (Store.data.mileageOn === false) { toast('Route & mileage tracking is off — turn it on in Settings → Toggles → Feature Toggles.'); return; }
+        openDrawRoute(el.getAttribute('data-pm-draw'));
+      };
+    })(drs[d2]);
   }
   var edits = box.querySelectorAll('[data-trip-edit]');
   for (var e = 0; e < edits.length; e++) {
@@ -7253,7 +8795,13 @@ function renderPaperworkMileage() {
     (function (el) {
       el.onclick = function () {
         var tr = tripById(el.getAttribute('data-trip-show'));
-        if (tr && tr.track && tr.track.length > 1 && window.Tracking) { switchTab('map'); Tracking.drawSaved(tr.track); }
+        if (!tr || !window.Tracking) return;
+        /* if (2026-11-21, Q298, Tanner): the button names the state it
+           is in — a trip whose route is on the map reads Hide on map,
+           and tapping it takes the route off (the route bar's own Hide
+           route by another door), staying right here in Paperwork. */
+        if (Tracking.drawnTripId && Tracking.drawnTripId() === tr.id) { Tracking.clearSaved(); renderPaperworkMileage(); return; }
+        if (tr.track && tr.track.length > 1) { var ctx = tripMapCtx(tr); ctx.noBar = true; /* Q300: shown from Paperwork — no second menu on the map */ switchTab('map'); Tracking.drawSaved(tr.track, ctx); }
         else toast('No route is saved on that trip.');
       };
     })(shows[s2]);
@@ -7263,6 +8811,20 @@ function renderPaperworkMileage() {
     (function (el) {
       el.onclick = function () { deleteTrip(lineOf(el), el.getAttribute('data-trip-gdel')); };
     })(gdels[g]);
+  }
+  /* go: Fix route — a GPS trip whose line jumped (the sleep diagonal)
+     can be repaired after the fact. The wiring lives in openTripFix
+     (above renderPaperworkMileage): gp's once-only Done callback, and
+     gr's landing on the drawn fixed route after it. */
+  var fixes = box.querySelectorAll('[data-trip-fix]');
+  for (var f2 = 0; f2 < fixes.length; f2++) {
+    (function (el) {
+      el.onclick = function () {
+        var tr = tripById(el.getAttribute('data-trip-fix'));
+        if (tr && tr.track && tr.track.length > 1 && window.Tracking) openTripFix(tr);
+        else toast('No route is saved on that trip.');
+      };
+    })(fixes[f2]);
   }
   /* gl: a trip row's head taps the row open and closed. */
   var togs = box.querySelectorAll('[data-trip-toggle]');
@@ -7276,39 +8838,73 @@ function renderPaperworkMileage() {
   }
   fillTripThumbs(box);
 }
-/* gn: Paperwork tab deadlines card — the active line's state pelt
-   sealing, harvest reporting, and sell-by deadlines (live-verified
-   entries only; the generator holds unverified ones out of the app),
-   plus the state's nuisance-operator note (Cat 8) where one exists.
-   The whole card hides when the state has none of these. */
-function renderPaperworkDeadlines() {
-  var card = $('setsec-deadlines');
-  var box = $('paperwork-deadlines');
+/* hk (2026-11-19): gn's Paperwork deadlines card (renderPaperworkDeadlines)
+   is gone from here — the section moved to the Seasons tab as
+   renderSeasonsDeadlines, content verbatim. Nothing in Paperwork
+   referenced it but its two render calls, both removed. */
+
+/* gw: Paperwork → My Tags — a view over the active line's catches, never
+   a second store. Two groups, newest catch first in each: records on
+   file (number, date, photo) and tag-species catches still awaiting a
+   tag number, carrying the state's deadline text. No badges, counters,
+   or mentions anywhere else in the app. The whole card hides when Tag
+   records are off — stored records are untouched. */
+function renderMyTags() {
+  var card = $('setsec-mytags');
+  var box = $('mytags-list');
   if (!card || !box) return;
-  var code = activeStateCode();
-  var d = stateData();
-  var rec = canadaData(code);
-  var h = '';
-  if (rec) {
-    if (rec.harvest_reporting_and_sealing) {
-      h += '<p class="rules-sec">Harvest reporting &amp; sealing</p><ul class="rules-list"><li>' +
-        esc(rec.harvest_reporting_and_sealing) + '</li></ul>';
-    }
-    if (typeof rec.royalty === 'string' && rec.royalty && rec.royalty !== 'None') {
-      h += '<p class="rules-sec">Fur royalty</p><ul class="rules-list"><li>' +
-        esc(rec.royalty) + '</li></ul>';
-    }
-    if (rec.nuisance_route && !/^none found/i.test(rec.nuisance_route)) {
-      h += '<p class="rules-sec">Nuisance wildlife work</p><ul class="rules-list"><li>' +
-        esc(rec.nuisance_route) + '</li></ul>';
-    }
-  }
-  if (!h) { card.style.display = 'none'; box.innerHTML = ''; return; }
+  if (!tagRecordsOn()) { card.style.display = 'none'; box.innerHTML = ''; return; }
   card.style.display = '';
-  var title = $('setsec-deadlines-title');
-  if (title) title.textContent = 'Deadlines & Permits — ' + (d ? d.state_name : code);
-  box.innerHTML = h + '<p class="dim rules-src">' + esc(REMINDER_LINE) + '</p>';
+  var logs = activeLogs().filter(function (l) {
+    return !l.otherType && l.species && isTagSpecies(l.species);
+  });
+  if (!logs.length) {
+    box.innerHTML = '<p class="dim">No catches on this line need a tag yet. When you log a species your state tags — bobcat, otter, and the like — its tag record will live here.</p>';
+    return;
+  }
+  IDB.all('photos').then(function (all) {
+    var tagPhotos = {};
+    (all || []).forEach(function (p) { if (p && p.logId && p.kind === 'tag') tagPhotos[p.logId] = p; });
+    var filled = [], waiting = [];
+    logs.forEach(function (l) { (logHasTagData(l, tagPhotos) ? filled : waiting).push(l); });
+    function byDateDesc(a, b) { return (b.date || '') < (a.date || '') ? -1 : ((b.date || '') > (a.date || '') ? 1 : (b.createdAt || 0) - (a.createdAt || 0)); }
+    filled.sort(byDateDesc); waiting.sort(byDateDesc);
+    function row(l) {
+      var p = tagPhotos[l.id];
+      var has = logHasTagData(l, tagPhotos);
+      var top = has
+        ? (l.tagNumber ? '<span class="tag-num">Tag № ' + esc(l.tagNumber) + '</span>' : '<span class="dim">Tag photo / date on file</span>')
+        : '<span class="dim">Awaiting tag</span>';
+      var meta = esc(fmtDate(l.date)) + (l.setName ? ' · ' + esc(l.setName) : '') +
+        (l.tagDate ? ' · Tagged ' + esc(fmtDate(l.tagDate)) : '');
+      var dl = '';
+      if (!has) {
+        var e = tagEntryForSpecies(l.species);
+        if (e) dl = '<div class="dim">' + (e.deadline ? '<strong>Deadline: ' + esc(e.deadline) + '</strong> — ' : '') + esc(e.rule) + '</div>';
+      }
+      return '<div class="tag-row" data-tag-edit="' + l.id + '"><div class="tag-flex">' +
+        '<div class="tag-main"><div class="tag-top"><span class="tag-species">' + esc(l.species) + '</span>' + top + '</div>' +
+        '<div class="dim">' + meta + '</div>' + dl + '</div>' +
+        (p ? '<img class="tag-thumb" data-tag-photo="' + l.id + '" src="' + photoURL(p) + '" alt="Tag photo">' : '') +
+        '</div></div>';
+    }
+    var h = '';
+    if (filled.length) h += (waiting.length ? '<p class="rules-sec">On record</p>' : '') + filled.map(row).join('');
+    if (waiting.length) h += (filled.length ? '<p class="rules-sec">Waiting for a tag</p>' : '') + waiting.map(row).join('');
+    box.innerHTML = h;
+    box.onclick = function (e) {
+      var th = e.target.closest ? e.target.closest('[data-tag-photo]') : null;
+      if (th) {
+        var p = tagPhotos[th.getAttribute('data-tag-photo')];
+        if (p) openPhotoViewer(p, null, true);
+        return;
+      }
+      var r = e.target.closest ? e.target.closest('[data-tag-edit]') : null;
+      if (r) openTagEditor(r.getAttribute('data-tag-edit'));
+    };
+  }).catch(function () { box.innerHTML = '<p class="dim">Could not load tag photos.</p>'; });
 }
+
 function renderLicenses() {
   var grid = $('license-grid');
   IDB.all('photos').then(function (all) {
@@ -7341,54 +8937,39 @@ function renderLicenses() {
         });
       };
       item.appendChild(img); item.appendChild(del);
-      if (p.link) {
-        var badge = document.createElement('span');
-        badge.className = 'lic-link';
-        badge.textContent = '🔗 site linked';
-        item.appendChild(badge);
-      }
+      /* hl (2026-11-20, Q245): the linked-photo badge is gone with the
+         custom-link override it marked. A stored p.link is simply
+         ignored now — the official state site governs. */
       grid.appendChild(item);
     });
   });
 }
 
-/* Tap a license photo: view it, open its linked site, or attach/change the link. */
+/* Tap a license photo: view it (zoomable — the warden reads it off the
+   phone) and open the official state license site. hl (2026-11-20, Q245,
+   Tanner, on Aron Arthur's word): the per-photo custom-link override is
+   retired — picture + zoom + the state site link is more than enough.
+   A previously saved p.link is simply ignored; no migration. */
 function openLicenseDetail(p) {
-  var link = p.link || '';
   var d = stateData();
-  /* Official state license vendor is automatic — no typing needed.
-     A per-photo custom link still overrides it when set. */
-  var officialUrl = (!link && d && d.license_url) ? d.license_url : '';
-  var btnUrl = link || officialUrl;
+  /* Official state license vendor is automatic — no typing needed. */
+  var officialUrl = (d && d.license_url) ? d.license_url : '';
   var html = '<img src="' + licURLs[p.id] + '" style="width:100%;border-radius:8px" alt="License photo">';
-  if (btnUrl) {
+  if (officialUrl) {
     /* Tanner 2026-10-01: title case on buttons and labels. */
-    var btnLabel = link ? 'Open License Site ↗'
-      : 'Official ' + esc(d.state_name) + ' License Site ↗';
     html += '<a class="btn-primary" style="display:block;text-align:center;margin-top:10px;text-decoration:none;border-radius:var(--radius)" href="' +
-      esc(btnUrl) + '" target="_blank" rel="noopener">' + btnLabel + '</a>';
-    if (!link && d.license_note) {
+      esc(officialUrl) + '" target="_blank" rel="noopener">' + 'Official ' + esc(d.state_name) + ' License Site ↗' + '</a>';
+    if (d.license_note) {
       html += '<p class="dim" style="margin-top:8px">' + esc(d.license_note) + '</p>';
     }
   }
-  html += '<label class="field" for="m-lic-link" style="margin-top:12px">Custom Link (Optional — Overrides the Official Site Above)</label>' +
-    '<input id="m-lic-link" type="url" inputmode="url" placeholder="https://…" value="' + esc(link) + '" autocomplete="off">' +
-    '<div class="btn-row btn-compact" style="margin-top:10px"><button class="btn-secondary" id="m-lic-save" type="button">Save Link</button>' +
+  html += '<div class="btn-row btn-compact" style="margin-top:10px">' +
     '<button class="btn-secondary" id="m-ph-save" type="button">Save Photo</button>' +
     '<button class="btn-secondary" id="m-close" type="button">Close</button></div>';
   showModal(html);
   wirePhotoZoom($('modal-card')); /* fy: the license photo zooms like every other photo */
   $('m-close').onclick = closeModal;
   $('m-ph-save').onclick = function () { sharePhotoFile(p.blob, 'opossum-foot-license'); };
-  $('m-lic-save').onclick = function () {
-    var v = $('m-lic-link').value.trim();
-    if (v && !/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(v)) v = 'https://' + v;
-    p.link = v;
-    IDB.put('photos', p).then(function () {
-      closeModal(); renderLicenses();
-      toast(v ? 'License link saved.' : 'License link removed.');
-    });
-  };
 }
 
 /* ================= 11b. LANDOWNER NOTEBOOK (Q52) =================
@@ -7807,9 +9388,17 @@ function buildBackupData() {
     exportedAt: new Date().toISOString(),
     version: APP_VERSION,
     state: activeStateCode(),
+    /* hy (Q286): the whole phone rides — lines, the landowner notebook,
+       and the forage markers included. Without them a restore landed
+       every set on a nameless default line and orphaned every
+       permission photo the media restore brought back. */
+    lines: Store.data.lines || [],
+    activeLineId: Store.data.activeLineId || null,
     sets: Store.data.sets || [],
     logs: Store.data.logs || [],
     trips: Store.data.trips || [], /* Q8: the trip log rides along */
+    landowners: Store.data.landowners || [],
+    markers: Store.data.markers || [],
     homes: homeByLineMap() /* Q53: per-line home grounds */
   };
 }
@@ -7940,8 +9529,8 @@ function buildMediaEntries(photos, memos) {
     (Store.data.logs || []).forEach(function (x) { if (x.id === id) found = x; });
     return found;
   }
-  var usedPaths = {}, entries = [], indexRows = [];
-  function add(folder, label, lineId, rec, blob, note) {
+  var usedPaths = {}, entries = [], indexRows = [], restoreRows = [];
+  function add(folder, label, lineId, rec, blob, note, store) {
     if (!blob) return;
     var when = rec.createdAt || Date.now();
     var base = mediaDateStamp(when) + ' — ' + mediaFileSlug(label);
@@ -7951,6 +9540,12 @@ function buildMediaEntries(photos, memos) {
     usedPaths[path] = true;
     entries.push({ path: path, blob: blob, when: when });
     indexRows.push({ file: path, category: folder, line: lineName(lineId), record: label, date: mediaDateStamp(when), note: note || '' });
+    /* hy (Q286): the restore manifest — the record itself, minus the
+       blob, so Import data can put every photo and memo back on its
+       exact record after a reinstall. */
+    var clean = {};
+    Object.keys(rec).forEach(function (k) { if (k !== 'blob') clean[k] = rec[k]; });
+    restoreRows.push({ path: path, store: store || 'photos', rec: clean });
   }
   photos.forEach(function (p) {
     if (!p || !p.blob) return;
@@ -7960,7 +9555,7 @@ function buildMediaEntries(photos, memos) {
         lo ? lo.lineId : firstLineId, p, p.blob, '');
     } else if (p.tripId) {
       var tr = tripById(p.tripId);
-      add('Trip Photos', 'Trip ' + (tr ? fmtDate(tr.date) : '') + (p.kind === 'map' ? ' — Directions' : ' — Odometer'),
+      add('Trip Photos', 'Trip ' + (tr ? fmtDate(tr.date) : '') + (p.kind === 'map' ? ' — Directions' : (p.kind === 'note' ? ' — Note photo' : ' — Odometer')),
         tr ? tr.lineId : firstLineId, p, p.blob, '');
     } else if (p.logId) {
       var lg = logById(p.logId);
@@ -7976,9 +9571,11 @@ function buildMediaEntries(photos, memos) {
       add('Forage & Finds', mk ? (mk.name || mk.label || mk.ref || 'Marker') : 'Marker',
         mk ? mk.lineId : firstLineId, p, p.blob, '');
     } else {
-      /* No set/log/trip/landowner/marker link: a license-wallet photo. */
+      /* No set/log/trip/landowner/marker link: a license-wallet photo.
+         hl (Q245): the old 'Linked site: …' index note is gone too — a
+         stored custom link is ignored everywhere now. */
       add('Licenses', p.name ? p.name.replace(/\.[A-Za-z0-9]+$/, '') : 'License',
-        p.lineId || firstLineId, p, p.blob, p.link ? 'Linked site: ' + p.link : '');
+        p.lineId || firstLineId, p, p.blob, '');
     }
   });
   memos.forEach(function (m) {
@@ -7988,9 +9585,9 @@ function buildMediaEntries(photos, memos) {
     var mSet = ms || (mlg && mlg.setId ? getSet(mlg.setId) : null);
     add('Voice Memos', mSet ? mSet.name : (mlg ? (mlg.species || 'Catch memo') : 'Voice memo'),
       mSet ? mSet.lineId : firstLineId, m, m.blob,
-      m.transcript ? 'Transcript: ' + m.transcript : '');
+      m.transcript ? 'Transcript: ' + m.transcript : '', 'memos');
   });
-  return { entries: entries, indexRows: indexRows };
+  return { entries: entries, indexRows: indexRows, restoreRows: restoreRows };
 }
 function mediaIndexText(rows) {
   var out = ['Opossum Foot — media export index', 'Exported ' + new Date().toLocaleString(), rows.length + ' files', ''];
@@ -8010,6 +9607,7 @@ function exportMediaZip() {
         return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
       }).join(',');
     }).join('\n');
+    built.entries.unshift({ path: 'RESTORE.json', blob: new Blob([JSON.stringify({ kind: 'opossum-foot-media', version: 1, files: built.restoreRows })], { type: 'application/json' }), when: Date.now() });
     built.entries.unshift({ path: 'INDEX.csv', blob: new Blob([csv], { type: 'text/csv' }), when: Date.now() });
     built.entries.unshift({ path: 'INDEX.txt', blob: new Blob([mediaIndexText(rows)], { type: 'text/plain' }), when: Date.now() });
     return buildZipBlob(built.entries).then(function (zip) {
@@ -8027,7 +9625,127 @@ function exportMediaZip() {
 /* Import a JSON file previously exported from Opossum Foot
    (or generated by the Trap Log migration): {app:'opossum-foot', sets:[], logs:[]}.
    Merges into existing data; colliding ids get fresh ones. */
+/* hy (2026-11-21, Q286, Tanner): the media restore door. The photos
+   & memos ZIP was a one-way archive — nothing read it back, so a
+   reinstall lost every license photo, permission slip, and voice
+   memo even with a perfect backup. Now the export carries a
+   RESTORE.json manifest (each file's record, minus the blob), and
+   Import data puts every record back under its own id — photos land
+   back on their sets, catches, trips, landowners, and licenses
+   exactly where they were. Records already on the phone are skipped,
+   never doubled. Older ZIPs without a manifest restore what the
+   index can place unambiguously (set photos by set name — names are
+   unique app-wide — and licenses) and say plainly what they can't. */
+function importMediaZip(file) {
+  toast('Reading your media file…');
+  file.arrayBuffer().then(function (buf) { return readZipEntries(buf); }).then(function (files) {
+    if (!files) { toast('That ZIP could not be read — your data is untouched.'); return; }
+    if (files['RESTORE.json']) {
+      files['RESTORE.json'].text().then(function (t) {
+        var man = null;
+        try { man = JSON.parse(t); } catch (e) { /* not a manifest — legacy path */ }
+        if (man && man.kind === 'opossum-foot-media' && Array.isArray(man.files)) { restoreMediaManifest(man.files, files); return; }
+        restoreMediaLegacy(files);
+      });
+      return;
+    }
+    restoreMediaLegacy(files);
+  }).catch(function () { toast('Media import hit a snag — your data is untouched.'); });
+}
+function restoreMediaManifest(rows, files) {
+  var placed = 0, already = 0, missing = 0;
+  var chain = Promise.resolve();
+  rows.forEach(function (row) {
+    chain = chain.then(function () {
+      var blob = files[row.path];
+      if (!blob || !row.rec || !row.rec.id || (row.store !== 'photos' && row.store !== 'memos')) { missing++; return null; }
+      return IDB.get(row.store, row.rec.id).then(function (have) {
+        if (have) { already++; return null; }
+        var rec = {};
+        Object.keys(row.rec).forEach(function (k) { rec[k] = row.rec[k]; });
+        rec.blob = (rec.mime && blob.type !== rec.mime) ? new Blob([blob], { type: rec.mime }) : blob;
+        return IDB.put(row.store, rec).then(function () { placed++; });
+      }).catch(function () { missing++; });
+    });
+  });
+  chain.then(function () {
+    toast('Media back in place: ' + placed + ' restored' +
+      (already ? ', ' + already + ' already on this phone' : '') +
+      (missing ? ', ' + missing + ' could not be placed' : '') + '.');
+    if (typeof renderGallery === 'function') { try { renderGallery(); } catch (e) { /* noop */ } }
+  });
+}
+function parseCsvRows(text) {
+  var rows = [], row = [], field = '', quoted = false;
+  for (var i = 0; i < text.length; i++) {
+    var c = text[i];
+    if (quoted) {
+      if (c === '"') {
+        if (text[i + 1] === '"') { field += '"'; i++; }
+        else quoted = false;
+      } else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field); field = '';
+      rows.push(row); row = [];
+    } else field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(function (r) { return r.length > 1 || (r[0] && r[0].trim()); });
+}
+function mediaParseDate(stamp) {
+  var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(stamp || '');
+  return m ? new Date(+m[1], +m[2] - 1, +m[3], 12).getTime() : Date.now();
+}
+function restoreMediaLegacy(files) {
+  var idx = files['INDEX.csv'];
+  if (!idx) { toast('That ZIP has no index — nothing was imported.'); return; }
+  idx.text().then(function (t) {
+    var rows = parseCsvRows(t);
+    rows.shift(); /* header */
+    var placed = 0, already = 0, unplaced = 0;
+    var havePhotos = [];
+    var chain = IDB.all('photos').then(function (all) { havePhotos = all; });
+    rows.forEach(function (r) {
+      var path = r[0], cat = r[1], label = r[3], date = r[4];
+      var blob = files[path];
+      if (!blob) { unplaced++; return; }
+      if (cat === 'Set Photos') {
+        var set = null;
+        (Store.data.sets || []).forEach(function (sx) { if (sx.name === label) set = sx; });
+        if (!set) { unplaced++; return; }
+        chain = chain.then(function () {
+          var dup = havePhotos.some(function (px) { return px.setId === set.id && !px.logId && mediaDateStamp(px.createdAt || 0) === date; });
+          if (dup) { already++; return null; }
+          var rec = { id: uid('p'), setId: set.id, blob: blob, mime: blob.type || 'image/jpeg', createdAt: mediaParseDate(date) };
+          havePhotos.push(rec);
+          return IDB.put('photos', rec).then(function () { placed++; });
+        });
+      } else if (cat === 'Licenses') {
+        chain = chain.then(function () {
+          var dup = havePhotos.some(function (px) {
+            return !px.setId && !px.logId && !px.tripId && !px.landownerId && !px.markerId && px.name &&
+              px.name.replace(/\.[A-Za-z0-9]+$/, '') === label;
+          });
+          if (dup) { already++; return null; }
+          var rec = { id: uid('p'), name: path.split('/').pop(), blob: blob, mime: blob.type || 'image/jpeg', createdAt: mediaParseDate(date) };
+          havePhotos.push(rec);
+          return IDB.put('photos', rec).then(function () { placed++; });
+        });
+      } else { unplaced++; }
+    });
+    chain.then(function () {
+      toast('Older media file: ' + placed + ' set photos & licenses restored' +
+        (already ? ', ' + already + ' already on this phone' : '') +
+        (unplaced ? '. ' + unplaced + ' files (catch photos, memos, and the rest) can\'t be placed from an older export — new exports restore everything.' : '.'));
+    });
+  }).catch(function () { toast('Media import hit a snag — your data is untouched.'); });
+}
 function importDataFile(file) {
+  /* hy (Q286): a media ZIP takes the media door, not the JSON reader. */
+  if (/\.zip$/i.test(file.name || '')) { importMediaZip(file); return; }
   var reader = new FileReader();
   reader.onload = function () {
     var data;
@@ -8040,6 +9758,32 @@ function importDataFile(file) {
     if (data && data.kind === 'photo-pack') { importPhotoPack(data); return; }
     if (!data || !Array.isArray(data.sets) || !Array.isArray(data.logs)) {
       toast('Not an Opossum Foot import file.');
+      return;
+    }
+    /* hy (Q286): a genuine full backup (it carries its lines) landing
+       on a phone with nothing on it restores WHOLESALE — lines, sets,
+       logs, trips with their tracks, landowners, and markers come
+       back with their own ids, so the media restore can put every
+       photo and memo back on its exact record. A phone that already
+       has data keeps the merge path below, untouched. */
+    if (data.app === 'opossum-foot' && Array.isArray(data.lines) && data.lines.length &&
+        !(Store.data.sets || []).length && !(Store.data.logs || []).length) {
+      var cloneAll = function (x) { return JSON.parse(JSON.stringify(x)); };
+      Store.data.lines = cloneAll(data.lines);
+      Store.data.sets = cloneAll(data.sets);
+      Store.data.logs = cloneAll(data.logs);
+      if (Array.isArray(data.trips)) Store.data.trips = cloneAll(data.trips);
+      if (Array.isArray(data.landowners)) Store.data.landowners = cloneAll(data.landowners);
+      if (Array.isArray(data.markers)) Store.data.markers = cloneAll(data.markers);
+      Store.data.activeLineId = (data.activeLineId && lineById(Store.data, data.activeLineId))
+        ? data.activeLineId : Store.data.lines[0].id;
+      applyImportedHomes(data);
+      if (!Store.data.onboarded && activeStateCode()) Store.data.onboarded = true;
+      Store.save();
+      refreshMarkers(); renderHistory(); renderTotals();
+      toast('Backup restored: ' + Store.data.sets.length + ' sets, ' + Store.data.logs.length + ' logs, ' +
+        (Store.data.trips ? Store.data.trips.length : 0) + ' trips on ' + Store.data.lines.length +
+        ' line' + (Store.data.lines.length === 1 ? '' : 's') + '. Now import your media ZIP to bring back photos & memos.');
       return;
     }
     var haveSetIds = {}, haveLogIds = {};
@@ -8106,9 +9850,29 @@ function importDataFile(file) {
           date: /^\d{4}-\d{2}-\d{2}$/.test(t.date || '') ? t.date : todayISO(),
           startOdo: (isFinite(+t.startOdo) && +t.startOdo >= 0) ? +t.startOdo : 0,
           endOdo: (isFinite(+t.endOdo) && +t.endOdo >= 0) ? +t.endOdo : 0,
+          miles: (isFinite(+t.miles) && +t.miles >= 0) ? +t.miles : 0,
+          track: (t.track && typeof t.track === 'object') ? t.track : undefined,
           notes: t.notes || '', createdAt: t.createdAt || Date.now()
         });
         nTrips++;
+      });
+    }
+    /* hy (Q286): landowners and markers ride the backup too — merged
+       by id, so the notebook and the forage pins come back with it. */
+    if (Array.isArray(data.landowners)) {
+      if (!Array.isArray(Store.data.landowners)) Store.data.landowners = [];
+      var haveLo = {};
+      Store.data.landowners.forEach(function (x) { if (x && x.id) haveLo[x.id] = true; });
+      data.landowners.forEach(function (lo) {
+        if (lo && lo.id && !haveLo[lo.id]) { Store.data.landowners.push(JSON.parse(JSON.stringify(lo))); haveLo[lo.id] = true; }
+      });
+    }
+    if (Array.isArray(data.markers)) {
+      if (!Array.isArray(Store.data.markers)) Store.data.markers = [];
+      var haveMk = {};
+      Store.data.markers.forEach(function (x) { if (x && x.id) haveMk[x.id] = true; });
+      data.markers.forEach(function (mk) {
+        if (mk && mk.id && !haveMk[mk.id]) { Store.data.markers.push(JSON.parse(JSON.stringify(mk))); haveMk[mk.id] = true; }
       });
     }
     var al = activeLine();
@@ -8297,7 +10061,7 @@ function galleryPhotoLabel(p) {
   }
   if (p.tripId) {
     var tr = tripById(p.tripId);
-    return { title: 'Trip ' + (tr ? fmtDate(tr.date) : ''), sub: p.kind === 'map' ? 'Directions' : 'Odometer', lineId: tr ? tr.lineId : p.lineId };
+    return { title: 'Trip ' + (tr ? fmtDate(tr.date) : ''), sub: p.kind === 'map' ? 'Directions' : (p.kind === 'note' ? 'Note photo' : 'Odometer'), lineId: tr ? tr.lineId : p.lineId };
   }
   if (p.logId) {
     var lg = null;
@@ -8680,6 +10444,71 @@ function kmzToKmlText(buf) {
       return new Response(stream).text().catch(function () { return null; });
     }
     return Promise.resolve(null);
+  } catch (e) { return Promise.resolve(null); }
+}
+/* hy (Q286): a general ZIP reader on the same machinery as the KMZ
+   reader above — central directory walk, stored entries straight
+   through, deflate through DecompressionStream. Returns a Promise of
+   { name: Blob } for every file inside, or null when unreadable. */
+function readZipEntries(buf) {
+  try {
+    var bytes = new Uint8Array(buf);
+    var view = new DataView(buf);
+    var eocd = -1, minPos = Math.max(0, bytes.length - 65558);
+    for (var i = bytes.length - 22; i >= minPos; i--) {
+      if (view.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+    }
+    if (eocd < 0) return Promise.resolve(null);
+    var count = view.getUint16(eocd + 10, true);
+    var off = view.getUint32(eocd + 16, true);
+    var decoder = new TextDecoder();
+    function mimeFor(name) {
+      if (/\.jpe?g$/i.test(name)) return 'image/jpeg';
+      if (/\.png$/i.test(name)) return 'image/png';
+      if (/\.webp$/i.test(name)) return 'image/webp';
+      if (/\.m4a$/i.test(name)) return 'audio/mp4';
+      if (/\.mp3$/i.test(name)) return 'audio/mpeg';
+      if (/\.wav$/i.test(name)) return 'audio/wav';
+      if (/\.json$/i.test(name)) return 'application/json';
+      if (/\.csv$/i.test(name)) return 'text/csv';
+      if (/\.txt$/i.test(name)) return 'text/plain';
+      return 'application/octet-stream';
+    }
+    var jobs = [];
+    for (var n = 0; n < count; n++) {
+      if (view.getUint32(off, true) !== 0x02014b50) break;
+      var ent = {
+        method: view.getUint16(off + 10, true),
+        compSize: view.getUint32(off + 20, true),
+        localOff: view.getUint32(off + 42, true)
+      };
+      var nameLen = view.getUint16(off + 28, true);
+      var extraLen = view.getUint16(off + 30, true);
+      var commentLen = view.getUint16(off + 32, true);
+      ent.name = decoder.decode(bytes.subarray(off + 46, off + 46 + nameLen));
+      off += 46 + nameLen + extraLen + commentLen;
+      if (!ent.name || /\/$/.test(ent.name)) continue;
+      (function (ent) {
+        jobs.push(Promise.resolve().then(function () {
+          if (view.getUint32(ent.localOff, true) !== 0x04034b50) return null;
+          var start = ent.localOff + 30 + view.getUint16(ent.localOff + 26, true) + view.getUint16(ent.localOff + 28, true);
+          var comp = bytes.subarray(start, start + ent.compSize);
+          var type = mimeFor(ent.name);
+          if (ent.method === 0) return { name: ent.name, blob: new Blob([comp], { type: type }) };
+          if (ent.method === 8 && typeof DecompressionStream !== 'undefined' && typeof Blob !== 'undefined') {
+            return new Response(new Blob([comp]).stream().pipeThrough(new DecompressionStream('deflate-raw')))
+              .blob().then(function (b) { return { name: ent.name, blob: new Blob([b], { type: type }) }; })
+              .catch(function () { return null; });
+          }
+          return null;
+        }));
+      })(ent);
+    }
+    return Promise.all(jobs).then(function (list) {
+      var out = {};
+      list.forEach(function (r) { if (r) out[r.name] = r.blob; });
+      return out;
+    });
   } catch (e) { return Promise.resolve(null); }
 }
 /* KML: one pin per <Placemark>. Name from <name> (CDATA-safe), coordinates
@@ -9123,8 +10952,9 @@ function switchTab(name) {
   if (name === 'scorecard') renderScorecardTab();
   if (name === 'totals') renderTotals();
   if (name === 'seasons') renderSeasons($('seasons-search').value);
-  if (name === 'licenses') { renderLicenses(); renderLandowners(); renderPaperworkMileage(); renderPaperworkDeadlines(); }
+  if (name === 'licenses') { renderLicenses(); renderLandowners(); renderPaperworkMileage(); renderMyTags(); }
   if (name === 'lines') renderLines();
+  try { sweepClearInputs($('pane-' + name)); } catch (e) {} /* ij (Q304): pane boxes carry the same clear × */
   reportViewport(); /* fj: keep the About diagnostic fresh, incl. bannerB while on the map */
 }
 
@@ -9147,7 +10977,7 @@ function refreshForLine() {
   renderLicenses();
   renderLandowners();
   renderPaperworkMileage(); /* df: mileage follows the active line */
-  renderPaperworkDeadlines(); /* gn: deadlines follow the active line's state too */
+  renderMyTags(); /* gw: tag records follow the active line too */
   renderMapStatusFilters();
   buildStateSelect($('settings-state'), activeStateCode());
   renderSettingsLineName();
@@ -9171,6 +11001,7 @@ function activateLine(id) {
   if (!ln || d.activeLineId === id) return;
   d.activeLineId = id;
   Store.save();
+  exitSelMode(); /* gz: a pick belongs to the line it was made on */
   refreshForLine();
   renderLines();
   toast('Active line: ' + ln.name + '.');
@@ -9331,6 +11162,7 @@ function deleteLine(id) {
       d.lines = d.lines.filter(function (x) { return x.id !== id; });
       d.sets = d.sets.filter(function (x) { return x.lineId !== id; });
       d.logs = d.logs.filter(function (l) { return !(l.lineId === id || deadSetIds[l.setId]); });
+      if (Array.isArray(d.activity)) d.activity = d.activity.filter(function (a) { return !(a.lineId === id || deadSetIds[a.setId]); }); /* Q272 */
       /* Q8: a line's trips go with it. */
       d.trips = (d.trips || []).filter(function (t) { return !t || t.lineId !== id; });
       /* photos + voice memos on the line's sets/logs go too (Q38: gone everywhere) */
@@ -9485,6 +11317,16 @@ function showView(id) {
 
 /* Q49: collapsible Settings sections. Every section below the trapping-state
    card toggles independently; all start collapsed. */
+/* ho (2026-11-21, Q254, Tanner): opening a collapsible card scrolls the
+   pane so the card's header lands at the top of the visible area, just
+   under the trap-line bar — the opened card is what he's looking at, so
+   it comes to him. Closing never yanks the scroll. */
+function scrollHeadIntoView(head) {
+  if (!head || !head.scrollIntoView) return;
+  requestAnimationFrame(function () {
+    try { head.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) {}
+  });
+}
 function toggleSettingsSection(secId) {
   var sec = $(secId), body = $(secId + '-body'), head = $(secId + '-head');
   if (!sec || !body || !head) return false;
@@ -9493,6 +11335,7 @@ function toggleSettingsSection(secId) {
   else { sec.classList.remove('open'); body.hidden = true; }
   if (willOpen) reportViewport(); /* fj: refresh the About diagnostic when opened */
   head.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  if (willOpen) scrollHeadIntoView(head); /* ho (Q254) */
   return willOpen;
 }
 /* Q99 (2026-10-01): Tanner — the notes/memos/photos stack on the set form,
@@ -9517,6 +11360,18 @@ function refreshNotesBox(secId, notesId, memosId, photosId) {
   var pb = photosId && $(photosId);
   var hasPhotos = !!(pb && pb.querySelector('img'));
   setSectionOpen(secId, hasNotes || hasMemos || hasPhotos);
+  if (secId === 'setdetail-notessec') refreshDetailNotes(hasNotes, hasMemos, hasPhotos);
+}
+/* ho (2026-11-21, Q251, Tanner): on the set detail's read view, a part of
+   Notes, Memos & Photos shows only when it has something in it — no bare
+   "Voice memos" label over nothing. When all three are empty the section
+   header stays and the opened body carries one quiet line instead. */
+function refreshDetailNotes(hasNotes, hasMemos, hasPhotos) {
+  var t = function (id, show) { var el = $(id); if (el) el.hidden = !show; };
+  t('sd-notes-head', hasNotes); t('sd-notes', hasNotes);
+  t('sd-memos-label', hasMemos); t('sd-memos', hasMemos);
+  t('sd-photos-label', hasPhotos); t('sd-photos', hasPhotos);
+  t('sd-notes-empty', !(hasNotes || hasMemos || hasPhotos));
 }
 
 function enterMain() {
@@ -9617,6 +11472,18 @@ function enterMain() {
       toast(this.checked ? 'Mileage tracking is on.' : 'Mileage tracking is off.');
     };
   }
+  /* gw: tag records toggle — off hides the catch-sheet Tag section and
+     My Tags everywhere; stored records are never deleted. Default on. */
+  var tagBox = $('settings-tagrecords');
+  if (tagBox) {
+    tagBox.checked = tagRecordsOn();
+    tagBox.onchange = function () {
+      Store.data.tagRecordsOn = this.checked;
+      Store.save();
+      renderMyTags();
+      toast(this.checked ? 'Tag records are on.' : 'Tag records are off — records already saved stay on this phone.');
+    };
+  }
   /* fy: ruler toggle — off hides the map's measure button entirely. Default on. */
   var rulerBox = $('settings-ruler');
   if (rulerBox) {
@@ -9687,8 +11554,8 @@ function enterMain() {
       l.catchAlerts = this.checked;
       Store.save();
       toast(this.checked
-        ? 'Catch alerts are on for ' + l.name + '.'
-        : 'Catch alerts are off for ' + l.name + ' — the season badges still show.');
+        ? 'Catch warnings are on for ' + l.name + '.'
+        : 'Catch warnings are off for ' + l.name + ' — the season badges still show.');
     };
   }
   renderCatchAlertsToggle();
@@ -9775,6 +11642,7 @@ function buildGuideTOC() {
       'Reset', function () {
     Store.data.weatherOn = true; Store.data.voiceOn = true; Store.data.windArrowsOn = true; /* Q17; Q183: reset restores the fresh-install default (weather on) */
     Store.data.mileageOn = true; /* Q8 */
+    Store.data.tagRecordsOn = true; /* gw */
     Store.data.rulerOn = true; /* fy */
     /* Q14/Q62: tab reset is per-line — restores all five toggleable tabs on the active line. */
     var l = activeLine();
@@ -9783,6 +11651,8 @@ function buildGuideTOC() {
     Store.save();
     $('settings-weather').checked = true; $('settings-voice').checked = true; $('settings-windarrows').checked = true;
     var mcb = $('settings-mileage'); if (mcb) mcb.checked = true;
+    var tgcb = $('settings-tagrecords'); if (tgcb) tgcb.checked = true;
+    renderMyTags(); /* gw: reset restores the My Tags section too */
     var rcb = $('settings-ruler'); if (rcb) rcb.checked = true;
     renderTabToggles();
     sfKeys.forEach(function (key) { var cb = $('settings-sf-' + key); if (cb) cb.checked = true; });
@@ -10010,10 +11880,9 @@ function renderSetTypeOptions() {
   var seenST = {};
   fnds.forEach(function (t) { seenST[t.toLowerCase()] = 1; });
   var customs = customOptionsFor('sf-settype').filter(function (t) { return !seenST[t.toLowerCase()]; });
-  var html = '';
-  fnds.concat(customs).sort(byName).forEach(function (t) { html += '<option>' + esc(t) + '</option>'; });
-  html += '<option value="' + OTHER_VALUE + '">Other…</option>';
-  sel.innerHTML = html;
+  /* ho (Q249): the foundation field is a combo input — the A–Z list is
+     stashed for its live getOptions; no Other… row (typing is the hatch). */
+  window._sfSetTypeOpts = fnds.concat(customs).sort(byName);
   renderVariationOptions();
 }
 /* Q212: the Variation dropdown under the foundation picker — "— None —"
@@ -10022,8 +11891,9 @@ function renderSetTypeOptions() {
 function renderVariationOptions() {
   var sel = $('sf-setvariation');
   if (!sel) return;
-  var f = $('sf-settype') ? $('sf-settype').value : '';
-  if (f === OTHER_VALUE) { var ot = $('sf-settype-othertext'); f = ot ? ot.value.trim() : ''; }
+  /* ho (Q249): the foundation is the set-type field's text; the variation
+     list is stashed for the combo's live getOptions. */
+  var f = $('sf-settype') ? $('sf-settype').value.trim() : '';
   var names = (SET_VARIATIONS[f] || []).slice();
   /* gj (2026-11-16, Tanner): his remembered custom variations for this
      foundation ride after its family names — a variation typed once is a
@@ -10033,55 +11903,50 @@ function renderVariationOptions() {
   if (f) customOptionsFor('sf-setvariation:' + f).forEach(function (t) {
     if (!seenV[t.toLowerCase()]) { names.push(t); seenV[t.toLowerCase()] = 1; }
   });
-  var html = '<option value="">— None —</option>';
-  names.forEach(function (t) { html += '<option>' + esc(t) + '</option>'; });
-  sel.innerHTML = html;
+  window._sfVarOpts = names;
 }
 /* Open-time fill: a name in the foundation's list selects in the dropdown;
    any other name (a custom variation) rides in the free-text box instead,
    so an edit opens with every stored character still on the form. */
 function setVariationFields(foundation, name) {
-  var sel = $('sf-setvariation'), cust = $('sf-setvariation-custom');
-  if (cust) cust.value = '';
+  /* ho (Q249): one combo field now — the stored name, family or custom,
+     simply sits in the field as text. */
+  var sel = $('sf-setvariation');
   if (!sel) return;
-  sel.value = '';
-  if (!name) return;
-  /* gj: a family name OR a remembered custom selects in the dropdown —
-     try the option itself, not just the family list. */
-  sel.value = name;
-  if (sel.value === name) return;
-  sel.value = '';
-  if (cust) cust.value = name;
+  sel.value = name || '';
   /* A stored custom that predates remembering joins the list now, so it
-     opens as a plain option from here on. */
-  if (foundation) rememberCustomOption('sf-setvariation:' + foundation, name);
+     opens as a plain option from here on. (gj) */
+  if (name && foundation && (SET_VARIATIONS[foundation] || []).indexOf(name) === -1) {
+    rememberCustomOption('sf-setvariation:' + foundation, name);
+  }
 }
 /* The variation as it should be stored: a typed custom name wins over the
    dropdown pick; blank when neither is set. */
 function variationFieldValue() {
-  var cust = $('sf-setvariation-custom');
-  var typed = cust ? cust.value.trim() : '';
-  if (typed) return typed;
+  /* ho (Q249): the combo field's text is the variation. A name outside
+     the foundation's family is remembered under that foundation (gj's
+     rule, moved from the old Custom box's change listener to read time). */
   var sel = $('sf-setvariation');
-  return sel ? (sel.value || '') : '';
+  var v = sel ? sel.value.trim() : '';
+  if (v === 'None') return ''; /* in (Q309): the face is not a variation */
+  if (v) {
+    var f = selVal('sf-settype');
+    if (f && (SET_VARIATIONS[f] || []).indexOf(v) === -1 &&
+        customOptionsFor('sf-setvariation:' + f).indexOf(v) === -1) {
+      rememberCustomOption('sf-setvariation:' + f, v);
+    }
+  }
+  return v;
 }
 /* Stored values with no foundation home ("Drowning set",
    "Trail / blind set") still open fine in the form: they ride along as a
    selected first option until the user picks a foundation value. (Q212:
    the 49 taxonomy names never reach here — foundationOf homes them.) */
 function ensureSetTypeOption(v) {
-  var sel = $('sf-settype');
-  if (!sel || !v || isKnownSetType(v)) return;
-  /* Q55: a remembered custom already rides in the rebuilt list — no dup. */
-  var opts = sel.options || [];
-  for (var i = 0; i < opts.length; i++) {
-    if (opts[i].value === v || opts[i].text === v) { sel.value = v; return; }
-  }
-  var cur = sel.innerHTML || '';
-  var tag = '<option selected>' + esc(v) + '</option>';
-  if (cur.indexOf(tag) !== 0) sel.innerHTML = tag + cur;
+  /* ho (Q249): the foundation field is a text combo now — any stored
+     name simply sits in the field; there is no option list to extend. */
+  return;
 }
-
 /* ================= Q8. MILEAGE PER TRAP LINE =================
    Per-line trip log with manual odometer entries, plus a straight-line
    route estimate (haversine sum in check order) drawn on the map with
@@ -10252,6 +12117,21 @@ function showTripModal(lineId, tripId) {
      him calculate right there. Typed readings are required; a photo (or failed
      photo) never blocks saving. */
   var startPhoto = null, endPhoto = null, mapPhoto = null;
+  var notePhotos = [];
+  /* hm (2026-11-20, Q195): notes parity — Tanner ruled note, voice, and
+     photo in ALL notes sections, and the trip editor's Notes field was
+     the one gap. It gains the set/log pattern: a Voice → notes button
+     (hidden when voice is off; on the installed iPhone app it gives way
+     to the keyboard-mic tip, the ga rule) and an Add photo button whose
+     photos classify as trip photos (kind 'note'). */
+  var tripVoiceBtn = '', tripVoiceTip = '';
+  if (Store.data.voiceOn !== false) {
+    if (isIOSPWA()) {
+      tripVoiceTip = '<p class="dim" id="voice-tripnotes-tip" style="margin:8px 0 0">Tap the <svg viewBox="0 0 24 24" width="12" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="vertical-align:-3px"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1"/><path d="M12 18v3"/></svg> key on your keyboard to dictate a note.</p>';
+    } else {
+      tripVoiceBtn = '<button class="btn-small btn-secondary" id="m-voice-tripnotes" type="button"><img class="bi" src="assets/icons/mic.png" alt="">Voice → notes</button>';
+    }
+  }
   showModal(
     '<h3>' + (t ? 'Edit trip' : 'Log a trip') + '</h3>' +
     '<label class="field" for="m-trip-date">Date</label>' +
@@ -10275,6 +12155,13 @@ function showTripModal(lineId, tripId) {
     '<div class="lic-grid" id="m-trip-photos"></div>' +
     '<label class="field" for="m-trip-notes">Notes <span class="dim">(optional)</span></label>' +
     '<input type="text" id="m-trip-notes" maxlength="80" placeholder="e.g. River bottoms check" value="' + esc(t ? t.notes || '' : '') + '">' +
+    /* hm (Q195): the notes row — Voice → notes + Add photo, the same
+       pair the set and log notes sections carry. */
+    '<div class="btn-row" style="margin-top:8px">' + tripVoiceBtn +
+    '<button class="btn-small btn-secondary" id="m-note-photo" type="button"><img class="bi" src="assets/icons/camera.png" alt="">Add a photo</button></div>' +
+    tripVoiceTip +
+    '<div class="voice-preview" id="voice-tripnotes-preview"></div>' +
+    '<div class="photo-strip" id="m-trip-note-photos" style="margin-top:8px"></div>' +
     '<input type="file" id="m-odo-photo-input" class="hidden-file" accept="image/*">' +
     '<div class="btn-row" style="margin-top:14px"><button class="btn-secondary" id="m-cancel" type="button">Cancel</button>' +
     '<button class="btn-primary" id="m-ok" type="button">' + (t ? 'Save' : 'Add trip') + '</button></div>' +
@@ -10300,6 +12187,31 @@ function showTripModal(lineId, tripId) {
   $('m-start-photo').onclick = function () { photoTarget = 'start'; $('m-odo-photo-input').click(); };
   $('m-end-photo').onclick = function () { photoTarget = 'end'; $('m-odo-photo-input').click(); };
   $('m-map-photo').onclick = function () { photoTarget = 'map'; $('m-odo-photo-input').click(); };
+  /* hm (Q195): the Notes photo button rides the same shared input. */
+  $('m-note-photo').onclick = function () { photoTarget = 'note'; $('m-odo-photo-input').click(); };
+  var tripVnBtn = $('m-voice-tripnotes');
+  if (tripVnBtn) tripVnBtn.onclick = function () {
+    var ta = $('m-trip-notes');
+    Voice.start($('voice-tripnotes-preview'), function (t2) {
+      ta.value = (ta.value ? ta.value.replace(/\s+$/, '') + ' ' : '') + t2;
+    });
+  };
+  /* Pending notes photos, thumbnailed in the strip under the Notes
+     field — the renderPendingLogPhotos pattern. Tap opens full-size. */
+  function renderTripNotePhotos() {
+    var box = $('m-trip-note-photos');
+    if (!box) return;
+    box.querySelectorAll('[data-pending-note]').forEach(function (el) { el.remove(); });
+    notePhotos.forEach(function (b) {
+      var img = document.createElement('img');
+      img.className = 'photo-thumb'; img.alt = 'Note photo';
+      img.setAttribute('data-pending-note', '1');
+      img.src = URL.createObjectURL(b);
+      img.title = 'Tap to enlarge';
+      img.onclick = function () { openFullPhoto(b); };
+      box.appendChild(img);
+    });
+  }
   /* Tanner 2026-10-07: attaching a photo pops a thumbnail right there, like
      everywhere else in the app — no "Photo attached." text getting shoved
      off the edge (that was also dragging the modal sideways). */
@@ -10325,6 +12237,7 @@ function showTripModal(lineId, tripId) {
         if (!blob) return;
         if (target === 'start') { startPhoto = blob; setPhotoThumb('m-start-photo-note', blob); }
         else if (target === 'map') { mapPhoto = blob; setPhotoThumb('m-map-photo-note', blob); }
+        else if (target === 'note') { notePhotos.push(blob); renderTripNotePhotos(); }
         else { endPhoto = blob; setPhotoThumb('m-end-photo-note', blob); }
       });
     } catch (e) { /* noop — saving the trip matters, the photo doesn't */ }
@@ -10339,6 +12252,16 @@ function showTripModal(lineId, tripId) {
         if (!p || p.tripId !== t.id || !p.blob) return;
         var img = document.createElement('img');
         img.src = photoURL(p);
+        /* hm (Q195): notes photos live in the Notes strip, not the
+           odometer/map grid above it — each photo in its own home. */
+        if (p.kind === 'note') {
+          var strip = $('m-trip-note-photos');
+          if (!strip) return;
+          img.className = 'photo-thumb'; img.alt = 'Note photo'; img.title = 'Tap to enlarge';
+          img.onclick = function () { openFullPhoto(p.blob); };
+          strip.appendChild(img);
+          return;
+        }
         img.alt = p.kind === 'map' ? 'Road directions screenshot' : 'Odometer photo';
         img.style.cssText = 'width:72px;height:72px;object-fit:cover;border-radius:8px;cursor:pointer;';
         img.onclick = function () { openFullPhoto(p.blob); };
@@ -10363,11 +12286,21 @@ function showTripModal(lineId, tripId) {
       Store.data.trips.push(rec);
     }
     Store.save();
-    /* Q72: attach odometer photos if any — failures are swallowed, the trip is already saved. */
-    if (startPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, kind: 'odo-start', blob: startPhoto, mime: startPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
-    if (endPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, kind: 'odo-end', blob: endPhoto, mime: endPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
+    /* Q72: attach odometer photos if any — failures are swallowed, the trip is already saved.
+       hj (2026-11-19): each photo also carries the owning trip's lineId,
+       stamped at write time — line-less photo records were the root of
+       the License Wallet misfiling (see isLicenseWalletPhoto). */
+    if (startPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, lineId: rec.lineId, kind: 'odo-start', blob: startPhoto, mime: startPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
+    if (endPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, lineId: rec.lineId, kind: 'odo-end', blob: endPhoto, mime: endPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
     /* The route-map screenshot rides along the same way (directions link-out scrapped 2026-10-07). */
-    if (mapPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, kind: 'map', blob: mapPhoto, mime: mapPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
+    if (mapPhoto) IDB.put('photos', { id: uid('p'), tripId: rec.id, lineId: rec.lineId, kind: 'map', blob: mapPhoto, mime: mapPhoto.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
+    /* hm (Q195): notes photos save with the trip too — the tripId is
+       what classifies them: they stay out of the License Wallet and
+       ride the trip's photo grid (Paperwork) and the media ZIP's
+       Trip Photos folder like every other trip photo. */
+    notePhotos.forEach(function (b) {
+      IDB.put('photos', { id: uid('p'), tripId: rec.id, lineId: rec.lineId, kind: 'note', blob: b, mime: b.type || 'image/jpeg', createdAt: Date.now() }).catch(function () {});
+    });
     closeModal(); switchTab('licenses');
     toast(t ? 'Trip updated.' : 'Trip logged.');
   };
@@ -10710,12 +12643,81 @@ function wireUp() {
       renderPendingLogPhotos();
     });
   };
+  /* gw: tag photo pickers — same behavior as the catch photo picker
+     (capture the file synchronously, clear the input, downscale). */
+  $('btn-log-tagphoto').onclick = function () { $('log-tag-photo-input').click(); };
+  $('log-tag-photo-input').onchange = function () {
+    var f = this.files[0];
+    this.value = '';
+    if (!f) return;
+    downscalePhoto(f, function (blob) {
+      pendingTagPhoto = { blob: blob };
+      renderPendingTagPhoto();
+    });
+  };
+  $('btn-tag-photo').onclick = function () { $('tag-photo-input').click(); };
+  $('tag-photo-input').onchange = function () {
+    var f = this.files[0];
+    this.value = '';
+    if (!f || !tagEditPhoto) return;
+    downscalePhoto(f, function (blob) {
+      tagEditPhoto.blob = blob;
+      tagEditPhoto.removed = false;
+      renderTagEditPhoto();
+    });
+  };
+  $('btn-tag-photo-remove').onclick = function () {
+    if (!tagEditPhoto) return;
+    tagEditPhoto.blob = null;
+    tagEditPhoto.removed = true;
+    renderTagEditPhoto();
+  };
+  $('btn-save-tag').onclick = saveTagRecord;
+  /* gw scope 3: post-catch sheet tag entry — write-through fields. */
+  $('pc-tag-number').onchange = pcTagWrite;
+  $('pc-tag-date').onchange = pcTagWrite;
+  $('btn-pc-tagphoto').onclick = function () { $('pc-tag-photo-input').click(); };
+  $('pc-tag-photo-input').onchange = function () {
+    var f = this.files[0];
+    this.value = '';
+    if (!f || !postCatchLogId) return;
+    downscalePhoto(f, function (blob) {
+      var l = tagLogById(postCatchLogId);
+      if (!l) return;
+      if (pcTagPhoto && pcTagPhoto.existing) deleteTagPhotoRec(pcTagPhoto.existing);
+      var rec = {
+        id: uid('p'), setId: l.setId, logId: l.id, kind: 'tag', blob: blob,
+        mime: blob.type || 'image/jpeg',
+        lat: (l.lat != null ? l.lat : null), lng: (l.lng != null ? l.lng : null),
+        createdAt: Date.now()
+      };
+      IDB.put('photos', rec).catch(function () { /* noop */ });
+      if (!pcTagPhoto) pcTagPhoto = { existing: null };
+      pcTagPhoto.existing = rec;
+      renderPcTagPhoto();
+    });
+  };
+  $('btn-pc-tagphoto-remove').onclick = function () {
+    if (pcTagPhoto && pcTagPhoto.existing) { deleteTagPhotoRec(pcTagPhoto.existing); pcTagPhoto.existing = null; }
+    renderPcTagPhoto();
+  };
 
-  /* seasons search */
-  $('seasons-search').oninput = function () { renderSeasons(this.value); };
+  /* seasons search — gw: filters the animal list ONLY, like the app's
+     other search bars; the full renderSeasons runs on tab open.
+     hb: revealFirstMatch keeps the first match visible under the bar. */
+  $('seasons-search').oninput = function () {
+    renderSeasonsList(this.value);
+    revealFirstMatch(this, document.querySelector('#seasons-list .species-row'));
+  };
 
   /* history filters */
-  $('history-search').oninput = function () { histUI.q = this.value; renderHistory(); };
+  $('history-search').oninput = function () {
+    histUI.q = this.value; renderHistory();
+    /* hb: the visible face of a History match is its day-group head (the
+       catch rows live in the collapsed day body), so that is the reveal
+       target; in By Trap Type view the first row matches instead. */
+    revealFirstMatch(this, document.querySelector('#history-list .day-head, #history-list .log-row'));
+  };
   /* report filters (Settings) */
   $('exp-from').onchange = function () { exportUI.from = this.value; renderExportFilterBar(); };
   $('exp-to').onchange = function () { exportUI.to = this.value; renderExportFilterBar(); };
@@ -10752,9 +12754,8 @@ function wireUp() {
       Store.data.totalsCollapsed = tco; Store.save();
       var tbody = thead.parentNode.querySelector('.totals-card-body');
       if (tbody) { if (tco[skey]) tbody.setAttribute('hidden', ''); else tbody.removeAttribute('hidden'); }
-      thead.setAttribute('aria-expanded', String(!tco[skey]));
-      var thchev = thead.querySelector('.tchev');
-      if (thchev) thchev.textContent = tco[skey] ? '▸' : '▾';
+      thead.setAttribute('aria-expanded', String(!tco[skey])); /* gw scope 5: the chevron rotates off aria-expanded; no glyph swap */
+      if (!tco[skey]) scrollHeadIntoView(thead); /* ho (Q254): an opened card comes to the top */
       return;
     }
     /* Tap a By Species / By Set row to expand/collapse its details. */
@@ -10814,6 +12815,9 @@ function wireUp() {
     }
     var memoBtn = e.target.closest ? e.target.closest('[data-memo-play]') : null;
     if (memoBtn) { toggleLogMemoPlayer(memoBtn); return; }
+    /* gw: the Tag record button opens the editor instead of expanding. */
+    var tagBtn = e.target.closest ? e.target.closest('[data-tag-edit]') : null;
+    if (tagBtn) { openTagEditor(tagBtn.getAttribute('data-tag-edit')); return; }
     var row = e.target.closest ? e.target.closest('.log-row') : null;
     if (row && row.getAttribute('data-log')) {
       var k = row.getAttribute('data-log');
@@ -10915,10 +12919,20 @@ function wireUp() {
     }
     closeSheets();
   };
-  /* Q140: stacked-pin menu — tapping a row opens that set's detail sheet. */
+  /* Q140: stacked-pin menu — tapping a row opens that set's detail sheet.
+     gz: in selection mode the same rows toggle the pick instead (the list
+     re-renders in place with the new states); no detail sheet opens. */
   $('stack-list').addEventListener('click', function (e) {
     var row = e.target && e.target.closest ? e.target.closest('[data-stack-id]') : null;
-    if (row) openSetDetail(row.getAttribute('data-stack-id'));
+    if (!row) return;
+    var id = row.getAttribute('data-stack-id');
+    if (selMode) {
+      var s = getSet(id);
+      toggleSel(id);
+      if (s) openSelStack(setsAtSpot(s.lat, s.lng));
+      return;
+    }
+    openSetDetail(id);
   });
   /* Q105 (2026-10-01): Tanner — no backdrop-tap dismissal on any dialog;
      every confirm closes only via its own buttons. The old
@@ -11028,6 +13042,26 @@ fitAppHeight(); /* set it at parse time too, before first paint */
 function boot() {
   fitAppHeight(); /* fh: pin the app to the true visible height (see below) */
   Store.load();
+  /* ho (Q249): the set form's static combo fields, wired once — their
+     option lists are computed live (maker catalog, the type cascade's
+     stash, the foundation/variation stashes). */
+  comboAttach('sf-maker', 'sf-maker-suggest', function () { return makerComboOptions(); }, {});
+  comboAttach('sf-type', 'sf-type-suggest', function () { return window._sfTypeOpts || ALL_TRAP_TYPES.slice(); }, { noneLabel: 'None' });
+  comboAttach('sf-settype', 'sf-settype-suggest', function () { return window._sfSetTypeOpts || []; }, { noneLabel: 'None' });
+  comboAttach('sf-setvariation', 'sf-setvariation-suggest', function () { return window._sfVarOpts || []; }, { noneLabel: 'None' });
+  /* ho (Q248): every other manually typed field in the sheets and the
+     home bar gets the clear × (the Set Name model). Fields already
+     carrying one (suggest/combo fields wrap themselves) are skipped by
+     ensureClearInput; Notes are textareas and stay untouched. */
+  document.querySelectorAll('.sheet input[type="text"], #home-bar input[type="text"]').forEach(function (inp) {
+    /* sf-name and sf-missing-detail grow their own × in their own wiring
+       (gm / attachSuggest) — a second one here would double them up. The
+       home-bar jump fields are not entry fields (the city field carries
+       its own match list) and wrapping the ZIP would break the Q265
+       jump row's flex — they stay bare. */
+    if (inp.id === 'sf-name' || inp.id === 'sf-missing-detail' || inp.id === 'home-zip' || inp.id === 'home-city') return;
+    ensureClearInput(inp);
+  });
   /* Q55: one delegated listener reveals the "What is it?" box under any
      Other-capable dropdown, wherever it was rendered. */
   document.addEventListener('change', function (e) {
@@ -11038,8 +13072,10 @@ function boot() {
        a variation never outlives the foundation it belonged to. */
     if (t && t.id === 'sf-settype') {
       renderVariationOptions();
-      var cust = $('sf-setvariation-custom');
-      if (cust) cust.value = '';
+      /* ho (Q249): the variation is one combo field now — a foundation
+         change clears it, as the rebuilt dropdown used to. */
+      var vf = $('sf-setvariation');
+      if (vf) vf.value = '';
     }
   });
   /* gi (2026-11-16, Tanner): a name typed under Other… joins its list the
@@ -11116,14 +13152,36 @@ function boot() {
   /* service worker: http(s) only — skipped on file:// */
   if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('sw.js').catch(function () { /* offline still works without it */ });
+      var swReg = null;
+      navigator.serviceWorker.register('sw.js').then(function (reg) { swReg = reg; })
+        .catch(function () { /* offline still works without it */ });
       /* A new build took charge while this page still runs the old one:
-         offer a one-tap reload. Never force it — the user might be mid-log. */
+         offer a one-tap reload. (hi: the version check below no longer
+         waits for the tap — see reloadOnceFor. This message path keeps
+         the banner as the manual fallback.) */
       navigator.serviceWorker.addEventListener('message', function (ev) {
         if (ev.data && ev.data.type === 'OF_NEW_VERSION') showUpdateBanner();
       });
-      /* backstop: version stamp check when the app is foregrounded / periodically */
-      document.addEventListener('visibilitychange', function () { if (!document.hidden) checkBuildFresh(); });
+      /* hi: when a new worker takes control of this page, ask whether
+         the running build is stale — checkBuildFresh spends the one
+         guarded reload if it is. A first-install claim finds the
+         running build matching and does nothing. */
+      navigator.serviceWorker.addEventListener('controllerchange', function () { checkBuildFresh(); });
+      /* hh: an installed PWA can sit on an old worker for days if the
+         browser only looks for a new one on cold navigation — ask for
+         an update check whenever the app returns to the foreground.
+         (The hg Mapbox field failure may have been exactly this: the
+         new worker never took charge on the phone.) */
+      function pokeSwUpdate() {
+        if (!swReg || !swReg.update) return;
+        try { swReg.update().catch(function () { /* offline: stay quiet */ }); }
+        catch (e) { /* an update check is a backstop, never a fault */ }
+      }
+      /* backstop: version stamp check on load, when the app is
+         foregrounded, and periodically */
+      checkBuildFresh();
+      document.addEventListener('visibilitychange', function () { if (!document.hidden) { checkBuildFresh(); pokeSwUpdate(); } });
+      window.addEventListener('pageshow', function () { checkBuildFresh(); pokeSwUpdate(); });
       setInterval(checkBuildFresh, 5 * 60 * 1000);
     });
   }
@@ -11146,14 +13204,37 @@ function showUpdateBanner() {
   d.appendChild(b);
   document.body.appendChild(d);
 }
+/* hi (2026-11-19): a detected update now takes over ONCE on its
+   own. Through hh, checkBuildFresh and the OF_NEW_VERSION message
+   both ended at the banner — if the tap never came, the open page
+   ran the old build under the new worker indefinitely (the
+   nag-only takeover defect). Now a mismatch spends a single
+   guarded reload: the guard is the target stamp kept in
+   localStorage, so the same target can never reload twice; if
+   the page comes back still mismatched, the banner returns as
+   the manual path. The guard clears as soon as the running build
+   matches the live stamp again. */
+var UPDATE_GUARD_KEY = 'of-reload-for';
+function reloadOnceFor(target) {
+  var seen = null;
+  try { seen = window.localStorage.getItem(UPDATE_GUARD_KEY); } catch (e) { /* storage unavailable: banner */ }
+  if (seen === target) { showUpdateBanner(); return; }
+  try { window.localStorage.setItem(UPDATE_GUARD_KEY, target); }
+  catch (e) { showUpdateBanner(); return; }
+  window.location.reload();
+}
 function checkBuildFresh() {
-  if (_updateBannerShown) return;
   fetch('version.txt', { cache: 'no-store' }).then(function (r) {
     if (!r.ok) throw 0;
     return r.text();
   }).then(function (t) {
     t = (t || '').trim();
-    if (t && APP_VERSION.indexOf(t) === -1) showUpdateBanner();
+    if (!t) return;
+    if (APP_VERSION.indexOf(t) !== -1) {
+      try { window.localStorage.removeItem(UPDATE_GUARD_KEY); } catch (e) { /* a spent guard may stay spent */ }
+      return;
+    }
+    reloadOnceFor(t);
   }).catch(function () { /* offline: stay quiet */ });
 }
 
