@@ -20,11 +20,11 @@
       "type": "image/png"
     }
   ],
-  "id": "./index.html?app=canada",
   "name": "Opossum Foot Canada",
   "orientation": "portrait",
   "scope": "./",
   "short_name": "Opossum Foot Canada",
   "start_url": "./index.html?app=canada",
-  "theme_color": "#141810"
+  "theme_color": "#141810",
+  "id": "./index.html?app=canada"
 }
